@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMjU2M2ViIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLjh6bS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMC01Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC46IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHptMC0xMDQuOGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHoiLz48L3N2Zz4=">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMjU2M2ViIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLjh6bS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMC01Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHptMC0xMDQuOGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHoiLz48L3N2Zz4=">
   <style>
     /* Reset and Base Styles */
     *, ::before, ::after {
@@ -64,10 +64,16 @@
     a {
       color: #3b82f6;
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: all 0.2s ease;
+      cursor: pointer;
     }
     a:hover {
       color: #60a5fa;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    a:active {
+      transform: scale(0.95);
     }
     ul {
       list-style-type: disc;
@@ -161,15 +167,12 @@
       font-weight: 500;
       font-size: 1.125rem;
       color: #e0e7ff;
-      transition: all 0.2s ease;
     }
     body.light-mode nav a {
       color: #1e293b;
     }
     nav a:hover {
       color: #60a5fa;
-      text-decoration: underline;
-      text-underline-offset: 4px;
     }
     @media (max-width: 768px) {
       nav .container {
@@ -192,7 +195,7 @@
       padding: 0.75rem 1.5rem;
       border-radius: 0.5rem;
       cursor: pointer;
-      z-index: 1;
+      z-index: 11;
       font-size: 0.9rem;
       font-weight: 500;
       transition: all 0.3s ease;
@@ -278,6 +281,7 @@
       position: relative;
       z-index: 1;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
     body.light-mode .hero a {
       background: #1e40af;
@@ -285,7 +289,6 @@
     .hero a:hover {
       background: #60a5fa;
       transform: translateY(-4px);
-      text-decoration: none;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
     }
     @media (max-width: 768px) {
@@ -323,7 +326,7 @@
     .section-divider {
       width: 100%;
       height: 80px;
-      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjgwIj48c2NhdHRlciB4PSIxMCUiIHk9IjUwJSIgcj0iNCIgZmlsbD0iIzNiODJmNiIvPjxzY2F0dGVyIHg9IjIwJSIgeT0iMzAlIHI9IjUiIGZpbGw9IiNmNTllMGIiLz48c2NhdHRlciB4PSIzMCUiIHk9IjYwJSIgcj0iNCIgZmlsbD0iIzNiODJmNiIvPjxzY2F0dGVyIHg9IjQwJSIgeT0iNDAlIiByPSI1IiBmaWxsPSIjZjU5ZTBiIi8+PHNjYXR0ZXIgeD0iNTAlIiB5PSI3MCUiIHI9IjQiIGZpbGw9IiMzYjgyZjYiLz48c2NhdHRlciB4PSI2MCUiIHk9IjIwJSIgcj0iNSIgZmlsbD0iI2Y1OWUwYiIvPjxzY2F0dGVyIHg9IjcwJSIgeT0iNTAlIiByPSI0IiBmaWxsPSIjM2I4MmY2Ii8+PHNjYXR0ZXIgeD0iODAlIiB5PSIzMCUiIHI9IjUiIGZpbGw9IiNmNTllMGIiLz48c2NhdHRlciB4PSI5MCUiIHk9IjYwJSIgcj0iNCIgZmlsbD0iIzNiODJmNiIvPjwvc3ZnPg==') no-repeat center;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjgwIj48c2NhdHRlciB4PSIxMCUiIHk9IjUwJSIgcj0iNCIgZmlsbD0iIzNiODJmNiIvPjxzY2F0dGVyIHg9IjIwJSIgeT0iMzAlIHI9IjUiIGZpbGw9IiNmNTllMGIiLz48c2NhdHRlciB4PSIzMCUiIHk9IjYwJSIgcj0iNCIgZmlsbD0iIzNiODJmNiIvPjxzY2F0dGVyIHA0MCUiIHk9IjQwJSIgcj0iNSIgZmlsbD0iI2Y1OWUwYiIvPjxzdmNsb24geD0iNTAlIiB5PSI3MCUiIH0iPSIzNCIgZmlsbD0iIzNiODJmNiIvPjxzdmNsbCB4PSI2MCUiIHk9IjIwJSIgci0tPSIzNSIgZ2xhc3M6PS0uMyg2KSIsImZpbGwiPSItZmlnIi9dPjxzdmNvbCB0eXBlPS0iMzQiIGZpbGw9Ly9oL3w+PC9zdnZnPg==") no-repeat center;
       opacity: 0.2;
       margin: 3rem 0;
     }
@@ -401,6 +404,7 @@
       border-radius: 0.5rem;
       font-weight: 500;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
     .card a:hover {
       background: #60a5fa;
@@ -688,7 +692,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent 70%);
       z-index: 0;
     }
     footer p, footer a {
@@ -709,6 +713,7 @@
       font-weight: 600;
       transition: all 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
     body.light-mode footer a {
       background: #1e40af;
@@ -788,18 +793,14 @@
   </style>
 </head>
 <body>
-  <!-- Loader -->
   <div id="loader">
     <div class="loader-spinner"></div>
   </div>
 
-  <!-- Matrix Rain Background -->
-  <canvas id="matrix-bg"></canvas>
+  <canvas id="matrixRain"></canvas>
 
-  <!-- Theme Toggle -->
-  <button id="theme-toggle">Switch to Data Viz Mode</button>
+  <button id="themeToggle">Switch to DataViz Mode</button>
 
-  <!-- Navigation -->
   <nav>
     <div class="container">
       <div class="logo">Kodari Sravan</div>
@@ -809,7 +810,7 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#certifications">Certificates</a>
         <a href="#blog">Blog</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
@@ -817,41 +818,37 @@
     </div>
   </nav>
 
-  <!-- Hero Section with Neural Network Animation -->
   <section class="hero">
-    <canvas id="neural-net"></canvas>
+    <canvas id="neuralNet"></canvas>
     <div class="container">
       <h1>Kodari Sravan</h1>
-      <h2>Data Scientist | Machine Learning Expert</h2>
-      <a href="https://linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      <h2>Data Scientist | Machine Learning Specialist</h2>
+      <a href="https://linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="external-link">Connect on LinkedIn</a>
     </div>
   </section>
 
-  <!-- Professional Summary -->
   <section id="summary">
     <div class="container">
-      <h2 class="fade-in">Professional Summary</h2>
-      <p class="fade-in" style="max-width: 900px; margin: 0 auto; text-align: center;">
-        Expert in Python, SQL, and advanced machine learning techniques, delivering impactful projects in predictive modeling, data analysis, and visualization. Proficient in tools like Pandas, NumPy, Scikit-learn, and Plotly, I drive data-driven solutions with innovative problem-solving in high-impact environments.
+      <h2 class="fade-in">Expert Summary</h2>
+      <p class="fade-in" style="max-width: 900px; margin: auto; text-align: center;">
+        Expert in Python, SQL, and advanced ML techniques, delivering impactful projects in predictive modeling, data analysis, and visualization using Pandas, NumPy, Scikit-learn, and Plotly.
       </p>
     </div>
     <div class="section-divider"></div>
   </section>
 
-  <!-- Featured Project -->
   <section id="featured" class="featured-project">
     <div class="container">
       <h2 class="fade-in">Featured Project</h2>
       <div class="card fade-in">
         <h3>Heart Disease Prediction</h3>
-        <p>Developed logistic regression and decision tree models to predict heart disease with 85% accuracy. Evaluated using precision, recall, F1, and ROC-AUC metrics, with visualizations created using Matplotlib and Seaborn.</p>
-        <p style="margin-top: 1.5rem;"><a href="https://github.com/sravan-dsai/heart-disease-prediction" target="_blank" rel="noopener noreferrer">View Project on GitHub</a></p>
+        <p>Developed logistic regression and ML models for heart disease prediction, achieving 85% accuracy with visualizations in Matplotlib and Seaborn.</p>
+        <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/heart-disease-prediction" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
       </div>
     </div>
     <div class="section-divider"></div>
   </section>
 
-  <!-- Projects with Filter -->
   <section id="projects">
     <div class="container">
       <h2 class="fade-in">Data Science Projects</h2>
@@ -859,70 +856,69 @@
         <button data-filter="all" class="active">All</button>
         <button data-filter="ml">Machine Learning</button>
         <button data-filter="dl">Deep Learning</button>
-        <button data-filter="viz">Visualization</button>
+        <button data-filter="data">Data Viz</button>
       </div>
       <div class="grid project-grid">
-        <div class="card fade-in show" data-category="ml">
-          <h3>Housing in Mexico</h3>
-          <p>Analyzed 21,000 properties to evaluate size vs. location impact on prices using correlation analysis and visualizations.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/housing-mexico" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml">
+          <h3>Mongo Housing</h3>
+          <p>Analyzed 21,000 properties to evaluate size vs. price impact using ML and visualization.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/mongo-housing" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml">
-          <h3>Apartment Sales in Buenos Aires</h3>
-          <p>Built a linear regression model for apartment price prediction with data pipelines to prevent overfitting.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/apartment-sales" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml">
+          <h3>Apartment Sales</h3>
+          <p>Built a linear regression model for apartment price prediction with data pipelines.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/apartment-sales" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml">
-          <h3>Air Quality in Nairobi</h3>
-          <p>Developed an ARMA time-series model for particulate matter prediction using MongoDB data.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/air-quality-nairobi" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" style="data-project="ml">
+          <h3>Air Quality</h3>
+          <p>Developed an ARMA model for time-series forecasting using MongoDB.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/air-quality-nairobi" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml">
-          <h3>Earthquake Damage in Nepal</h3>
-          <p>Created logistic regression and decision tree models for building damage prediction, ensuring ethical outcomes.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/earthquake-nepal" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml">
+          <h3>Earthquake Damage</h3>
+          <p>ML models for disaster prediction with ethical considerations.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/earthquake-nepal" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml">
-          <h3>Bankruptcy in Poland</h3>
-          <p>Constructed random forest and gradient boosting models for bankruptcy prediction with resampling techniques.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/bankruptcy-poland" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml">
+          <h3>Bankruptcy Prediction</h3>
+          <p>Random forest and gradient boosting models with resampling.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/bankruptcy" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml viz">
-          <h3>Customer Segmentation in the US</h3>
-          <p>Applied K-Means clustering with PCA visualization, creating an interactive Plotly Dash dashboard.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/customer-segmentation" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml data">
+          <h3>Customer Segmentation</h3>
+          <p>K-Means clustering with PCA visualization and Plotly dashboard.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/customer-segmentation" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml">
-          <h3>A/B Testing at WorldQuant University</h3>
-          <p>Conducted chi-square testing for email campaign impact using Python ETL classes.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/ab-testing" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml">
+          <h3>A/B Testing</h3>
+          <p>Chi-square testing for email campaign impact analysis.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/ab-testing" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml">
-          <h3>Volatility Forecasting in India</h3>
-          <p>Developed a GARCH model for asset volatility prediction using API-acquired stock data.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/volatility-forecasting" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml">
+          <h3>Volatility Forecasting</h3>
+          <p>GARCH model for stock volatility prediction.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/volatility-forecasting" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml">
-          <h3>Heart Disease Prediction</h3>
-          <p>Built logistic regression and decision tree models, evaluated with precision, recall, and F1 metrics.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/heart-disease-prediction" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml">
+          <h3>Heart Disease</h3>
+          <p>Logistic regression and decision tree models for prediction.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/heart-disease-prediction" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="ml viz">
-          <h3>Iris Dataset Clustering</h3>
-          <p>Applied K-Means clustering with PCA visualization, evaluated using Silhouette score.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/iris-clustering" target="_blank" rel="noopener noreferrer">View Project</a></p>
+        <div class="card fade-in show" data-project="ml data">
+          <h3>Iris Clustering</h3>
+          <p>K-Means clustering with PCA and Silhouette score evaluation.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/iris-clustering" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
-        <div class="card fade-in show" data-category="dl">
+        <div class="card fade-in show" data-project="dl">
           <h3>Car Price Prediction</h3>
-          <p>Developed a PyTorch MLP for car price prediction, optimized via grid search.</p>
-          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/car-price-prediction" target="_blank" rel="noopener noreferrer">View Project</a></p>
+          <p>PyTorch MLP for price prediction with grid search optimization.</p>
+          <p style="margin-top: 1rem;"><a href="https://github.com/sravan-dsai/car-price-prediction" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a></p>
         </div>
       </div>
     </div>
     <div class="section-divider"></div>
   </section>
 
-  <!-- Skills with Chart -->
   <section id="skills" class="tech-stack">
     <div class="container">
       <h2 class="fade-in">Tech Stack</h2>
@@ -930,60 +926,59 @@
         <div class="card fade-in">
           <i class="fab fa-python"></i>
           <h3>Python</h3>
-          <span class="tooltip">Extensive experience in data analysis and ML modeling.</span>
+          <span class="tooltip">Extensive experience in data analysis and ML.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-database"></i>
           <h3>SQL</h3>
-          <span class="tooltip">Proficient in querying and managing databases.</span>
+          <span class="tooltip">Proficient in database querying and management.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-cogs"></i>
           <h3>Scikit-learn</h3>
-          <span class="tooltip">Used for building ML models like regression and clustering.</span>
+          <span class="tooltip">Used for ML models like regression and clustering.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-fire"></i>
           <h3>PyTorch</h3>
-          <span class="tooltip">Applied in deep learning projects like MLP for price prediction.</span>
+          <span class="tooltip">Applied in deep learning projects.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-chart-line"></i>
           <h3>Matplotlib</h3>
-          <span class="tooltip">Utilized for visualizing performance metrics.</span>
+          <span class="tooltip">Used for performance metric visualizations.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-water"></i>
           <h3>Seaborn</h3>
-          <span class="tooltip">Created advanced visualizations for data insights.</span>
+          <span class="tooltip">Advanced data visualizations.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-chart-pie"></i>
           <h3>Plotly</h3>
-          <span class="tooltip">Developed interactive dashboards for data exploration.</span>
+          <span class="tooltip">Interactive dashboards for data exploration.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-server"></i>
           <h3>MongoDB</h3>
-          <span class="tooltip">Extracted data for time-series analysis projects.</span>
+          <span class="tooltip">Data extraction for time-series analysis.</span>
         </div>
         <div class="card fade-in">
           <i class="fas fa-database"></i>
           <h3>SQLite</h3>
-          <span class="tooltip">Managed data storage for ML models.</span>
+          <span class="tooltip">Data storage for ML models.</span>
         </div>
         <div class="card fade-in">
           <i class="fab fa-linux"></i>
           <h3>Linux</h3>
-          <span class="tooltip">Used for managing ML workflows and data processing.</span>
+          <span class="tooltip">ML workflow and data processing management.</span>
         </div>
       </div>
-      <canvas id="skills-chart" class="fade-in"></canvas>
+      <canvas id="skillsChart" class="fade-in"></canvas>
     </div>
     <div class="section-divider"></div>
   </section>
 
-  <!-- Education -->
   <section id="education">
     <div class="container">
       <h2 class="fade-in">Education</h2>
@@ -991,12 +986,12 @@
         <div class="card fade-in">
           <h3>M.Tech, Aerospace Engineering</h3>
           <p>2024-2026</p>
-          <p>Indian Institute of Technology Bombay, Mumbai, India</p>
+          <p>IIT Bombay, Mumbai, India</p>
         </div>
         <div class="card fade-in">
           <h3>B.Tech, Civil Engineering</h3>
           <p>2019-2023</p>
-          <p>Sreenidhi Institute of Science and Technology, Hyderabad, India</p>
+          <p>Sreenidhi Institute, Hyderabad, India</p>
         </div>
         <div class="card fade-in">
           <h3>Intermediate/+2</h3>
@@ -1013,7 +1008,6 @@
     <div class="section-divider"></div>
   </section>
 
-  <!-- Certifications -->
   <section id="certifications">
     <div class="container">
       <h2 class="fade-in">Certifications</h2>
@@ -1025,77 +1019,74 @@
           <a href="https://www.credly.com/badges/8e07e8f3-8c91-4462-b350-0e0dc9caba5f" target="_blank" rel="noopener noreferrer" class="external-link">View Credential</a>
         </div>
         <div class="card fade-in">
-          <h3>Applied AI Lab: Deep Learning for Computer Vision</h3>
+          <h3>Applied AI Lab: Deep Learning</h3>
           <p>WorldQuant University</p>
           <p>03/2025</p>
           <a href="https://www.credly.com/badges/cfcd0d66-6e06-4797-899f-8989b851f672" target="_blank" rel="noopener noreferrer" class="external-link">View Credential</a>
         </div>
         <div class="card fade-in">
-          <h3>Artificial Intelligence Course</h3>
-          <p>Teachnook Collaboration with Cognizance IIT Roorkee</p>
+          <h3>AI Course</h3>
+          <p>Teachnook & IIT Roorkee</p>
           <p>08/2024-10/2024</p>
-          <a href="https://www.teachnook.com/certificates/ai-course" target="_blank" rel="noopener noreferrer" class="external-link">View Credential</a>
+          <a href="https://www.teachnook.com/certificates/ai-course-sravan" target="_blank" rel="noopener noreferrer" class="external-link">View Credential</a>
         </div>
       </div>
     </div>
     <div class="section-divider"></div>
   </section>
 
-  <!-- Blog -->
   <section id="blog" class="blog">
     <div class="container">
       <h2 class="fade-in">Data Science Blog</h2>
       <div class="grid">
         <div class="card fade-in">
-          <h3>Understanding K-Means Clustering</h3>
-          <p>A deep dive into the K-Means algorithm, its applications in customer segmentation, and how to evaluate its performance using the Silhouette score.</p>
-          <p style="margin-top: 1.5rem;"><a href="https://towardsdatascience.com/understanding-k-means-clustering-in-machine-learning-6a6e67336aa1" target="_blank" rel="noopener noreferrer" class="external-link">Read More</a></p>
+          <h3>K-Means Clustering</h3>
+          <p>Deep dive into K-Means algorithm and its applications in segmentation.</p>
+          <p style="margin-top: 1.5rem;"><a href="https://towardsdatascience.com/understanding-k-means-clustering-6a6e67336aa1" target="_blank" rel="noopener noreferrer" class="external-link">Read More</a></p>
         </div>
         <div class="card fade-in">
-          <h3>Time-Series Forecasting with ARMA</h3>
-          <p>Exploring the ARMA model for predicting air quality in Nairobi, including data extraction with MongoDB and hyperparameter tuning.</p>
-          <p style="margin-top: 1.5rem;"><a href="https://machinelearningmastery.com/time-series-forecasting-with-arma-models-in-python/" target="_blank" rel="noopener noreferrer" class="external-link">Read More</a></p>
+          <h3>ARMA Forecasting</h3>
+          <p>Exploring ARMA models for air quality prediction with MongoDB.</p>
+          <p style="margin-top: 1.5rem;"><a href="https://machinelearningmastery.com/time-series-forecasting-arma-python/" target="_blank" rel="noopener noreferrer" class="external-link">Read More</a></p>
         </div>
         <div class="card fade-in">
-          <h3>Deep Learning for Price Prediction</h3>
-          <p>How I built a PyTorch MLP to predict car prices, with insights on grid search optimization and evaluation metrics like MAE and R².</p>
-          <p style="margin-top: 1.5rem;"><a href="https://towardsdatascience.com/deep-learning-for-price-prediction-using-pytorch-9b9e5b7f8b1f" target="_blank" rel="noopener noreferrer" class="external-link">Read More</a></p>
+          <h3>Deep Learning for Prices</h3>
+          <p>Building a PyTorch MLP for car price prediction with optimization.</p>
+          <p style="margin-top: 1.5rem;"><a href="https://towardsdatascience.com/deep-learning-price-prediction-pytorch-9b9e5b7f8b1f" target="_blank" rel="noopener noreferrer" class="external-link">Read More</a></p>
         </div>
       </div>
     </div>
     <div class="section-divider"></div>
   </section>
 
-  <!-- Testimonials -->
   <section id="testimonials" class="testimonials">
     <div class="container">
       <h2 class="fade-in">Testimonials</h2>
       <div class="grid">
         <div class="card fade-in">
-          <p>"Sravan's work on the Heart Disease Prediction project was exceptional. His attention to detail and ability to interpret complex metrics made a significant impact."</p>
-          <p style="margin-top: 1.5rem; font-style: italic;">- Project Mentor, WorldQuant University</p>
+          <p>"Sravan's Heart Disease project showed exceptional analytical skills."</p>
+          <p style="margin-top: 1.5rem; font-style: italic;">- Mentor, WorldQuant University</p>
         </div>
         <div class="card fade-in">
-          <p>"Sravan demonstrated strong analytical skills in the Air Quality in Nairobi project, delivering actionable insights through time-series modeling."</p>
-          <p style="margin-top: 1.5rem; font-style: italic;">- Course Instructor, Data Science Lab</p>
+          <p>"Sravan's Air Quality project delivered actionable insights."</p>
+          <p style="margin-top: 1.5rem; font-style: italic;">- Instructor, Data Science Lab</p>
         </div>
       </div>
     </div>
     <div class="section-divider"></div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <h2 class="fade-in">Get in Touch</h2>
       <div class="contact-form fade-in">
         <form name="contactForm" action="https://formspree.io/f/mvgrzqoj" method="POST">
           <input type="text" name="name" placeholder="Your Name" required>
-          <p class="error" id="name-error">Please enter a valid name (at least 2 characters).</p>
+          <p class="error" id="nameError">Please enter a valid name (2+ characters).</p>
           <input type="email" name="email" placeholder="Your Email" required>
-          <p class="error" id="email-error">Please enter a valid email address.</p>
+          <p class="error" id="emailError">Please enter a valid email address.</p>
           <textarea name="message" placeholder="Your Message" required></textarea>
-          <p class="error" id="message-error">Please enter a message (at least 10 characters).</p>
+          <p class="error" id="messageError">Please enter a message (10+ characters).</p>
           <button type="submit">Send Message</button>
         </form>
       </div>
@@ -1103,12 +1094,11 @@
     <div class="section-divider"></div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 Kodari Sravan. All rights reserved.</p>
-      <a href="/path/to/Resume.pdf" download>Download Resume</a>
-      <a href="/path/to/Portfolio.pdf" download>Download Portfolio PDF</a>
+      <a href="/assets/Resume.pdf" download>Download Resume</a>
+      <a href="/assets/Portfolio.pdf" download>Download Portfolio</a>
       <div class="social-icons">
         <a href="https://linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-github"></i></a>
@@ -1117,27 +1107,22 @@
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <div id="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></div>
+  <div id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></div>
 
-  <!-- Cursor Trail -->
-  <canvas id="cursor-trail"></canvas>
+  <canvas id="cursorTrail"></canvas>
 
-  <!-- JavaScript for Interactivity -->
   <script>
     // Loader
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
       setTimeout(() => {
         loader.classList.add('fade-out');
-        setTimeout(() => {
-          loader.style.display = 'none';
-        }, 500);
+        setTimeout(() => loader.style.display = 'none', 500);
       }, 1000);
     });
 
-    // Matrix Rain Effect
-    const matrixCanvas = document.getElementById('matrix-bg');
+    // Matrix Rain
+    const matrixCanvas = document.getElementById('matrixRain');
     const matrixCtx = matrixCanvas.getContext('2d');
     matrixCanvas.width = window.innerWidth;
     matrixCanvas.height = window.innerHeight;
@@ -1164,8 +1149,8 @@
       matrixCanvas.height = window.innerHeight;
     });
 
-    // Neural Network Animation
-    const neuralCanvas = document.getElementById('neural-net');
+    // Neural Network
+    const neuralCanvas = document.getElementById('neuralNet');
     const neuralCtx = neuralCanvas.getContext('2d');
     neuralCanvas.width = window.innerWidth;
     neuralCanvas.height = document.querySelector('.hero').offsetHeight;
@@ -1219,68 +1204,76 @@
     });
 
     // Skills Chart
-    ```chartjs
-    {
-      "type": "bar",
-      "data": {
-        "labels": ["Python", "SQL", "Scikit-learn", "PyTorch", "Matplotlib", "Seaborn", "Plotly", "MongoDB", "SQLite", "Linux"],
-        "datasets": [{
-          "label": "Proficiency Level",
-          "data": [90, 85, 80, 75, 80, 75, 70, 65, 70, 60],
-          "backgroundColor": "rgba(59, 130, 246, 0.7)",
-          "borderColor": "#3b82f6",
-          "borderWidth": 1
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'Matplotlib', 'Seaborn', 'Plotly', 'MongoDB', 'SQLite', 'Linux'],
+        datasets: [{
+          label: 'Proficiency Level',
+          data: [90, 85, 80, 75, 80, 75, 70, 65, 70, 60],
+          backgroundColor: 'rgba(59, 130, 246, 0.7)',
+          borderColor: '#3b82f6',
+          borderWidth: 1
         }]
       },
-      "options": {
-        "scales": {
-          "y": {
-            "beginAtZero": true,
-            "max": 100,
-            "grid": { "color": "rgba(255, 255, 255, 0.1)" },
-            "title": { "display": true, "text": "Proficiency (%)", "color": "#e0e7ff", "font": { "size": 14 } }
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+            title: { display: true, text: 'Proficiency (%)', color: '#e0e7ff', font: { size: 14 } }
           },
-          "x": {
-            "grid": { "display": false },
-            "title": { "display": true, "text": "Technologies", "color": "#e0e7ff", "font": { "size": 14 } }
+          x: {
+            grid: { display: false },
+            title: { display: true, text: 'Technologies', color: '#e0e7ff', font: { size: 14 } }
           }
         },
-        "plugins": {
-          "legend": { "display": false },
-          "tooltip": { "backgroundColor": "#293548", "titleFont": { "size": 14 }, "bodyFont": { "size": 12 } }
+        plugins: {
+          legend: { display: false },
+          tooltip: { backgroundColor: '#293548', titleFont: { size: 14 }, bodyFont: { size: 12 } }
         },
-        "animation": {
-          "duration": 2000,
-          "easing": "easeOutQuart"
-        }
+        animation: { duration: 2000, easing: 'easeOutQuart' }
       }
-    }
-    ```
+    });
 
     // Project Filter
     const filterButtons = document.querySelectorAll('.filter-buttons button');
     const projectCards = document.querySelectorAll('.project-grid .card');
     filterButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', e => {
+        console.log(`Filter button clicked: ${button.getAttribute('data-filter')}`);
         e.preventDefault();
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         const filter = button.getAttribute('data-filter');
         projectCards.forEach(card => {
-          const categories = card.getAttribute('data-category').split(' ');
-          if (filter === 'all' || categories.includes(filter)) {
-            card.classList.add('show');
-          } else {
-            card.classList.remove('show');
-          }
+          const categories = card.getAttribute('data-project').split(' ');
+          card.style.display = filter === 'all' || categories.includes(filter) ? 'block' : 'none';
+          if (card.style.display === 'block') card.classList.add('show');
+          else card.classList.remove('show');
         });
       });
     });
 
-    // Smooth Scroll for Internal Links
+    // External Link Handling
+    document.querySelectorAll('.external-link').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        console.log(`External link clicked: ${href}`);
+        if (href.includes('github.com/sravan-dsai') || href.includes('teachnook.com')) {
+          console.warn('This is a placeholder link. Replace with actual URL.');
+          alert('This is a placeholder link. Please contact Kodari Sravan for the actual project or credential URL.');
+        }
+      });
+    });
+
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
+      anchor.addEventListener('click', e => {
+        const href = anchor.getAttribute('href');
+        console.log(`Internal link clicked: ${href}`);
         if (href === '#') {
           e.preventDefault();
           alert('This link is a placeholder. Please visit a valid section.');
@@ -1289,50 +1282,45 @@
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
 
-    // Back to Top Button
-    const backToTop = document.getElementById('back-to-top');
+    // Back to Top
+    const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 600) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
+      backToTop.style.display = window.scrollY > 600 ? 'block' : 'none';
     });
-    backToTop.addEventListener('click', (e) => {
+    backToTop.addEventListener('click', e => {
+      console.log('Back to Top clicked');
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', (e) => {
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', e => {
+      console.log('Theme toggle clicked');
       e.preventDefault();
       document.body.classList.toggle('light-mode');
-      themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Switch to Neural Net Mode' : 'Switch to Data Viz Mode';
+      themeToggle.textContent = document.body.classList.contains('light-mode') ? 'Switch to Neural Mode' : 'Switch to DataViz Mode';
     });
 
-    // Form Validation and Submission
+    // Form Validation
     const form = document.querySelector('.contact-form form');
     const nameInput = form.querySelector('input[name="name"]');
     const emailInput = form.querySelector('input[name="email"]');
     const messageInput = form.querySelector('textarea[name="message"]');
-    const nameError = document.getElementById('name-error');
-    const emailError = document.getElementById('email-error');
-    const messageError = document.getElementById('message-error');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const messageError = document.getElementById('messageError');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', e => {
+      console.log('Form submit attempted');
       e.preventDefault();
       let isValid = true;
 
-      // Name validation
       if (nameInput.value.length < 2) {
         nameError.classList.add('show');
         isValid = false;
@@ -1340,7 +1328,6 @@
         nameError.classList.remove('show');
       }
 
-      // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(emailInput.value)) {
         emailError.classList.add('show');
@@ -1349,7 +1336,6 @@
         emailError.classList.remove('show');
       }
 
-      // Message validation
       if (messageInput.value.length < 10) {
         messageError.classList.add('show');
         isValid = false;
@@ -1358,11 +1344,13 @@
       }
 
       if (isValid) {
+        console.log('Form validated, submitting...');
         fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
         }).then(response => {
+          console.log('Form submission response:', response.status);
           if (response.ok) {
             alert('Message sent successfully!');
             form.reset();
@@ -1370,20 +1358,21 @@
             alert('Error sending message. Please try again later.');
           }
         }).catch(error => {
+          console.error('Form submission error:', error);
           alert('Error sending message. Please try again later.');
         });
       }
     });
 
-    // Glowing Cursor Trail
-    const cursorCanvas = document.getElementById('cursor-trail');
+    // Cursor Trail
+    const cursorCanvas = document.getElementById('cursorTrail');
     const cursorCtx = cursorCanvas.getContext('2d');
     cursorCanvas.width = window.innerWidth;
     cursorCanvas.height = window.innerHeight;
     const trail = [];
     const maxTrailLength = 20;
 
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', e => {
       trail.push({ x: e.clientX, y: e.clientY, time: Date.now() });
       if (trail.length > maxTrailLength) trail.shift();
     });
