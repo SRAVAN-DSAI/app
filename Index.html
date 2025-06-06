@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kodari Sravan - Data Scientist Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel-standalone@7.22.9/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function Header() {
+      return (
+        <header className="bg-gray-800 text-white py-6">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl font-bold">Kodari Sravan</h1>
+            <h2 className="text-2xl mt-2">Data Scientist</h2>
+            <a href="https://linkedin.com/in/sravan-kodari-943654210" target="_blank" className="text-blue-400 hover:underline">LinkedIn Profile</a>
+          </div>
+        </header>
+      );
+    }
+
+    function Summary() {
+      return (
+        <section className="py-8 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-semibold text-center mb-6">Professional Summary</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Proficient in Python, SQL, and machine learning techniques, including regression, clustering, and deep learning models. Successfully completed hands-on projects in data analysis, predictive modeling, and visualization using tools like Pandas, NumPy, Seaborn, Plotly, and Scikit-learn. Worked on cleaning and processing complex datasets to derive actionable insights. Passionate about leveraging analytical skills and innovative problem-solving to contribute to data-driven decision-making in dynamic environments. Eager to apply technical expertise and a commitment to continuous learning in a challenging Data Science role.
+            </p>
+          </div>
+        </section>
+      );
+    }
+
+    function Projects() {
+      const projects = [
+        {
+          title: "Housing in Mexico",
+          description: "Analyzed 21,000 properties to evaluate size vs. location impact on prices using correlation analysis, with CSV data cleaning and visualizations."
+        },
+        {
+          title: "Apartment Sales in Buenos Aires",
+          description: "Developed a linear regression model for apartment price prediction, implementing data pipelines for imputation and encoding to mitigate overfitting."
+        },
+        {
+          title: "Air Quality in Nairobi",
+          description: "Built an ARMA time-series model for particulate matter prediction, extracting MongoDB data via pymongo with hyperparameter tuning."
+        },
+        {
+          title: "Earthquake Damage in Nepal",
+          description: "Created logistic regression and decision tree models for building damage prediction, analyzing SQLite data for biases to ensure ethical outcomes."
+        },
+        {
+          title: "Bankruptcy in Poland",
+          description: "Constructed random forest and gradient boosting models for bankruptcy prediction, using Linux and resampling techniques for imbalanced datasets."
+        },
+        {
+          title: "Customer Segmentation in the US",
+          description: "Applied K-Means clustering with PCA visualization, developing an interactive Plotly Dash dashboard for consumer group analysis."
+        },
+        {
+          title: "A/B Testing at WorldQuant University",
+          description: "Conducted chi-square testing for email campaign impact, utilizing Python ETL classes and a three-tiered data application."
+        },
+        {
+          title: "Volatility Forecasting in India",
+          description: "Developed a GARCH model for asset volatility prediction, using API-acquired stock data stored in SQLite and served via a custom API."
+        },
+        {
+          title: "Heart Disease Prediction",
+          description: "Built logistic regression and decision tree models, evaluated using precision, recall, F1, and ROC-AUC metrics."
+        },
+        {
+          title: "Iris Dataset Clustering",
+          description: "Applied K-Means clustering with PCA visualization, evaluated using Silhouette score."
+        },
+        {
+          title: "Car Price Prediction",
+          description: "Developed a PyTorch MLP for car price prediction, optimized via grid search, evaluated with MAE, MSE, and R²."
+        }
+      ];
+
+      return (
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-semibold text-center mb-6">Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects.map((project, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-600">{project.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Skills() {
+      const skills = [
+        { category: "Programming Languages", items: ["Python", "SQL"] },
+        { category: "Machine Learning", items: ["Linear Regression", "Logistic Regression", "Decision Trees", "Random Forest", "Gradient Boosting", "K-Means Clustering", "ARMA", "GARCH"] },
+        { category: "Deep Learning", items: ["PyTorch", "MLPs (Multi-Layer Perceptrons)", "CNNs", "Transformers", "Transfer Learning"] },
+        { category: "Data Tools", items: ["MongoDB", "SQLite", "Pandas", "NumPy", "Scikit-learn", "Plotly Dash"] },
+        { category: "Visualization", items: ["Matplotlib", "Seaborn", "Plotly", "PCA Visualization"] },
+        { category: "Other Tools", items: ["Linux", "API Design", "ETL Pipelines", "Hyperparameter Tuning"] },
+        { category: "Domains", items: ["Data Science", "Civil Engineering", "Aerospace Engineering"] },
+        { category: "Soft Skills", items: ["Problem-Solving", "Analytical Thinking", "Team Collaboration"] }
+      ];
+
+      return (
+        <section className="py-8 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-semibold text-center mb-6">Skills</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {skills.map((skill, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-bold mb-2">{skill.category}</h3>
+                  <ul className="list-disc list-inside text-gray-600">
+                    {skill.items.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Education() {
+      const education = [
+        { degree: "M.Tech, Aerospace Engineering", year: "2024-2026", institution: "Indian Institute of Technology Bombay, Mumbai, India" },
+        { degree: "B.Tech, Civil Engineering", year: "2019-2023", institution: "Sreenidhi Institute of Science and Technology, Hyderabad, India" },
+        { degree: "Intermediate/+2", year: "2017-2019", institution: "Narayana Junior College, Hyderabad, India" },
+        { degree: "High School", year: "2016-2017", institution: "Tejaswi High School, Hanamkonda, India" }
+      ];
+
+      return (
+        <section className="py-8">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-semibold text-center mb-6">Education</h2>
+            <div className="space-y-4">
+              {education.map((edu, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-bold">{edu.degree}</h3>
+                  <p className="text-gray-600">{edu.year}</p>
+                  <p className="text-gray-600">{edu.institution}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Certifications() {
+      const certifications = [
+        { title: "Applied Data Science Lab", issuer: "WorldQuant University", issued: "06/2025", link: "#" },
+        { title: "Applied AI Lab: Deep Learning for Computer Vision", issuer: "WorldQuant University", issued: "03/2025", link: "#" },
+        { title: "Artificial Intelligence Course", issuer: "Teachnook Collaboration with Cognizance IIT Roorkee", issued: "08/2024-10/2024", link: "#" }
+      ];
+
+      return (
+        <section className="py-8 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-semibold text-center mb-6">Certifications</h2>
+            <div className="space-y-4">
+              {certifications.map((cert, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-bold">{cert.title}</h3>
+                  <p className="text-gray-600">{cert.issuer}</p>
+                  <p className="text-gray-600">{cert.issued}</p>
+                  <a href={cert.link} target="_blank" className="text-blue-600 hover:underline">View Credential</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="bg-gray-800 text-white py-6">
+          <div className="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Kodari Sravan. All rights reserved.</p>
+          </div>
+        </footer>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Header />
+          <Summary />
+          <Projects />
+          <Skills />
+          <Education />
+          <Certifications />
+          <Footer />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
