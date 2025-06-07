@@ -100,32 +100,54 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.3;
+      opacity: 0.5;
     }
     .hero-content {
       text-align: center;
       z-index: 1;
-      animation: fadeIn 1s ease;
+      animation: fadeIn 1.5s ease;
+      background: rgba(10, 14, 26, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 247, 255, 0.3);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
     }
     .profile-photo {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1rem;
-      border: 2px solid #00f7ff;
-      box-shadow: 0 0 12px rgba(0, 247, 255, 0.5);
+      margin-bottom: 1.5rem;
+      border: 3px solid #00f7ff;
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+      transition: transform 0.3s;
+    }
+    .profile-photo:hover {
+      transform: scale(1.1);
     }
     .hero h1 {
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
     }
-    .hero h2 { color: #e0e7ff; font-weight: 400; }
+    .hero h2 {
+      color: #e0e7ff;
+      font-weight: 400;
+      font-size: 1.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h2::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+      color: #00f7ff;
+    }
     .hero a {
       display: inline-block;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       padding: 0.75rem 2rem;
       background: rgba(0, 247, 255, 0.2);
       border: 1px solid #00f7ff;
@@ -153,11 +175,11 @@
     .hero a.resume-btn:hover {
       background: #ff007a;
       color: #0a0e1a;
-      transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
     }
     .hero .contact-info {
       text-align: center;
+      margin-top: 1rem;
     }
     .hero .contact-info p {
       display: flex;
@@ -167,23 +189,25 @@
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
       color: #a5b4fc;
+      transition: color 0.3s;
     }
-    @media (max-width: 768px) {
-      .hero .hero-links {
-        gap: 0.75rem;
-      }
-      .hero .contact-info p {
-        font-size: 0.8rem;
-      }
+    .hero .contact-info p:hover {
+      color: #00f7ff;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero h2 { font-size: 1.2rem; }
-      .profile-photo { width: 120px; height: 120px; }
+      .hero h1 { font-size: 2.8rem; }
+      .hero h2 { font-size: 1.4rem; }
+      .profile-photo { width: 140px; height: 140px; }
+      .hero-content { padding: 1.5rem; }
+      .hero .hero-links { gap: 0.75rem; }
+      .hero .contact-info p { font-size: 0.8rem; }
     }
 
     /* Sections */
@@ -431,7 +455,7 @@
     <div class="hero-content">
       <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan Profile" class="profile-photo">
       <h1>Kodari Sravan</h1>
-      <h2>Data Scientist & ML Enthusiast</h2>
+      <h2 id="typing-text"></h2>
       <div class="hero-links">
         <a href="https://github.com/SRAVAN-DSAI/app/raw/main/Resume.pdf" target="_blank" rel="noopener noreferrer" class="external-link resume-btn">View Resume</a>
         <a href="https://www.linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer" class="external-link">Connect on LinkedIn</a>
@@ -642,33 +666,148 @@
   <div id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></div>
 
   <script>
-    // 3D Hero Background
+    // Advanced Hero Background with Neural Network Particles
     try {
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
       const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('heroCanvas'), alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.position.z = 50;
-
-      const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-      const material = new THREE.MeshBasicMaterial({ color: 0x00f7ff, wireframe: true });
-      const torus = new THREE.Mesh(geometry, material);
-      scene.add(torus);
-
+      camera.position.z = 100;
+    
+      // Particle system for neural network effect
+      const particleCount = 200;
+      const particles = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      const velocities = new Float32Array(particleCount * 3);
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 200;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
+        velocities[i * 3] = (Math.random() - 0.5) * 0.2;
+        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.2;
+        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.2;
+      }
+      particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const particleMaterial = new THREE.PointsMaterial({
+        color: 0x00f7ff,
+        size: 2,
+        transparent: true,
+        opacity: 0.8
+      });
+      const particleSystem = new THREE.Points(particles, particleMaterial);
+      scene.add(particleSystem);
+    
+      // Lines to connect particles (neural network effect)
+      const lines = [];
+      for (let i = 0; i < particleCount; i++) {
+        for (let j = i + 1; j < particleCount; j++) {
+          const lineGeometry = new THREE.BufferGeometry();
+          const linePositions = new Float32Array(6);
+          lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+          const lineMaterial = new THREE.LineBasicMaterial({
+            color: 0x00f7ff,
+            transparent: true,
+            opacity: 0.2
+          });
+          const line = new THREE.Line(lineGeometry, lineMaterial);
+          lines.push(line);
+          scene.add(line);
+        }
+      }
+    
       function animate() {
         requestAnimationFrame(animate);
-        torus.rotation.x += 0.01;
-        torus.rotation.y += 0.01;
+        // Update particle positions
+        for (let i = 0; i < particleCount; i++) {
+          positions[i * 3] += velocities[i * 3];
+          positions[i * 3 + 1] += velocities[i * 3 + 1];
+          positions[i * 3 + 2] += velocities[i * 3 + 2];
+          // Bounce particles off boundaries
+          if (Math.abs(positions[i * 3]) > 100) velocities[i * 3] *= -1;
+          if (Math.abs(positions[i * 3 + 1]) > 100) velocities[i * 3 + 1] *= -1;
+          if (Math.abs(positions[i * 3 + 2]) > 100) velocities[i * 3 + 2] *= -1;
+        }
+        particles.attributes.position.needsUpdate = true;
+    
+        // Update lines
+        let lineIndex = 0;
+        for (let i = 0; i < particleCount; i++) {
+          for (let j = i + 1; j < particleCount; j++) {
+            const pos1 = [
+              positions[i * 3],
+              positions[i * 3 + 1],
+              positions[i * 3 + 2]
+            ];
+            const pos2 = [
+              positions[j * 3],
+              positions[j * 3 + 1],
+              positions[j * 3 + 2]
+            ];
+            const distance = Math.sqrt(
+              Math.pow(pos1[0] - pos2[0], 2) +
+              Math.pow(pos1[1] - pos2[1], 2) +
+              Math.pow(pos1[2] - pos2[2], 2)
+            );
+            if (distance < 50) {
+              lines[lineIndex].geometry.attributes.position.array.set([
+                pos1[0], pos1[1], pos1[2],
+                pos2[0], pos2[1], pos2[2]
+              ]);
+              lines[lineIndex].geometry.attributes.position.needsUpdate = true;
+              lines[lineIndex].material.opacity = 0.3 * (1 - distance / 50);
+            } else {
+              lines[lineIndex].material.opacity = 0;
+            }
+            lineIndex++;
+          }
+        }
+    
         renderer.render(scene, camera);
       }
       animate();
+    
       window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
       });
+    
+      // Typing effect for subtitle
+      const typingText = document.getElementById('typing-text');
+      const phrases = [
+        'Data Scientist & ML Enthusiast',
+        'AI Innovator',
+        'Predictive Modeling Expert',
+        'Data Visualization Specialist'
+      ];
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+    
+      function type() {
+        const currentPhrase = phrases[phraseIndex];
+        if (isDeleting) {
+          typingText.textContent = currentPhrase.substring(0, charIndex--);
+          if (charIndex < 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            setTimeout(type, 500);
+          } else {
+            setTimeout(type, 50);
+          }
+        } else {
+          typingText.textContent = currentPhrase.substring(0, charIndex++);
+          if (charIndex > currentPhrase.length) {
+            isDeleting = true;
+            setTimeout(type, 2000);
+          } else {
+            setTimeout(type, 100);
+          }
+        }
+      }
+      type();
     } catch (error) {
-      console.error('3D Hero error:', error);
+      console.error('Advanced Hero error:', error);
     }
 
     // Skills Radar Chart
