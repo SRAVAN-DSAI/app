@@ -3,89 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Kodari Sravan, a Data Scientist specializing in Machine Learning and Data Visualization">
-  <meta name="keywords" content="Data Science, Machine Learning, Python, Portfolio, Kodari Sravan">
-  <meta name="author" content="Kodari Sravan">
-  <title>Kodari Sravan - Data Scientist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Kodari Sravan - Data Scientist Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLjh6bS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMC01Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHptMC0xMDQuOGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHoiLz48L3N2Zz4=">
   <style>
-    /* Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-    }
-    html {
       scroll-behavior: smooth;
-      background: #0a0e1a;
-      color: #e0e7ff;
     }
     body {
+      background: #0a0e1a;
+      color: #e0e7ff;
       line-height: 1.6;
-      overflow-x: hidden;
     }
-    h1 { font-size: 4rem; font-weight: 700; }
-    h2 { font-size: 2.5rem; font-weight: 600; }
-    h3 { font-size: 1.5rem; font-weight: 500; }
-    p { font-size: 1rem; color: #a5b4fc; }
-    a { color: #00f7ff; text-decoration: none; transition: color 0.3s; }
-    a:hover { color: #ff007a; }
+    a {
+      text-decoration: none;
+      color: #00f7ff;
+    }
 
-    /* Sidebar Navigation */
-    nav {
+    /* Horizontal Ribbon Navigation */
+    .ribbon-nav {
       position: fixed;
-      left: 0;
       top: 0;
-      height: 100%;
-      width: 80px;
-      background: rgba(10, 14, 26, 0.8);
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(10, 14, 26, 0.7);
       backdrop-filter: blur(10px);
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 2rem 0;
       z-index: 100;
-      transition: width 0.3s ease;
+      border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 247, 255, 0.3);
     }
-    nav:hover { width: 200px; }
-    nav .logo {
-      font-size: 1.5rem;
-      color: #00f7ff;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transition: opacity 0.3s;
+    .nav-content {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    nav:hover .logo { opacity: 1; }
-    nav a {
+    .ribbon-nav a {
       color: #e0e7ff;
       font-size: 1rem;
-      margin: 1rem 0;
       display: flex;
       align-items: center;
-      width: 100%;
+      gap: 0.5rem;
       padding: 0.5rem 1rem;
-      opacity: 0.6;
+      background: rgba(0, 247, 255, 0.2);
+      border: 1px solid rgba(0, 247, 255, 0.3);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+      position: relative;
+      overflow: hidden;
     }
-    nav:hover a { opacity: 1; }
-    nav a i { font-size: 1.5rem; margin-right: 1rem; }
-    nav a span { display: none; }
-    nav:hover a span { display: inline; }
-    nav a:hover { background: rgba(0, 247, 255, 0.1); color: #ff007a; }
-    @media (max-width: 768px) {
-      nav { width: 60px; }
-      nav:hover { width: 150px; }
-      nav a i { font-size: 1.2rem; }
+    .ribbon-nav a:hover {
+      background: #00f7ff;
+      color: #0a0e1a;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 247, 255, 0.5);
+      text-shadow: none;
     }
-  <style>
+    .ribbon-nav a i {
+      font-size: 1.2rem;
+    }
+    .ribbon-nav a span {
+      display: inline-block;
+    }
+    .ribbon-nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.4), transparent);
+      transition: 0.5s;
+    }
+    .ribbon-nav a:hover::before {
+      left: 100%;
+    }
+
     /* Hero Section */
     .hero {
-      height: 100vh;
+      height: calc(100vh - 70px);
+      margin-top: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -100,18 +108,18 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.7; /* Increased opacity slightly for better animation visibility */
+      opacity: 0.7;
     }
     .hero-content {
       text-align: center;
       z-index: 1;
       animation: fadeIn 1.5s ease;
-      background: rgba(10, 14, 26, 0.3); /* Reduced opacity for more transparency */
-      backdrop-filter: blur(10px); /* Enhanced blur for glassmorphism effect */
+      background: rgba(10, 14, 26, 0.3);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 1rem;
-      border: 1px solid rgba(0, 247, 255, 0.2); /* Slightly lighter border */
-      box-shadow: 0 0 20px rgba(0, 247, 255, 0.3); /* Softer shadow */
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
     }
     .profile-photo {
       width: 180px;
@@ -131,7 +139,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7); /* Stronger shadow for legibility */
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
     }
     .hero h2 {
       color: #e0e7ff;
@@ -139,7 +147,7 @@
       font-size: 1.8rem;
       position: relative;
       overflow: hidden;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Added shadow for better contrast */
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
     .hero h2::after {
       content: '|';
@@ -150,13 +158,13 @@
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.75rem 2rem;
-      background: rgba(0, 247, 255, 0.3); /* Slightly more opaque for visibility */
+      background: rgba(0, 247, 255, 0.3);
       border: 1px solid #00f7ff;
       border-radius: 50px;
       font-weight: 500;
       transition: all 0.3s;
-      color: #e0e7ff; /* Ensured text is legible */
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5); /* Subtle shadow for links */
+      color: #e0e7ff;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
     }
     .hero a:hover {
       background: #00f7ff;
@@ -172,7 +180,7 @@
       margin-top: 2rem;
     }
     .hero a.resume-btn {
-      background: rgba(255, 0, 122, 0.3); /* Slightly more opaque for visibility */
+      background: rgba(255, 0, 122, 0.3);
       border: 1px solid #ff007a;
     }
     .hero a.resume-btn:hover {
@@ -193,29 +201,16 @@
       font-size: 0.9rem;
       color: #a5b4fc;
       transition: color 0.3s;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4); /* Added shadow for legibility */
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
     }
     .hero .contact-info p:hover {
       color: #00f7ff;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.8rem; }
-      .hero h2 { font-size: 1.4rem; }
-      .profile-photo { width: 140px; height: 140px; }
-      .hero-content { padding: 1.5rem; }
-      .hero .hero-links { gap: 0.75rem; }
-      .hero .contact-info p { font-size: 0.8rem; }
-    }
+
     /* Sections */
     section {
       padding: 5rem 2rem;
+      padding-top: 120px;
       max-width: 1200px;
       margin: 0 auto;
       position: relative;
@@ -236,12 +231,12 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.4; /* Lower opacity for subtlety in sections */
+      opacity: 0.4;
     }
-  
+
     /* Glassmorphism Cards */
     .card {
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(0, 247, 255, 0.2);
       border-radius: 1rem;
@@ -294,13 +289,13 @@
       z-index: 1;
       position: relative;
     }
-  
+
     /* Project Grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 1rem;
       padding: 1rem;
@@ -333,13 +328,13 @@
       box-shadow: 0 4px 8px rgba(0, 247, 255, 0.5);
       text-shadow: none;
     }
-  
+
     /* Skills Section */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1.5rem;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 1rem;
       padding: 1rem;
@@ -383,14 +378,14 @@
     #skillsChart {
       max-width: 500px;
       margin: 3rem auto;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 1rem;
       z-index: 1;
       position: relative;
     }
-  
+
     /* Contact Form */
     .contact-form .card {
       max-width: 600px;
@@ -412,7 +407,7 @@
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 0.5rem;
@@ -455,10 +450,48 @@
     .contact-form .error.show {
       display: block;
     }
-  
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
+      .ribbon-nav {
+        height: auto;
+        padding: 0.5rem 0;
+      }
+      .nav-content {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .ribbon-nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+      .ribbon-nav a i {
+        font-size: 1rem;
+      }
+      .ribbon-nav a span {
+        font-size: 0.8rem;
+      }
+      .hero h1 { font-size: 2.8rem; }
+      .hero h2 { font-size: 1.4rem; }
+      .profile-photo { width: 140px; height: 140px; }
+      .hero-content { padding: 1.5rem; }
+      .hero .hero-links { gap: 0.75rem; }
+      .hero .contact-info p { font-size: 0.8rem; }
       section {
         padding: 3rem 1rem;
+        padding-top: 100px;
       }
       .project-grid {
         grid-template-columns: 1fr;
@@ -467,55 +500,10 @@
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       }
     }
-  <style>
-    
-
-    /* Footer */
-    footer {
-      padding: 2rem;
-      text-align: center;
-      background: rgba(10, 14, 26, 0.8);
-      backdrop-filter: blur(10px);
-    }
-    footer p { color: #a5b4fc; }
-    .social-icons a {
-      font-size: 1.5rem;
-      margin: 0 0.5rem;
-      color: #00f7ff;
-      transition: all 0.3s;
-    }
-    .social-icons a:hover { color: #ff007a; transform: scale(1.2); }
-
-    /* Back to Top */
-    #backToTop {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #00f7ff;
-      color: #0a0e1a;
-      padding: 0.75rem;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      z-index: 10;
-      transition: all 0.3s;
-    }
-    #backToTop:hover {
-      background: #ff007a;
-      color: #e0e7ff;
-      transform: scale(1.2);
-    }
-    #backToTop i { font-size: 1.2rem; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      section { padding: 3rem 1rem; }
-      .project-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
-    }
   </style>
 </head>
 <body>
+  <!-- Horizontal Ribbon Navigation -->
   <nav class="ribbon-nav">
     <div class="nav-content">
       <a href="#hero"><i class="fas fa-home"></i><span>Home</span></a>
@@ -528,6 +516,7 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section id="hero" class="hero">
     <canvas id="heroCanvas"></canvas>
     <div class="hero-content">
@@ -545,6 +534,7 @@
     </div>
   </section>
 
+  <!-- Summary Section -->
   <section id="summary">
     <canvas id="summaryCanvas"></canvas>
     <h2>Summary</h2>
@@ -552,7 +542,8 @@
       <p>Passionate Data Scientist with expertise in Python, SQL, and machine learning. Delivered impactful projects in predictive modeling and data visualization, leveraging tools like Scikit-learn, PyTorch, and Plotly.</p>
     </div>
   </section>
-  
+
+  <!-- Projects Section -->
   <section id="projects">
     <canvas id="projectsCanvas"></canvas>
     <h2>Projects</h2>
@@ -642,7 +633,8 @@
       </div>
     </div>
   </section>
-  
+
+  <!-- Skills Section -->
   <section id="skills">
     <canvas id="skillsCanvas"></canvas>
     <h2>Skills</h2>
@@ -682,7 +674,8 @@
       <canvas id="radarChart"></canvas>
     </div>
   </section>
-  
+
+  <!-- Education Section -->
   <section id="education">
     <canvas id="educationCanvas"></canvas>
     <h2>Education</h2>
@@ -693,7 +686,8 @@
       <p>2019-2023, Sreenidhi Institute of Science & Technology</p>
     </div>
   </section>
-  
+
+  <!-- Certifications Section -->
   <section id="certifications">
     <canvas id="certificationsCanvas"></canvas>
     <h2>Certifications</h2>
@@ -715,7 +709,8 @@
       </div>
     </div>
   </section>
-  
+
+  <!-- Contact Section -->
   <section id="contact">
     <canvas id="contactCanvas"></canvas>
     <h2>Contact</h2>
@@ -738,17 +733,6 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Kodari Sravan. All Rights Reserved.</p>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-github"></i></a>
-      <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-x-twitter"></i></a>
-    </div>
-  </footer>
-
-  <div id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></div>
-
   <script>
     // Advanced Hero Background with Neural Network Particles
     try {
@@ -757,7 +741,7 @@
       const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('heroCanvas'), alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
       camera.position.z = 100;
-    
+
       // Particle system for neural network effect
       const particleCount = 200;
       const particles = new THREE.BufferGeometry();
@@ -780,7 +764,7 @@
       });
       const particleSystem = new THREE.Points(particles, particleMaterial);
       scene.add(particleSystem);
-    
+
       // Lines to connect particles (neural network effect)
       const lines = [];
       for (let i = 0; i < particleCount; i++) {
@@ -798,21 +782,20 @@
           scene.add(line);
         }
       }
-    
+
       function animate() {
         requestAnimationFrame(animate);
         // Update particle positions
         for (let i = 0; i < particleCount; i++) {
           positions[i * 3] += velocities[i * 3];
           positions[i * 3 + 1] += velocities[i * 3 + 1];
-          positions[i * 3 + 2] += velocities[i * 3 + 2];
-          // Bounce particles off boundaries
+          positions[i * 3 + 2] += velocities[i * 3 + 2;
           if (Math.abs(positions[i * 3]) > 100) velocities[i * 3] *= -1;
           if (Math.abs(positions[i * 3 + 1]) > 100) velocities[i * 3 + 1] *= -1;
           if (Math.abs(positions[i * 3 + 2]) > 100) velocities[i * 3 + 2] *= -1;
         }
         particles.attributes.position.needsUpdate = true;
-    
+
         // Update lines
         let lineIndex = 0;
         for (let i = 0; i < particleCount; i++) {
@@ -845,17 +828,17 @@
             lineIndex++;
           }
         }
-    
+
         renderer.render(scene, camera);
       }
       animate();
-    
+
       window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
       });
-    
+
       // Typing effect for subtitle
       const typingText = document.getElementById('typing-text');
       const phrases = [
@@ -867,7 +850,7 @@
       let phraseIndex = 0;
       let charIndex = 0;
       let isDeleting = false;
-    
+
       function type() {
         const currentPhrase = phrases[phraseIndex];
         if (isDeleting) {
@@ -893,7 +876,7 @@
     } catch (error) {
       console.error('Advanced Hero error:', error);
     }
-    
+
     // Particle Animation for All Sections
     try {
       const sections = [
@@ -904,17 +887,17 @@
         { canvasId: 'certificationsCanvas', particleCount: 100, maxDistance: 50, particleSize: 1.5, color: 0x00f7ff },
         { canvasId: 'contactCanvas', particleCount: 90, maxDistance: 48, particleSize: 1.4, color: 0xff007a }
       ];
-    
+
       sections.forEach(section => {
         const canvas = document.getElementById(section.canvasId);
         if (!canvas) return;
-    
+
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         camera.position.z = 100;
-    
+
         // Particle system
         const particles = new THREE.BufferGeometry();
         const positions = new Float32Array(section.particleCount * 3);
@@ -936,7 +919,7 @@
         });
         const particleSystem = new THREE.Points(particles, particleMaterial);
         scene.add(particleSystem);
-    
+
         // Lines for neural network effect
         const lines = [];
         for (let i = 0; i < section.particleCount; i++) {
@@ -954,20 +937,20 @@
             scene.add(line);
           }
         }
-    
+
         function animate() {
           requestAnimationFrame(animate);
           // Update particle positions
           for (let i = 0; i < section.particleCount; i++) {
             positions[i * 3] += velocities[i * 3];
             positions[i * 3 + 1] += velocities[i * 3 + 1];
-            positions[i * 3 + 2] += velocities[i * 3 + 2];
+            positions[i * 3 + 2] += velocities[i * 3 + 2;
             if (Math.abs(positions[i * 3]) > 100) velocities[i * 3] *= -1;
             if (Math.abs(positions[i * 3 + 1]) > 100) velocities[i * 3 + 1] *= -1;
             if (Math.abs(positions[i * 3 + 2]) > 100) velocities[i * 3 + 2] *= -1;
           }
           particles.attributes.position.needsUpdate = true;
-    
+
           // Update lines
           let lineIndex = 0;
           for (let i = 0; i < section.particleCount; i++) {
@@ -1000,11 +983,11 @@
               lineIndex++;
             }
           }
-    
+
           renderer.render(scene, camera);
         }
         animate();
-    
+
         window.addEventListener('resize', () => {
           renderer.setSize(window.innerWidth, window.innerHeight);
           camera.aspect = window.innerWidth / window.innerHeight;
@@ -1014,7 +997,7 @@
     } catch (error) {
       console.error('Section Particle Animation error:', error);
     }
-    
+
     // Skills Radar Chart
     try {
       const ctx = document.getElementById('radarChart').getContext('2d');
@@ -1049,18 +1032,18 @@
     } catch (error) {
       console.error('Radar Chart error:', error);
     }
-    
+
     // Project Filtering
     try {
       const filterButtons = document.querySelectorAll('.filter-buttons button');
       const projectCards = document.querySelectorAll('.project-grid .card');
-    
+
       filterButtons.forEach(button => {
         button.addEventListener('click', () => {
           filterButtons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
           const filter = button.getAttribute('data-filter');
-    
+
           projectCards.forEach(card => {
             const projectType = card.getAttribute('data-project').split(' ');
             if (filter === 'all' || projectType.includes(filter)) {
@@ -1076,7 +1059,7 @@
     } catch (error) {
       console.error('Project Filtering error:', error);
     }
-    
+
     // Plotly Visualizations (Mock Data)
     try {
       const plots = [
@@ -1092,7 +1075,7 @@
         { id: 'plot10', title: 'Iris Clusters', x: [1, 2, 3, 4, 5], y: [2, 3, 2, 4, 3], type: 'scatter' },
         { id: 'plot11', title: 'Car Price Predictions', x: [1, 2, 3, 4, 5], y: [15000, 20000, 18000, 22000, 21000], type: 'bar' }
       ];
-    
+
       plots.forEach(plot => {
         Plotly.newPlot(plot.id, [{
           x: plot.x,
@@ -1113,7 +1096,7 @@
     } catch (error) {
       console.error('Plotly Visualizations error:', error);
     }
-    
+
     // Contact Form Validation
     try {
       const form = document.getElementById('contactForm');
@@ -1123,10 +1106,10 @@
       const nameError = document.getElementById('nameError');
       const emailError = document.getElementById('emailError');
       const messageError = document.getElementById('messageError');
-    
+
       form.addEventListener('submit', (e) => {
         let valid = true;
-    
+
         // Name validation
         if (nameInput.value.length < 2) {
           nameError.classList.add('show');
@@ -1134,7 +1117,7 @@
         } else {
           nameError.classList.remove('show');
         }
-    
+
         // Email validation
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(emailInput.value)) {
@@ -1143,7 +1126,7 @@
         } else {
           emailError.classList.remove('show');
         }
-    
+
         // Message validation
         if (messageInput.value.length < 10) {
           messageError.classList.add('show');
@@ -1151,7 +1134,7 @@
         } else {
           messageError.classList.remove('show');
         }
-    
+
         if (!valid) {
           e.preventDefault();
         }
