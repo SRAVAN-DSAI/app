@@ -33,10 +33,10 @@
       overflow-x: hidden;
     }
     
-    h1 { font-size: 4rem; font-weight: 700; }
-    h2 { font-size: 2.5rem; font-weight: 600; }
-    h3 { font-size: 1.5rem; font-weight: 500; }
-    p { font-size: 1rem; color: #a5b4fc; }
+    h1 { font-size: 3.5rem; font-weight: 700; } /* Reduced from 4rem for better mobile scaling */
+    h2 { font-size: 2rem; font-weight: 600; } /* Reduced from 2.5rem */
+    h3 { font-size: 1.3rem; font-weight: 500; } /* Reduced from 1.5rem */
+    p { font-size: 0.9rem; color: #a5b4fc; } /* Reduced from 1rem */
     a { color: #00f7ff; text-decoration: none; transition: color 0.3s; }
     a:hover { color: #ff007a; }
     
@@ -52,26 +52,26 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 2rem;
+      padding: 0 1rem; /* Reduced padding for mobile */
       z-index: 100;
       transition: height 0.3s ease;
     }
     nav:hover {
-      height: 70px;
+      height: 60px; /* Reduced from 70px for mobile */
     }
     nav a {
       color: #e0e7ff;
-      font-size: 1rem;
-      margin: 0 1rem;
+      font-size: 0.9rem; /* Reduced from 1rem */
+      margin: 0 0.5rem; /* Tighter spacing */
       display: flex;
       align-items: center;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem;
       opacity: 0.8;
       transition: all 0.3s ease;
     }
     nav a i {
-      font-size: 1.2rem;
-      margin-right: 0.5rem;
+      font-size: 1rem; /* Reduced from 1.2rem */
+      margin-right: 0.3rem; /* Reduced from 0.5rem */
     }
     nav a span {
       display: inline;
@@ -83,38 +83,41 @@
     }
     @media (max-width: 768px) {
       nav {
-        height: 50px;
-        padding: 0 1rem;
+        height: 40px; /* Smaller nav height */
+        padding: 0 0.5rem;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow scrolling if needed */
+        white-space: nowrap;
       }
       nav:hover {
-        height: 60px;
+        height: 50px;
       }
       nav a {
-        margin: 0 0.5rem;
-        padding: 0.5rem;
-        font-size: 0.9rem;
+        margin: 0 0.3rem;
+        padding: 0.3rem;
+        font-size: 0.8rem;
       }
       nav a i {
-        font-size: 1rem;
-        margin-right: 0.3rem;
+        font-size: 0.9rem;
+        margin-right: 0.2rem;
       }
       nav a span {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
     }
     
     /* Hero Section */
     .hero {
-      min-height: 100vh;
+      min-height: 80vh; /* Reduced from 100vh for mobile */
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.4), rgba(30, 58, 138, 0.4)); /* Reduced opacity for gradient */
+      background: linear-gradient(135deg, rgba(10, 14, 26, 0.4), rgba(30, 58, 138, 0.4));
       position: relative;
       overflow: hidden;
-      padding: 5rem 2rem;
+      padding: 4rem 1rem; /* Reduced padding */
       margin: 0 auto;
-      max-width: 1200px;
+      max-width: 100%; /* Changed from 1200px to prevent overflow */
     }
     #heroCanvas {
       position: absolute;
@@ -123,27 +126,29 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.2; /* Reduced from 0.3 for subtler particle effect */
+      opacity: 0.2;
     }
     .hero-content {
       text-align: center;
       z-index: 1;
       animation: fadeIn 1.5s ease;
-      background: rgba(10, 14, 26, 0.1); /* Increased transparency from 0.2 to 0.1 */
-      backdrop-filter: blur(10px);
-      padding: 2rem;
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px); /* Reduced blur for performance */
+      padding: 1.5rem; /* Reduced from 2rem */
       border-radius: 1rem;
-      border: 1px solid rgba(0, 247, 255, 0.15); /* Slightly more transparent border */
-      box-shadow: 0 0 20px rgba(0, 247, 255, 0.2); /* Reduced shadow opacity */
+      border: 1px solid rgba(0, 247, 255, 0.15);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.2);
+      width: 100%;
+      max-width: 600px; /* Added to constrain content width */
     }
     .profile-photo {
-      width: 180px;
-      height: 180px;
+      width: 150px; /* Reduced from 180px */
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem; /* Reduced from 1.5rem */
       border: 3px solid #00f7ff;
-      box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+      box-shadow: 0 0 10px rgba(0, 247, 255, 0.6);
       transition: transform 0.3s;
     }
     .profile-photo:hover {
@@ -153,18 +158,17 @@
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
-      font-size: 4rem;
-      font-weight: 700;
+      margin-bottom: 0.8rem; /* Reduced from 1rem */
+      text-shadow: 0 0 8px rgba(0, 247, 255, 0.7);
+      font-size: 3rem; /* Reduced from 4rem */
     }
     .hero h2 {
       color: #e0e7ff;
       font-weight: 400;
-      font-size: 1.8rem;
+      font-size: 1.4rem; /* Reduced from 1.8rem */
       position: relative;
       overflow: hidden;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
     }
     .hero h2::after {
       content: '|';
@@ -173,85 +177,95 @@
     }
     .hero a {
       display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 2rem;
-      background: rgba(0, 247, 255, 0.2); /* Slightly more transparent button background */
+      margin-top: 1rem; /* Reduced from 1.5rem */
+      padding: 0.5rem 1.5rem; /* Reduced padding */
+      background: rgba(0, 247, 255, 0.2);
       border: 1px solid #00f7ff;
       border-radius: 50px;
       font-weight: 500;
       transition: all 0.3s;
       color: #e0e7ff;
       text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+      font-size: 0.9rem; /* Added for smaller buttons */
     }
     .hero a:hover {
       background: #00f7ff;
       color: #0a0e1a;
       transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0, 247, 255, 0.5);
+      box-shadow: 0 4px 10px rgba(0, 247, 255, 0.5);
     }
     .hero .hero-links {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 1rem; /* Reduced from 1.5rem */
+      margin-top: 1.5rem; /* Reduced from 2rem */
     }
     .hero a.resume-btn {
-      background: rgba(255, 0, 122, 0.2); /* Slightly more transparent button background */
+      background: rgba(255, 0, 122, 0.2);
       border: 1px solid #ff007a;
     }
     .hero a.resume-btn:hover {
       background: #ff007a;
       color: #0a0e1a;
-      box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
+      box-shadow: 0 4px 10px rgba(255, 0, 122, 0.5);
     }
     .hero .contact-info {
       text-align: center;
-      margin-top: 1rem;
+      margin-top: 0.8rem; /* Reduced from 1rem */
     }
     .hero .contact-info p {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
+      gap: 0.4rem; /* Reduced from 0.5rem */
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem; /* Reduced from 0.9rem */
       color: #a5b4fc;
       transition: color 0.3s;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
     }
     .hero .contact-info p:hover {
       color: #00f7ff;
     }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); } /* Reduced translateY */
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
     @media (max-width: 768px) {
       .hero {
-        padding: 3rem 1rem;
+        padding: 2rem 0.5rem; /* Further reduced */
+        min-height: 60vh; /* Reduced for mobile */
       }
-      .hero h1 { font-size: 2.8rem; }
-      .hero h2 { font-size: 1.4rem; }
-      .profile-photo { width: 140px; height: 140px; }
-      .hero-content { padding: 1.5rem; }
+      .hero h1 { font-size: 2rem; } /* Further reduced */
+      .hero h2 { font-size: 1.2rem; }
+      .profile-photo { width: 120px; height: 120px; }
+      .hero-content { padding: 1rem; max-width: 90%; }
       .hero .hero-links {
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 0.5rem;
       }
-      .hero .contact-info p { font-size: 0.8rem; }
+      .hero a { padding: 0.4rem 1rem; font-size: 0.8rem; }
+      .hero .contact-info p { font-size: 0.7rem; }
     }
     
     /* Sections */
     section {
-      padding: 5rem 2rem; /* Consistent padding */
-      max-width: 1200px;
-      margin: 2rem auto; /* Added consistent margin for spacing between sections */
+      padding: 4rem 1rem; /* Reduced from 5rem 2rem */
+      max-width: 100%; /* Changed from 1200px */
+      margin: 1.5rem auto; /* Reduced from 2rem */
       position: relative;
       overflow: hidden;
     }
     section h2 {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem; /* Reduced from 3rem */
       color: #00f7ff;
-      text-shadow: 0 0 8px rgba(0, 247, 255, 0.7);
+      text-shadow: 0 0 6px rgba(0, 247, 255, 0.7);
       z-index: 1;
       position: relative;
     }
@@ -262,16 +276,16 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.2; /* Reduced for performance */
     }
     
     /* Glassmorphism Cards */
     .card {
-      background: rgba(10, 14, 26, 0.3);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(0, 247, 255, 0.2);
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 247, 255, 0.15);
       border-radius: 1rem;
-      padding: 2rem;
+      padding: 1.5rem; /* Reduced from 2rem */
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -279,34 +293,34 @@
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.3);
+      box-shadow: 0 6px 15px rgba(0, 247, 255, 0.2);
     }
     .card img {
       width: 100%;
-      height: 200px;
+      height: 150px; /* Reduced from 200px */
       object-fit: cover;
       border-radius: 0.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem; /* Reduced from 1rem */
     }
     .card h3 {
       color: #ff007a;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 5px rgba(255, 0, 122, 0.5);
+      margin-bottom: 0.4rem;
+      text-shadow: 0 0 4px rgba(255, 0, 122, 0.5);
     }
     .card p {
       color: #a5b4fc;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
     }
     .card a {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: rgba(0, 247, 255, 0.3);
+      margin-top: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(0, 247, 255, 0.2);
       border: 1px solid #00f7ff;
       border-radius: 50px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #e0e7ff;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.5);
     }
     .card a:hover {
       background: #00f7ff;
@@ -315,8 +329,8 @@
     }
     .plotly-container {
       width: 100%;
-      height: 300px;
-      margin-top: 1rem;
+      height: 200px; /* Reduced from 300px */
+      margin-top: 0.8rem;
       z-index: 1;
       position: relative;
     }
@@ -324,34 +338,384 @@
     /* Project Grid */
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      background: rgba(10, 14, 26, 0.3);
-      backdrop-filter: blur(10px);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Reduced from 300px */
+      gap: 1.5rem; /* Reduced from 2rem */
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px);
       border-radius: 1rem;
-      padding: 1rem;
+      padding: 0.8rem;
       z-index: 1;
       position: relative;
     }
     .filter-buttons {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      gap: 0.8rem; /* Reduced from 1rem */
+      margin-bottom: 1.5rem;
       flex-wrap: wrap;
       z-index: 1;
       position: relative;
     }
     .filter-buttons button {
+      padding: 0.4rem 1rem;
+      background===================================================================== System: It looks like the CSS provided was cut off. I'll complete the CSS based on the previous context and ensure it addresses the mobile issues comprehensively, incorporating all prior changes (horizontal links in hero, increased hero transparency, consistent section spacing, skills chart margin fix). Below is the complete updated `<style>` section, optimized for mobile while maintaining desktop functionality.
+    
+    ### Updated CSS
+    Replace the entire `<style>` section in your HTML with the following:
+    
+    ```css
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      background: #0a0e1a;
+      color: #e0e7ff;
+    }
+    
+    body {
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1 { font-size: 3.5rem; font-weight: 700; }
+    h2 { font-size: 2rem; font-weight: 600; }
+    h3 { font-size: 1.3rem; font-weight: 500; }
+    p { font-size: 0.9rem; color: #a5b4fc; }
+    a { color: #00f7ff; text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #ff007a; }
+    
+    /* Horizontal Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: rgba(10, 14, 26, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+      z-index: 100;
+      transition: height 0.3s ease;
+    }
+    nav:hover {
+      height: 60px;
+    }
+    nav a {
+      color: #e0e7ff;
+      font-size: 0.9rem;
+      margin: 0 0.5rem;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+    nav a i {
+      font-size: 1rem;
+      margin-right: 0.3rem;
+    }
+    nav a span {
+      display: inline;
+    }
+    nav a:hover {
+      background: rgba(0, 247, 255, 0.1);
+      color: #ff007a;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      nav {
+        height: 40px;
+        padding: 0 0.5rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      nav:hover {
+        height: 50px;
+      }
+      nav a {
+        margin: 0 0.3rem;
+        padding: 0.3rem;
+        font-size: 0.8rem;
+      }
+      nav a i {
+        font-size: 0.9rem;
+        margin-right: 0.2rem;
+      }
+      nav a span {
+        font-size: 0.7rem;
+      }
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(10, 14, 26, 0.4), rgba(30, 58, 138, 0.4));
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 1rem;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+    #heroCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.2;
+    }
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      animation: fadeIn 1.5s ease;
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 247, 255, 0.15);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.2);
+      width: 100%;
+      max-width: 600px;
+    }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #00f7ff;
+      box-shadow: 0 0 10px rgba(0, 247, 255, 0.6);
+      transition: transform 0.3s;
+    }
+    .profile-photo:hover {
+      transform: scale(1.1);
+    }
+    .hero h1 {
+      background: linear-gradient(90deg, #00f7ff, #ff007a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 8px rgba(0, 247, 255, 0.7);
+      font-size: 3rem;
+    }
+    .hero h2 {
+      color: #e0e7ff;
+      font-weight: 400;
+      font-size: 1.4rem;
+      position: relative;
+      overflow: hidden;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    }
+    .hero h2::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+      color: #00f7ff;
+    }
+    .hero a {
+      display: inline-block;
+      margin-top: 1rem;
       padding: 0.5rem 1.5rem;
-      background: rgba(0, 247, 255, 0.3);
+      background: rgba(0, 247, 255, 0.2);
+      border: 1px solid #00f7ff;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s;
+      color: #e0e7ff;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+      font-size: 0.9rem;
+    }
+    .hero a:hover {
+      background: #00f7ff;
+      color: #0a0e1a;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 247, 255, 0.5);
+    }
+    .hero .hero-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .hero a.resume-btn {
+      background: rgba(255, 0, 122, 0.2);
+      border: 1px solid #ff007a;
+    }
+    .hero a.resume-btn:hover {
+      background: #ff007a;
+      color: #0a0e1a;
+      box-shadow: 0 4px 10px rgba(255, 0, 122, 0.5);
+    }
+    .hero .contact-info {
+      text-align: center;
+      margin-top: 0.8rem;
+    }
+    .hero .contact-info p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+      color: #a5b4fc;
+      transition: color 0.3s;
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
+    }
+    .hero .contact-info p:hover {
+      color: #00f7ff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2rem 0.5rem;
+        min-height: 60vh;
+      }
+      .hero h1 { font-size: 2rem; }
+      .hero h2 { font-size: 1.2rem; }
+      .profile-photo { width: 120px; height: 120px; }
+      .hero-content { padding: 1rem; max-width: 90%; }
+      .hero .hero-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .hero a { padding: 0.4rem 1rem; font-size: 0.8rem; }
+      .hero .contact-info p { font-size: 0.7rem; }
+    }
+    
+    /* Sections */
+    section {
+      padding: 4rem 1rem;
+      max-width: 100%;
+      margin: 1.5rem auto;
+      position: relative;
+      overflow: hidden;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #00f7ff;
+      text-shadow: 0 0 6px rgba(0, 247, 255, 0.7);
+      z-index: 1;
+      position: relative;
+    }
+    section canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.2;
+    }
+    
+    /* Glassmorphism Cards */
+    .card {
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 247, 255, 0.15);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 247, 255, 0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .card h3 {
+      color: #ff007a;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 0 4px rgba(255, 0, 122, 0.5);
+    }
+    .card p {
+      color: #a5b4fc;
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(0, 247, 255, 0.2);
+      border: 1px solid #00f7ff;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: #e0e7ff;
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.5);
+    }
+    .card a:hover {
+      background: #00f7ff;
+      color: #0a0e1a;
+      text-shadow: none;
+    }
+    .plotly-container {
+      width: 100%;
+      height: 200px;
+      margin-top: 0.8rem;
+      z-index: 1;
+      position: relative;
+    }
+    
+    /* Project Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px);
+      border-radius: 1rem;
+      padding: 0.8rem;
+      z-index: 1;
+      position: relative;
+    }
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      z-index: 1;
+      position: relative;
+    }
+    .filter-buttons button {
+      padding: 0.4rem 1rem;
+      background: rgba(0, 247, 255, 0.2);
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s;
-      font-size: 0.9rem;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+      font-size: 0.8rem;
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.5);
     }
     .filter-buttons button:hover, .filter-buttons button.active {
       background: #00f7ff;
@@ -363,43 +727,43 @@
     /* Skills Section */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-      background: rgba(10, 14, 26, 0.3);
-      backdrop-filter: blur(10px);
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px);
       border-radius: 1rem;
-      padding: 1rem;
+      padding: 0.8rem;
       z-index: 1;
       position: relative;
     }
     .skills-grid .card {
       text-align: center;
-      padding: 1.5rem;
+      padding: 1rem;
     }
     .skills-grid i {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #ff007a;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       transition: transform 0.3s;
-      text-shadow: 0 0 5px rgba(255, 0, 122, 0.5);
+      text-shadow: 0 0 4px rgba(255, 0, 122, 0.5);
     }
     .skills-grid .card:hover i {
       transform: scale(1.2);
     }
     .tooltip {
       visibility: hidden;
-      background: rgba(0, 247, 255, 0.3);
+      background: rgba(0, 247, 255, 0.2);
       color: #e0e7ff;
-      padding: 0.5rem;
+      padding: 0.4rem;
       border-radius: 0.5rem;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       position: absolute;
-      top: -40px;
+      top: -30px;
       white-space: nowrap;
       z-index: 1;
       opacity: 0;
       transition: all 0.3s;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
     }
     .skills-grid .card:hover .tooltip {
       visibility: visible;
@@ -407,23 +771,23 @@
       transform: translateY(-5px);
     }
     #skills {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 2rem auto; /* Consistent margin */
+      padding: 4rem 1rem;
+      max-width: 100%;
+      margin: 1.5rem auto;
       position: relative;
       overflow: hidden;
       min-height: auto;
     }
     #skillsChart {
-      max-width: 500px;
+      max-width: 100%;
       margin: 2rem auto;
-      background: rgba(10, 14, 26, 0.3);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 1.5rem;
       border-radius: 1rem;
       z-index: 1;
       position: relative;
-      height: 400px;
+      height: 300px; /* Reduced from 400px */
     }
     #skillsCanvas {
       position: absolute;
@@ -432,14 +796,14 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.2;
     }
     
     /* Education Section */
     #education {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 2rem auto; /* Standardized margin */
+      padding: 4rem 1rem;
+      max-width: 100%;
+      margin: 1.5rem auto;
       position: relative;
       overflow: hidden;
     }
@@ -450,7 +814,7 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.2;
     }
     
     /* Certifications Section */
@@ -461,69 +825,69 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.2;
     }
     
     /* Contact Form */
     .contact-form .card {
-      max-width: 600px;
+      max-width: 100%;
       margin: 0 auto;
     }
     .contact-info {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
     .contact-info p {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
     }
     .contact-form input, .contact-form textarea {
       width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      background: rgba(10, 14, 26, 0.3);
+      padding: 0.5rem;
+      margin-bottom: 0.8rem;
+      background: rgba(10, 14, 26, 0.1);
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 0.5rem;
-      font-size: 1rem;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+      font-size: 0.9rem;
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
     }
     .contact-form input:focus, .contact-form textarea:focus {
       outline: none;
       border-color: #ff007a;
-      box-shadow: 0 0 8px rgba(255, 0, 122, 0.5);
+      box-shadow: 0 0 6px rgba(255, 0, 122, 0.5);
     }
     .contact-form textarea {
-      height: 150px;
+      height: 120px;
       resize: vertical;
     }
     .contact-form button {
-      padding: 0.75rem 2rem;
-      background: rgba(0, 247, 255, 0.3);
+      padding: 0.5rem 1.5rem;
+      background: rgba(0, 247, 255, 0.2);
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 50px;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+      text-shadow: 0 0 4px rgba(0, 247, 255, 0.5);
     }
     .contact-form button:hover {
       background: #ff007a;
       color: #e0e7ff;
-      box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
+      box-shadow: 0 4px 10px rgba(255, 0, 122, 0.5);
       text-shadow: none;
     }
     .contact-form .error {
       color: #ff6b6b;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
+      font-size: 0.7rem;
+      margin-bottom: 0.8rem;
       display: none;
-      text-shadow: 0 0 5px rgba(255, 107, 107, 0.4);
+      text-shadow: 0 0 4px rgba(255, 107, 107, 0.4);
     }
     .contact-form .error.show {
       display: block;
@@ -535,17 +899,17 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.2;
     }
     
     /* Footer */
     footer {
-      padding: 5rem 2rem; /* Standardized padding to match sections */
+      padding: 4rem 1rem;
       text-align: center;
       background: rgba(10, 14, 26, 0.8);
-      backdrop-filter: blur(10px);
-      margin: 2rem auto; /* Added margin for consistency */
-      max-width: 1200px; /* Consistent with sections */
+      backdrop-filter: blur(8px);
+      margin: 1.5rem auto;
+      max-width: 100%;
     }
     footer p {
       color: #a5b4fc;
@@ -554,11 +918,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
     }
     .social-icons a {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #00f7ff;
       transition: all 0.3s;
     }
@@ -570,11 +934,11 @@
     /* Back to Top */
     #backToTop {
       position: fixed;
-      bottom: 2rem;
-      right: 2rem;
+      bottom: 1.5rem;
+      right: 1.5rem;
       background: #00f7ff;
       color: #0a0e1a;
-      padding: 0.75rem;
+      padding: 0.5rem;
       border-radius: 50%;
       cursor: pointer;
       display: none;
@@ -587,38 +951,39 @@
       transform: scale(1.2);
     }
     #backToTop i {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     
     /* Responsive */
     @media (max-width: 768px) {
       section {
-        padding: 3rem 1rem; /* Consistent responsive padding */
-        margin: 1rem auto; /* Adjusted margin for mobile */
+        padding: 2rem 0.5rem;
+        margin: 1rem auto;
       }
       .project-grid {
         grid-template-columns: 1fr;
       }
       .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       }
       #skills {
-        padding: 3rem 1rem;
-        margin: 1rem auto; /* Consistent margin */
+        padding: 2rem 0.5rem;
+        margin: 1rem auto;
         min-height: auto;
       }
       #skillsChart {
-        height: 400px;
+        height: 250px;
         margin: 1rem auto;
       }
       #education {
-        padding: 3rem 1rem;
-        margin: 1rem auto; /* Consistent margin */
+        padding: 2rem 0.5rem;
+        margin: 1rem auto;
       }
       footer {
-        padding: 3rem 1rem; /* Consistent with section padding */
-        margin: 1rem auto; /* Consistent margin */
+        padding: 2rem 0.5rem;
+        margin: 1rem auto;
       }
+    }
     }
   </style>
 </head>
@@ -835,12 +1200,14 @@
     try {
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('heroCanvas'), alpha: true });
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('heroCanvas'), alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Optimize for mobile
       renderer.setSize(window.innerWidth, window.innerHeight);
       camera.position.z = 100;
     
-      // Particle system for neural network effect
-      const particleCount = 200;
+      // Reduced particle count for mobile
+      const isMobile = window.innerWidth <= 768;
+      const particleCount = isMobile ? 100 : 200; // Fewer particles on mobile
       const particles = new THREE.BufferGeometry();
       const positions = new Float32Array(particleCount * 3);
       const velocities = new Float32Array(particleCount * 3);
@@ -848,21 +1215,20 @@
         positions[i * 3] = (Math.random() - 0.5) * 200;
         positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
         positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
-        velocities[i * 3] = (Math.random() - 0.5) * 0.8;
-        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.8;
-        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.8;
+        velocities[i * 3] = (Math.random() - 0.5) * 0.9;
+        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.9;
+        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.9;
       }
       particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
       const particleMaterial = new THREE.PointsMaterial({
         color: 0x00f7ff,
-        size: 2,
+        size: isMobile ? 1.5 : 2, // Smaller particles on mobile
         transparent: true,
         opacity: 0.8
       });
       const particleSystem = new THREE.Points(particles, particleMaterial);
       scene.add(particleSystem);
     
-      // Lines to connect particles (neural network effect)
       const lines = [];
       for (let i = 0; i < particleCount; i++) {
         for (let j = i + 1; j < particleCount; j++) {
@@ -882,32 +1248,21 @@
     
       function animate() {
         requestAnimationFrame(animate);
-        // Update particle positions
         for (let i = 0; i < particleCount; i++) {
           positions[i * 3] += velocities[i * 3];
           positions[i * 3 + 1] += velocities[i * 3 + 1];
           positions[i * 3 + 2] += velocities[i * 3 + 2];
-          // Bounce particles off boundaries
           if (Math.abs(positions[i * 3]) > 100) velocities[i * 3] *= -1;
           if (Math.abs(positions[i * 3 + 1]) > 100) velocities[i * 3 + 1] *= -1;
           if (Math.abs(positions[i * 3 + 2]) > 100) velocities[i * 3 + 2] *= -1;
         }
         particles.attributes.position.needsUpdate = true;
     
-        // Update lines
         let lineIndex = 0;
         for (let i = 0; i < particleCount; i++) {
           for (let j = i + 1; j < particleCount; j++) {
-            const pos1 = [
-              positions[i * 3],
-              positions[i * 3 + 1],
-              positions[i * 3 + 2]
-            ];
-            const pos2 = [
-              positions[j * 3],
-              positions[j * 3 + 1],
-              positions[j * 3 + 2]
-            ];
+            const pos1 = [positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]];
+            const pos2 = [positions[j * 3], positions[j * 3 + 1], positions[j * 3 + 2]];
             const distance = Math.sqrt(
               Math.pow(pos1[0] - pos2[0], 2) +
               Math.pow(pos1[1] - pos2[1], 2) +
@@ -933,6 +1288,7 @@
     
       window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
       });
@@ -978,12 +1334,12 @@
     // Particle Animation for All Sections
     try {
       const sections = [
-        { canvasId: 'summaryCanvas', particleCount: 100, maxDistance: 50, particleSize: 1.5, color: 0x00f7ff },
-        { canvasId: 'projectsCanvas', particleCount: 150, maxDistance: 60, particleSize: 2, color: 0xff007a },
-        { canvasId: 'skillsCanvas', particleCount: 120, maxDistance: 55, particleSize: 1.8, color: 0x00f7ff },
-        { canvasId: 'educationCanvas', particleCount: 80, maxDistance: 45, particleSize: 1.2, color: 0xff007a },
-        { canvasId: 'certificationsCanvas', particleCount: 100, maxDistance: 50, particleSize: 1.5, color: 0x00f7ff },
-        { canvasId: 'contactCanvas', particleCount: 90, maxDistance: 48, particleSize: 1.4, color: 0xff007a }
+        { canvasId: 'summaryCanvas', particleCount: window.innerWidth <= 768 ? 50 : 100, maxDistance: 50, particleSize: 1.2, color: 0x00f7ff },
+        { canvasId: 'projectsCanvas', particleCount: window.innerWidth <= 768 ? 75 : 150, maxDistance: 60, particleSize: 1.5, color: 0xff007a },
+        { canvasId: 'skillsCanvas', particleCount: window.innerWidth <= 768 ? 60 : 120, maxDistance: 55, particleSize: 1.3, color: 0x00f7ff },
+        { canvasId: 'educationCanvas', particleCount: window.innerWidth <= 768 ? 40 : 80, maxDistance: 45, particleSize: 1, color: 0xff007a },
+        { canvasId: 'certificationsCanvas', particleCount: window.innerWidth <= 768 ? 50 : 100, maxDistance: 50, particleSize: 1.2, color: 0x00f7ff },
+        { canvasId: 'contactCanvas', particleCount: window.innerWidth <= 768 ? 45 : 90, maxDistance: 48, particleSize: 1.1, color: 0xff007a }
       ];
     
       sections.forEach(section => {
@@ -992,11 +1348,11 @@
     
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight); // Use canvas dimensions
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
         camera.position.z = 100;
     
-        // Particle system
         const particles = new THREE.BufferGeometry();
         const positions = new Float32Array(section.particleCount * 3);
         const velocities = new Float32Array(section.particleCount * 3);
@@ -1004,9 +1360,9 @@
           positions[i * 3] = (Math.random() - 0.5) * 200;
           positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
           positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
-          velocities[i * 3] = (Math.random() - 0.5) * 0.8;
-          velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.8;
-          velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.8;
+          velocities[i * 3] = (Math.random() - 0.5) * 0.9;
+          velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.9;
+          velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.9;
         }
         particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         const particleMaterial = new THREE.PointsMaterial({
@@ -1018,7 +1374,6 @@
         const particleSystem = new THREE.Points(particles, particleMaterial);
         scene.add(particleSystem);
     
-        // Lines for neural network effect
         const lines = [];
         for (let i = 0; i < section.particleCount; i++) {
           for (let j = i + 1; j < section.particleCount; j++) {
@@ -1051,16 +1406,8 @@
           let lineIndex = 0;
           for (let i = 0; i < section.particleCount; i++) {
             for (let j = i + 1; j < section.particleCount; j++) {
-              const pos1 = [
-                positions[i * 3],
-                positions[i * 3 + 1],
-                positions[i * 3 + 2]
-              ];
-              const pos2 = [
-                positions[j * 3],
-                positions[j * 3 + 1],
-                positions[j * 3 + 2]
-              ];
+              const pos1 = [positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]];
+              const pos2 = [positions[j * 3], positions[j * 3 + 1], positions[j * 3 + 2]];
               const distance = Math.sqrt(
                 Math.pow(pos1[0] - pos2[0], 2) +
                 Math.pow(pos1[1] - pos2[1], 2) +
@@ -1086,6 +1433,7 @@
     
         window.addEventListener('resize', () => {
           renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
           camera.aspect = canvas.clientWidth / canvas.clientHeight;
           camera.updateProjectionMatrix();
         });
@@ -1093,7 +1441,7 @@
     } catch (error) {
       console.error('Section Particle Animation error:', error);
     }
-  
+    
     // Project Filtering
     try {
       const filterButtons = document.querySelectorAll('.filter-buttons button');
@@ -1146,105 +1494,19 @@
           marker: { color: '#00f7ff' },
           line: { color: '#ff007a' }
         }], {
-          title: { text: plot.title, font: { color: '#e0e7ff' } },
-          xaxis: { title: { text: 'X', font: { color: '#e0e7ff' } }, gridcolor: 'rgba(255, 255, 255, 0.2)' },
-          yaxis: { title: { text: 'Y', font: { color: '#e0e7ff' } }, gridcolor: 'rgba(255, 255, 255, 0.2)' },
+          title: { text: plot.title, font: { color: '#e0e7ff', size: window.innerWidth <= 768 ? 14 : 16 } },
+          xaxis: { title: { text: 'X', font: { color: '#e0e7ff', size: window.innerWidth <= 768 ? 12 : 14 } }, gridcolor: 'rgba(255, 255, 255, 0.2)' },
+          yaxis: { title: { text: 'Y', font: { color: '#e0e7ff', size: window.innerWidth <= 768 ? 12 : 14 } }, gridcolor: 'rgba(255, 255, 255, 0.2)' },
           plot_bgcolor: 'transparent',
           paper_bgcolor: 'transparent',
-          margin: { t: 50, b: 50, l: 50, r: 50 }
-        }, { responsive: true });
+          margin: { t: 40, b: 40, l: 40, r: 40 },
+          responsive: true
+        }, { responsive: true, displayModeBar: false }); // Disable Plotly toolbar on mobile
       });
     } catch (error) {
       console.error('Plotly Visualizations error:', error);
     }
-    // Horizontal Bar Chart for Skills
-    try {
-      const ctx = document.getElementById('hbarChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'MongoDB', 'Plotly Dash'],
-          datasets: [{
-            label: 'Proficiency Level',
-            data: [90, 90, 75, 75, 60, 90], // Advanced: 90, Proficient: 75, Intermediate: 60
-            backgroundColor: [
-              'rgba(0, 247, 255, 0.6)', // Python
-              'rgba(0, 247, 255, 0.6)', // SQL
-              'rgba(255, 0, 122, 0.6)', // Scikit-learn
-              'rgba(255, 0, 122, 0.6)', // PyTorch
-              'rgba(165, 180, 252, 0.6)', // MongoDB
-              'rgba(0, 247, 255, 0.6)' // Plotly Dash
-            ],
-            borderColor: [
-              '#00f7ff',
-              '#00f7ff',
-              '#ff007a',
-              '#ff007a',
-              '#a5b4fc',
-              '#00f7ff'
-            ],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          indexAxis: 'y', // Makes the bar chart horizontal
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false // Hide legend as it's not needed
-            },
-            title: {
-              display: true,
-              text: 'Skills Proficiency',
-              color: '#e0e7ff',
-              font: {
-                size: 18,
-                family: "'Poppins', sans-serif"
-              }
-            }
-          },
-          scales: {
-            x: {
-              beginAtZero: true,
-              max: 100,
-              title: {
-                display: true,
-                text: 'Proficiency (%)',
-                color: '#e0e7ff',
-                font: {
-                  size: 14
-                }
-              },
-              grid: {
-                color: 'rgba(255, 255, 255, 0.2)'
-              },
-              ticks: {
-                color: '#e0e7ff'
-              }
-            },
-            y: {
-              title: {
-                display: true,
-                text: 'Skills',
-                color: '#e0e7ff',
-                font: {
-                  size: 14
-                }
-              },
-              grid: {
-                color: 'rgba(255, 255, 255, 0.2)'
-              },
-              ticks: {
-                color: '#e0e7ff'
-              }
-            }
-          }
-        }
-      });
-    } catch (error) {
-      console.error('Horizontal Bar Chart error:', error);
-    }
+    
     // Contact Form Validation
     try {
       const form = document.getElementById('contactForm');
@@ -1258,7 +1520,6 @@
       form.addEventListener('submit', (e) => {
         let valid = true;
     
-        // Name validation
         if (nameInput.value.length < 2) {
           nameError.classList.add('show');
           valid = false;
@@ -1266,7 +1527,6 @@
           nameError.classList.remove('show');
         }
     
-        // Email validation
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(emailInput.value)) {
           emailError.classList.add('show');
@@ -1275,7 +1535,6 @@
           emailError.classList.remove('show');
         }
     
-        // Message validation
         if (messageInput.value.length < 10) {
           messageError.classList.add('show');
           valid = false;
@@ -1289,6 +1548,97 @@
       });
     } catch (error) {
       console.error('Contact Form Validation error:', error);
+    }
+    
+    // Horizontal Bar Chart for Skills
+    try {
+      const ctx = document.getElementById('hbarChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'MongoDB', 'Plotly Dash'],
+          datasets: [{
+            label: 'Proficiency Level',
+            data: [90, 90, 75, 75, 60, 90],
+            backgroundColor: [
+              'rgba(0, 247, 255, 0.6)',
+              'rgba(0, 247, 255, 0.6)',
+              'rgba(255, 0, 122, 0.6)',
+              'rgba(255, 0, 122, 0.6)',
+              'rgba(165, 180, 252, 0.6)',
+              'rgba(0, 247, 255, 0.6)'
+            ],
+            borderColor: [
+              '#00f7ff',
+              '#00f7ff',
+              '#ff007a',
+              '#ff007a',
+              '#a5b4fc',
+              '#00f7ff'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: 'Skills Proficiency',
+              color: '#e0e7ff',
+              font: {
+                size: window.innerWidth <= 768 ? 14 : 18,
+                family: "'Poppins', sans-serif"
+              }
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100,
+              title: {
+                display: true,
+                text: 'Proficiency (%)',
+                color: '#e0e7ff',
+                font: {
+                  size: window.innerWidth <= 768 ? 12 : 14
+                }
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)'
+              },
+              ticks: {
+                color: '#e0e7ff',
+                font: { size: window.innerWidth <= 768 ? 10 : 12 }
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Skills',
+                color: '#e0e7ff',
+                font: {
+                  size: window.innerWidth <= 768 ? 12 : 14
+                }
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)'
+              },
+              ticks: {
+                color: '#e0e7ff',
+                font: { size: window.innerWidth <= 768 ? 10 : 12 }
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Horizontal Bar Chart error:', error);
     }
   </script>
 </body>
