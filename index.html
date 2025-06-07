@@ -112,7 +112,7 @@
       background: linear-gradient(135deg, #0a0e1a, #1e3a8a);
       position: relative;
       overflow: hidden;
-      margin-top: 90px;
+      margin-top: 40px;
     }
     #heroCanvas {
       position: absolute;
@@ -230,7 +230,7 @@
     }
     @media (max-width: 768px) {
       .hero {
-        margin-top: 70px;
+        margin-top: 40px;
       }
       .hero h1 { font-size: 2.8rem; }
       .hero h2 { font-size: 1.4rem; }
@@ -1085,59 +1085,7 @@
     } catch (error) {
       console.error('Section Particle Animation error:', error);
     }
-    
-    // Skills Radar Chart
-    try {
-      const ctx = document.getElementById('radarChart').getContext('2d');
-      new Chart(ctx, {
-        type: 'radar',
-        data: {
-          labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'MongoDB', 'Plotly Dash'],
-          datasets: [{
-            label: 'Skill Proficiency',
-            data: [90, 85, 80, 75, 70, 85],
-            backgroundColor: 'rgba(0, 247, 255, 0.2)',
-            borderColor: '#00f7ff',
-            pointBackgroundColor: '#ff007a',
-            pointBorderColor: '#ff007a',
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false, // Allow chart to fill container height
-          scales: {
-            r: {
-              angleLines: { color: 'rgba(255, 255, 255, 0.3)' },
-              grid: { color: 'rgba(255, 255, 255, 0.3)' },
-              pointLabels: {
-                color: '#e0e7ff',
-                font: { size: 14 } // Increased font size for labels
-              },
-              ticks: {
-                display: true, // Show ticks
-                stepSize: 20, // Clearer scale increments
-                max: 100, // Set max value for clarity
-                min: 0,
-                color: '#e0e7ff',
-                font: { size: 12 }
-              }
-            }
-          },
-          plugins: {
-            legend: {
-              labels: {
-                color: '#e0e7ff',
-                font: { size: 14 } // Increased legend font size
-              }
-            }
-          }
-        }
-      });
-    } catch (error) {
-      console.error('Radar Chart error:', error);
-    }
-    
+  
     // Project Filtering
     try {
       const filterButtons = document.querySelectorAll('.filter-buttons button');
