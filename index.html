@@ -9,7 +9,17 @@
   <title>Kodari Sravan - Data Scientist</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.js"></script>
+  <style>
+  "datasets": [{
+    "label": "Skill Proficiency",
+    "data": [90, 85, 80, 75, 70, 85],
+    "backgroundColor": "rgba(0, 247, 255, 0.3)",
+    "borderColor": "#00f7ff",
+    "borderWidth": 1,
+    "barThickness": 30
+  }]
+  <style>
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLjh6bS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMC01Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHptMC0xMDQuOGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHoiLz48L3N2Zz4=">
@@ -112,7 +122,7 @@
       background: linear-gradient(135deg, #0a0e1a, #1e3a8a);
       position: relative;
       overflow: hidden;
-      margin-top: 40px;
+      margin-top: 120px;
     }
     #heroCanvas {
       position: absolute;
@@ -121,7 +131,7 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.5;
+      opacity: 0.3;
     }
     .hero-content {
       text-align: center;
@@ -230,7 +240,7 @@
     }
     @media (max-width: 768px) {
       .hero {
-        margin-top: 40px;
+        margin-top: 120px;
       }
       .hero h1 { font-size: 2.8rem; }
       .hero h2 { font-size: 1.4rem; }
