@@ -105,16 +105,16 @@
     
     /* Hero Section */
     .hero {
-      min-height: 100vh; /* Changed from height to min-height to prevent content clipping */
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(135deg, #0a0e1a, #1e3a8a);
       position: relative;
       overflow: hidden;
-      padding: 5rem 2rem; /* Standardized padding */
-      margin: 0 auto; /* Consistent with other sections */
-      max-width: 1200px; /* Consistent with other sections */
+      padding: 5rem 2rem;
+      margin: 0 auto;
+      max-width: 1200px;
     }
     #heroCanvas {
       position: absolute;
@@ -143,7 +143,7 @@
       object-fit: cover;
       margin-bottom: 1.5rem;
       border: 3px solid #00f7ff;
-      box-shadow: 0 0 15px rgba(0,  s247, 255, 0.6);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
       transition: transform 0.3s;
     }
     .profile-photo:hover {
@@ -191,10 +191,11 @@
     }
     .hero .hero-links {
       display: flex;
-      flex-direction: column;
+      flex-direction: row; /* Changed from column to row */
       align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
+      justify-content: center; /* Center links horizontally */
+      gap: 1.5rem; /* Increased gap for better spacing */
+      margin-top: 2rem;
     }
     .hero a.resume-btn {
       background: rgba(255, 0, 122, 0.3);
@@ -223,22 +224,18 @@
     .hero .contact-info p:hover {
       color: #00f7ff;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
     @media (max-width: 768px) {
       .hero {
-        padding: 3rem 1rem; /* Adjusted for mobile */
+        padding: 3rem 1rem;
       }
       .hero h1 { font-size: 2.8rem; }
       .hero h2 { font-size: 1.4rem; }
       .profile-photo { width: 140px; height: 140px; }
       .hero-content { padding: 1.5rem; }
-      .hero .hero-links { gap: 0.75rem; }
+      .hero .hero-links {
+        flex-direction: column; /* Revert to column for mobile to avoid crowding */
+        gap: 0.75rem;
+      }
       .hero .contact-info p { font-size: 0.8rem; }
     }
     
