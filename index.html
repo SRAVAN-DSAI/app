@@ -135,8 +135,8 @@
       box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
     }
     .profile-photo {
-      width: 180px;
-      height: 180px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1.5rem;
@@ -1149,7 +1149,94 @@
     } catch (error) {
       console.error('Plotly Visualizations error:', error);
     }
-    
+    // Horizontal Bar Chart for Skills
+    try {
+      const ctx = document.getElementById('hbarChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'MongoDB', 'Plotly Dash'],
+          datasets: [{
+            label: 'Proficiency Level',
+            data: [90, 90, 75, 75, 60, 90], // Advanced: 90, Proficient: 75, Intermediate: 60
+            backgroundColor: [
+              'rgba(0, 247, 255, 0.6)', // Python
+              'rgba(0, 247, 255, 0.6)', // SQL
+              'rgba(255, 0, 122, 0.6)', // Scikit-learn
+              'rgba(255, 0, 122, 0.6)', // PyTorch
+              'rgba(165, 180, 252, 0.6)', // MongoDB
+              'rgba(0, 247, 255, 0.6)' // Plotly Dash
+            ],
+            borderColor: [
+              '#00f7ff',
+              '#00f7ff',
+              '#ff007a',
+              '#ff007a',
+              '#a5b4fc',
+              '#00f7ff'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          indexAxis: 'y', // Makes the bar chart horizontal
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false // Hide legend as it's not needed
+            },
+            title: {
+              display: true,
+              text: 'Skills Proficiency',
+              color: '#e0e7ff',
+              font: {
+                size: 18,
+                family: "'Poppins', sans-serif"
+              }
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100,
+              title: {
+                display: true,
+                text: 'Proficiency (%)',
+                color: '#e0e7ff',
+                font: {
+                  size: 14
+                }
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)'
+              },
+              ticks: {
+                color: '#e0e7ff'
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: 'Skills',
+                color: '#e0e7ff',
+                font: {
+                  size: 14
+                }
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)'
+              },
+              ticks: {
+                color: '#e0e7ff'
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Horizontal Bar Chart error:', error);
+    }
     // Contact Form Validation
     try {
       const form = document.getElementById('contactForm');
