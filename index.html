@@ -37,50 +37,67 @@
     a { color: #00f7ff; text-decoration: none; transition: color 0.3s; }
     a:hover { color: #ff007a; }
 
-    /* Sidebar Navigation */
+    /* Horizontal Navigation */
     nav {
       position: fixed;
-      left: 0;
       top: 0;
-      height: 100%;
-      width: 80px;
+      left: 0;
+      width: 100%;
+      height: 60px;
       background: rgba(10, 14, 26, 0.8);
       backdrop-filter: blur(10px);
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 2rem 0;
+      padding: 0 2rem;
       z-index: 100;
-      transition: width 0.3s ease;
+      transition: height 0.3s ease;
     }
-    nav:hover { width: 200px; }
-    nav .logo {
-      font-size: 1.5rem;
-      color: #00f7ff;
-      margin-bottom: 2rem;
-      opacity: 0;
-      transition: opacity 0.3s;
+    nav:hover {
+      height: 70px; /* Slightly taller on hover for effect */
     }
-    nav:hover .logo { opacity: 1; }
     nav a {
       color: #e0e7ff;
       font-size: 1rem;
-      margin: 1rem 0;
+      margin: 0 1rem;
       display: flex;
       align-items: center;
-      width: 100%;
       padding: 0.5rem 1rem;
-      opacity: 0.6;
+      opacity: 0.8;
+      transition: all 0.3s ease;
     }
-    nav:hover a { opacity: 1; }
-    nav a i { font-size: 1.5rem; margin-right: 1rem; }
-    nav a span { display: none; }
-    nav:hover a span { display: inline; }
-    nav a:hover { background: rgba(0, 247, 255, 0.1); color: #ff007a; }
+    nav a i {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+    nav a span {
+      display: inline; /* Always show text */
+    }
+    nav a:hover {
+      background: rgba(0, 247, 255, 0.1);
+      color: #ff007a;
+      border-radius: 8px;
+    }
     @media (max-width: 768px) {
-      nav { width: 60px; }
-      nav:hover { width: 150px; }
-      nav a i { font-size: 1.2rem; }
+      nav {
+        height: 50px;
+        padding: 0 1rem;
+      }
+      nav:hover {
+        height: 60px;
+      }
+      nav a {
+        margin: 0 0.5rem;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+      nav a i {
+        font-size: 1rem;
+        margin-right: 0.3rem;
+      }
+      nav a span {
+        font-size: 0.8rem;
+      }
     }
   <style>
     /* Hero Section */
@@ -92,7 +109,9 @@
       background: linear-gradient(135deg, #0a0e1a, #1e3a8a);
       position: relative;
       overflow: hidden;
+      margin-top: 60px; /* Added to prevent overlap with horizontal nav */
     }
+    
     #heroCanvas {
       position: absolute;
       top: 0;
@@ -102,6 +121,7 @@
       z-index: 0;
       opacity: 0.7; /* Increased opacity slightly for better animation visibility */
     }
+    
     .hero-content {
       text-align: center;
       z-index: 1;
@@ -113,6 +133,7 @@
       border: 1px solid rgba(0, 247, 255, 0.2); /* Slightly lighter border */
       box-shadow: 0 0 20px rgba(0, 247, 255, 0.3); /* Softer shadow */
     }
+    
     .profile-photo {
       width: 180px;
       height: 180px;
@@ -123,16 +144,21 @@
       box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
       transition: transform 0.3s;
     }
+    
     .profile-photo:hover {
       transform: scale(1.1);
     }
+    
     .hero h1 {
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(0, 247, 255, 0.7); /* Stronger shadow for legibility */
+      font-size: 4rem; /* From base styles */
+      font-weight: 700; /* From base styles */
     }
+    
     .hero h2 {
       color: #e0e7ff;
       font-weight: 400;
@@ -141,11 +167,13 @@
       overflow: hidden;
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Added shadow for better contrast */
     }
+    
     .hero h2::after {
       content: '|';
       animation: blink 0.7s infinite;
       color: #00f7ff;
     }
+    
     .hero a {
       display: inline-block;
       margin-top: 1.5rem;
@@ -158,12 +186,14 @@
       color: #e0e7ff; /* Ensured text is legible */
       text-shadow: 0 0 5px rgba(0, 247, 255, 0.5); /* Subtle shadow for links */
     }
+    
     .hero a:hover {
       background: #00f7ff;
       color: #0a0e1a;
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(0, 247, 255, 0.5);
     }
+    
     .hero .hero-links {
       display: flex;
       flex-direction: column;
@@ -171,19 +201,23 @@
       gap: 1rem;
       margin-top: 2rem;
     }
+    
     .hero a.resume-btn {
       background: rgba(255, 0, 122, 0.3); /* Slightly more opaque for visibility */
       border: 1px solid #ff007a;
     }
+    
     .hero a.resume-btn:hover {
       background: #ff007a;
       color: #0a0e1a;
       box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
     }
+    
     .hero .contact-info {
       text-align: center;
       margin-top: 1rem;
     }
+    
     .hero .contact-info p {
       display: flex;
       align-items: center;
@@ -195,23 +229,45 @@
       transition: color 0.3s;
       text-shadow: 0 0 5px rgba(0, 247, 255, 0.4); /* Added shadow for legibility */
     }
+    
     .hero .contact-info p:hover {
       color: #00f7ff;
     }
+    
+    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
     @keyframes blink {
       50% { opacity: 0; }
     }
+    
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.8rem; }
-      .hero h2 { font-size: 1.4rem; }
-      .profile-photo { width: 140px; height: 140px; }
-      .hero-content { padding: 1.5rem; }
-      .hero .hero-links { gap: 0.75rem; }
-      .hero .contact-info p { font-size: 0.8rem; }
+      .hero {
+        margin-top: 50px; /* Matches mobile nav height */
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero h2 {
+        font-size: 1.4rem;
+      }
+      .profile-photo {
+        width: 140px;
+        height: 140px;
+      }
+      .hero-content {
+        padding: 1.5rem;
+      }
+      .hero .hero-links {
+        gap: 0.75rem;
+      }
+      .hero .contact-info p {
+        font-size: 0.8rem;
+      }
     }
     /* Sections */
     section {
@@ -516,16 +572,14 @@
   </style>
 </head>
 <body>
-  <nav class="ribbon-nav">
-    <div class="nav-content">
-      <a href="#hero"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="#summary"><i class="fas fa-user"></i><span>Summary</span></a>
-      <a href="#projects"><i class="fas fa-code"></i><span>Projects</span></a>
-      <a href="#skills"><i class="fas fa-cogs"></i><span>Skills</span></a>
-      <a href="#education"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
-      <a href="#certifications"><i class="fas fa-certificate"></i><span>Certifications</span></a>
-      <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
-    </div>
+  <nav>
+    <a href="#hero"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="#summary"><i class="fas fa-user"></i><span>Summary</span></a>
+    <a href="#projects"><i class="fas fa-code"></i><span>Projects</span></a>
+    <a href="#skills"><i class="fas fa-cogs"></i><span>Skills</span></a>
+    <a href="#education"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
+    <a href="#certifications"><i class="fas fa-certificate"></i><span>Certifications</span></a>
+    <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
   </nav>
 
   <section id="hero" class="hero">
