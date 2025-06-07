@@ -213,34 +213,47 @@
       .hero .hero-links { gap: 0.75rem; }
       .hero .contact-info p { font-size: 0.8rem; }
     }
-  <style>
     /* Sections */
     section {
       padding: 5rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
+      position: relative;
+      overflow: hidden;
     }
     section h2 {
       text-align: center;
       margin-bottom: 3rem;
       color: #00f7ff;
-      text-shadow: 0 0 8px rgba(0, 247, 255, 0.5);
+      text-shadow: 0 0 8px rgba(0, 247, 255, 0.7);
+      z-index: 1;
+      position: relative;
     }
-
+    section canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.4; /* Lower opacity for subtlety in sections */
+    }
+  
     /* Glassmorphism Cards */
     .card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(10, 14, 26, 0.3); /* Transparent background */
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(0, 247, 255, 0.2);
       border-radius: 1rem;
       padding: 2rem;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      z-index: 1;
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.3);
     }
     .card img {
       width: 100%;
@@ -249,31 +262,50 @@
       border-radius: 0.5rem;
       margin-bottom: 1rem;
     }
-    .card h3 { color: #ff007a; margin-bottom: 0.5rem; }
+    .card h3 {
+      color: #ff007a;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px rgba(255, 0, 122, 0.5);
+    }
+    .card p {
+      color: #a5b4fc;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+    }
     .card a {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.5rem 1rem;
-      background: rgba(0, 247, 255, 0.2);
+      background: rgba(0, 247, 255, 0.3);
       border: 1px solid #00f7ff;
       border-radius: 50px;
       font-size: 0.9rem;
+      color: #e0e7ff;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
     }
     .card a:hover {
       background: #00f7ff;
       color: #0a0e1a;
+      text-shadow: none;
     }
     .plotly-container {
       width: 100%;
       height: 300px;
       margin-top: 1rem;
+      z-index: 1;
+      position: relative;
     }
-
+  
     /* Project Grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
+      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1rem;
+      z-index: 1;
+      position: relative;
     }
     .filter-buttons {
       display: flex;
@@ -281,28 +313,38 @@
       gap: 1rem;
       margin-bottom: 2rem;
       flex-wrap: wrap;
+      z-index: 1;
+      position: relative;
     }
     .filter-buttons button {
       padding: 0.5rem 1.5rem;
-      background: rgba(0, 247, 255, 0.1);
+      background: rgba(0, 247, 255, 0.3);
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s;
       font-size: 0.9rem;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
     }
     .filter-buttons button:hover, .filter-buttons button.active {
       background: #00f7ff;
       color: #0a0e1a;
       box-shadow: 0 4px 8px rgba(0, 247, 255, 0.5);
+      text-shadow: none;
     }
-
+  
     /* Skills Section */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1.5rem;
+      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1rem;
+      z-index: 1;
+      position: relative;
     }
     .skills-grid .card {
       text-align: center;
@@ -313,11 +355,14 @@
       color: #ff007a;
       margin-bottom: 0.5rem;
       transition: transform 0.3s;
+      text-shadow: 0 0 5px rgba(255, 0, 122, 0.5);
     }
-    .skills-grid .card:hover i { transform: scale(1.2); }
+    .skills-grid .card:hover i {
+      transform: scale(1.2);
+    }
     .tooltip {
       visibility: hidden;
-      background: rgba(0, 247, 255, 0.2);
+      background: rgba(0, 247, 255, 0.3);
       color: #e0e7ff;
       padding: 0.5rem;
       border-radius: 0.5rem;
@@ -328,6 +373,7 @@
       z-index: 1;
       opacity: 0;
       transition: all 0.3s;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
     }
     .skills-grid .card:hover .tooltip {
       visibility: visible;
@@ -337,11 +383,14 @@
     #skillsChart {
       max-width: 500px;
       margin: 3rem auto;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 1rem;
+      z-index: 1;
+      position: relative;
     }
-
+  
     /* Contact Form */
     .contact-form .card {
       max-width: 600px;
@@ -357,45 +406,69 @@
       justify-content: center;
       gap: 0.5rem;
       margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
     }
     .contact-form input, .contact-form textarea {
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(10, 14, 26, 0.3); /* Transparent background */
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 0.5rem;
       font-size: 1rem;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
     }
     .contact-form input:focus, .contact-form textarea:focus {
       outline: none;
       border-color: #ff007a;
       box-shadow: 0 0 8px rgba(255, 0, 122, 0.5);
     }
-    .contact-form textarea { height: 150px; resize: vertical; }
+    .contact-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
     .contact-form button {
       padding: 0.75rem 2rem;
-      background: #00f7ff;
-      color: #0a0e1a;
-      border: none;
+      background: rgba(0, 247, 255, 0.3);
+      border: 1px solid #00f7ff;
+      color: #e0e7ff;
       border-radius: 50px;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
     }
     .contact-form button:hover {
       background: #ff007a;
       color: #e0e7ff;
       box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
+      text-shadow: none;
     }
     .contact-form .error {
       color: #ff6b6b;
       font-size: 0.8rem;
       margin-bottom: 1rem;
       display: none;
+      text-shadow: 0 0 5px rgba(255, 107, 107, 0.4);
     }
-    .contact-form .error.show { display: block; }
+    .contact-form .error.show {
+      display: block;
+    }
+  
+    @media (max-width: 768px) {
+      section {
+        padding: 3rem 1rem;
+      }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+  <style>
+    
 
     /* Footer */
     footer {
@@ -472,13 +545,15 @@
   </section>
 
   <section id="summary">
+    <canvas id="summaryCanvas"></canvas>
     <h2>Summary</h2>
     <div class="card">
       <p>Passionate Data Scientist with expertise in Python, SQL, and machine learning. Delivered impactful projects in predictive modeling and data visualization, leveraging tools like Scikit-learn, PyTorch, and Plotly.</p>
     </div>
   </section>
-
+  
   <section id="projects">
+    <canvas id="projectsCanvas"></canvas>
     <h2>Projects</h2>
     <div class="filter-buttons">
       <button data-filter="all" class="active">All</button>
@@ -566,8 +641,9 @@
       </div>
     </div>
   </section>
-
+  
   <section id="skills">
+    <canvas id="skillsCanvas"></canvas>
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="card">
@@ -605,8 +681,9 @@
       <canvas id="radarChart"></canvas>
     </div>
   </section>
-
+  
   <section id="education">
+    <canvas id="educationCanvas"></canvas>
     <h2>Education</h2>
     <div class="card">
       <h3>M.Tech., Aerospace Engineering</h3>
@@ -615,8 +692,9 @@
       <p>2019-2023, Sreenidhi Institute of Science & Technology</p>
     </div>
   </section>
-
+  
   <section id="certifications">
+    <canvas id="certificationsCanvas"></canvas>
     <h2>Certifications</h2>
     <div class="project-grid">
       <div class="card">
@@ -636,8 +714,9 @@
       </div>
     </div>
   </section>
-
+  
   <section id="contact">
+    <canvas id="contactCanvas"></canvas>
     <h2>Contact</h2>
     <div class="contact-form">
       <div class="card">
@@ -813,35 +892,156 @@
     } catch (error) {
       console.error('Advanced Hero error:', error);
     }
-
+    
+    // Particle Animation for All Sections
+    try {
+      const sections = [
+        { canvasId: 'summaryCanvas', particleCount: 100, maxDistance: 50, particleSize: 1.5, color: 0x00f7ff },
+        { canvasId: 'projectsCanvas', particleCount: 150, maxDistance: 60, particleSize: 2, color: 0xff007a },
+        { canvasId: 'skillsCanvas', particleCount: 120, maxDistance: 55, particleSize: 1.8, color: 0x00f7ff },
+        { canvasId: 'educationCanvas', particleCount: 80, maxDistance: 45, particleSize: 1.2, color: 0xff007a },
+        { canvasId: 'certificationsCanvas', particleCount: 100, maxDistance: 50, particleSize: 1.5, color: 0x00f7ff },
+        { canvasId: 'contactCanvas', particleCount: 90, maxDistance: 48, particleSize: 1.4, color: 0xff007a }
+      ];
+    
+      sections.forEach(section => {
+        const canvas = document.getElementById(section.canvasId);
+        if (!canvas) return;
+    
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.z = 100;
+    
+        // Particle system
+        const particles = new THREE.BufferGeometry();
+        const positions = new Float32Array(section.particleCount * 3);
+        const velocities = new Float32Array(section.particleCount * 3);
+        for (let i = 0; i < section.particleCount; i++) {
+          positions[i * 3] = (Math.random() - 0.5) * 200;
+          positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
+          positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
+          velocities[i * 3] = (Math.random() - 0.5) * 0.15;
+          velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.15;
+          velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.15;
+        }
+        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particleMaterial = new THREE.PointsMaterial({
+          color: section.color,
+          size: section.particleSize,
+          transparent: true,
+          opacity: 0.7
+        });
+        const particleSystem = new THREE.Points(particles, particleMaterial);
+        scene.add(particleSystem);
+    
+        // Lines for neural network effect
+        const lines = [];
+        for (let i = 0; i < section.particleCount; i++) {
+          for (let j = i + 1; j < section.particleCount; j++) {
+            const lineGeometry = new THREE.BufferGeometry();
+            const linePositions = new Float32Array(6);
+            lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+            const lineMaterial = new THREE.LineBasicMaterial({
+              color: section.color,
+              transparent: true,
+              opacity: 0.15
+            });
+            const line = new THREE.Line(lineGeometry, lineMaterial);
+            lines.push(line);
+            scene.add(line);
+          }
+        }
+    
+        function animate() {
+          requestAnimationFrame(animate);
+          // Update particle positions
+          for (let i = 0; i < section.particleCount; i++) {
+            positions[i * 3] += velocities[i * 3];
+            positions[i * 3 + 1] += velocities[i * 3 + 1];
+            positions[i * 3 + 2] += velocities[i * 3 + 2];
+            if (Math.abs(positions[i * 3]) > 100) velocities[i * 3] *= -1;
+            if (Math.abs(positions[i * 3 + 1]) > 100) velocities[i * 3 + 1] *= -1;
+            if (Math.abs(positions[i * 3 + 2]) > 100) velocities[i * 3 + 2] *= -1;
+          }
+          particles.attributes.position.needsUpdate = true;
+    
+          // Update lines
+          let lineIndex = 0;
+          for (let i = 0; i < section.particleCount; i++) {
+            for (let j = i + 1; j < section.particleCount; j++) {
+              const pos1 = [
+                positions[i * 3],
+                positions[i * 3 + 1],
+                positions[i * 3 + 2]
+              ];
+              const pos2 = [
+                positions[j * 3],
+                positions[j * 3 + 1],
+                positions[j * 3 + 2]
+              ];
+              const distance = Math.sqrt(
+                Math.pow(pos1[0] - pos2[0], 2) +
+                Math.pow(pos1[1] - pos2[1], 2) +
+                Math.pow(pos1[2] - pos2[2], 2)
+              );
+              if (distance < section.maxDistance) {
+                lines[lineIndex].geometry.attributes.position.array.set([
+                  pos1[0], pos1[1], pos1[2],
+                  pos2[0], pos2[1], pos2[2]
+                ]);
+                lines[lineIndex].geometry.attributes.position.needsUpdate = true;
+                lines[lineIndex].material.opacity = 0.2 * (1 - distance / section.maxDistance);
+              } else {
+                lines[lineIndex].material.opacity = 0;
+              }
+              lineIndex++;
+            }
+          }
+    
+          renderer.render(scene, camera);
+        }
+        animate();
+    
+        window.addEventListener('resize', () => {
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+        });
+      });
+    } catch (error) {
+      console.error('Section Particle Animation error:', error);
+    }
+    
     // Skills Radar Chart
     try {
       const ctx = document.getElementById('radarChart').getContext('2d');
       new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'Matplotlib', 'Plotly'],
+          labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'MongoDB', 'Plotly Dash'],
           datasets: [{
-            label: 'Skills',
-            data: [95, 90, 85, 80, 75, 80],
+            label: 'Skill Proficiency',
+            data: [90, 85, 80, 75, 70, 85],
             backgroundColor: 'rgba(0, 247, 255, 0.2)',
             borderColor: '#00f7ff',
             pointBackgroundColor: '#ff007a',
+            pointBorderColor: '#ff007a',
             borderWidth: 2
           }]
         },
         options: {
           scales: {
             r: {
-              beginAtZero: true,
-              max: 100,
-              grid: { borderColor: '#00f7ff' },
-              ticks: { color: '#e0e7ff' },
-              angleLines: { color: 'rgba(0, 247, 255, 0.3)' }
+              angleLines: { color: 'rgba(255, 255, 255, 0.3)' },
+              grid: { color: 'rgba(255, 255, 255, 0.3)' },
+              pointLabels: { color: '#e0e7ff' },
+              ticks: { display: false }
             }
           },
           plugins: {
-            legend: { display: false }
+            legend: { labels: { color: '#e0e7ff' } }
           }
         }
       });
@@ -849,199 +1049,71 @@
       console.error('Radar Chart error:', error);
     }
     
-    // Project Filter
+    // Project Filtering
     try {
       const filterButtons = document.querySelectorAll('.filter-buttons button');
       const projectCards = document.querySelectorAll('.project-grid .card');
+    
       filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-          const filter = button.getAttribute('data-filter');
           filterButtons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
+          const filter = button.getAttribute('data-filter');
+    
           projectCards.forEach(card => {
-            const categories = card.getAttribute('data-project').split(' ');
-            card.style.display = filter === 'all' || categories.includes(filter) ? 'block' : 'none';
+            const projectType = card.getAttribute('data-project').split(' ');
+            if (filter === 'all' || projectType.includes(filter)) {
+              card.style.display = 'block';
+              card.classList.add('fade-in');
+            } else {
+              card.style.display = 'none';
+              card.classList.remove('fade-in');
+            }
           });
         });
       });
     } catch (error) {
-      console.error('Project Filter error:', error);
+      console.error('Project Filtering error:', error);
     }
     
-    // Plotly Visualizations
+    // Plotly Visualizations (Mock Data)
     try {
-      Plotly.newPlot('plot1', [{
-        x: [100, 200, 300, 400, 500],
-        y: [50, 60, 55, 65, 70],
-        type: 'scatter',
-        mode: 'markers',
-        marker: { color: '#ff007a', size: 10 }
-      }], {
-        title: 'Price vs. Size Correlation',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Size (sq ft)' },
-        yaxis: { title: 'Price ($K)' }
-      });
-      Plotly.newPlot('plot2', [{
-        x: ['2020', '2021', '2022', '2023'],
-        y: [200, 220, 250, 270],
-        type: 'bar',
-        marker: { color: '#00f7ff' }
-      }], {
-        title: 'Apartment Sales Trend',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Year' },
-        yaxis: { title: 'Sales ($M)' }
-      });
-      Plotly.newPlot('plot3', [{
-        x: [1, 2, 3, 4, 5],
-        y: [10, 15, 13, 17, 14],
-        type: 'scatter',
-        mode: 'lines+markers',
-        marker: { color: '#ff007a' },
-        line: { color: '#00f7ff' }
-      }], {
-        title: 'Air Quality Time-Series',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Time' },
-        yaxis: { title: 'Particulate Matter' }
-      });
-      Plotly.newPlot('plot4', [{
-        x: ['Logistic', 'Decision Tree'],
-        y: [0.82, 0.85],
-        type: 'bar',
-        marker: { color: '#ff007a' }
-      }], {
-        title: 'Model Performance',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Model' },
-        yaxis: { title: 'Accuracy' }
-      });
-      Plotly.newPlot('plot5', [{
-        x: ['Random Forest', 'Gradient Boosting'],
-        y: [0.88, 0.90],
-        type: 'bar',
-        marker: { color: '#00f7ff' }
-      }], {
-        title: 'Bankruptcy Prediction Accuracy',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Model' },
-        yaxis: { title: 'Accuracy' }
-      });
-      Plotly.newPlot('plot6', [{
-        z: [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
-        type: 'heatmap',
-        colorscale: [[0, '#0a0e1a'], [1, '#00f7ff']]
-      }], {
-        title: 'Customer Cluster Analysis',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' }
-      });
-      Plotly.newPlot('plot7', [{
-        x: ['Control', 'Test'],
-        y: [0.05, 0.08],
-        type: 'bar',
-        marker: { color: '#ff007a' }
-      }], {
-        title: 'A/B Testing Results',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Group' },
-        yaxis: { title: 'Conversion Rate' }
-      });
-      Plotly.newPlot('plot8', [{
-        x: [1, 2, 3, 4, 5],
-        y: [0.02, 0.03, 0.025, 0.035, 0.03],
-        type: 'scatter',
-        mode: 'lines',
-        line: { color: '#00f7ff' }
-      }], {
-        title: 'Volatility Forecast',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Time' },
-        yaxis: { title: 'Volatility' }
-      });
-      Plotly.newPlot('plot9', [{
-        x: ['Logistic', 'Decision Tree'],
-        y: [0.85, 0.87],
-        type: 'bar',
-        marker: { color: '#ff007a' }
-      }], {
-        title: 'Heart Disease Model Metrics',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' },
-        xaxis: { title: 'Model' },
-        yaxis: { title: 'ROC-AUC' }
-      });
-      Plotly.newPlot('plot10', [{
-        z: [[1, 2], [3, 4], [5, 6]],
-        type: 'heatmap',
-        colorscale: [[0, '#0a0e1a'], [1, '#00f7ff']]
-      }], {
-        title: 'Iris Cluster Visualization',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' }
-      });
-      Plotly.newPlot('plot11', [{
-        x: ['Feature 1', 'Feature 2', 'Feature 3'],
-        y: [0.3, 0.5, 0.2],
-        type: 'bar',
-        marker: { color: '#ff007a' }
-      }], {
-        title: 'Car Price Feature Importance',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#e0e7ff' }
+      const plots = [
+        { id: 'plot1', title: 'Housing Prices by Location', x: [1, 2, 3, 4, 5], y: [200, 300, 250, 400, 350], type: 'scatter' },
+        { id: 'plot2', title: 'Apartment Price Predictions', x: [1, 2, 3, 4, 5], y: [150, 200, 180, 220, 210], type: 'bar' },
+        { id: 'plot3', title: 'Air Quality Trends', x: [1, 2, 3, 4, 5], y: [50, 60, 55, 70, 65], type: 'scatter' },
+        { id: 'plot4', title: 'Earthquake Damage Levels', x: [1, 2, 3, 4, 5], y: [0.2, 0.4, 0.3, 0.5, 0.4], type: 'bar' },
+        { id: 'plot5', title: 'Bankruptcy Risk Scores', x: [1, 2, 3, 4, 5], y: [0.1, 0.3, 0.2, 0.4, 0.3], type: 'scatter' },
+        { id: 'plot6', title: 'Customer Segments', x: [1, 2, 3, 4, 5], y: [3, 2, 4, 1, 5], type: 'scatter' },
+        { id: 'plot7', title: 'A/B Testing Results', x: ['A', 'B'], y: [100, 120], type: 'bar' },
+        { id: 'plot8', title: 'Volatility Forecast', x: [1, 2, 3, 4, 5], y: [0.05, 0.07, 0.06, 0.08, 0.07], type: 'scatter' },
+        { id: 'plot9', title: 'Heart Disease ROC', x: [0, 0.2, 0.4, 0.6, 1], y: [0, 0.3, 0.7, 0.9, 1], type: 'scatter' },
+        { id: 'plot10', title: 'Iris Clusters', x: [1, 2, 3, 4, 5], y: [2, 3, 2, 4, 3], type: 'scatter' },
+        { id: 'plot11', title: 'Car Price Predictions', x: [1, 2, 3, 4, 5], y: [15000, 20000, 18000, 22000, 21000], type: 'bar' }
+      ];
+    
+      plots.forEach(plot => {
+        Plotly.newPlot(plot.id, [{
+          x: plot.x,
+          y: plot.y,
+          type: plot.type,
+          mode: plot.type === 'scatter' ? 'lines+markers' : undefined,
+          marker: { color: '#00f7ff' },
+          line: { color: '#ff007a' }
+        }], {
+          title: { text: plot.title, font: { color: '#e0e7ff' } },
+          xaxis: { title: { text: 'X', font: { color: '#e0e7ff' } }, gridcolor: 'rgba(255, 255, 255, 0.2)' },
+          yaxis: { title: { text: 'Y', font: { color: '#e0e7ff' } }, gridcolor: 'rgba(255, 255, 255, 0.2)' },
+          plot_bgcolor: 'transparent',
+          paper_bgcolor: 'transparent',
+          margin: { t: 50, b: 50, l: 50, r: 50 }
+        }, { responsive: true });
       });
     } catch (error) {
-      console.error('Plotly error:', error);
+      console.error('Plotly Visualizations error:', error);
     }
-
-    // Smooth Scroll
-    try {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', e => {
-          e.preventDefault();
-          const target = document.querySelector(anchor.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
-    } catch (error) {
-      console.error('Smooth Scroll error:', error);
-    }
-
-    // Back to Top
-    try {
-      const backToTop = document.getElementById('backToTop');
-      window.addEventListener('scroll', () => {
-        backToTop.style.display = window.scrollY > 500 ? 'block' : 'none';
-      });
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    } catch (error) {
-      console.error('Back to Top error:', error);
-    }
-
-    // Form Validation
+    
+    // Contact Form Validation
     try {
       const form = document.getElementById('contactForm');
       const nameInput = form.querySelector('input[name="name"]');
@@ -1050,39 +1122,41 @@
       const nameError = document.getElementById('nameError');
       const emailError = document.getElementById('emailError');
       const messageError = document.getElementById('messageError');
-
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        let isValid = true;
-
+    
+      form.addEventListener('submit', (e) => {
+        let valid = true;
+    
+        // Name validation
         if (nameInput.value.length < 2) {
           nameError.classList.add('show');
-          isValid = false;
+          valid = false;
         } else {
           nameError.classList.remove('show');
         }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailInput.value)) {
+    
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value)) {
           emailError.classList.add('show');
-          isValid = false;
+          valid = false;
         } else {
           emailError.classList.remove('show');
         }
-
+    
+        // Message validation
         if (messageInput.value.length < 10) {
           messageError.classList.add('show');
-          isValid = false;
+          valid = false;
         } else {
           messageError.classList.remove('show');
         }
-
-        if (isValid) {
-          form.submit();
+    
+        if (!valid) {
+          e.preventDefault();
         }
       });
     } catch (error) {
-      console.error('Form Validation error:', error);
+      console.error('Contact Form Validation error:', error);
     }
   </script>
 </body>
