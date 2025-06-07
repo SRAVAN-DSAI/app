@@ -413,7 +413,7 @@
       margin: 0 auto;
       position: relative;
       overflow: hidden;
-      min-height: 700px;
+      min-height: 600px;
     }
     #skillsChart {
       max-width: 500px;
@@ -741,43 +741,19 @@
   </section>
   
   <section id="skills">
-    <canvas id="skillsCanvas"></canvas>
     <h2>Skills</h2>
     <div class="skills-grid">
-      <div class="card">
-        <i class="fab fa-python"></i>
-        <h3>Python</h3>
-        <span class="tooltip">Programming for ML and data analysis.</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-database"></i>
-        <h3>SQL</h3>
-        <span class="tooltip">Database querying and management.</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-cogs"></i>
-        <h3>Scikit-learn</h3>
-        <span class="tooltip">Machine learning model development.</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-fire"></i>
-        <h3>PyTorch</h3>
-        <span class="tooltip">Deep learning and neural networks.</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-database"></i>
-        <h3>MongoDB</h3>
-        <span class="tooltip">NoSQL database for data storage.</span>
-      </div>
-      <div class="card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Plotly Dash</h3>
-        <span class="tooltip">Interactive data visualization dashboards.</span>
-      </div>
+      <div class="card"><i class="fab fa-python"></i><p>Python</p><span class="tooltip">Advanced</span></div>
+      <div class="card"><i class="fas fa-database"></i><p>SQL</p><span class="tooltip">Advanced</span></div>
+      <div class="card"><i class="fas fa-cogs"></i><p>Scikit-learn</p><span class="tooltip">Proficient</span></div>
+      <div class="card"><i class="fas fa-fire"></i><p>PyTorch</p><span class="tooltip">Proficient</span></div>
+      <div class="card"><i class="fas fa-server"></i><p>MongoDB</p><span class="tooltip">Intermediate</span></div>
+      <div class="card"><i class="fas fa-chart-line"></i><p>Plotly Dash</p><span class="tooltip">Advanced</span></div>
     </div>
     <div id="skillsChart">
       <canvas id="radarChart"></canvas>
     </div>
+    <canvas id="skillsCanvas"></canvas>
   </section>
   
   <section id="education">
