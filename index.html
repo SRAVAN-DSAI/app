@@ -21,22 +21,25 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
+    
     html {
       scroll-behavior: smooth;
       background: #0a0e1a;
       color: #e0e7ff;
     }
+    
     body {
       line-height: 1.6;
       overflow-x: hidden;
     }
+    
     h1 { font-size: 4rem; font-weight: 700; }
     h2 { font-size: 2.5rem; font-weight: 600; }
     h3 { font-size: 1.5rem; font-weight: 500; }
     p { font-size: 1rem; color: #a5b4fc; }
     a { color: #00f7ff; text-decoration: none; transition: color 0.3s; }
     a:hover { color: #ff007a; }
-
+    
     /* Horizontal Navigation */
     nav {
       position: fixed;
@@ -54,7 +57,7 @@
       transition: height 0.3s ease;
     }
     nav:hover {
-      height: 70px; /* Slightly taller on hover for effect */
+      height: 70px;
     }
     nav a {
       color: #e0e7ff;
@@ -71,7 +74,7 @@
       margin-right: 0.5rem;
     }
     nav a span {
-      display: inline; /* Always show text */
+      display: inline;
     }
     nav a:hover {
       background: rgba(0, 247, 255, 0.1);
@@ -99,7 +102,7 @@
         font-size: 0.8rem;
       }
     }
-  <style>
+    
     /* Hero Section */
     .hero {
       height: 100vh;
@@ -109,9 +112,8 @@
       background: linear-gradient(135deg, #0a0e1a, #1e3a8a);
       position: relative;
       overflow: hidden;
-      margin-top: 60px; /* Added to prevent overlap with horizontal nav */
+      margin-top: 60px;
     }
-    
     #heroCanvas {
       position: absolute;
       top: 0;
@@ -119,21 +121,19 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.7; /* Increased opacity slightly for better animation visibility */
+      opacity: 0.7;
     }
-    
     .hero-content {
       text-align: center;
       z-index: 1;
       animation: fadeIn 1.5s ease;
-      background: rgba(10, 14, 26, 0.3); /* Reduced opacity for more transparency */
-      backdrop-filter: blur(10px); /* Enhanced blur for glassmorphism effect */
+      background: rgba(10, 14, 26, 0.3);
+      backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 1rem;
-      border: 1px solid rgba(0, 247, 255, 0.2); /* Slightly lighter border */
-      box-shadow: 0 0 20px rgba(0, 247, 255, 0.3); /* Softer shadow */
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
     }
-    
     .profile-photo {
       width: 180px;
       height: 180px;
@@ -144,56 +144,49 @@
       box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
       transition: transform 0.3s;
     }
-    
     .profile-photo:hover {
       transform: scale(1.1);
     }
-    
     .hero h1 {
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7); /* Stronger shadow for legibility */
-      font-size: 4rem; /* From base styles */
-      font-weight: 700; /* From base styles */
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
+      font-size: 4rem;
+      font-weight: 700;
     }
-    
     .hero h2 {
       color: #e0e7ff;
       font-weight: 400;
       font-size: 1.8rem;
       position: relative;
       overflow: hidden;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Added shadow for better contrast */
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
     }
-    
     .hero h2::after {
       content: '|';
       animation: blink 0.7s infinite;
       color: #00f7ff;
     }
-    
     .hero a {
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.75rem 2rem;
-      background: rgba(0, 247, 255, 0.3); /* Slightly more opaque for visibility */
+      background: rgba(0, 247, 255, 0.3);
       border: 1px solid #00f7ff;
       border-radius: 50px;
       font-weight: 500;
       transition: all 0.3s;
-      color: #e0e7ff; /* Ensured text is legible */
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5); /* Subtle shadow for links */
+      color: #e0e7ff;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
     }
-    
     .hero a:hover {
       background: #00f7ff;
       color: #0a0e1a;
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(0, 247, 255, 0.5);
     }
-    
     .hero .hero-links {
       display: flex;
       flex-direction: column;
@@ -201,23 +194,19 @@
       gap: 1rem;
       margin-top: 2rem;
     }
-    
     .hero a.resume-btn {
-      background: rgba(255, 0, 122, 0.3); /* Slightly more opaque for visibility */
+      background: rgba(255, 0, 122, 0.3);
       border: 1px solid #ff007a;
     }
-    
     .hero a.resume-btn:hover {
       background: #ff007a;
       color: #0a0e1a;
       box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
     }
-    
     .hero .contact-info {
       text-align: center;
       margin-top: 1rem;
     }
-    
     .hero .contact-info p {
       display: flex;
       align-items: center;
@@ -227,48 +216,30 @@
       font-size: 0.9rem;
       color: #a5b4fc;
       transition: color 0.3s;
-      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4); /* Added shadow for legibility */
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
     }
-    
     .hero .contact-info p:hover {
       color: #00f7ff;
     }
-    
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
     @keyframes blink {
       50% { opacity: 0; }
     }
-    
-    /* Responsive Adjustments */
     @media (max-width: 768px) {
       .hero {
-        margin-top: 50px; /* Matches mobile nav height */
+        margin-top: 50px;
       }
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-      .hero h2 {
-        font-size: 1.4rem;
-      }
-      .profile-photo {
-        width: 140px;
-        height: 140px;
-      }
-      .hero-content {
-        padding: 1.5rem;
-      }
-      .hero .hero-links {
-        gap: 0.75rem;
-      }
-      .hero .contact-info p {
-        font-size: 0.8rem;
-      }
+      .hero h1 { font-size: 2.8rem; }
+      .hero h2 { font-size: 1.4rem; }
+      .profile-photo { width: 140px; height: 140px; }
+      .hero-content { padding: 1.5rem; }
+      .hero .hero-links { gap: 0.75rem; }
+      .hero .contact-info p { font-size: 0.8rem; }
     }
+    
     /* Sections */
     section {
       padding: 5rem 2rem;
@@ -292,12 +263,12 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0.4; /* Lower opacity for subtlety in sections */
+      opacity: 0.4;
     }
-  
+    
     /* Glassmorphism Cards */
     .card {
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(0, 247, 255, 0.2);
       border-radius: 1rem;
@@ -350,13 +321,13 @@
       z-index: 1;
       position: relative;
     }
-  
+    
     /* Project Grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 1rem;
       padding: 1rem;
@@ -389,13 +360,13 @@
       box-shadow: 0 4px 8px rgba(0, 247, 255, 0.5);
       text-shadow: none;
     }
-  
+    
     /* Skills Section */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1.5rem;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 1rem;
       padding: 1rem;
@@ -436,17 +407,64 @@
       opacity: 1;
       transform: translateY(-5px);
     }
+    #skills {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+    }
     #skillsChart {
       max-width: 500px;
       margin: 3rem auto;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 1rem;
       z-index: 1;
       position: relative;
+      height: 300px;
     }
-  
+    #skillsCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.4;
+    }
+    
+    /* Education Section */
+    #education {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+    }
+    #educationCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.4;
+    }
+    
+    /* Certifications Section */
+    #certificationsCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.4;
+    }
+    
     /* Contact Form */
     .contact-form .card {
       max-width: 600px;
@@ -468,7 +486,7 @@
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
-      background: rgba(10, 14, 26, 0.3); /* Transparent background */
+      background: rgba(10, 14, 26, 0.3);
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 0.5rem;
@@ -511,21 +529,16 @@
     .contact-form .error.show {
       display: block;
     }
-  
-    @media (max-width: 768px) {
-      section {
-        padding: 3rem 1rem;
-      }
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-      .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      }
+    #contactCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.4;
     }
-  <style>
     
-
     /* Footer */
     footer {
       padding: 2rem;
@@ -533,15 +546,26 @@
       background: rgba(10, 14, 26, 0.8);
       backdrop-filter: blur(10px);
     }
-    footer p { color: #a5b4fc; }
+    footer p {
+      color: #a5b4fc;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
     .social-icons a {
       font-size: 1.5rem;
-      margin: 0 0.5rem;
       color: #00f7ff;
       transition: all 0.3s;
     }
-    .social-icons a:hover { color: #ff007a; transform: scale(1.2); }
-
+    .social-icons a:hover {
+      color: #ff007a;
+      transform: scale(1.2);
+    }
+    
     /* Back to Top */
     #backToTop {
       position: fixed;
@@ -561,13 +585,32 @@
       color: #e0e7ff;
       transform: scale(1.2);
     }
-    #backToTop i { font-size: 1.2rem; }
-
+    #backToTop i {
+      font-size: 1.2rem;
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
-      section { padding: 3rem 1rem; }
-      .project-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+      section {
+        padding: 3rem 1rem;
+      }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+      #skills {
+        padding: 3rem 1rem;
+        min-height: 500px;
+      }
+      #skillsChart {
+        height: 250px;
+      }
+      #education {
+        padding: 3rem 1rem;
+        margin: 1rem auto;
+      }
     }
   </style>
 </head>
@@ -964,9 +1007,9 @@
         if (!canvas) return;
     
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight); // Use canvas dimensions
         camera.position.z = 100;
     
         // Particle system
@@ -1011,7 +1054,6 @@
     
         function animate() {
           requestAnimationFrame(animate);
-          // Update particle positions
           for (let i = 0; i < section.particleCount; i++) {
             positions[i * 3] += velocities[i * 3];
             positions[i * 3 + 1] += velocities[i * 3 + 1];
@@ -1022,7 +1064,6 @@
           }
           particles.attributes.position.needsUpdate = true;
     
-          // Update lines
           let lineIndex = 0;
           for (let i = 0; i < section.particleCount; i++) {
             for (let j = i + 1; j < section.particleCount; j++) {
@@ -1060,8 +1101,8 @@
         animate();
     
         window.addEventListener('resize', () => {
-          renderer.setSize(window.innerWidth, window.innerHeight);
-          camera.aspect = window.innerWidth / window.innerHeight;
+          renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+          camera.aspect = canvas.clientWidth / canvas.clientHeight;
           camera.updateProjectionMatrix();
         });
       });
