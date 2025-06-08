@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.js"></script>
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLjh6bS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMC01Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHptMC0xMDQuOGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHoiLz48L3N2Zz4=">
   <style>
     /* Reset and Base Styles */
@@ -40,7 +39,7 @@
     a { color: #00f7ff; text-decoration: none; transition: color 0.3s; }
     a:hover { color: #ff007a; }
     
-    /* Horizontal Navigation */
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -58,6 +57,11 @@
     }
     nav:hover {
       height: 70px;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     nav a {
       color: #e0e7ff;
@@ -81,25 +85,63 @@
       color: #ff007a;
       border-radius: 8px;
     }
+    
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      color: #e0e7ff;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 101;
+    }
+    .nav-links.active {
+      transform: translateX(0);
+    }
+    
     @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+      }
       nav {
         height: 50px;
         padding: 0 1rem;
+        justify-content: flex-start;
       }
       nav:hover {
-        height: 60px;
+        height: 50px;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 200px;
+        background: rgba(10, 14, 26, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
       }
       nav a {
-        margin: 0 0.5rem;
-        padding: 0.5rem;
-        font-size: 0.9rem;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: flex-start;
       }
       nav a i {
-        font-size: 1rem;
-        margin-right: 0.3rem;
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
       }
       nav a span {
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
     }
     
@@ -109,32 +151,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(10, 14, 26, 0.4), rgba(30, 58, 138, 0.4)); /* Reduced opacity for gradient */
+      background: linear-gradient(135deg, rgba(10, 14, 26, 0.4), rgba(30, 58, 138, 0.4));
       position: relative;
       overflow: hidden;
       padding: 5rem 2rem;
       margin: 0 auto;
       max-width: 1200px;
     }
-    #heroCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.2; /* Reduced from 0.3 for subtler particle effect */
-    }
     .hero-content {
       text-align: center;
       z-index: 1;
       animation: fadeIn 1.5s ease;
-      background: rgba(10, 14, 26, 0.1); /* Increased transparency from 0.2 to 0.1 */
+      background: rgba(10, 14, 26, 0.1);
       backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 1rem;
-      border: 1px solid rgba(0, 247, 255, 0.15); /* Slightly more transparent border */
-      box-shadow: 0 0 20px rgba(0, 247, 255, 0.2); /* Reduced shadow opacity */
+      border: 1px solid rgba(0, 247, 255, 0.15);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
     }
     .profile-photo {
       width: 180px;
@@ -175,7 +208,7 @@
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.75rem 2rem;
-      background: rgba(0, 247, 255, 0.2); /* Slightly more transparent button background */
+      background: rgba(0, 247, 255, 0.2);
       border: 1px solid #00f7ff;
       border-radius: 50px;
       font-weight: 500;
@@ -198,7 +231,7 @@
       margin-top: 2rem;
     }
     .hero a.resume-btn {
-      background: rgba(255, 0, 122, 0.2); /* Slightly more transparent button background */
+      background: rgba(255, 0, 122, 0.2);
       border: 1px solid #ff007a;
     }
     .hero a.resume-btn:hover {
@@ -241,9 +274,9 @@
     
     /* Sections */
     section {
-      padding: 5rem 2rem; /* Consistent padding */
+      padding: 5rem 2rem;
       max-width: 1200px;
-      margin: 2rem auto; /* Added consistent margin for spacing between sections */
+      margin: 2rem auto;
       position: relative;
       overflow: hidden;
     }
@@ -254,15 +287,6 @@
       text-shadow: 0 0 8px rgba(0, 247, 255, 0.7);
       z-index: 1;
       position: relative;
-    }
-    section canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.4;
     }
     
     /* Glassmorphism Cards */
@@ -409,7 +433,7 @@
     #skills {
       padding: 5rem 2rem;
       max-width: 1200px;
-      margin: 2rem auto; /* Consistent margin */
+      margin: 2rem auto;
       position: relative;
       overflow: hidden;
       min-height: auto;
@@ -425,43 +449,14 @@
       position: relative;
       height: 400px;
     }
-    #skillsCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.4;
-    }
     
     /* Education Section */
     #education {
       padding: 5rem 2rem;
       max-width: 1200px;
-      margin: 2rem auto; /* Standardized margin */
+      margin: 2rem auto;
       position: relative;
       overflow: hidden;
-    }
-    #educationCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.4;
-    }
-    
-    /* Certifications Section */
-    #certificationsCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.4;
     }
     
     /* Contact Form */
@@ -528,24 +523,15 @@
     .contact-form .error.show {
       display: block;
     }
-    #contactCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      opacity: 0.4;
-    }
     
     /* Footer */
     footer {
-      padding: 5rem 2rem; /* Standardized padding to match sections */
+      padding: 5rem 2rem;
       text-align: center;
       background: rgba(10, 14, 26, 0.8);
       backdrop-filter: blur(10px);
-      margin: 2rem auto; /* Added margin for consistency */
-      max-width: 1200px; /* Consistent with sections */
+      margin: 2rem auto;
+      max-width: 1200px;
     }
     footer p {
       color: #a5b4fc;
@@ -593,8 +579,8 @@
     /* Responsive */
     @media (max-width: 768px) {
       section {
-        padding: 3rem 1rem; /* Consistent responsive padding */
-        margin: 1rem auto; /* Adjusted margin for mobile */
+        padding: 3rem 1rem;
+        margin: 1rem auto;
       }
       .project-grid {
         grid-template-columns: 1fr;
@@ -604,7 +590,7 @@
       }
       #skills {
         padding: 3rem 1rem;
-        margin: 1rem auto; /* Consistent margin */
+        margin: 1rem auto;
         min-height: auto;
       }
       #skillsChart {
@@ -613,28 +599,32 @@
       }
       #education {
         padding: 3rem 1rem;
-        margin: 1rem auto; /* Consistent margin */
+        margin: 1rem auto;
       }
       footer {
-        padding: 3rem 1rem; /* Consistent with section padding */
-        margin: 1rem auto; /* Consistent margin */
+        padding: 3rem 1rem;
+        margin: 1rem auto;
       }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#hero"><i class="fas fa-home"></i><span>Home</span></a>
-    <a href="#summary"><i class="fas fa-user"></i><span>Summary</span></a>
-    <a href="#projects"><i class="fas fa-code"></i><span>Projects</span></a>
-    <a href="#skills"><i class="fas fa-cogs"></i><span>Skills</span></a>
-    <a href="#education"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
-    <a href="#certifications"><i class="fas fa-certificate"></i><span>Certifications</span></a>
-    <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links">
+      <a href="#hero"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="#summary"><i class="fas fa-user"></i><span>Summary</span></a>
+      <a href="#projects"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="#skills"><i class="fas fa-cogs"></i><span>Skills</span></a>
+      <a href="#education"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
+      <a href="#certifications"><i class="fas fa-certificate"></i><span>Certifications</span></a>
+      <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    </div>
   </nav>
 
   <section id="hero" class="hero">
-    <canvas id="heroCanvas"></canvas>
     <div class="hero-content">
       <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan Profile" class="profile-photo">
       <h1>Kodari Sravan</h1>
@@ -651,7 +641,6 @@
   </section>
 
   <section id="summary">
-    <canvas id="summaryCanvas"></canvas>
     <h2>Summary</h2>
     <div class="card">
       <p>Passionate Data Scientist with expertise in Python, SQL, and machine learning. Delivered impactful projects in predictive modeling and data visualization, leveraging tools like Scikit-learn, PyTorch, and Plotly.</p>
@@ -659,7 +648,6 @@
   </section>
   
   <section id="projects">
-    <canvas id="projectsCanvas"></canvas>
     <h2>Projects</h2>
     <div class="filter-buttons">
       <button data-filter="all" class="active">All</button>
@@ -761,11 +749,9 @@
     <div id="skillsChart">
       <canvas id="hbarChart"></canvas>
     </div>
-    <canvas id="skillsCanvas"></canvas>
   </section>
   
   <section id="education">
-    <canvas id="educationCanvas"></canvas>
     <h2>Education</h2>
     <div class="card">
       <h3>M.Tech., Aerospace Engineering</h3>
@@ -776,7 +762,6 @@
   </section>
   
   <section id="certifications">
-    <canvas id="certificationsCanvas"></canvas>
     <h2>Certifications</h2>
     <div class="project-grid">
       <div class="card">
@@ -798,7 +783,6 @@
   </section>
   
   <section id="contact">
-    <canvas id="contactCanvas"></canvas>
     <h2>Contact</h2>
     <div class="contact-form">
       <div class="card">
@@ -831,113 +815,25 @@
   <div id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></div>
 
   <script>
-    // Advanced Hero Background with Neural Network Particles
+    // Hamburger Menu Toggle
     try {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('heroCanvas'), alpha: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.position.z = 100;
-    
-      // Particle system for neural network effect
-      const particleCount = 200;
-      const particles = new THREE.BufferGeometry();
-      const positions = new Float32Array(particleCount * 3);
-      const velocities = new Float32Array(particleCount * 3);
-      for (let i = 0; i < particleCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 200;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
-        velocities[i * 3] = (Math.random() - 0.5) * 0.8;
-        velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.8;
-        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.8;
-      }
-      particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      const particleMaterial = new THREE.PointsMaterial({
-        color: 0x00f7ff,
-        size: 2,
-        transparent: true,
-        opacity: 0.8
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
       });
-      const particleSystem = new THREE.Points(particles, particleMaterial);
-      scene.add(particleSystem);
-    
-      // Lines to connect particles (neural network effect)
-      const lines = [];
-      for (let i = 0; i < particleCount; i++) {
-        for (let j = i + 1; j < particleCount; j++) {
-          const lineGeometry = new THREE.BufferGeometry();
-          const linePositions = new Float32Array(6);
-          lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-          const lineMaterial = new THREE.LineBasicMaterial({
-            color: 0x00f7ff,
-            transparent: true,
-            opacity: 0.2
-          });
-          const line = new THREE.Line(lineGeometry, lineMaterial);
-          lines.push(line);
-          scene.add(line);
-        }
-      }
-    
-      function animate() {
-        requestAnimationFrame(animate);
-        // Update particle positions
-        for (let i = 0; i < particleCount; i++) {
-          positions[i * 3] += velocities[i * 3];
-          positions[i * 3 + 1] += velocities[i * 3 + 1];
-          positions[i * 3 + 2] += velocities[i * 3 + 2];
-          // Bounce particles off boundaries
-          if (Math.abs(positions[i * 3]) > 100) velocities[i * 3] *= -1;
-          if (Math.abs(positions[i * 3 + 1]) > 100) velocities[i * 3 + 1] *= -1;
-          if (Math.abs(positions[i * 3 + 2]) > 100) velocities[i * 3 + 2] *= -1;
-        }
-        particles.attributes.position.needsUpdate = true;
-    
-        // Update lines
-        let lineIndex = 0;
-        for (let i = 0; i < particleCount; i++) {
-          for (let j = i + 1; j < particleCount; j++) {
-            const pos1 = [
-              positions[i * 3],
-              positions[i * 3 + 1],
-              positions[i * 3 + 2]
-            ];
-            const pos2 = [
-              positions[j * 3],
-              positions[j * 3 + 1],
-              positions[j * 3 + 2]
-            ];
-            const distance = Math.sqrt(
-              Math.pow(pos1[0] - pos2[0], 2) +
-              Math.pow(pos1[1] - pos2[1], 2) +
-              Math.pow(pos1[2] - pos2[2], 2)
-            );
-            if (distance < 50) {
-              lines[lineIndex].geometry.attributes.position.array.set([
-                pos1[0], pos1[1], pos1[2],
-                pos2[0], pos2[1], pos2[2]
-              ]);
-              lines[lineIndex].geometry.attributes.position.needsUpdate = true;
-              lines[lineIndex].material.opacity = 0.3 * (1 - distance / 50);
-            } else {
-              lines[lineIndex].material.opacity = 0;
-            }
-            lineIndex++;
-          }
-        }
-    
-        renderer.render(scene, camera);
-      }
-      animate();
-    
-      window.addEventListener('resize', () => {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
+      // Close menu when a link is clicked
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
       });
-    
-      // Typing effect for subtitle
+    } catch (error) {
+      console.error('Hamburger Menu error:', error);
+    }
+
+    // Typing effect for subtitle
+    try {
       const typingText = document.getElementById('typing-text');
       const phrases = [
         'Data Scientist & ML Enthusiast',
@@ -972,128 +868,9 @@
       }
       type();
     } catch (error) {
-      console.error('Advanced Hero error:', error);
+      console.error('Typing Effect error:', error);
     }
     
-    // Particle Animation for All Sections
-    try {
-      const sections = [
-        { canvasId: 'summaryCanvas', particleCount: 100, maxDistance: 50, particleSize: 1.5, color: 0x00f7ff },
-        { canvasId: 'projectsCanvas', particleCount: 150, maxDistance: 60, particleSize: 2, color: 0xff007a },
-        { canvasId: 'skillsCanvas', particleCount: 120, maxDistance: 55, particleSize: 1.8, color: 0x00f7ff },
-        { canvasId: 'educationCanvas', particleCount: 80, maxDistance: 45, particleSize: 1.2, color: 0xff007a },
-        { canvasId: 'certificationsCanvas', particleCount: 100, maxDistance: 50, particleSize: 1.5, color: 0x00f7ff },
-        { canvasId: 'contactCanvas', particleCount: 90, maxDistance: 48, particleSize: 1.4, color: 0xff007a }
-      ];
-    
-      sections.forEach(section => {
-        const canvas = document.getElementById(section.canvasId);
-        if (!canvas) return;
-    
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight); // Use canvas dimensions
-        camera.position.z = 100;
-    
-        // Particle system
-        const particles = new THREE.BufferGeometry();
-        const positions = new Float32Array(section.particleCount * 3);
-        const velocities = new Float32Array(section.particleCount * 3);
-        for (let i = 0; i < section.particleCount; i++) {
-          positions[i * 3] = (Math.random() - 0.5) * 200;
-          positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
-          positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
-          velocities[i * 3] = (Math.random() - 0.5) * 0.8;
-          velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.8;
-          velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.8;
-        }
-        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const particleMaterial = new THREE.PointsMaterial({
-          color: section.color,
-          size: section.particleSize,
-          transparent: true,
-          opacity: 0.7
-        });
-        const particleSystem = new THREE.Points(particles, particleMaterial);
-        scene.add(particleSystem);
-    
-        // Lines for neural network effect
-        const lines = [];
-        for (let i = 0; i < section.particleCount; i++) {
-          for (let j = i + 1; j < section.particleCount; j++) {
-            const lineGeometry = new THREE.BufferGeometry();
-            const linePositions = new Float32Array(6);
-            lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-            const lineMaterial = new THREE.LineBasicMaterial({
-              color: section.color,
-              transparent: true,
-              opacity: 0.15
-            });
-            const line = new THREE.Line(lineGeometry, lineMaterial);
-            lines.push(line);
-            scene.add(line);
-          }
-        }
-    
-        function animate() {
-          requestAnimationFrame(animate);
-          for (let i = 0; i < section.particleCount; i++) {
-            positions[i * 3] += velocities[i * 3];
-            positions[i * 3 + 1] += velocities[i * 3 + 1];
-            positions[i * 3 + 2] += velocities[i * 3 + 2];
-            if (Math.abs(positions[i * 3]) > 100) velocities[i * 3] *= -1;
-            if (Math.abs(positions[i * 3 + 1]) > 100) velocities[i * 3 + 1] *= -1;
-            if (Math.abs(positions[i * 3 + 2]) > 100) velocities[i * 3 + 2] *= -1;
-          }
-          particles.attributes.position.needsUpdate = true;
-    
-          let lineIndex = 0;
-          for (let i = 0; i < section.particleCount; i++) {
-            for (let j = i + 1; j < section.particleCount; j++) {
-              const pos1 = [
-                positions[i * 3],
-                positions[i * 3 + 1],
-                positions[i * 3 + 2]
-              ];
-              const pos2 = [
-                positions[j * 3],
-                positions[j * 3 + 1],
-                positions[j * 3 + 2]
-              ];
-              const distance = Math.sqrt(
-                Math.pow(pos1[0] - pos2[0], 2) +
-                Math.pow(pos1[1] - pos2[1], 2) +
-                Math.pow(pos1[2] - pos2[2], 2)
-              );
-              if (distance < section.maxDistance) {
-                lines[lineIndex].geometry.attributes.position.array.set([
-                  pos1[0], pos1[1], pos1[2],
-                  pos2[0], pos2[1], pos2[2]
-                ]);
-                lines[lineIndex].geometry.attributes.position.needsUpdate = true;
-                lines[lineIndex].material.opacity = 0.2 * (1 - distance / section.maxDistance);
-              } else {
-                lines[lineIndex].material.opacity = 0;
-              }
-              lineIndex++;
-            }
-          }
-    
-          renderer.render(scene, camera);
-        }
-        animate();
-    
-        window.addEventListener('resize', () => {
-          renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-          camera.aspect = canvas.clientWidth / canvas.clientHeight;
-          camera.updateProjectionMatrix();
-        });
-      });
-    } catch (error) {
-      console.error('Section Particle Animation error:', error);
-    }
-  
     // Project Filtering
     try {
       const filterButtons = document.querySelectorAll('.filter-buttons button');
@@ -1157,6 +934,7 @@
     } catch (error) {
       console.error('Plotly Visualizations error:', error);
     }
+    
     // Horizontal Bar Chart for Skills
     try {
       const ctx = document.getElementById('hbarChart').getContext('2d');
@@ -1166,14 +944,14 @@
           labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'MongoDB', 'Plotly Dash'],
           datasets: [{
             label: 'Proficiency Level',
-            data: [90, 90, 75, 75, 60, 90], // Advanced: 90, Proficient: 75, Intermediate: 60
+            data: [90, 90, 75, 75, 60, 90],
             backgroundColor: [
-              'rgba(0, 247, 255, 0.6)', // Python
-              'rgba(0, 247, 255, 0.6)', // SQL
-              'rgba(255, 0, 122, 0.6)', // Scikit-learn
-              'rgba(255, 0, 122, 0.6)', // PyTorch
-              'rgba(165, 180, 252, 0.6)', // MongoDB
-              'rgba(0, 247, 255, 0.6)' // Plotly Dash
+              'rgba(0, 247, 255, 0.6)',
+              'rgba(0, 247, 255, 0.6)',
+              'rgba(255, 0, 122, 0.6)',
+              'rgba(255, 0, 122, 0.6)',
+              'rgba(165, 180, 252, 0.6)',
+              'rgba(0, 247, 255, 0.6)'
             ],
             borderColor: [
               '#00f7ff',
@@ -1187,12 +965,12 @@
           }]
         },
         options: {
-          indexAxis: 'y', // Makes the bar chart horizontal
+          indexAxis: 'y',
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
             legend: {
-              display: false // Hide legend as it's not needed
+              display: false
             },
             title: {
               display: true,
@@ -1245,6 +1023,7 @@
     } catch (error) {
       console.error('Horizontal Bar Chart error:', error);
     }
+    
     // Contact Form Validation
     try {
       const form = document.getElementById('contactForm');
