@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of Kodari Sravan, a passionate Data Scientist with expertise in Python, SQL, and machine learning.">
+  <meta name="keywords" content="data science, machine learning, python, portfolio, Kodari Sravan">
+  <meta name="author" content="Kodari Sravan">
   <title>Kodari Sravan - Data Scientist Portfolio</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,7 +18,6 @@
   <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <style>
-    /* Custom styles for particle background and other tweaks */
     canvas {
       position: fixed;
       top: 0;
@@ -61,6 +62,26 @@
     }
     .group:hover .group-hover\:from-cyan-500\/20 {
       background-image: linear-gradient(to right, rgba(6, 182, 212, 0.2), rgba(236, 72, 153, 0.2));
+    }
+    .animate-spin-slow {
+      animation: spin 20s linear infinite;
+    }
+    .animate-blink {
+      animation: blink 0.8s infinite;
+    }
+    .animate-bounce {
+      animation: bounce 2s infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
     }
   </style>
 </head>
@@ -177,11 +198,11 @@
         </div>
         <div class="flex items-center space-x-2">
           <i data-lucide="phone" class="w-5 h-5"></i>
-          <span>8374147548</span>
+          <span>+91 8374147548</span>
         </div>
       </div>
       <div class="mt-12">
-        <button onclick="document.getElementById('summary').scrollIntoView({ behavior: 'smooth' })" class="text-cyan-400 hover:text-pink-500 transition-colors animate-bounce">
+        <button onclick="document.getElementById('summary').scrollIntoView({ behavior: 'smooth' })" class="text-cyan-400 hover:text-pink-500 transition-colors animate-bounce" aria-label="Scroll to summary">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
@@ -269,7 +290,6 @@
             </div>
           </div>
         </div>
-        <!-- Repeat for other categories -->
         <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
           <div class="flex items-center mb-6">
             <div class="bg-gradient-to-r from-cyan-500 to-pink-500 p-3 rounded-lg mr-4">
@@ -307,7 +327,80 @@
             </div>
           </div>
         </div>
-        <!-- Add Data Visualization and Databases similarly -->
+        <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
+          <div class="flex items-center mb-6">
+            <div class="bg-gradient-to-r from-cyan-500 to-pink-500 p-3 rounded-lg mr-4">
+              <i data-lucide="bar-chart-3" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Data Visualization</h3>
+          </div>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-300 font-medium">Plotly</span>
+                <span class="text-cyan-400 font-bold">95%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-300 font-medium">Matplotlib</span>
+                <span class="text-cyan-400 font-bold">88%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-green-500 to-teal-500 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-300 font-medium">Seaborn</span>
+                <span class="text-cyan-400 font-bold">85%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-pink-500 to-rose-500 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
+          <div class="flex items-center mb-6">
+            <div class="bg-gradient-to-r from-cyan-500 to-pink-500 p-3 rounded-lg mr-4">
+              <i data-lucide="database" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Databases</h3>
+          </div>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-300 font-medium">MongoDB</span>
+                <span class="text-cyan-400 font-bold">82%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-green-600 to-green-400 rounded-full" style="width: 82%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-300 font-medium">SQLite</span>
+                <span class="text-cyan-400 font-bold">88%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-300 font-medium">PostgreSQL</span>
+                <span class="text-cyan-400 font-bold">78%</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-indigo-600 to-indigo-400 rounded-full" style="width: 78%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
         <h3 class="text-2xl font-bold text-center text-white mb-8">Tools & Technologies</h3>
@@ -319,7 +412,41 @@
               <p class="text-xs text-slate-400 mt-1">Interactive Computing</p>
             </div>
           </div>
-          <!-- Add other tools -->
+          <div class="text-center group">
+            <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
+              <div class="text-3xl mb-2">🔧</div>
+              <h4 class="text-white font-semibold">Git</h4>
+              <p class="text-xs text-slate-400 mt-1">Version Control</p>
+            </div>
+          </div>
+          <div class="text-center group">
+            <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
+              <div class="text-3xl mb-2">🐳</div>
+              <h4 class="text-white font-semibold">Docker</h4>
+              <p class="text-xs text-slate-400 mt-1">Containerization</p>
+            </div>
+          </div>
+          <div class="text-center group">
+            <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
+              <div class="text-3xl mb-2">☁️</div>
+              <h4 class="text-white font-semibold">AWS</h4>
+              <p class="text-xs text-slate-400 mt-1">Cloud Computing</p>
+            </div>
+          </div>
+          <div class="text-center group">
+            <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
+              <div class="text-3xl mb-2">📊</div>
+              <h4 class="text-white font-semibold">Dash</h4>
+              <p class="text-xs text-slate-400 mt-1">Web Applications</p>
+            </div>
+          </div>
+          <div class="text-center group">
+            <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
+              <div class="text-3xl mb-2">🐼</div>
+              <h4 class="text-white font-semibold">Pandas</h4>
+              <p class="text-xs text-slate-400 mt-1">Data Manipulation</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -362,7 +489,8 @@
                   </h5>
                   <div class="flex flex-wrap gap-2">
                     <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Computational Fluid Dynamics</span>
-                    <!-- Add other highlights -->
+                    <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Data Analysis</span>
+                    <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Research Methodology</span>
                   </div>
                 </div>
               </div>
@@ -372,7 +500,45 @@
             </div>
             <div class="flex-1 max-w-lg hidden md:block"></div>
           </div>
-          <!-- Add B.Tech. similarly -->
+          <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+            <div class="flex-1 max-w-lg">
+              <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all">
+                <div class="flex items-center mb-4">
+                  <span class="text-4xl mr-4">🏗️</span>
+                  <div>
+                    <h3 class="text-2xl font-bold text-white mb-1">B.Tech. in Civil Engineering</h3>
+                    <h4 class="text-lg text-cyan-400 font-semibold">Sreenidhi Institute of Science & Technology</h4>
+                  </div>
+                </div>
+                <div class="flex items-center text-slate-400 mb-4 space-x-4">
+                  <div class="flex items-center">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                    <span>2019 - 2023</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                    <span>Hyderabad, India</span>
+                  </div>
+                </div>
+                <p class="text-slate-300 mb-6 leading-relaxed">Comprehensive engineering education with strong foundation in mathematics, statistics, and analytical problem-solving.</p>
+                <div>
+                  <h5 class="text-white font-semibold mb-3 flex items-center">
+                    <i data-lucide="award" class="w-5 h-5 mr-2 text-pink-500"></i>
+                    Key Areas
+                  </h5>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Engineering Mathematics</span>
+                    <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Statistical Analysis</span>
+                    <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Project Management</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hidden md:flex items-center justify-center w-12 h-12 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-full shadow-lg z-10">
+              <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+            </div>
+            <div class="flex-1 max-w-lg hidden md:block"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -412,7 +578,9 @@
               <h4 class="text-white font-semibold mb-3">Key Skills</h4>
               <div class="flex flex-wrap gap-2">
                 <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Data Analysis</span>
-                <!-- Add other skills -->
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Machine Learning</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Statistical Modeling</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Python</span>
               </div>
             </div>
             <a href="https://www.credly.com/badges/8e07e8f3-8c91-4462-b350-0e0dc9caba5f" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-cyan-500 to-pink-500 text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg transition-all">
@@ -421,7 +589,80 @@
             </a>
           </div>
         </div>
-        <!-- Add other certifications -->
+        <div class="group bg-slate-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500">
+          <div class="bg-gradient-to-r from-cyan-500/20 to-pink-500/20 p-6 border-b border-slate-700/50">
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center">
+                <span class="text-3xl mr-4">🤖</span>
+                <div class="flex items-center">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>
+                  <span class="px-2 py-1 rounded-full text-xs font-semibold uppercase bg-green-400/20 text-green-400">verified</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Applied AI Lab: Deep Learning for Computer Vision</h3>
+            <div class="flex items-center text-slate-400 mb-2">
+              <span class="font-semibold text-pink-400">WorldQuant University</span>
+            </div>
+            <div class="flex items-center text-slate-400">
+              <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+              <span class="text-sm">April 2025</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-300 mb-6 leading-relaxed">Advanced deep learning specialization focusing on computer vision applications, neural networks, and image processing techniques.</p>
+            <div class="mb-6">
+              <h4 class="text-white font-semibold mb-3">Key Skills</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Deep Learning</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Computer Vision</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Neural Networks</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">PyTorch</span>
+              </div>
+            </div>
+            <a href="https://www.credly.com/badges/cfcd0d66-6e06-4797-899f-8989b851f672" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-cyan-500 to-pink-500 text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg transition-all">
+              <i data-lucide="external-link" class="w-5 h-5"></i>
+              <span>View Credential</span>
+            </a>
+          </div>
+        </div>
+        <div class="group bg-slate-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500">
+          <div class="bg-gradient-to-r from-cyan-500/20 to-pink-500/20 p-6 border-b border-slate-700/50">
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center">
+                <span class="text-3xl mr-4">🧠</span>
+                <div class="flex items-center">
+                  <i data-lucide="award" class="w-5 h-5 text-yellow-400 mr-2"></i>
+                  <span class="px-2 py-1 rounded-full text-xs font-semibold uppercase bg-yellow-400/20 text-yellow-400">completed</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Artificial Intelligence Course</h3>
+            <div class="flex items-center text-slate-400 mb-2">
+              <span class="font-semibold text-pink-400">Teachnook x Cognizance IIT Roorkee</span>
+            </div>
+            <div class="flex items-center text-slate-400">
+              <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+              <span class="text-sm">August 2024 - October 2024</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-300 mb-6 leading-relaxed">Intensive AI program covering fundamental and advanced concepts in artificial intelligence, machine learning algorithms, and practical implementations.</p>
+            <div class="mb-6">
+              <h4 class="text-white font-semibold mb-3">Key Skills</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Artificial Intelligence</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Machine Learning</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Algorithm Design</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Problem Solving</span>
+              </div>
+            </div>
+            <a href="https://github.com/SRAVAN-DSAI/My-Portfolio/raw/main/Artificial_Intelligence_August_2024_Batch-Kodari_Sravan.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-2 w-full bg-gradient-to-r from-cyan-500 to-pink-500 text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg transition-all">
+              <i data-lucide="external-link" class="w-5 h-5"></i>
+              <span>View Credential</span>
+            </a>
+          </div>
+        </div>
       </div>
       <div class="mt-16 bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -561,8 +802,9 @@
     canvas.height = window.innerHeight;
     const particles = [];
     const colors = ['#00f7ff', '#ff007a', '#8b5cf6', '#06b6d4'];
+    const maxParticles = window.innerWidth < 768 ? 50 : 100; // Reduce particles on mobile
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < maxParticles; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -676,6 +918,9 @@
         lucide.createIcons();
       });
     });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -697,8 +942,60 @@
 
     // Projects Data
     const projects = [
-      { id: 1, title: "Housing in Mexico", description: "Analyzed 21,000 properties to evaluate size vs. location impact on prices using correlation analysis and visualizations.", image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop", category: "ml", tags: ["Python", "Pandas", "Plotly", "Correlation Analysis"], metrics: { accuracy: "92%", dataPoints: "21K", model: "Linear Regression" } },
-      // Add other projects
+      {
+        id: 1,
+        title: "Housing in Mexico",
+        description: "Analyzed 21,000 properties to evaluate size vs. location impact on prices using correlation analysis and visualizations.",
+        image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
+        category: "ml",
+        tags: ["Python", "Pandas", "Plotly", "Correlation Analysis"],
+        metrics: { accuracy: "92%", dataPoints: "21K", model: "Linear Regression" }
+      },
+      {
+        id: 2,
+        title: "Buenos Aires Apartment Sales",
+        description: "Built a linear regression model for apartment price prediction with data pipelines to mitigate overfitting.",
+        image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
+        category: "ml",
+        tags: ["Scikit-learn", "Feature Engineering", "Cross-validation"],
+        metrics: { rmse: "0.15", r2: "0.87", features: "25" }
+      },
+      {
+        id: 3,
+        title: "Air Quality Nairobi",
+        description: "Developed an ARMA time-series model for particulate matter prediction using MongoDB data.",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
+        category: "ts",
+        tags: ["Time Series", "ARMA", "MongoDB", "Environmental Data"],
+        metrics: { mae: "12.3", forecast: "7 days", accuracy: "85%" }
+      },
+      {
+        id: 4,
+        title: "Nepal Earthquake Damage",
+        description: "Created logistic regression and decision tree models for building damage prediction.",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
+        category: "ml",
+        tags: ["Classification", "Decision Trees", "SQLite", "Risk Assessment"],
+        metrics: { precision: "0.89", recall: "0.82", f1: "0.85" }
+      },
+      {
+        id: 5,
+        title: "Customer Segmentation US",
+        description: "Applied K-Means clustering with PCA, visualized via an interactive Plotly Dash dashboard.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+        category: "ml",
+        tags: ["K-Means", "PCA", "Dash", "Clustering"],
+        metrics: { clusters: "5", silhouette: "0.72", variance: "85%" }
+      },
+      {
+        id: 6,
+        title: "Car Price Prediction DL",
+        description: "Developed a PyTorch MLP for car price prediction, optimized via grid search.",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
+        category: "dl",
+        tags: ["PyTorch", "Neural Networks", "Grid Search", "Deep Learning"],
+        metrics: { mae: "1.2K", r2: "0.91", epochs: "150" }
+      }
     ];
     const projectsGrid = document.getElementById('projects-grid');
     function renderProjects(filter = 'all') {
@@ -734,7 +1031,7 @@
         `;
         projectsGrid.appendChild(card);
         lucide.createIcons();
-        gsap.from(card, { opacity: 0, y: 50, duration: 0.6, delay: index * 0.1, scrollTrigger: { trigger: card, start: 'top 80%' } });
+        gsap.from(card, { opacity: 0, y: 50, duration: 0.6, delay: index * 0.1, scrollTrigger: { trigger: card, start: 'top 80%', once: true } });
       });
     }
     renderProjects();
@@ -748,7 +1045,7 @@
 
     // GSAP Animations
     gsap.utils.toArray('section').forEach(section => {
-      gsap.from(section.querySelectorAll('div, h2, p, img, button, a'), {
+      gsap.from(section.querySelectorAll('div, h2, h3, p, img, button, a'), {
         opacity: 0,
         y: 50,
         duration: 0.8,
@@ -800,7 +1097,7 @@
           body: JSON.stringify(formData)
         });
         if (response.ok) {
-          Toastify({ text: 'Message sent successfully! I\'ll get back to you soon.', duration: 3000, style: { background: '#22c55e' } }).showToast();
+          Toastify({ text: "Message sent successfully! I'll get back to you soon.", duration: 3000, style: { background: '#22c55e' } }).showToast();
           document.getElementById('contact-form').reset();
         } else {
           Toastify({ text: 'Failed to send message. Please try again.', duration: 3000, style: { background: '#ef4444' } }).showToast();
