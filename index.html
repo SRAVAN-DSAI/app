@@ -9,7 +9,6 @@
   <title>Kodari Sravan - Data Scientist</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.js"></script>
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLjh6bS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMC01Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHptMC0xMDQuOGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHoiLz48L3N2Zz4=">
   <style>
@@ -719,16 +718,17 @@
       transform: translateY(-10px); /* More significant lift */
     }
 
-    #skillsChart {
-      max-width: 600px; /* Wider chart */
-      margin: 3rem auto 0; /* More margin */
+    /* Removed #skillsChart styling as per user request */
+    /* #skillsChart {
+      max-width: 600px;
+      margin: 3rem auto 0;
       background: rgba(10, 14, 26, 0.4);
       backdrop-filter: blur(15px);
-      padding: 2.5rem; /* More padding */
+      padding: 2.5rem;
       border-radius: 1.5rem;
       border: 1px solid rgba(0, 247, 255, 0.25);
       box-shadow: 0 0 25px rgba(0, 247, 255, 0.2);
-    }
+    } */
 
     /* Education Section */
     #education .card {
@@ -946,11 +946,12 @@
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 1.5rem;
       }
-      #skillsChart {
-        height: 350px; /* Slightly shorter chart */
+      /* Removed #skillsChart responsive styling */
+      /* #skillsChart {
+        height: 350px;
         margin: 2rem auto;
         padding: 1.5rem;
-      }
+      } */
       #education {
         padding: 3rem 1rem;
         margin: 1rem auto;
@@ -1190,10 +1191,7 @@
       <div class="card"><i class="fas fa-brain"></i><p>Keras/TensorFlow</p><span class="tooltip">Intermediate: Deep Learning Frameworks</span></div>
       <div class="card"><i class="fas fa-terminal"></i><p>Linux</p><span class="tooltip">Basic: Command Line, System Navigation</span></div>
     </div>
-    <div id="skillsChart">
-      <canvas id="hbarChart"></canvas>
-    </div>
-  </section>
+    </section>
   
   <section id="education">
     <h2>Education</h2>
@@ -1421,7 +1419,8 @@
       console.error('Plotly Visualizations error:', error);
     }
     
-    // Horizontal Bar Chart for Skills
+    // Removed Horizontal Bar Chart for Skills as per user request
+    /*
     try {
       const ctx = document.getElementById('hbarChart').getContext('2d');
       new Chart(ctx, {
@@ -1430,7 +1429,7 @@
           labels: ['Python', 'SQL', 'Plotly Dash', 'Scikit-learn', 'PyTorch', 'Pandas', 'Matplotlib/Seaborn', 'MongoDB', 'Git', 'Keras/TensorFlow', 'AWS (S3, EC2)', 'Linux'],
           datasets: [{
             label: 'Proficiency Level',
-            data: [95, 90, 88, 85, 80, 92, 80, 70, 75, 70, 50, 40], // Updated proficiency levels
+            data: [95, 90, 88, 85, 80, 92, 80, 70, 75, 70, 50, 40],
             backgroundColor: [
               'rgba(0, 247, 255, 0.7)', 'rgba(0, 247, 255, 0.7)', 'rgba(0, 247, 255, 0.7)',
               'rgba(255, 0, 122, 0.7)', 'rgba(255, 0, 122, 0.7)', 'rgba(0, 247, 255, 0.7)',
@@ -1512,6 +1511,7 @@
     } catch (error) {
       console.error('Horizontal Bar Chart error:', error);
     }
+    */
     
     // Contact Form Validation
     try {
