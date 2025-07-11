@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHoiLz48L3N2Zz4=">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2MDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC.256 0 0 512 512z"></path></svg>">
   <style>
     /* Global Reset & Base Styles */
     * {
@@ -694,9 +694,45 @@
         font-size: 1.2em;
       }
     }
+
+    /* NEW: Background Images for Scroll Effect */
+    .background-image {
+      position: fixed; /* Fixed position relative to the viewport */
+      top: 0;
+      left: 0;
+      width: 100vw; /* Full viewport width */
+      height: 100vh; /* Full viewport height */
+      background-size: cover; /* Cover the entire area */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat */
+      opacity: 0.03; /* Very subtle transparency */
+      z-index: -1; /* Send to background */
+      pointer-events: none; /* Make them not interfere with mouse events */
+      transition: opacity 1s ease-in-out; /* Smooth fade-in/out */
+    }
+
+    /* Replace these placeholder URLs with your actual transparent image URLs */
+    .data-engineer-bg {
+      background-image: url('https://i.imgur.com/your_data_engineer_image.png'); /* Placeholder for Data Engineer workflow */
+      /* Initially visible, or set opacity to 0 and control via JS */
+    }
+
+    .data-scientist-bg {
+      background-image: url('https://i.imgur.com/your_data_scientist_image.png'); /* Placeholder for Data Scientist workflow */
+      opacity: 0; /* Initially hidden, controlled by JS */
+    }
+
+    .ai-ml-bg {
+      background-image: url('https://i.imgur.com/your_ai_ml_image.png'); /* Placeholder for AI/ML workflow */
+      opacity: 0; /* Initially hidden, controlled by JS */
+    }
   </style>
 </head>
 <body>
+  <div class="background-image data-engineer-bg"></div>
+  <div class="background-image data-scientist-bg"></div>
+  <div class="background-image ai-ml-bg"></div>
+  
   <nav>
     <div class="hamburger">
       <i class="fas fa-bars"></i>
@@ -1123,6 +1159,67 @@
       });
     } catch (error) {
       console.error('Back to Top button error:', error);
+    }
+
+    // NEW: Background Image Scroll Effect
+    try {
+      const dataEngineerBg = document.querySelector('.data-engineer-bg');
+      const dataScientistBg = document.querySelector('.data-scientist-bg');
+      const aiMlBg = document.querySelector('.ai-ml-bg');
+
+      // Define scroll thresholds for each image
+      // Adjust these values to control when each image becomes visible
+      const dataScientistThreshold = document.getElementById('projects').offsetTop - (window.innerHeight * 0.7); // Appears before projects
+      const aiMlThreshold = document.getElementById('skills').offsetTop - (window.innerHeight * 0.7); // Appears before skills
+      const contactThreshold = document.getElementById('contact').offsetTop - (window.innerHeight * 0.7); // To fade out previous image before contact
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Data Engineer background - visible at the top, fades out slightly
+        if (dataEngineerBg) {
+          if (scrollY < dataScientistThreshold) {
+            dataEngineerBg.style.opacity = 0.03; // Full opacity for this stage
+          } else if (scrollY >= dataScientistThreshold && scrollY < aiMlThreshold) {
+            // Fade out as data scientist image fades in
+            dataEngineerBg.style.opacity = Math.max(0, 0.03 - (scrollY - dataScientistThreshold) / (aiMlThreshold - dataScientistThreshold) * 0.03);
+          } else {
+            dataEngineerBg.style.opacity = 0; // Fully hidden
+          }
+        }
+
+        // Data Scientist background
+        if (dataScientistBg) {
+          if (scrollY >= dataScientistThreshold && scrollY < aiMlThreshold) {
+            // Fade in as data engineer image fades out
+            dataScientistBg.style.opacity = Math.min(0.03, (scrollY - dataScientistThreshold) / (aiMlThreshold - dataScientistThreshold) * 0.03);
+          } else if (scrollY >= aiMlThreshold && scrollY < contactThreshold) {
+            dataScientistBg.style.opacity = 0.03; // Full opacity for this stage
+          }
+          else {
+            dataScientistBg.style.opacity = 0; // Hidden outside its active range
+          }
+        }
+
+        // AI/ML background
+        if (aiMlBg) {
+          if (scrollY >= aiMlThreshold && scrollY < contactThreshold) {
+            // Fade in as data scientist image fades out
+            aiMlBg.style.opacity = Math.min(0.03, (scrollY - aiMlThreshold) / (contactThreshold - aiMlThreshold) * 0.03);
+          } else if (scrollY >= contactThreshold) {
+            dataScientistBg.style.opacity = 0; // Fade out data scientist before contact
+            aiMlBg.style.opacity = 0.03; // Keep AI/ML visible in contact section
+          } else {
+            aiMlBg.style.opacity = 0; // Hidden outside its active range
+          }
+        }
+      });
+
+      // Initialize opacity on page load in case user is already scrolled
+      window.dispatchEvent(new Event('scroll'));
+
+    } catch (error) {
+      console.error('Background image scroll effect error:', error);
     }
   </script>
 </body>
