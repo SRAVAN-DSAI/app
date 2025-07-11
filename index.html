@@ -1,983 +1,1142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Kodari Sravan, a passionate Data Scientist with expertise in Python, SQL, and machine learning.">
-    <meta name="keywords" content="data science, machine learning, python, portfolio, Kodari Sravan, SQL, PyTorch, Plotly, Scikit-learn">
-    <meta name="author" content="Kodari Sravan">
-    <title>Kodari Sravan - Data Scientist Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Kodari Sravan, a Data Scientist specializing in Machine Learning and Data Visualization">
+  <meta name="keywords" content="Data Science, Machine Learning, Python, Portfolio, Kodari Sravan">
+  <meta name="author" content="Kodari Sravan">
+  <title>Kodari Sravan - Data Scientist</title>
+  <!-- Google Fonts - Poppins for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js for skill visualization (horizontal bar chart) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.js"></script>
+  <!-- Plotly.js for interactive data visualizations in projects -->
+  <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
+  <!-- Custom SVG favicon for the browser tab -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2MDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLmbhLS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczE0LjYgMzguMiAwLTUyLjh6bS0xMDAtMTA0Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMtMTQuNiAzOC4yIDAgNTIuOGMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44em0wLTEwNC44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMtMTQuNiAzOC4yIDAgNTIuOGMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44eiIvPjwvc3ZnPg==">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://raw.githubusercontent.com">
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+      background: #0a0e1a; /* Dark background color */
+      color: #e0e7ff; /* Light text color */
+    }
 
+    body {
+      line-height: 1.6;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    /* Typography */
+    h1 { font-size: 4rem; font-weight: 700; }
+    h2 { font-size: 2.5rem; font-weight: 600; }
+    h3 { font-size: 1.5rem; font-weight: 500; }
+    p { font-size: 1rem; color: #a5b4fc; } /* Slightly muted light blue for paragraphs */
+    a { color: #00f7ff; text-decoration: none; transition: color 0.3s; } /* Vibrant blue for links */
+    a:hover { color: #ff007a; } /* Pink on hover */
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: rgba(10, 14, 26, 0.8); /* Semi-transparent dark background */
+      backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2rem;
+      z-index: 100; /* Ensure nav is on top */
+      transition: height 0.3s ease;
+    }
+    nav:hover {
+      height: 70px; /* Expand nav on hover */
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav a {
+      color: #e0e7ff;
+      font-size: 1rem;
+      margin: 0 1rem;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+    nav a i {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+    nav a span {
+      display: inline; /* Show text by default */
+    }
+    nav a:hover {
+      background: rgba(0, 247, 255, 0.1); /* Subtle background on hover */
+      color: #ff007a;
+      border-radius: 8px;
+    }
 
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    /* Hamburger Menu for Mobile */
+    .hamburger {
+      display: none; /* Hidden by default on desktop */
+      font-size: 1.5rem;
+      color: #e0e7ff;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 101; /* Ensure hamburger is above nav-links when active */
+    }
+    .nav-links.active {
+      transform: translateX(0); /* Slide in nav links on mobile */
+    }
 
-    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block; /* Show hamburger on mobile */
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+      }
+      nav {
+        height: 50px;
+        padding: 0 1rem;
+        justify-content: flex-start;
+      }
+      nav:hover {
+        height: 50px; /* Keep height consistent on mobile hover */
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh; /* Full height sidebar */
+        width: 200px;
+        background: rgba(10, 14, 26, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        transform: translateX(-100%); /* Hide off-screen */
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
+      }
+      nav a {
+        margin: 0.5rem 0;
+        padding: 1rem;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      nav a i {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+      }
+      nav a span {
+        font-size: 1rem;
+      }
+    }
 
-    <style>
-        /* Base styles for the particle canvas */
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            pointer-events: none; /* Allows clicks to pass through to elements beneath */
-        }
+    /* Hero Section - Main introduction */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(10, 14, 26, 0.4), rgba(30, 58, 138, 0.4)); /* Gradient background */
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 2rem;
+      margin: 0 auto;
+      max-width: 1200px; /* Max width for content */
+    }
+    .hero-content {
+      text-align: center;
+      z-index: 1;
+      animation: fadeIn 1.5s ease; /* Fade-in animation */
+      background: rgba(10, 14, 26, 0.1);
+      backdrop-filter: blur(10px); /* Glassmorphism effect */
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 247, 255, 0.15); /* Subtle border */
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.2); /* Glow effect */
+    }
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid #00f7ff; /* Vibrant border */
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.6); /* Stronger glow */
+      transition: transform 0.3s;
+    }
+    .profile-photo:hover {
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+    .hero h1 {
+      background: linear-gradient(90deg, #00f7ff, #ff007a); /* Gradient text */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7); /* Text glow */
+      font-size: 4rem;
+      font-weight: 700;
+    }
+    .hero h2 {
+      color: #e0e7ff;
+      font-weight: 400;
+      font-size: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+    .hero h2::after {
+      content: '|';
+      animation: blink 0.7s infinite; /* Typing cursor effect */
+      color: #00f7ff;
+    }
+    .hero a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      background: rgba(0, 247, 255, 0.2);
+      border: 1px solid #00f7ff;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s;
+      color: #e0e7ff;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+    }
+    .hero a:hover {
+      background: #00f7ff;
+      color: #0a0e1a;
+      transform: translateY(-3px); /* Lift effect */
+      box-shadow: 0 4px 12px rgba(0, 247, 255, 0.5);
+    }
+    .hero .hero-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .hero a.resume-btn {
+      background: rgba(255, 0, 122, 0.2); /* Pink background for resume */
+      border: 1px solid #ff007a;
+    }
+    .hero a.resume-btn:hover {
+      background: #ff007a;
+      color: #0a0e1a;
+      box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
+    }
+    .hero .contact-info {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .hero .contact-info p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #a5b4fc;
+      transition: color 0.3s;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+    }
+    .hero .contact-info p:hover {
+      color: #00f7ff;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1rem;
+      }
+      .hero h1 { font-size: 2.8rem; }
+      .hero h2 { font-size: 1.4rem; }
+      .profile-photo { width: 140px; height: 140px; }
+      .hero-content { padding: 1.5rem; }
+      .hero .hero-links {
+        flex-direction: column; /* Stack buttons on mobile */
+        gap: 0.75rem;
+      }
+      .hero .contact-info p { font-size: 0.8rem; }
+    }
 
-        /* Ensure sections are above the canvas */
-        section {
-            position: relative;
-            z-index: 10;
-        }
+    /* General Section Styling */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #00f7ff;
+      text-shadow: 0 0 8px rgba(0, 247, 255, 0.7);
+      z-index: 1;
+      position: relative;
+    }
 
-        /* Navigation active state styling */
-        .nav-active {
-            background-image: linear-gradient(to right, #06b6d4, #ec4899);
-            color: white;
-        }
+    /* Glassmorphism Card Style */
+    .card {
+      background: rgba(10, 14, 26, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 247, 255, 0.2);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.3);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      color: #ff007a;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px rgba(255, 0, 122, 0.5);
+    }
+    .card p {
+      color: #a5b4fc;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: rgba(0, 247, 255, 0.3);
+      border: 1px solid #00f7ff;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: #e0e7ff;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+    }
+    .card a:hover {
+      background: #00f7ff;
+      color: #0a0e1a;
+      text-shadow: none;
+    }
+    .plotly-container {
+      width: 100%;
+      height: 300px;
+      margin-top: 1rem;
+      z-index: 1;
+      position: relative;
+    }
 
-        /* Progress bar styling */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background-image: linear-gradient(to right, #06b6d4, #ec4899);
-            transform-origin: left;
-            z-index: 50; /* Ensure it's on top */
-        }
+    /* Project Grid and Filters */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      background: rgba(10, 14, 26, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1rem;
+      z-index: 1;
+      position: relative;
+    }
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      z-index: 1;
+      position: relative;
+    }
+    .filter-buttons button {
+      padding: 0.5rem 1.5rem;
+      background: rgba(0, 247, 255, 0.3);
+      border: 1px solid #00f7ff;
+      color: #e0e7ff;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+    }
+    .filter-buttons button:hover, .filter-buttons button.active {
+      background: #00f7ff;
+      color: #0a0e1a;
+      box-shadow: 0 4px 8px rgba(0, 247, 255, 0.5);
+      text-shadow: none;
+    }
 
-        /* Truncate text to 3 lines */
-        .truncate-3 {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      background: rgba(10, 14, 26, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1rem;
+      z-index: 1;
+      position: relative;
+    }
+    .skills-grid .card {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .skills-grid i {
+      font-size: 2.5rem;
+      color: #ff007a;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s;
+      text-shadow: 0 0 5px rgba(255, 0, 122, 0.5);
+    }
+    .skills-grid .card:hover i {
+      transform: scale(1.2);
+    }
+    .tooltip {
+      visibility: hidden;
+      background: rgba(0, 247, 255, 0.3);
+      color: #e0e7ff;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      position: absolute;
+      top: -40px; /* Position above icon */
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 1;
+      opacity: 0;
+      transition: all 0.3s;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+    }
+    .skills-grid .card:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, -5px); /* Show and slightly lift on hover */
+    }
+    #skills {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+      min-height: auto; /* Allow content to define height */
+    }
+    #skillsChart {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: rgba(10, 14, 26, 0.3);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1rem;
+      z-index: 1;
+      position: relative;
+      height: 400px; /* Fixed height for chart container */
+    }
 
-        /* Group hover effects for project/skill cards */
-        .group:hover .group-hover\:scale-110 {
-            transform: scale(1.1);
-        }
-        .group:hover .group-hover\:text-cyan-400 {
-            color: #06b6d4;
-        }
-        .group:hover .group-hover\:shadow-cyan-500\/20 {
-            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.2);
-        }
-        .group:hover .group-hover\:from-cyan-500\/20 {
-            background-image: linear-gradient(to right, rgba(6, 182, 212, 0.2), rgba(236, 72, 153, 0.2));
-        }
+    /* Education Section */
+    #education {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+    }
 
-        /* Animations */
-        .animate-spin-slow {
-            animation: spin 20s linear infinite;
-        }
-        .animate-blink {
-            animation: blink 0.8s infinite;
-        }
-        .animate-bounce {
-            animation: bounce 2s infinite;
-        }
+    /* Contact Form */
+    .contact-form .card {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-info {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .contact-info p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      background: rgba(10, 14, 26, 0.3);
+      border: 1px solid #00f7ff;
+      color: #e0e7ff;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.4);
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: #ff007a;
+      box-shadow: 0 0 8px rgba(255, 0, 122, 0.5);
+    }
+    .contact-form textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    .contact-form button {
+      padding: 0.75rem 2rem;
+      background: rgba(0, 247, 255, 0.3);
+      border: 1px solid #00f7ff;
+      color: #e0e7ff;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-shadow: 0 0 5px rgba(0, 247, 255, 0.5);
+    }
+    .contact-form button:hover {
+      background: #ff007a;
+      color: #e0e7ff;
+      box-shadow: 0 4px 12px rgba(255, 0, 122, 0.5);
+      text-shadow: none;
+    }
+    .contact-form .error {
+      color: #ff6b6b;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      display: none; /* Hidden by default */
+      text-shadow: 0 0 5px rgba(255, 107, 107, 0.4);
+    }
+    .contact-form .error.show {
+      display: block; /* Show on validation error */
+    }
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
-        }
-    </style>
+    /* Footer */
+    footer {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: rgba(10, 14, 26, 0.8);
+      backdrop-filter: blur(10px);
+      margin: 2rem auto;
+      max-width: 1200px;
+    }
+    footer p {
+      color: #a5b4fc;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      color: #00f7ff;
+      transition: all 0.3s;
+    }
+    .social-icons a:hover {
+      color: #ff007a;
+      transform: scale(1.2);
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #00f7ff;
+      color: #0a0e1a;
+      padding: 0.75rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none; /* Hidden by default */
+      z-index: 10;
+      transition: all 0.3s;
+    }
+    #backToTop:hover {
+      background: #ff007a;
+      color: #e0e7ff;
+      transform: scale(1.2);
+    }
+    #backToTop i {
+      font-size: 1.2rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      section {
+        padding: 3rem 1rem;
+        margin: 1rem auto;
+      }
+      .project-grid {
+        grid-template-columns: 1fr; /* Stack projects on mobile */
+      }
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+      #skills {
+        padding: 3rem 1rem;
+        margin: 1rem auto;
+        min-height: auto;
+      }
+      #skillsChart {
+        height: 400px;
+        margin: 1rem auto;
+      }
+      #education {
+        padding: 3rem 1rem;
+        margin: 1rem auto;
+      }
+      footer {
+        padding: 3rem 1rem;
+        margin: 1rem auto;
+      }
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 overflow-x-hidden antialiased">
-    <canvas id="particle-canvas" aria-hidden="true" role="presentation"></canvas>
-
-    <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-
-    <nav id="nav" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-700/50" aria-label="Main Navigation">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <div class="hidden md:flex items-center justify-center space-x-8">
-                <button class="nav-item flex items-center space-x-2 px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="hero" aria-label="Go to Home section">
-                    <i data-lucide="home" class="w-5 h-5" aria-hidden="true"></i>
-                    <span class="text-sm font-medium">Home</span>
-                </button>
-                <button class="nav-item flex items-center space-x-2 px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="summary" aria-label="Go to Summary section">
-                    <i data-lucide="user" class="w-5 h-5" aria-hidden="true"></i>
-                    <span class="text-sm font-medium">Summary</span>
-                </button>
-                <button class="nav-item flex items-center space-x-2 px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="projects" aria-label="Go to Projects section">
-                    <i data-lucide="code" class="w-5 h-5" aria-hidden="true"></i>
-                    <span class="text-sm font-medium">Projects</span>
-                </button>
-                <button class="nav-item flex items-center space-x-2 px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="skills" aria-label="Go to Skills section">
-                    <i data-lucide="settings" class="w-5 h-5" aria-hidden="true"></i>
-                    <span class="text-sm font-medium">Skills</span>
-                </button>
-                <button class="nav-item flex items-center space-x-2 px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="education" aria-label="Go to Education section">
-                    <i data-lucide="graduation-cap" class="w-5 h-5" aria-hidden="true"></i>
-                    <span class="text-sm font-medium">Education</span>
-                </button>
-                <button class="nav-item flex items-center space-x-2 px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="certifications" aria-label="Go to Certifications section">
-                    <i data-lucide="award" class="w-5 h-5" aria-hidden="true"></i>
-                    <span class="text-sm font-medium">Certifications</span>
-                </button>
-                <button class="nav-item flex items-center space-x-2 px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="contact" aria-label="Go to Contact section">
-                    <i data-lucide="message-square" class="w-5 h-5" aria-hidden="true"></i>
-                    <span class="text-sm font-medium">Contact</span>
-                </button>
-            </div>
-            <div class="md:hidden flex justify-between items-center">
-                <span class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">KS</span>
-                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white p-2" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-                    <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-slate-950/95 backdrop-blur-lg border-r border-slate-700/50 z-40 hidden" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-btn">
-        <div class="pt-20 px-4">
-            <button class="nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="hero" aria-label="Go to Home section">
-                <i data-lucide="home" class="w-5 h-5" aria-hidden="true"></i>
-                <span class="font-medium">Home</span>
-            </button>
-            <button class="nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="summary" aria-label="Go to Summary section">
-                <i data-lucide="user" class="w-5 h-5" aria-hidden="true"></i>
-                <span class="font-medium">Summary</span>
-            </button>
-            <button class="nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="projects" aria-label="Go to Projects section">
-                <i data-lucide="code" class="w-5 h-5" aria-hidden="true"></i>
-                <span class="font-medium">Projects</span>
-            </button>
-            <button class="nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="skills" aria-label="Go to Skills section">
-                <i data-lucide="settings" class="w-5 h-5" aria-hidden="true"></i>
-                <span class="font-medium">Skills</span>
-            </button>
-            <button class="nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="education" aria-label="Go to Education section">
-                <i data-lucide="graduation-cap" class="w-5 h-5" aria-hidden="true"></i>
-                <span class="font-medium">Education</span>
-            </button>
-            <button class="nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="certifications" aria-label="Go to Certifications section">
-                <i data-lucide="award" class="w-5 h-5" aria-hidden="true"></i>
-                <span class="font-medium">Certifications</span>
-            </button>
-            <button class="nav-item w-full flex items-center space-x-3 px-4 py-3 rounded-lg mb-2 text-slate-300 hover:text-white hover:bg-slate-800 transition-all" data-section="contact" aria-label="Go to Contact section">
-                <i data-lucide="message-square" class="w-5 h-5" aria-hidden="true"></i>
-                <span class="font-medium">Contact</span>
-            </button>
-        </div>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
     </div>
-    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-30 hidden" aria-hidden="true"></div>
+    <div class="nav-links">
+      <a href="#hero"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="#summary"><i class="fas fa-user"></i><span>Summary</span></a>
+      <a href="#projects"><i class="fas fa-code"></i><span>Projects</span></a>
+      <a href="#skills"><i class="fas fa-cogs"></i><span>Skills</span></a>
+      <a href="#education"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
+      <a href="#certifications"><i class="fas fa-certificate"></i><span>Certifications</span></a>
+      <a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    </div>
+  </nav>
 
-    <section id="hero" class="min-h-screen flex items-center justify-center px-4" aria-labelledby="hero-heading">
-        <div class="max-w-4xl mx-auto text-center z-10">
-            <div class="mb-8">
-                <div class="relative inline-block">
-                    <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan's profile picture" class="w-48 h-48 rounded-full object-cover border-4 border-cyan-400 shadow-2xl">
-                    <div class="absolute inset-0 rounded-full border-4 border-pink-500 animate-spin-slow" aria-hidden="true"></div>
-                </div>
-            </div>
-            <h1 id="hero-heading" class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">Kodari Sravan</h1>
-            <div class="text-2xl md:text-3xl text-slate-300 mb-8 h-12 flex items-center justify-center">
-                <span id="typing-text" aria-live="polite"></span>
-                <span class="ml-1 text-cyan-400 animate-blink" aria-hidden="true">|</span>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <a href="https://github.com/SRAVAN-DSAI/app/raw/main/Data_Scientist_Resume.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-pink-500 px-6 py-3 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all">
-                    <i data-lucide="download" class="w-5 h-5" aria-hidden="true"></i>
-                    <span>Download Resume</span>
-                </a>
-                <a href="https://www.linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 border-2 border-cyan-400 px-6 py-3 rounded-full text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-slate-950 transition-all">
-                    <i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i>
-                    <span>Connect on LinkedIn</span>
-                </a>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-slate-400">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
-                    <a href="mailto:sravankodari4@gmail.com" class="hover:text-white transition-colors">sravankodari4@gmail.com</a>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="phone" class="w-5 h-5" aria-hidden="true"></i>
-                    <a href="tel:+918374147548" class="hover:text-white transition-colors">+91 8374147548</a>
-                </div>
-            </div>
-            <div class="mt-12">
-                <button onclick="document.getElementById('summary').scrollIntoView({ behavior: 'smooth' })" class="text-cyan-400 hover:text-pink-500 transition-colors animate-bounce" aria-label="Scroll to professional summary section">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </button>
-            </div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan Profile" class="profile-photo">
+      <h1>Kodari Sravan</h1>
+      <h2 id="typing-text"></h2>
+      <div class="hero-links">
+        <a href="https://github.com/SRAVAN-DSAI/app/raw/main/Data_Scientist_Resume.pdf" target="_blank" rel="noopener noreferrer" class="external-link resume-btn">View Resume</a>
+        <a href="https://www.linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer" class="external-link">Connect on LinkedIn</a>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i>sravankodari4@gmail.com</p>
+          <p><i class="fas fa-phone"></i>8374147548</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="summary" class="py-20 px-4" aria-labelledby="summary-heading">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 id="summary-heading" class="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">Professional Summary</h2>
-                <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-                    <p class="text-lg leading-relaxed text-slate-300">
-                        Passionate Data Scientist with expertise in **Python**, **SQL**, and **machine learning**.
-                        Delivered impactful projects in predictive modeling and data visualization,
-                        leveraging tools like **Scikit-learn**, **PyTorch**, and **Plotly**. Experienced in building
-                        end-to-end ML pipelines and creating interactive dashboards for business intelligence.
-                    </p>
-                </div>
-            </div>
+  <!-- Summary Section -->
+  <section id="summary">
+    <h2>Summary</h2>
+    <div class="card">
+      <p>Passionate Data Scientist with expertise in Python, SQL, and machine learning. Delivered impactful projects in predictive modeling and data visualization, leveraging tools like Scikit-learn, PyTorch, and Plotly.</p>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="filter-buttons">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="ml">Machine Learning</button>
+      <button data-filter="dl">Deep Learning</button>
+      <button data-filter="data">Data Viz</button>
+    </div>
+    <div class="project-grid">
+      <!-- Project Card 1 -->
+      <div class="card" data-project="ml data">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Housing in Mexico">
+        <h3>Housing in Mexico</h3>
+        <p>Analyzed 21,000 properties to evaluate size vs. location impact on prices using correlation analysis and visualizations.</p>
+        <div id="plot1" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/housing-mexico" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 2 -->
+      <div class="card" data-project="ml">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" alt="Apartment Sales in Buenos Aires">
+        <h3>Apartment Sales in Buenos Aires</h3>
+        <p>Built a linear regression model for apartment price prediction with data pipelines to mitigate overfitting.</p>
+        <div id="plot2" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/apartment-sales" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 3 -->
+      <div class="card" data-project="ml">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Air Quality in Nairobi">
+        <h3>Air Quality in Nairobi</h3>
+        <p>Developed an ARMA time-series model for particulate matter prediction using MongoDB data.</p>
+        <div id="plot3" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/air-quality-nairobi" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 4 -->
+      <div class="card" data-project="ml">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa" alt="Earthquake Damage in Nepal">
+        <h3>Earthquake Damage in Nepal</h3>
+        <p>Created logistic regression and decision tree models for building damage prediction, analyzing SQLite data.</p>
+        <div id="plot4" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/earthquake-nepal" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 5 -->
+      <div class="card" data-project="ml">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Bankruptcy in Poland">
+        <h3>Bankruptcy in Poland</h3>
+        <p>Built random forest and gradient boosting models for bankruptcy prediction with resampling for imbalanced data.</p>
+        <div id="plot5" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/bankruptcy-poland" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 6 -->
+      <div class="card" data-project="ml data">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Customer Segmentation in the US">
+        <h3>Customer Segmentation in the US</h3>
+        <p>Applied K-Means clustering with PCA, visualized via an interactive Plotly Dash dashboard.</p>
+        <div id="plot6" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/customer-segmentation" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 7 -->
+      <div class="card" data-project="data">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="A/B Testing at WorldQuant University">
+        <h3>A/B Testing at WorldQuant University</h3>
+        <p>Conducted chi-square testing for email campaign impact using Python ETL classes.</p>
+        <div id="plot7" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/ab-testing" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 8 -->
+      <div class="card" data-project="ml">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Volatility Forecasting in India">
+        <h3>Volatility Forecasting in India</h3>
+        <p>Developed a GARCH model for asset volatility prediction using API-acquired stock data.</p>
+        <div id="plot8" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/volatility-forecasting" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 9 -->
+      <div class="card" data-project="ml">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa" alt="Heart Disease Prediction">
+        <h3>Heart Disease Prediction</h3>
+        <p>Built logistic regression and decision tree models, evaluated with precision, recall, and ROC-AUC.</p>
+        <div id="plot9" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/heart-disease" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 10 -->
+      <div class="card" data-project="ml data">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Iris Dataset Clustering">
+        <h3>Iris Dataset Clustering</h3>
+        <p>Applied K-Means clustering with PCA visualization, evaluated using Silhouette score.</p>
+        <div id="plot10" class="plotly-container"></div>
+       <!-- <a href="https://github.com/sravan-dsai/iris-clustering" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+      <!-- Project Card 11 -->
+      <div class="card" data-project="dl">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Car Price Prediction">
+        <h3>Car Price Prediction</h3>
+        <p>Developed a PyTorch MLP for car price prediction, optimized via grid search, evaluated with MAE, MSE, and R².</p>
+        <div id="plot11" class="plotly-container"></div>
+        <!-- <a href="https://github.com/sravan-dsai/car-price-prediction" target="_blank" rel="noopener noreferrer" class="external-link">View Project</a> -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="card"><i class="fab fa-python"></i><p>Python</p><span class="tooltip">Advanced</span></div>
+      <div class="card"><i class="fas fa-database"></i><p>SQL</p><span class="tooltip">Advanced</span></div>
+      <div class="card"><i class="fas fa-cogs"></i><p>Scikit-learn</p><span class="tooltip">Proficient</span></div>
+      <div class="card"><i class="fas fa-fire"></i><p>PyTorch</p><span class="tooltip">Proficient</span></div>
+      <div class="card"><i class="fas fa-server"></i><p>MongoDB</p><span class="tooltip">Intermediate</span></div>
+      <div class="card"><i class="fas fa-chart-line"></i><p>Plotly Dash</p><span class="tooltip">Advanced</span></div>
+    </div>
+    <div id="skillsChart">
+      <canvas id="hbarChart"></canvas>
+    </div>
+  </section>
+  
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>M.Tech., Aerospace Engineering</h3>
+      <p>2024-2026, Indian Institute of Technology Bombay</p>
+      <h3>B.Tech., Civil Engineering</h3>
+      <p>2019-2023, Sreenidhi Institute of Science & Technology</p>
+    </div>
+  </section>
+  
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="project-grid">
+      <div class="card">
+        <h3>Applied Data Science Lab</h3>
+        <p>WorldQuant University, 06/2025</p>
+        <a href="https://www.credly.com/badges/8e07e8f3-8c91-4462-b350-0e0dc9caba5f" target="_blank" rel="noopener noreferrer" class="external-link">View Credential</a>
+      </div>
+      <div class="card">
+        <h3>Applied AI Lab: Deep Learning for Computer Vision</h3>
+        <p>WorldQuant University, 04/2025</p>
+        <a href="https://www.credly.com/badges/cfcd0d66-6e06-4797-899f-8989b851f672" target="_blank" rel="noopener noreferrer" class="external-link">View Credential</a>
+      </div>
+      <div class="card">
+        <h3>AI Course</h3>
+        <p>Teachnook Collaboration with Cognizance IIT Roorkee, 08/2024 - 10/2024</p>
+        <a href="https://github.com/SRAVAN-DSAI/My-Portfolio/raw/main/Artificial_Intelligence_August_2024_Batch-Kodari_Sravan.pdf" target="_blank" rel="noopener noreferrer" class="external-link">View Credential</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-form">
+      <div class="card">
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i>8374147548</p>
+          <p><i class="fas fa-envelope"></i>sravankodari4@gmail.com</p>
         </div>
-    </section>
+        <form id="contactForm" action="https://formspree.io/f/mvgrzqoj" method="POST" target="_blank">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <p class="error" id="nameError">Name must be 2+ characters.</p>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <p class="error" id="emailError">Invalid email address.</p>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <p class="error" id="messageError">Message must be 10+ characters.</p>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects" class="py-20 px-4" aria-labelledby="projects-heading">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 id="projects-heading" class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">Featured Projects</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto">Explore my data science projects showcasing machine learning, deep learning, and data visualization expertise</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-4 mb-12" role="group" aria-label="Project filter buttons">
-                <button class="filter-btn px-6 py-3 rounded-full font-medium bg-gradient-to-r from-cyan-500 to-pink-500 text-white shadow-lg" data-filter="all" aria-pressed="true">All Projects (6)</button>
-                <button class="filter-btn px-6 py-3 rounded-full font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-all" data-filter="ml" aria-pressed="false">Machine Learning (4)</button>
-                <button class="filter-btn px-6 py-3 rounded-full font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-all" data-filter="dl" aria-pressed="false">Deep Learning (1)</button>
-                <button class="filter-btn px-6 py-3 rounded-full font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-all" data-filter="ts" aria-pressed="false">Time Series (1)</button>
-            </div>
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-        </div>
-    </section>
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2025 Kodari Sravan. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/sravan-dsai" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="external-link"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </footer>
 
-    <section id="skills" class="py-20 px-4" aria-labelledby="skills-heading">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 id="skills-heading" class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">Technical Skills</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto">Comprehensive expertise across the data science stack, from data collection to model deployment</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gradient-to-r from-cyan-500 to-pink-500 p-3 rounded-lg mr-4">
-                            <i data-lucide="code" class="w-6 h-6 text-white" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Programming Languages</h3>
-                    </div>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">Python</span>
-                                <span class="text-cyan-400 font-bold">95%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Python skill level">
-                                <div class="h-full bg-gradient-to-r from-blue-500 to-green-500 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">SQL</span>
-                                <span class="text-cyan-400 font-bold">90%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="SQL skill level">
-                                <div class="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">R</span>
-                                <span class="text-cyan-400 font-bold">75%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="R skill level">
-                                <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gradient-to-r from-cyan-500 to-pink-500 p-3 rounded-lg mr-4">
-                            <i data-lucide="brain" class="w-6 h-6 text-white" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Machine Learning</h3>
-                    </div>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">Scikit-learn</span>
-                                <span class="text-cyan-400 font-bold">90%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Scikit-learn skill level">
-                                <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">PyTorch</span>
-                                <span class="text-cyan-400 font-bold">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="PyTorch skill level">
-                                <div class="h-full bg-gradient-to-r from-red-500 to-orange-500 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">TensorFlow</span>
-                                <span class="text-cyan-400 font-bold">80%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="TensorFlow skill level">
-                                <div class="h-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gradient-to-r from-cyan-500 to-pink-500 p-3 rounded-lg mr-4">
-                            <i data-lucide="bar-chart-3" class="w-6 h-6 text-white" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Data Visualization</h3>
-                    </div>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">Plotly</span>
-                                <span class="text-cyan-400 font-bold">95%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Plotly skill level">
-                                <div class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">Matplotlib</span>
-                                <span class="text-cyan-400 font-bold">88%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Matplotlib skill level">
-                                <div class="h-full bg-gradient-to-r from-green-500 to-teal-500 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">Seaborn</span>
-                                <span class="text-cyan-400 font-bold">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Seaborn skill level">
-                                <div class="h-full bg-gradient-to-r from-pink-500 to-rose-500 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gradient-to-r from-cyan-500 to-pink-500 p-3 rounded-lg mr-4">
-                            <i data-lucide="database" class="w-6 h-6 text-white" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white">Databases</h3>
-                    </div>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">MongoDB</span>
-                                <span class="text-cyan-400 font-bold">82%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="MongoDB skill level">
-                                <div class="h-full bg-gradient-to-r from-green-600 to-green-400 rounded-full" style="width: 82%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">SQLite</span>
-                                <span class="text-cyan-400 font-bold">88%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="SQLite skill level">
-                                <div class="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-slate-300 font-medium">PostgreSQL</span>
-                                <span class="text-cyan-400 font-bold">78%</span>
-                            </div>
-                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="PostgreSQL skill level">
-                                <div class="h-full bg-gradient-to-r from-indigo-600 to-indigo-400 rounded-full" style="width: 78%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl">
-                <h3 class="text-2xl font-bold text-center text-white mb-8">Tools & Technologies</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                    <div class="text-center group">
-                        <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
-                            <div class="text-3xl mb-2" role="img" aria-label="Jupyter icon">🪐</div>
-                            <h4 class="text-white font-semibold">Jupyter</h4>
-                            <p class="text-xs text-slate-400 mt-1">Interactive Computing</p>
-                        </div>
-                    </div>
-                    <div class="text-center group">
-                        <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
-                            <div class="text-3xl mb-2" role="img" aria-label="Git icon">🔧</div>
-                            <h4 class="text-white font-semibold">Git</h4>
-                            <p class="text-xs text-slate-400 mt-1">Version Control</p>
-                        </div>
-                    </div>
-                    <div class="text-center group">
-                        <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
-                            <div class="text-3xl mb-2" role="img" aria-label="Docker icon">🐳</div>
-                            <h4 class="text-white font-semibold">Docker</h4>
-                            <p class="text-xs text-slate-400 mt-1">Containerization</p>
-                        </div>
-                    </div>
-                    <div class="text-center group">
-                        <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
-                            <div class="text-3xl mb-2" role="img" aria-label="Cloud icon">☁️</div>
-                            <h4 class="text-white font-semibold">AWS</h4>
-                            <p class="text-xs text-slate-400 mt-1">Cloud Computing</p>
-                        </div>
-                    </div>
-                    <div class="text-center group">
-                        <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
-                            <div class="text-3xl mb-2" role="img" aria-label="Chart icon">📊</div>
-                            <h4 class="text-white font-semibold">Dash</h4>
-                            <p class="text-xs text-slate-400 mt-1">Web Applications</p>
-                        </div>
-                    </div>
-                    <div class="text-center group">
-                        <div class="bg-slate-800 rounded-xl p-4 mb-3 group-hover:from-cyan-500/20 group-hover:to-pink-500/20 transition-all">
-                            <div class="text-3xl mb-2" role="img" aria-label="Pandas icon">🐼</div>
-                            <h4 class="text-white font-semibold">Pandas</h4>
-                            <p class="text-xs text-slate-400 mt-1">Data Manipulation</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Back to Top Button -->
+  <div id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></div>
 
-    <section id="education" class="py-20 px-4" aria-labelledby="education-heading">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 id="education-heading" class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">Education</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto">Academic foundation in engineering with strong emphasis on analytical and computational skills</p>
-            </div>
-            <div class="relative">
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-500 to-pink-500 rounded-full hidden md:block" aria-hidden="true"></div>
-                <div class="space-y-12">
-                    <div class="flex flex-col md:flex-row items-center gap-8">
-                        <div class="flex-1 max-w-lg">
-                            <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all">
-                                <div class="flex items-center mb-4">
-                                    <span class="text-4xl mr-4" role="img" aria-label="Rocket emoji">🚀</span>
-                                    <div>
-                                        <h3 class="text-2xl font-bold text-white mb-1">M.Tech. in Aerospace Engineering</h3>
-                                        <h4 class="text-lg text-cyan-400 font-semibold">Indian Institute of Technology Bombay</h4>
-                                    </div>
-                                </div>
-                                <div class="flex items-center text-slate-400 mb-4 space-x-4">
-                                    <div class="flex items-center">
-                                        <i data-lucide="calendar" class="w-4 h-4 mr-2" aria-hidden="true"></i>
-                                        <span>2024 - 2026</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i data-lucide="map-pin" class="w-4 h-4 mr-2" aria-hidden="true"></i>
-                                        <span>Mumbai, India</span>
-                                    </div>
-                                </div>
-                                <p class="text-slate-300 mb-6 leading-relaxed">Advanced studies in aerospace engineering with focus on computational methods and data analysis applications in aerospace systems.</p>
-                                <div>
-                                    <h5 class="text-white font-semibold mb-3 flex items-center">
-                                        <i data-lucide="award" class="w-5 h-5 mr-2 text-pink-500" aria-hidden="true"></i>
-                                        Key Areas
-                                    </h5>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Computational Fluid Dynamics</span>
-                                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Data Analysis</span>
-                                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Research Methodology</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex items-center justify-center w-12 h-12 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-full shadow-lg z-10" aria-hidden="true">
-                            <i data-lucide="graduation-cap" class="w-6 h-6 text-white" aria-hidden="true"></i>
-                        </div>
-                        <div class="flex-1 max-w-lg hidden md:block" aria-hidden="true"></div>
-                    </div>
-                    <div class="flex flex-col md:flex-row-reverse items-center gap-8">
-                        <div class="flex-1 max-w-lg">
-                            <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all">
-                                <div class="flex items-center mb-4">
-                                    <span class="text-4xl mr-4" role="img" aria-label="Building emoji">🏗️</span>
-                                    <div>
-                                        <h3 class="text-2xl font-bold text-white mb-1">B.Tech. in Civil Engineering</h3>
-                                        <h4 class="text-lg text-cyan-400 font-semibold">Sreenidhi Institute of Science & Technology</h4>
-                                    </div>
-                                </div>
-                                <div class="flex items-center text-slate-400 mb-4 space-x-4">
-                                    <div class="flex items-center">
-                                        <i data-lucide="calendar" class="w-4 h-4 mr-2" aria-hidden="true"></i>
-                                        <span>2019 - 2023</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i data-lucide="map-pin" class="w-4 h-4 mr-2" aria-hidden="true"></i>
-                                        <span>Hyderabad, India</span>
-                                    </div>
-                                </div>
-                                <p class="text-slate-300 mb-6 leading-relaxed">Comprehensive engineering education with strong foundation in mathematics, statistics, and analytical problem-solving.</p>
-                                <div>
-                                    <h5 class="text-white font-semibold mb-3 flex items-center">
-                                        <i data-lucide="award" class="w-5 h-5 mr-2 text-pink-500" aria-hidden="true"></i>
-                                        Key Areas
-                                    </h5>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Engineering Mathematics</span>
-                                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Statistical Analysis</span>
-                                        <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-600">Project Management</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex items-center justify-center w-12 h-12 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-full shadow-lg z-10" aria-hidden="true">
-                            <i data-lucide="graduation-cap" class="w-6 h-6 text-white" aria-hidden="true"></i>
-                        </div>
-                        <div class="flex-1 max-w-lg hidden md:block" aria-hidden="true"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="py-20 px-4" aria-labelledby="certifications-heading">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 id="certifications-heading" class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">Certifications & Achievements</h2>
-                <p class="text-xl text-slate-400 max-w-3xl mx-auto">Continuous learning and professional development in data science and artificial intelligence</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-                <div class="group bg-slate-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500">
-                    <div class="bg-gradient-to-r from-cyan-500/20 to-pink-500/20 p-6 border-b border-slate-700/50">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex items-center">
-                                <span class="text-3xl mr-4" role="img" aria-label="Graduation cap emoji">🎓</span>
-                                <div class="flex items-center">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2" aria-hidden="true"></i>
-                                    <span class="px-2 py-1 rounded-full text-xs font-semibold uppercase bg-green-400/20 text-green-400">verified</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Applied Data Science Lab</h3>
-                        <div class="flex items-center text-slate-400 mb-2">
-                            <span class="font-semibold text-pink-400">WorldQuant University</span>
-                        </div>
-                        <div class="flex items-center text-slate-400">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-2" aria-hidden="true"></i>
-                            <span class="text-sm">June 2025</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-slate-300 mb-6 leading-relaxed">Comprehensive data science program covering...</p>
-                        </div>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 px-4" aria-labelledby="contact-heading">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 id="contact-heading" class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">Get in Touch</h2>
-            <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-
-            <div class="bg-slate-900/50 backdrop-blur-lg rounded-2xl p-8 border border-slate-700/50 shadow-2xl mb-12">
-                <form class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-left text-slate-300 font-medium mb-2">Name</label>
-                        <input type="text" id="name" name="name" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:outline-none focus:border-cyan-500" placeholder="Your Name" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-left text-slate-300 font-medium mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:outline-none focus:border-cyan-500" placeholder="your.email@example.com" required>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-left text-slate-300 font-medium mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 focus:outline-none focus:border-cyan-500" placeholder="Your message..." required></textarea>
-                    </div>
-                    <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all">
-                        Send Message
-                    </button>
-                </form>
-            </div>
-
-            <div class="flex justify-center space-x-6 text-slate-400">
-                <a href="https://github.com/SRAVAN-DSAI" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center space-x-2">
-                    <i data-lucide="github" class="w-6 h-6" aria-hidden="true"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center space-x-2">
-                    <i data-lucide="linkedin" class="w-6 h-6" aria-hidden="true"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="mailto:sravankodari4@gmail.com" class="hover:text-white transition-colors flex items-center space-x-2">
-                    <i data-lucide="mail" class="w-6 h-6" aria-hidden="true"></i>
-                    <span>Email</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800 mt-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <p>&copy; <span id="current-year"></span> Kodari Sravan. All rights reserved.</p>
-            <p class="mt-2">Built with <span class="text-pink-500">&hearts;</span> and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline">Tailwind CSS</a>.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Dynamically update copyright year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('.nav-item').forEach(button => {
-            button.addEventListener('click', function() {
-                const sectionId = this.dataset.section;
-                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-                // Close mobile menu if open
-                document.getElementById('mobile-menu').classList.add('hidden');
-                document.getElementById('mobile-overlay').classList.add('hidden');
-                document.getElementById('mobile-menu-btn').setAttribute('aria-expanded', 'false');
-            });
+  <script>
+    // JavaScript for Hamburger Menu Toggle
+    try {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+      // Close menu when a link is clicked (for mobile)
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
         });
+      });
+    } catch (error) {
+      console.error('Hamburger Menu error:', error);
+    }
 
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileOverlay = document.getElementById('mobile-overlay');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden', !isHidden);
-            mobileOverlay.classList.toggle('hidden', !isHidden);
-            mobileMenuBtn.setAttribute('aria-expanded', isHidden);
-        });
-
-        mobileOverlay.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            mobileOverlay.classList.add('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        });
-
-        // Typing effect for Hero Section
-        const typingTextElement = document.getElementById('typing-text');
-        const phrases = ["Data Scientist", "ML Engineer", "Data Analyst"];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 150;
-        let deletingSpeed = 75;
-        let pauseTime = 1500;
-
-        function typeWriter() {
-            const currentPhrase = phrases[phraseIndex];
-            if (isDeleting) {
-                typingTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
+    // JavaScript for Typing Effect in Hero Section
+    try {
+      const typingText = document.getElementById('typing-text');
+      const phrases = [
+        'Data Scientist & AI-ML Enthusiast',
+        'Predictive Modeling and Data Visualization Specialist'
+      ];
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+    
+      function type() {
+        const currentPhrase = phrases[phraseIndex];
+        if (isDeleting) {
+          typingText.textContent = currentPhrase.substring(0, charIndex--);
+          if (charIndex < 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            setTimeout(type, 500); // Pause before typing next phrase
+          } else {
+            setTimeout(type, 50); // Typing speed
+          }
+        } else {
+          typingText.textContent = currentPhrase.substring(0, charIndex++);
+          if (charIndex > currentPhrase.length) {
+            isDeleting = true;
+            setTimeout(type, 2000); // Pause after typing a phrase
+          } else {
+            setTimeout(type, 100); // Typing speed
+          }
+        }
+      }
+      type(); // Start the typing effect
+    } catch (error) {
+      console.error('Typing Effect error:', error);
+    }
+    
+    // JavaScript for Project Filtering
+    try {
+      const filterButtons = document.querySelectorAll('.filter-buttons button');
+      const projectCards = document.querySelectorAll('.project-grid .card');
+    
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove 'active' class from all buttons and add to the clicked one
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          const filter = button.getAttribute('data-filter'); // Get the filter type
+    
+          projectCards.forEach(card => {
+            const projectType = card.getAttribute('data-project').split(' '); // Get project categories
+            if (filter === 'all' || projectType.includes(filter)) {
+              card.style.display = 'block'; // Show card
+              card.classList.add('fade-in'); // Add fade-in animation
             } else {
-                typingTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
+              card.style.display = 'none'; // Hide card
+              card.classList.remove('fade-in'); // Remove fade-in class if hidden
             }
-
-            let currentTypingSpeed = typingSpeed;
-            if (isDeleting) {
-                currentTypingSpeed = deletingSpeed;
-            }
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                currentTypingSpeed = pauseTime;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                currentTypingSpeed = 500; // Pause before typing next phrase
-            }
-
-            setTimeout(typeWriter, currentTypingSpeed);
-        }
-
-        document.addEventListener('DOMContentLoaded', typeWriter);
-
-        // Progress Bar on Scroll (GSAP)
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.to('#progress-bar', {
-            scrollTrigger: {
-                trigger: 'body',
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: true,
-                onUpdate: self => {
-                    const progress = self.progress * 100;
-                    document.getElementById('progress-bar').style.width = `${progress}%`;
-                    document.getElementById('progress-bar').setAttribute('aria-valuenow', Math.round(progress));
-                }
-            }
+          });
         });
-
-        // Navigation active state on scroll
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-item');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5 // Adjust as needed
-        };
-
-        const sectionObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navItems.forEach(item => {
-                        item.classList.remove('nav-active');
-                        item.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-pink-500', 'text-white', 'shadow-lg'); // Remove gradient on others
-                        item.classList.add('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700', 'hover:text-white'); // Add default on others
-                    });
-                    const currentNavItem = document.querySelector(`.nav-item[data-section="${entry.target.id}"]`);
-                    if (currentNavItem) {
-                        currentNavItem.classList.add('nav-active');
-                        currentNavItem.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-pink-500', 'text-white', 'shadow-lg'); // Add gradient
-                        currentNavItem.classList.remove('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700', 'hover:text-white'); // Remove default
-                    }
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-
-        // Particle background animation
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        const numParticles = 100;
-        const particleSize = 1.5;
-        const particleSpeed = 0.5;
-        const connectionDistance = 120; // Distance for lines
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            createParticles(); // Re-create particles on resize to avoid weird behavior
-        }
-
-        function createParticles() {
-            particles = [];
-            for (let i = 0; i < numParticles; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * particleSpeed,
-                    vy: (Math.random() - 0.5) * particleSpeed,
-                    color: `hsl(${Math.random() * 360}, 70%, 70%)`, // Random colors
-                    radius: Math.random() * particleSize + 0.5
-                });
+      });
+    } catch (error) {
+      console.error('Project Filtering error:', error);
+    }
+    
+    // JavaScript for Plotly Visualizations (Mock Data)
+    // This section generates interactive charts for each project card using Plotly.js
+    try {
+      const plots = [
+        { id: 'plot1', title: 'Housing Prices by Location', x: ['Mexico City', 'Guadalajara', 'Monterrey', 'Puebla', 'Tijuana'], y: [200, 300, 250, 400, 350], type: 'bar' },
+        { id: 'plot2', title: 'Apartment Price Predictions', x: [1, 2, 3, 4, 5], y: [150, 200, 180, 220, 210], type: 'scatter' },
+        { id: 'plot3', title: 'Air Quality Trends (PM2.5)', x: ['Jan', 'Feb', 'Mar', 'Apr', 'May'], y: [50, 60, 55, 70, 65], type: 'scatter' },
+        { id: 'plot4', title: 'Earthquake Damage Levels', x: ['Minor', 'Moderate', 'Major', 'Severe', 'Collapsed'], y: [0.2, 0.4, 0.3, 0.5, 0.4], type: 'bar' },
+        { id: 'plot5', title: 'Bankruptcy Risk Scores', x: [1, 2, 3, 4, 5], y: [0.1, 0.3, 0.2, 0.4, 0.3], type: 'scatter' },
+        { id: 'plot6', title: 'Customer Segments (PCA)', x: [1, 2, 3, 4, 5], y: [3, 2, 4, 1, 5], type: 'scatter' },
+        { id: 'plot7', title: 'A/B Testing Results (Conversion)', x: ['Control', 'Variant'], y: [100, 120], type: 'bar' },
+        { id: 'plot8', title: 'Volatility Forecast (GARCH)', x: [1, 2, 3, 4, 5], y: [0.05, 0.07, 0.06, 0.08, 0.07], type: 'scatter' },
+        { id: 'plot9', title: 'Heart Disease ROC Curve', x: [0, 0.2, 0.4, 0.6, 1], y: [0, 0.3, 0.7, 0.9, 1], type: 'scatter' },
+        { id: 'plot10', title: 'Iris Dataset Clusters', x: [1, 2, 3, 4, 5], y: [2, 3, 2, 4, 3], type: 'scatter' },
+        { id: 'plot11', title: 'Car Price Predictions (MAE)', x: [1, 2, 3, 4, 5], y: [15000, 20000, 18000, 22000, 21000], type: 'bar' }
+      ];
+    
+      plots.forEach(plot => {
+        Plotly.newPlot(plot.id, [{
+          x: plot.x,
+          y: plot.y,
+          type: plot.type,
+          mode: plot.type === 'scatter' ? 'lines+markers' : undefined,
+          marker: { color: '#00f7ff' }, // Marker color
+          line: { color: '#ff007a' }    // Line color
+        }], {
+          title: { text: plot.title, font: { color: '#e0e7ff' } }, // Chart title color
+          xaxis: { 
+            title: { text: 'X-axis Label', font: { color: '#e0e7ff' } }, // X-axis label color
+            gridcolor: 'rgba(255, 255, 255, 0.2)', // Grid line color
+            tickfont: { color: '#e0e7ff' } // Tick label color
+          },
+          yaxis: { 
+            title: { text: 'Y-axis Label', font: { color: '#e0e7ff' } }, // Y-axis label color
+            gridcolor: 'rgba(255, 255, 255, 0.2)', // Grid line color
+            tickfont: { color: '#e0e7ff' } // Tick label color
+          },
+          plot_bgcolor: 'transparent', // Transparent plot background
+          paper_bgcolor: 'transparent', // Transparent paper background
+          margin: { t: 50, b: 50, l: 50, r: 50 } // Chart margins
+        }, { responsive: true }); // Make charts responsive
+      });
+    } catch (error) {
+      console.error('Plotly Visualizations error:', error);
+    }
+    
+    // JavaScript for Horizontal Bar Chart for Skills (Chart.js)
+    try {
+      const ctx = document.getElementById('hbarChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Python', 'SQL', 'Scikit-learn', 'PyTorch', 'MongoDB', 'Plotly Dash'],
+          datasets: [{
+            label: 'Proficiency Level',
+            data: [90, 90, 75, 75, 60, 90], // Proficiency data
+            backgroundColor: [
+              'rgba(0, 247, 255, 0.6)', // Blue for higher proficiency
+              'rgba(0, 247, 255, 0.6)',
+              'rgba(255, 0, 122, 0.6)', // Pink for intermediate
+              'rgba(255, 0, 122, 0.6)',
+              'rgba(165, 180, 252, 0.6)', // Muted blue for lower
+              'rgba(0, 247, 255, 0.6)'
+            ],
+            borderColor: [
+              '#00f7ff',
+              '#00f7ff',
+              '#ff007a',
+              '#ff007a',
+              '#a5b4fc',
+              '#00f7ff'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          indexAxis: 'y', // Horizontal bar chart
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false // Hide legend
+            },
+            title: {
+              display: true,
+              text: 'Skills Proficiency',
+              color: '#e0e7ff', // Title color
+              font: {
+                size: 18,
+                family: "'Poppins', sans-serif"
+              }
             }
-        }
-
-        function drawParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-
-            for (let i = 0; i < numParticles; i++) {
-                const p1 = particles[i];
-
-                // Update position
-                p1.x += p1.vx;
-                p1.y += p1.vy;
-
-                // Bounce off edges
-                if (p1.x < 0 || p1.x > canvas.width) p1.vx *= -1;
-                if (p1.y < 0 || p1.y > canvas.height) p1.vy *= -1;
-
-                // Draw particle
-                ctx.beginPath();
-                ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-                ctx.fillStyle = p1.color;
-                ctx.fill();
-
-                // Draw connections to nearby particles
-                for (let j = i + 1; j < numParticles; j++) {
-                    const p2 = particles[j];
-                    const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-
-                    if (dist < connectionDistance) {
-                        ctx.beginPath();
-                        ctx.moveTo(p1.x, p1.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - (dist / connectionDistance)})`; // Fade lines
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                    }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100, // Max proficiency 100%
+              title: {
+                display: true,
+                text: 'Proficiency (%)',
+                color: '#e0e7ff',
+                font: {
+                  size: 14
                 }
-            }
-            requestAnimationFrame(drawParticles);
-        }
-
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas(); // Initial resize and particle creation
-        drawParticles(); // Start the animation loop
-
-        // Project filtering and data (example - replace with your actual project data)
-        const allProjects = [
-            {
-                id: 1,
-                title: "Customer Churn Prediction",
-                description: "Built a machine learning model to predict customer churn using historical data, achieving 90% accuracy with a Random Forest classifier. Implemented feature engineering and hyperparameter tuning.",
-                tags: ["ml", "python", "scikit-learn", "data-preprocessing"],
-                image: "https://via.placeholder.com/400x250/0f172a/06b6d4?text=Churn+Prediction",
-                github: "https://github.com/SRAVAN-DSAI/Churn-Prediction-Model",
-                live: "#"
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)' // Grid line color
+              },
+              ticks: {
+                color: '#e0e7ff' // Tick label color
+              }
             },
-            {
-                id: 2,
-                title: "Image Classification with CNNs",
-                description: "Developed a Convolutional Neural Network using PyTorch to classify images from the CIFAR-10 dataset, reaching an accuracy of 85%. Explored different architectures and regularization techniques.",
-                tags: ["dl", "python", "pytorch", "computer-vision"],
-                image: "https://via.placeholder.com/400x250/0f172a/ec4899?text=Image+Classification",
-                github: "https://github.com/SRAVAN-DSAI/Image-Classifier",
-                live: "#"
-            },
-            {
-                id: 3,
-                title: "Sales Forecasting Model",
-                description: "Implemented a time series forecasting model (ARIMA) to predict future sales based on historical data. Used Plotly for interactive visualizations of forecasts and actuals.",
-                tags: ["ts", "ml", "python", "plotly", "time-series"],
-                image: "https://via.placeholder.com/400x250/0f172a/06b6d4?text=Sales+Forecasting",
-                github: "https://github.com/SRAVAN-DSAI/Sales-Forecasting",
-                live: "#"
-            },
-            {
-                id: 4,
-                title: "Sentiment Analysis of Reviews",
-                description: "Applied Natural Language Processing (NLP) techniques to analyze customer reviews and classify them as positive, negative, or neutral. Utilized TF-IDF and Logistic Regression.",
-                tags: ["ml", "python", "nlp", "text-analysis"],
-                image: "https://via.placeholder.com/400x250/0f172a/ec4899?text=Sentiment+Analysis",
-                github: "https://github.com/SRAVAN-DSAI/Sentiment-Analysis",
-                live: "#"
-            },
-            {
-                id: 5,
-                title: "Credit Card Fraud Detection",
-                description: "Built a fraud detection system using anomaly detection algorithms (Isolation Forest, One-Class SVM) on imbalanced credit card transaction datasets.",
-                tags: ["ml", "python", "anomaly-detection", "imbalanced-data"],
-                image: "https://via.placeholder.com/400x250/0f172a/06b6d4?text=Fraud+Detection",
-                github: "https://github.com/SRAVAN-DSAI/Fraud-Detection",
-                live: "#"
-            },
-            {
-                id: 6,
-                title: "House Price Prediction",
-                description: "Developed a regression model to predict house prices based on various features like area, number of bedrooms, and location using linear regression and gradient boosting.",
-                tags: ["ml", "python", "regression", "data-visualization"],
-                image: "https://via.placeholder.com/400x250/0f172a/ec4899?text=House+Prices",
-                github: "https://github.com/SRAVAN-DSAI/House-Price-Prediction",
-                live: "#"
-            }
-        ];
-
-        function renderProjects(projectsToRender) {
-            const projectsGrid = document.getElementById('projects-grid');
-            projectsGrid.innerHTML = ''; // Clear existing projects
-
-            projectsToRender.forEach(project => {
-                const projectCard = `
-                    <div class="group bg-slate-900/50 backdrop-blur-lg rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 transform group-hover:scale-105">
-                        <img src="${project.image}" alt="Project image for ${project.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">${project.title}</h3>
-                            <p class="text-slate-300 text-sm truncate-3 mb-4">${project.description}</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                ${project.tags.map(tag => `<span class="px-2 py-1 bg-slate-800 text-slate-400 rounded-full text-xs font-medium">${tag}</span>`).join('')}
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white flex items-center space-x-1 transition-colors">
-                                    <i data-lucide="github" class="w-4 h-4"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                ${project.live ? `<a href="${project.live}" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white flex items-center space-x-1 transition-colors">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i>
-                                    <span>Live Demo</span>
-                                </a>` : ''}
-                            </div>
-                        </div>
-                    </div>
-                `;
-                projectsGrid.insertAdjacentHTML('beforeend', projectCard);
-            });
-            lucide.createIcons(); // Re-initialize icons for new content
-        }
-
-        // Project filter functionality
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-pink-500', 'text-white', 'shadow-lg');
-                    btn.classList.add('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700', 'hover:text-white');
-                    btn.setAttribute('aria-pressed', 'false');
-                });
-
-                this.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-pink-500', 'text-white', 'shadow-lg');
-                this.classList.remove('bg-slate-800', 'text-slate-300', 'hover:bg-slate-700', 'hover:text-white');
-                this.setAttribute('aria-pressed', 'true');
-
-
-                const filter = this.dataset.filter;
-                if (filter === 'all') {
-                    renderProjects(allProjects);
-                } else {
-                    const filteredProjects = allProjects.filter(project => project.tags.includes(filter));
-                    renderProjects(filteredProjects);
+            y: {
+              title: {
+                display: true,
+                text: 'Skills',
+                color: '#e0e7ff',
+                font: {
+                  size: 14
                 }
-            });
-        });
-
-        // Initial render of all projects
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProjects(allProjects);
-        });
-
-        // Toastify for contact form (example, you'll need a backend for actual submission)
-        const contactForm = document.querySelector('#contact form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                Toastify({
-                    text: "Message Sent! (Backend integration required for actual delivery)",
-                    duration: 3000,
-                    newWindow: true,
-                    close: true,
-                    gravity: "top", // `top` or `bottom`
-                    position: "right", // `left`, `center` or `right`
-                    stopOnFocus: true, // Prevents dismissing on hover
-                    style: {
-                        background: "linear-gradient(to right, #06b6d4, #ec4899)",
-                    },
-                    onClick: function(){} // Callback after click
-                }).showToast();
-                this.reset(); // Clear form fields
-            });
+              },
+              grid: {
+                color: 'rgba(255, 255, 255, 0.2)' // Grid line color
+              },
+              ticks: {
+                color: '#e0e7ff' // Tick label color
+              }
+            }
+          }
         }
-    </script>
+      });
+    } catch (error) {
+      console.error('Horizontal Bar Chart error:', error);
+    }
+    
+    // JavaScript for Contact Form Validation
+    try {
+      const form = document.getElementById('contactForm');
+      const nameInput = form.querySelector('input[name="name"]');
+      const emailInput = form.querySelector('input[name="email"]');
+      const messageInput = form.querySelector('textarea[name="message"]');
+      const nameError = document.getElementById('nameError');
+      const emailError = document.getElementById('emailError');
+      const messageError = document.getElementById('messageError');
+    
+      form.addEventListener('submit', (e) => {
+        let valid = true;
+    
+        // Name validation: minimum 2 characters
+        if (nameInput.value.length < 2) {
+          nameError.classList.add('show');
+          valid = false;
+        } else {
+          nameError.classList.remove('show');
+        }
+    
+        // Email validation: basic regex pattern
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value)) {
+          emailError.classList.add('show');
+          valid = false;
+        } else {
+          emailError.classList.remove('show');
+        }
+    
+        // Message validation: minimum 10 characters
+        if (messageInput.value.length < 10) {
+          messageError.classList.add('show');
+          valid = false;
+        } else {
+          messageError.classList.remove('show');
+        }
+    
+        if (!valid) {
+          e.preventDefault(); // Prevent form submission if validation fails
+        }
+      });
+    } catch (error) {
+      console.error('Contact Form Validation error:', error);
+    }
+
+    // JavaScript for Back to Top button functionality
+    try {
+      const backToTopButton = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Show button after scrolling 300px down
+          backToTopButton.style.display = 'block';
+        } else {
+          backToTopButton.style.display = 'none';
+        }
+      });
+
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' // Smooth scroll to top
+        });
+      });
+    } catch (error) {
+      console.error('Back to Top button error:', error);
+    }
+  </script>
 </body>
 </html>
