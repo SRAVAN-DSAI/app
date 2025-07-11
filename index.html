@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwcy0xNC42LTM4LjIgMC01Mi44YzE0LjYtMTQuNiAzOC4yLTE0LjYgNTIuOCAwczE0LjYgMzguMiAwIDUyLjh6bS0xMDAgMTA0YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczE0LjYgMzguMiAwLTUyLjh6bS0xMDAtMTA0Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMtMTQuNiAzOC4yIDAgNTIuOGMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44em0wLTEwNC44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMtMTQuNiAzOC4yIDAgNTIuOGMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44eiIvPjxzL3N2Zz4=">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMCA1Mi44YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjh6Ii8+PC9zdmc+">
   <style>
     /* Reset and Base Styles */
     * {
@@ -27,9 +27,9 @@
     }
 
     body {
-      line-height: 1.6;
+      line-height: 1.7; /* Slightly more line height for readability */
       overflow-x: hidden;
-      position: relative; /* For background pattern */
+      position: relative;
     }
 
     body::before {
@@ -39,7 +39,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300f7ff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5zM6 0H5L0 5V6z'/%3E%3C/g%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300f7ff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5zM6 0H5L0 5V6z'/%3E%3C/g%3E%3C/svg%3E");
       opacity: 0.1;
       z-index: -1;
     }
@@ -48,6 +48,7 @@
       font-family: 'Merriweather', serif;
       font-size: 4rem;
       font-weight: 700;
+      color: #e0e7ff; /* Primary color for headings */
     }
 
     h2 {
@@ -57,7 +58,8 @@
       position: relative;
       padding-bottom: 0.5rem;
       margin-bottom: 3rem;
-      display: inline-block; /* To make underline fit content */
+      display: inline-block;
+      color: #00f7ff; /* Accent color for section titles */
     }
 
     h2::after {
@@ -66,7 +68,7 @@
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      width: 60px;
+      width: 80px; /* Slightly wider underline */
       height: 4px;
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       border-radius: 2px;
@@ -75,21 +77,24 @@
     h3 {
       font-size: 1.75rem;
       font-weight: 600;
+      color: #e0e7ff;
     }
 
     p {
       font-size: 1.05rem;
       color: #a5b4fc;
+      text-shadow: none; /* Removed text shadow for cleaner look */
     }
 
     a {
       color: #00f7ff;
       text-decoration: none;
-      transition: color 0.3s;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     a:hover {
       color: #ff007a;
+      transform: translateY(-2px); /* Subtle lift on hover */
     }
 
     /* Navigation */
@@ -99,19 +104,19 @@
       left: 0;
       width: 100%;
       height: 50px;
-      background: rgba(10, 14, 26, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(10, 14, 26, 0.85); /* Slightly less opaque */
+      backdrop-filter: blur(12px); /* Increased blur */
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 0 2rem;
       z-index: 100;
       transition: height 0.3s ease;
-      box-shadow: 0 2px 15px rgba(0, 247, 255, 0.15); /* Slightly stronger shadow */
+      box-shadow: 0 2px 10px rgba(0, 247, 255, 0.1); /* Lighter shadow */
     }
 
     nav:hover {
-      height: 70px;
+      height: 65px; /* Slightly less hover height increase */
     }
 
     .nav-links {
@@ -127,11 +132,11 @@
       display: flex;
       align-items: center;
       padding: 0.5rem 1rem;
-      opacity: 0.8;
+      opacity: 0.9;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s ease;
-      border-radius: 8px;
+      transition: all 0.3s ease;
+      border-radius: 6px; /* Slightly smaller radius */
     }
 
     nav a i {
@@ -162,9 +167,9 @@
 
     nav a:hover {
       color: #ff007a;
-      background: rgba(0, 247, 255, 0.08); /* Lighter hover effect, slightly more visible */
+      background: rgba(0, 247, 255, 0.05); /* Very subtle hover effect */
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 247, 255, 0.2); /* Subtle shadow on hover */
+      box-shadow: 0 2px 8px rgba(0, 247, 255, 0.1); /* Lighter shadow on hover */
     }
 
     /* Hamburger Menu */
@@ -184,7 +189,7 @@
 
     .nav-links.active {
       transform: translateX(0);
-      box-shadow: 4px 0 20px rgba(0, 247, 255, 0.25); /* Stronger shadow for open menu */
+      box-shadow: 4px 0 15px rgba(0, 247, 255, 0.15); /* Lighter shadow for open menu */
     }
 
     @media (max-width: 768px) {
@@ -211,7 +216,7 @@
         left: 0;
         height: 100vh;
         width: 250px;
-        background: rgba(10, 14, 26, 0.98);
+        background: rgba(10, 14, 26, 0.95); /* Slightly less opaque */
         backdrop-filter: blur(15px);
         flex-direction: column;
         justify-content: flex-start;
@@ -219,12 +224,12 @@
         transform: translateX(-100%);
         transition: transform 0.4s ease-in-out;
         z-index: 100;
-        border-right: 1px solid rgba(0, 247, 255, 0.25); /* Slightly stronger border */
+        border-right: 1px solid rgba(0, 247, 255, 0.15); /* Lighter border */
       }
 
       nav a {
         margin: 0.75rem 0;
-        padding: 1.2rem;
+        padding: 1rem; /* Slightly smaller padding for mobile */
         font-size: 1.1rem;
         width: 100%;
         justify-content: flex-start;
@@ -253,15 +258,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at top left, rgba(0, 247, 255, 0.08), transparent 70%),
-                  radial-gradient(circle at bottom right, rgba(255, 0, 122, 0.08), transparent 70%);
+      background: radial-gradient(circle at top left, rgba(0, 247, 255, 0.05), transparent 70%), /* Less opaque */
+                  radial-gradient(circle at bottom right, rgba(255, 0, 122, 0.05), transparent 70%);
       position: relative;
       overflow: hidden;
       padding: 5rem 2rem;
       margin: 0 auto;
       max-width: 1200px;
-      border-radius: 1.5rem; /* Larger radius for hero */
-      box-shadow: 0 0 40px rgba(0, 247, 255, 0.15); /* Slightly stronger shadow */
+      border-radius: 1.5rem;
+      box-shadow: 0 0 30px rgba(0, 247, 255, 0.1); /* Lighter shadow */
       margin-top: 60px;
     }
 
@@ -269,12 +274,12 @@
       text-align: center;
       z-index: 1;
       animation: fadeIn 1.5s ease;
-      background: rgba(10, 14, 26, 0.25); /* Slightly more opaque glass */
-      backdrop-filter: blur(15px); /* Increased blur for more depth */
-      padding: 3.5rem; /* More padding */
-      border-radius: 1.75rem; /* Larger radius */
-      border: 1px solid rgba(0, 247, 255, 0.3); /* Stronger border */
-      box-shadow: 0 0 40px rgba(0, 247, 255, 0.4); /* Stronger shadow */
+      background: rgba(10, 14, 26, 0.2); /* Less opaque glass */
+      backdrop-filter: blur(10px); /* Slightly less blur */
+      padding: 3rem; /* Slightly less padding */
+      border-radius: 1.5rem;
+      border: 1px solid rgba(0, 247, 255, 0.2); /* Lighter border */
+      box-shadow: 0 0 30px rgba(0, 247, 255, 0.3); /* Lighter shadow */
       position: relative;
       overflow: hidden;
     }
@@ -286,11 +291,11 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(0, 247, 255, 0.15), transparent 50%), /* Slightly more visible gradient */
-                  radial-gradient(circle, rgba(255, 0, 122, 0.15), transparent 50%);
+      background: radial-gradient(circle, rgba(0, 247, 255, 0.1), transparent 50%), /* Less opaque */
+                  radial-gradient(circle, rgba(255, 0, 122, 0.1), transparent 50%);
       animation: rotateBg 20s linear infinite;
       z-index: -1;
-      opacity: 0.6; /* Slightly more opaque */
+      opacity: 0.5; /* Less opaque */
     }
 
     @keyframes rotateBg {
@@ -308,34 +313,34 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 2rem;
-      border: 5px solid #00f7ff;
-      box-shadow: 0 0 25px rgba(0, 247, 255, 0.9); /* Stronger glow */
+      border: 4px solid #00f7ff; /* Slightly thinner border */
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.7); /* Lighter glow */
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .profile-photo:hover {
-      transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 0 35px rgba(0, 247, 255, 1), 0 0 50px rgba(255, 0, 122, 0.6); /* Dual glow */
+      transform: scale(1.03) rotate(1deg); /* Less pronounced effect */
+      box-shadow: 0 0 30px rgba(0, 247, 255, 0.8), 0 0 40px rgba(255, 0, 122, 0.5); /* Lighter dual glow */
     }
 
     .hero h1 {
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 15px rgba(0, 247, 255, 0.9); /* Stronger shadow */
-      font-size: 4.5rem;
-      letter-spacing: 2px;
+      margin-bottom: 1rem; /* Slightly less margin */
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7); /* Lighter shadow */
+      font-size: 4rem; /* Slightly smaller font */
+      letter-spacing: 1px;
     }
 
     .hero h2 {
       color: #e0e7ff;
       font-weight: 500;
-      font-size: 2rem;
+      font-size: 1.8rem; /* Slightly smaller font */
       position: relative;
       overflow: hidden;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Stronger shadow */
-      margin-bottom: 2.5rem;
+      text-shadow: none; /* Removed text shadow */
+      margin-bottom: 2rem; /* Slightly less margin */
     }
 
     .hero h2::after {
@@ -349,21 +354,21 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
+      gap: 1.5rem; /* Slightly less gap */
+      margin-top: 2.5rem; /* Slightly less margin */
       flex-wrap: wrap;
     }
 
     .hero .hero-links a {
       display: inline-block;
-      padding: 0.9rem 2.5rem;
-      background: rgba(0, 247, 255, 0.2);
+      padding: 0.8rem 2.2rem; /* Slightly smaller padding */
+      background: rgba(0, 247, 255, 0.15); /* Less opaque */
       border: 1px solid #00f7ff;
       border-radius: 50px;
       font-weight: 600;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
       color: #e0e7ff;
-      text-shadow: 0 0 8px rgba(0, 247, 255, 0.7); /* Stronger shadow */
+      text-shadow: none; /* Removed text shadow */
       position: relative;
       overflow: hidden;
     }
@@ -375,8 +380,8 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent); /* Slightly more visible shine */
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Less visible shine */
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .hero .hero-links a:hover::before {
@@ -386,49 +391,47 @@
     .hero .hero-links a:hover {
       background: #00f7ff;
       color: #0a0e1a;
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 247, 255, 0.7); /* Stronger shadow */
+      transform: translateY(-3px); /* Less pronounced lift */
+      box-shadow: 0 5px 15px rgba(0, 247, 255, 0.5); /* Lighter shadow */
       text-shadow: none;
     }
 
     .hero a.resume-btn {
-      background: rgba(255, 0, 122, 0.2);
+      background: rgba(255, 0, 122, 0.15); /* Less opaque */
       border: 1px solid #ff007a;
-      text-shadow: 0 0 8px rgba(255, 0, 122, 0.7);
     }
 
     .hero a.resume-btn:hover {
       background: #ff007a;
       color: #0a0e1a;
-      box-shadow: 0 8px 25px rgba(255, 0, 122, 0.7);
-      text-shadow: none;
+      box-shadow: 0 5px 15px rgba(255, 0, 122, 0.5); /* Lighter shadow */
     }
 
     .hero .contact-info {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 1.5rem; /* Slightly less margin */
     }
 
     .hero .contact-info p {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.8rem;
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
+      gap: 0.6rem; /* Slightly less gap */
+      margin-bottom: 0.6rem; /* Slightly less margin */
+      font-size: 0.95rem; /* Slightly smaller font */
       color: #a5b4fc;
       transition: color 0.3s, transform 0.3s;
-      text-shadow: 0 0 6px rgba(0, 247, 255, 0.6); /* Stronger shadow */
+      text-shadow: none; /* Removed text shadow */
     }
 
     .hero .contact-info p i {
-      font-size: 1.3rem;
+      font-size: 1.2rem; /* Slightly smaller icon */
       color: #ff007a;
     }
 
     .hero .contact-info p:hover {
       color: #00f7ff;
-      transform: translateX(5px);
+      transform: translateX(3px); /* Less pronounced lift */
     }
 
     @media (max-width: 768px) {
@@ -485,123 +488,123 @@
       margin: 2rem auto;
       position: relative;
       overflow: hidden;
-      background: rgba(10, 14, 26, 0.35); /* Slightly more opaque background for sections */
-      backdrop-filter: blur(12px); /* Increased blur */
-      border-radius: 1.75rem; /* Consistent large radius */
-      border: 1px solid rgba(0, 247, 255, 0.2); /* Slightly stronger border */
-      box-shadow: 0 0 30px rgba(0, 247, 255, 0.15); /* Stronger shadow */
+      background: rgba(10, 14, 26, 0.25); /* Less opaque background for sections */
+      backdrop-filter: blur(10px); /* Slightly less blur */
+      border-radius: 1.5rem;
+      border: 1px solid rgba(0, 247, 255, 0.15); /* Lighter border */
+      box-shadow: 0 0 25px rgba(0, 247, 255, 0.1); /* Lighter shadow */
     }
 
     section h2 {
       text-align: center;
       margin-bottom: 3rem;
       color: #00f7ff;
-      text-shadow: 0 0 10px rgba(0, 247, 255, 0.9); /* Stronger shadow */
+      text-shadow: none; /* Removed text shadow */
       z-index: 1;
       position: relative;
     }
 
     /* Glassmorphism Cards */
     .card {
-      background: rgba(10, 14, 26, 0.45); /* Slightly more opaque */
-      backdrop-filter: blur(18px); /* Increased blur */
-      border: 1px solid rgba(0, 247, 255, 0.3); /* Stronger border */
-      border-radius: 1.5rem; /* Consistent radius */
-      padding: 2.5rem; /* More padding */
-      transition: all 0.4s ease;
+      background: rgba(10, 14, 26, 0.35); /* Less opaque */
+      backdrop-filter: blur(15px); /* Less blur */
+      border: 1px solid rgba(0, 247, 255, 0.2); /* Lighter border */
+      border-radius: 1.2rem; /* Slightly smaller radius */
+      padding: 2rem; /* Slightly less padding */
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
       z-index: 1;
-      box-shadow: 0 4px 20px rgba(0, 247, 255, 0.2); /* Stronger shadow */
+      box-shadow: 0 4px 15px rgba(0, 247, 255, 0.15); /* Lighter shadow */
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.01); /* More pronounced lift and slight scale */
-      box-shadow: 0 15px 35px rgba(0, 247, 255, 0.5), 0 0 60px rgba(255, 0, 122, 0.3); /* Dual shadow */
+      transform: translateY(-8px) scale(1.01); /* Less pronounced lift and slight scale */
+      box-shadow: 0 10px 25px rgba(0, 247, 255, 0.3), 0 0 40px rgba(255, 0, 122, 0.2); /* Lighter dual shadow */
     }
 
     .card img {
       width: 100%;
-      height: 220px;
+      height: 200px; /* Slightly smaller height */
       object-fit: cover;
-      border-radius: 0.85rem; /* Larger radius */
-      margin-bottom: 1.5rem;
-      box-shadow: 0 5px 20px rgba(0, 247, 255, 0.4); /* Image shadow */
+      border-radius: 0.75rem; /* Slightly smaller radius */
+      margin-bottom: 1.2rem; /* Slightly less margin */
+      box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3); /* Lighter image shadow */
       transition: transform 0.3s ease;
     }
 
     .card img:hover {
-      transform: scale(1.02);
+      transform: scale(1.01); /* Less pronounced scale */
     }
 
     .card h3 {
       color: #ff007a;
-      margin-bottom: 0.75rem;
-      text-shadow: 0 0 10px rgba(255, 0, 122, 0.7); /* Stronger shadow */
+      margin-bottom: 0.6rem; /* Slightly less margin */
+      text-shadow: none; /* Removed text shadow */
     }
 
     .card p {
       color: #a5b4fc;
-      text-shadow: 0 0 7px rgba(0, 247, 255, 0.6); /* Stronger shadow */
-      line-height: 1.7;
-      margin-bottom: 1rem;
+      text-shadow: none; /* Removed text shadow */
+      line-height: 1.6;
+      margin-bottom: 0.8rem; /* Slightly less margin */
     }
 
     .card .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem; /* Slightly more gap */
-      margin-top: 0.8rem;
+      gap: 0.5rem; /* Slightly less gap */
+      margin-top: 0.6rem; /* Slightly less margin */
     }
     
     .card .project-tags span {
-      background: rgba(0, 247, 255, 0.2); /* Slightly more opaque */
+      background: rgba(0, 247, 255, 0.15); /* Less opaque */
       color: #00f7ff;
-      padding: 0.35rem 0.8rem; /* Slightly larger padding */
-      border-radius: 6px; /* Slightly larger radius */
-      font-size: 0.88rem; /* Slightly larger font */
-      border: 1px solid rgba(0, 247, 255, 0.35); /* Stronger border */
+      padding: 0.3rem 0.7rem; /* Slightly smaller padding */
+      border-radius: 5px; /* Slightly smaller radius */
+      font-size: 0.85rem; /* Slightly smaller font */
+      border: 1px solid rgba(0, 247, 255, 0.2); /* Lighter border */
       text-shadow: none;
     }
 
     .card a.project-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem; /* More space between icon and text */
-      margin-top: 1.8rem; /* More space */
-      padding: 0.8rem 2rem; /* Larger button */
-      background: rgba(0, 247, 255, 0.35); /* Slightly more opaque */
+      gap: 0.5rem; /* Slightly less space between icon and text */
+      margin-top: 1.5rem; /* Slightly less space */
+      padding: 0.7rem 1.8rem; /* Slightly smaller button */
+      background: rgba(0, 247, 255, 0.25); /* Less opaque */
       border: 1px solid #00f7ff;
       border-radius: 50px;
-      font-size: 1.05rem; /* Slightly larger font */
+      font-size: 1rem;
       color: #e0e7ff;
-      text-shadow: 0 0 9px rgba(0, 247, 255, 0.7); /* Stronger shadow */
-      transition: all 0.4s ease;
+      text-shadow: none; /* Removed text shadow */
+      transition: all 0.3s ease;
     }
 
     .card a.project-link:hover {
       background: #00f7ff;
       color: #0a0e1a;
       text-shadow: none;
-      transform: translateY(-4px); /* More pronounced lift */
-      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.6); /* Stronger shadow */
+      transform: translateY(-3px); /* Less pronounced lift */
+      box-shadow: 0 6px 15px rgba(0, 247, 255, 0.4); /* Lighter shadow */
     }
 
     .card .plotly-container {
       width: 100%;
-      height: 250px;
-      margin-top: 1.5rem;
-      border-radius: 0.85rem; /* Match image radius */
-      background: rgba(0, 0, 0, 0.15); /* Slightly darker background for plots */
+      height: 220px; /* Slightly smaller height */
+      margin-top: 1.2rem; /* Slightly less margin */
+      border-radius: 0.75rem; /* Match image radius */
+      background: rgba(0, 0, 0, 0.1); /* Lighter background for plots */
       overflow: hidden;
-      box-shadow: inset 0 0 10px rgba(0, 247, 255, 0.1); /* Inner shadow for plot container */
+      box-shadow: inset 0 0 8px rgba(0, 247, 255, 0.08); /* Lighter inner shadow */
     }
 
     /* Project Grid */
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.8rem; /* More spacing */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem; /* Slightly less spacing */
       background: transparent;
       backdrop-filter: none;
       border-radius: 0;
@@ -612,22 +615,22 @@
     .filter-buttons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem; /* More spacing */
-      margin-bottom: 3.5rem; /* More spacing */
+      gap: 1.2rem; /* Slightly less gap */
+      margin-bottom: 3rem; /* Slightly less margin */
       flex-wrap: wrap;
     }
 
     .filter-buttons button {
-      padding: 0.7rem 2rem; /* Larger buttons */
-      background: rgba(0, 247, 255, 0.3); /* Slightly more opaque */
+      padding: 0.6rem 1.8rem; /* Slightly smaller padding */
+      background: rgba(0, 247, 255, 0.2); /* Less opaque */
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 50px;
       cursor: pointer;
-      transition: all 0.4s ease;
-      font-size: 1.05rem; /* Slightly larger font */
+      transition: all 0.3s ease;
+      font-size: 0.95rem; /* Slightly smaller font */
       font-weight: 500;
-      text-shadow: 0 0 7px rgba(0, 247, 255, 0.6); /* Stronger shadow */
+      text-shadow: none; /* Removed text shadow */
       position: relative;
       overflow: hidden;
     }
@@ -639,8 +642,8 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.25), transparent); /* Slightly more visible shine */
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent); /* Less visible shine */
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .filter-buttons button:hover::before {
@@ -651,16 +654,16 @@
     .filter-buttons button.active {
       background: #00f7ff;
       color: #0a0e1a;
-      box-shadow: 0 7px 18px rgba(0, 247, 255, 0.6); /* Stronger shadow */
+      box-shadow: 0 5px 12px rgba(0, 247, 255, 0.4); /* Lighter shadow */
       text-shadow: none;
-      transform: translateY(-4px); /* More pronounced lift */
+      transform: translateY(-3px); /* Less pronounced lift */
     }
 
     /* Skills Section */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 2.2rem; /* More spacing */
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem; /* Slightly less spacing */
       background: transparent;
       backdrop-filter: none;
       border-radius: 0;
@@ -670,7 +673,7 @@
 
     .skills-grid .card {
       text-align: center;
-      padding: 2rem; /* More padding */
+      padding: 1.8rem; /* Slightly less padding */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -678,91 +681,91 @@
     }
 
     .skills-grid i {
-      font-size: 3.2rem; /* Larger icons */
+      font-size: 3rem; /* Slightly smaller icons */
       color: #ff007a;
-      margin-bottom: 0.9rem; /* More space */
-      transition: transform 0.4s ease, color 0.4s ease;
-      text-shadow: 0 0 9px rgba(255, 0, 122, 0.8); /* Stronger shadow */
+      margin-bottom: 0.8rem; /* Slightly less margin */
+      transition: transform 0.3s ease, color 0.3s ease;
+      text-shadow: none; /* Removed text shadow */
     }
 
     .skills-grid .card:hover i {
-      transform: scale(1.2) rotate(6deg); /* More pronounced effect */
+      transform: scale(1.15) rotate(5deg); /* Less pronounced effect */
       color: #00f7ff;
     }
 
     .skills-grid .card p {
-      font-size: 1.15rem; /* Slightly larger text */
+      font-size: 1.1rem; /* Slightly smaller text */
       font-weight: 500;
       color: #e0e7ff;
     }
 
     .tooltip {
       visibility: hidden;
-      background: rgba(0, 247, 255, 0.5); /* More opaque */
+      background: rgba(0, 247, 255, 0.3); /* Less opaque */
       color: #e0e7ff;
-      padding: 0.7rem 1.2rem; /* Larger padding */
-      border-radius: 0.7rem; /* Larger radius */
-      font-size: 0.95rem; /* Slightly larger font */
+      padding: 0.6rem 1rem; /* Slightly smaller padding */
+      border-radius: 0.6rem; /* Slightly smaller radius */
+      font-size: 0.9rem; /* Slightly smaller font */
       position: absolute;
-      top: -50px; /* Adjusted position */
+      top: -45px; /* Adjusted position */
       white-space: nowrap;
       z-index: 2;
       opacity: 0;
-      transition: all 0.3s ease-out, transform 0.3s ease-out;
-      text-shadow: 0 0 7px rgba(0, 247, 255, 0.6); /* Stronger shadow */
+      transition: all 0.2s ease-out, transform 0.2s ease-out;
+      text-shadow: none; /* Removed text shadow */
       pointer-events: none;
     }
 
     .skills-grid .card:hover .tooltip {
       visibility: visible;
       opacity: 1;
-      transform: translateY(-12px); /* More significant lift */
+      transform: translateY(-10px); /* Less significant lift */
     }
 
     /* Education Section */
     #education .card {
-      max-width: 800px;
+      max-width: 750px; /* Slightly less max-width */
       margin: 0 auto;
       text-align: center;
-      padding: 2.8rem; /* More padding */
+      padding: 2.5rem; /* Slightly less padding */
     }
     #education .card h3 {
       color: #00f7ff;
-      margin-bottom: 0.8rem; /* More margin */
-      text-shadow: 0 0 9px rgba(0, 247, 255, 0.7); /* Stronger shadow */
-      font-size: 2.1rem; /* Slightly larger */
+      margin-bottom: 0.7rem; /* Slightly less margin */
+      text-shadow: none; /* Removed text shadow */
+      font-size: 2rem; /* Slightly smaller */
     }
     #education .card p {
-      font-size: 1.15rem; /* Slightly larger */
-      margin-bottom: 0.6rem; /* More margin */
+      font-size: 1.1rem; /* Slightly smaller */
+      margin-bottom: 0.5rem; /* Slightly less margin */
       color: #a5b4fc;
     }
 
     /* Certifications Section */
     #certifications .project-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Slightly smaller minmax */
     }
     #certifications .card h3 {
-      font-size: 1.7rem; /* Slightly larger */
+      font-size: 1.6rem; /* Slightly smaller */
     }
     #certifications .card p {
-      font-size: 1.05rem; /* Slightly larger */
-      margin-bottom: 1.2rem; /* More margin */
+      font-size: 1rem; /* Slightly smaller */
+      margin-bottom: 1rem; /* Slightly less margin */
     }
     #certifications .card a {
-      padding: 0.7rem 1.6rem; /* Slightly larger */
-      font-size: 1rem; /* Slightly larger */
+      padding: 0.6rem 1.5rem; /* Slightly smaller */
+      font-size: 0.95rem; /* Slightly smaller */
     }
 
     /* Contact Form */
     .contact-form .card {
-      max-width: 750px; /* Wider form card */
+      max-width: 700px; /* Slightly less max-width */
       margin: 0 auto;
-      padding: 3rem; /* More padding */
+      padding: 2.5rem; /* Slightly less padding */
     }
 
     .contact-info {
-      margin-bottom: 2.8rem; /* More space */
+      margin-bottom: 2.5rem; /* Slightly less margin */
       text-align: center;
     }
 
@@ -770,53 +773,53 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.9rem; /* More spacing */
-      margin-bottom: 0.9rem; /* More spacing */
-      font-size: 1.1rem; /* Slightly larger font */
-      text-shadow: 0 0 7px rgba(0, 247, 255, 0.6);
+      gap: 0.8rem; /* Slightly less gap */
+      margin-bottom: 0.8rem; /* Slightly less margin */
+      font-size: 1.05rem; /* Slightly smaller font */
+      text-shadow: none; /* Removed text shadow */
     }
     .contact-info p i {
       color: #ff007a;
-      font-size: 1.4rem; /* Larger icons */
+      font-size: 1.3rem; /* Slightly smaller icons */
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 1rem; /* Larger input fields */
-      margin-bottom: 1.5rem; /* More space */
-      background: rgba(10, 14, 26, 0.6); /* More opaque */
+      padding: 0.9rem; /* Slightly smaller input fields */
+      margin-bottom: 1.2rem; /* Slightly less margin */
+      background: rgba(10, 14, 26, 0.5); /* Less opaque */
       border: 1px solid #00f7ff;
       color: #e0e7ff;
-      border-radius: 0.7rem; /* Larger radius */
-      font-size: 1.1rem; /* Slightly larger font */
-      text-shadow: 0 0 7px rgba(0, 247, 255, 0.6);
-      transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s; /* Added background transition */
+      border-radius: 0.6rem; /* Slightly smaller radius */
+      font-size: 1rem;
+      text-shadow: none; /* Removed text shadow */
+      transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
       border-color: #ff007a;
-      box-shadow: 0 0 12px rgba(255, 0, 122, 0.8); /* Stronger focus glow */
-      background: rgba(10, 14, 26, 0.8); /* Darker on focus */
+      box-shadow: 0 0 10px rgba(255, 0, 122, 0.6); /* Lighter focus glow */
+      background: rgba(10, 14, 26, 0.7); /* Lighter on focus */
     }
 
     .contact-form textarea {
-      height: 180px;
+      height: 150px; /* Slightly smaller height */
       resize: vertical;
     }
 
     .contact-form button {
-      padding: 1rem 2.8rem; /* Larger button */
-      background: rgba(0, 247, 255, 0.4); /* Slightly more opaque */
+      padding: 0.9rem 2.5rem; /* Slightly smaller button */
+      background: rgba(0, 247, 255, 0.3); /* Less opaque */
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 50px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.4s ease;
-      text-shadow: 0 0 9px rgba(0, 247, 255, 0.7); /* Stronger shadow */
+      transition: all 0.3s ease;
+      text-shadow: none; /* Removed text shadow */
       position: relative;
       overflow: hidden;
     }
@@ -828,8 +831,8 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent); /* Slightly more visible shine */
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Less visible shine */
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .contact-form button:hover::before {
@@ -839,17 +842,17 @@
     .contact-form button:hover {
       background: #ff007a;
       color: #e0e7ff;
-      box-shadow: 0 7px 20px rgba(255, 0, 122, 0.7); /* Stronger shadow */
+      box-shadow: 0 6px 15px rgba(255, 0, 122, 0.5); /* Lighter shadow */
       text-shadow: none;
-      transform: translateY(-4px); /* More pronounced lift */
+      transform: translateY(-3px); /* Less pronounced lift */
     }
 
     .contact-form .error {
       color: #ff6b6b;
-      font-size: 0.95rem; /* Slightly larger error text */
-      margin-bottom: 1.5rem; /* More margin */
+      font-size: 0.9rem; /* Slightly smaller error text */
+      margin-bottom: 1.2rem; /* Slightly less margin */
       display: none;
-      text-shadow: 0 0 7px rgba(255, 107, 107, 0.6); /* Stronger shadow */
+      text-shadow: none; /* Removed text shadow */
     }
 
     .contact-form .error.show {
@@ -858,68 +861,68 @@
 
     /* Footer */
     footer {
-      padding: 3rem 2rem;
+      padding: 2.5rem 2rem; /* Slightly less padding */
       text-align: center;
-      background: rgba(10, 14, 26, 0.95); /* More opaque */
-      backdrop-filter: blur(12px); /* Stronger blur */
+      background: rgba(10, 14, 26, 0.9); /* Less opaque */
+      backdrop-filter: blur(10px); /* Slightly less blur */
       margin: 2rem auto 0;
       max-width: 1200px;
-      border-radius: 1.75rem 1.75rem 0 0; /* Rounded top corners only */
-      border-top: 1px solid rgba(0, 247, 255, 0.2); /* Stronger border */
-      box-shadow: 0 -2px 20px rgba(0, 247, 255, 0.15); /* Stronger shadow */
+      border-radius: 1.5rem 1.5rem 0 0; /* Consistent radius */
+      border-top: 1px solid rgba(0, 247, 255, 0.15); /* Lighter border */
+      box-shadow: 0 -2px 15px rgba(0, 247, 255, 0.1); /* Lighter shadow */
     }
 
     footer p {
       color: #a5b4fc;
-      font-size: 0.98rem; /* Slightly larger font */
+      font-size: 0.95rem; /* Slightly smaller font */
     }
 
     .social-icons {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1.8rem; /* More spacing */
-      margin-top: 1.8rem; /* More spacing */
+      gap: 1.5rem; /* Slightly less gap */
+      margin-top: 1.5rem; /* Slightly less margin */
     }
 
     .social-icons a {
-      font-size: 2rem; /* Larger icons */
+      font-size: 1.8rem; /* Slightly smaller icons */
       color: #00f7ff;
-      transition: all 0.4s ease;
-      text-shadow: 0 0 9px rgba(0, 247, 255, 0.8); /* Stronger shadow */
+      transition: all 0.3s ease;
+      text-shadow: none; /* Removed text shadow */
     }
 
     .social-icons a:hover {
       color: #ff007a;
-      transform: scale(1.35) rotate(7deg); /* More pronounced effect */
-      text-shadow: 0 0 12px rgba(255, 0, 122, 1); /* Stronger shadow */
+      transform: scale(1.25) rotate(5deg); /* Less pronounced effect */
+      text-shadow: none; /* Removed text shadow */
     }
 
     /* Back to Top */
     #backToTop {
       position: fixed;
-      bottom: 2.8rem; /* Slightly higher */
-      right: 2.8rem; /* Slightly further right */
+      bottom: 2.5rem; /* Slightly less */
+      right: 2.5rem; /* Slightly less */
       background: linear-gradient(135deg, #00f7ff, #ff007a);
       color: #0a0e1a;
-      padding: 1rem; /* Larger button */
+      padding: 0.9rem; /* Slightly smaller button */
       border-radius: 50%;
       cursor: pointer;
       display: none;
       z-index: 10;
-      transition: all 0.4s ease;
-      box-shadow: 0 5px 18px rgba(0, 247, 255, 0.5); /* Stronger shadow */
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 247, 255, 0.4); /* Lighter shadow */
     }
 
     #backToTop:hover {
       background: linear-gradient(135deg, #ff007a, #00f7ff);
       color: #e0e7ff;
-      transform: scale(1.3) translateY(-4px); /* More pronounced effect */
-      box-shadow: 0 7px 22px rgba(255, 0, 122, 0.7); /* Stronger shadow */
+      transform: scale(1.2) translateY(-3px); /* Less pronounced effect */
+      box-shadow: 0 6px 18px rgba(255, 0, 122, 0.5); /* Lighter shadow */
     }
 
     #backToTop i {
-      font-size: 1.5rem; /* Larger icon */
+      font-size: 1.3rem; /* Slightly smaller icon */
     }
 
     /* Responsive */
@@ -1357,13 +1360,13 @@
           title: { text: plot.title, font: { color: '#e0e7ff', size: 14 } },
           xaxis: { 
             title: { text: plot.type === 'bar' ? 'Category' : 'Value', font: { color: '#e0e7ff', size: 12 } }, 
-            gridcolor: 'rgba(255, 255, 255, 0.1)', 
+            gridcolor: 'rgba(255, 255, 255, 0.08)', /* Lighter grid lines */
             tickfont: { color: '#a5b4fc', size: 10 },
             automargin: true
           },
           yaxis: { 
             title: { text: plot.type === 'bar' ? 'Count' : 'Value', font: { color: '#e0e7ff', size: 12 } }, 
-            gridcolor: 'rgba(255, 255, 255, 0.1)', 
+            gridcolor: 'rgba(255, 255, 255, 0.08)', /* Lighter grid lines */
             tickfont: { color: '#a5b4fc', size: 10 },
             automargin: true
           },
