@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLilhYjYgMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC.256 0C112.6 0 0 112.6 0 256s112.6 256 256 256 256-112.6 256-256S399.4 0 256 0zm100 112c-14.6 14.6-38.2 14.6-52.8 0s14.6-38.2 0-52.8c14.6-14.6 38.2-14.6 52.8 0s14.6 38.2 0 52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8z"/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC.256 0C112.6 0 0 112.6 0 256s112.6 256 256 256 256-112.6 256-256S399.4 0 256 0zm100 112c-14.6 14.6-38.2 14.6-52.8 0s14.6-38.2 0-52.8c14.6-14.6 38.2-14.6 52.8 0s14.6 38.2 0 52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8z"/%3E%3C/svg%3E">
   <style>
     /* Global Reset & Base Styles */
     * {
@@ -145,7 +145,7 @@
 
     /* Desktop Contact Info in Nav */
     .nav-contact-desktop {
-      display: flex;
+      display: flex; /* Default to flex for desktop */
       align-items: center;
       gap: 15px; /* Spacing between contact items */
     }
@@ -195,8 +195,8 @@
     }
 
     /* Classes for showing/hiding elements based on screen size */
-    .mobile-hidden { display: none; }
-    .desktop-hidden { display: none; } /* Default hidden on desktop */
+    .mobile-hidden { display: flex; } /* Show on desktop by default */
+    .desktop-hidden { display: none; } /* Hide on desktop by default */
 
     @media (max-width: 768px) {
       .hamburger {
@@ -251,7 +251,7 @@
         width: calc(100% - 40px);
       }
 
-      .nav-contact-desktop { display: none; } /* Hide desktop contact info on mobile */
+      .mobile-hidden { display: none; } /* Hide desktop contact info on mobile */
       .desktop-hidden { display: block; } /* Show mobile contact info in menu */
 
       /* Ensure contact items in mobile menu are styled correctly */
@@ -331,9 +331,9 @@
       margin: 20px auto 0 auto; /* Margin for about text, removed bottom margin for combined section */
       font-size: 1.1rem;
       color: #a5b4fc;
+      text-align: left; /* Make it look like a paragraph block */
+      padding: 0 20px; /* Add some horizontal padding for smaller screens */
     }
-
-    /* Removed hero-links and contact-info styles as they are moved */
 
     /* Project Filtering */
     .filter-buttons {
@@ -633,9 +633,8 @@
 
       .hero { padding: 60px 15px; } /* Reduced padding for hero */
       .profile-photo { width: 120px; height: 120px; margin-bottom: 15px; } /* Smaller photo */
-      .hero-content .about-text-hero { font-size: 1rem; margin: 15px auto 20px auto; } /* Adjusted about text on mobile */
-      /* Hero links and contact info are now in nav */
-
+      .hero-content .about-text-hero { font-size: 1rem; margin: 15px auto 20px auto; padding: 0 10px; } /* Adjusted about text on mobile */
+      
       section {
         padding: 40px 15px; /* Reduced section padding */
         margin: 20px auto; /* Reduced section margin */
@@ -693,7 +692,6 @@
     </div>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
-      <!-- About link removed as content is merged into Hero -->
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
