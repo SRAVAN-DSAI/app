@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwcy0xNC42IDM4LjIgMCA1Mi44YzE0LjYgMTQuNiAzOC4yIDE0LjYgNTIuOCAwczE0LjYtMzguMiAwLTUyLjh6Ii8+PC9zdmc+">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTI.OHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0.Ni0xNC42LTM4LjItMTQuNi01Mi44IDBzMC0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTI.OCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC.256 0C112.6 0 0 112.6 0 256s112.6 256 256 256 256-112.6 256-256S399.4 0 256 0zm100 112c-14.6 14.6-38.2 14.6-52.8 0s14.6-38.2 0-52.8c14.6-14.6 38.2-14.6 52.8 0s14.6 38.2 0 52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8z"/%3E%3C/svg%3E">
   <style>
     /* Reset and Base Styles */
     * {
@@ -22,16 +22,17 @@
 
     html {
       scroll-behavior: smooth;
-      background: #0a0e1a;
-      color: #e0e7ff;
+      background: #0a0e1a; /* Deep dark background */
+      color: #e0e7ff; /* Soft light text color */
     }
 
     body {
-      line-height: 1.7; /* Slightly more line height for readability */
+      line-height: 1.7;
       overflow-x: hidden;
       position: relative;
     }
 
+    /* Subtle background pattern */
     body::before {
       content: '';
       position: fixed;
@@ -39,25 +40,25 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300f7ff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5zM6 0H5L0 5V6z'/%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.1;
+      background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300f7ff' fill-opacity='0.01' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5zM6 0H5L0 5V6z'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.1; /* Very low opacity */
       z-index: -1;
     }
 
     h1 {
       font-family: 'Merriweather', serif;
-      font-size: 4rem;
+      font-size: 4.2rem; /* Slightly larger for impact */
       font-weight: 700;
-      color: #e0e7ff; /* Primary color for headings */
+      color: #e0e7ff;
     }
 
     h2 {
       font-family: 'Merriweather', serif;
-      font-size: 2.8rem;
+      font-size: 3rem; /* Larger for section titles */
       font-weight: 700;
       position: relative;
-      padding-bottom: 0.5rem;
-      margin-bottom: 3rem;
+      padding-bottom: 0.6rem; /* More space below underline */
+      margin-bottom: 3.5rem; /* More space below heading */
       display: inline-block;
       color: #00f7ff; /* Accent color for section titles */
     }
@@ -68,22 +69,22 @@
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      width: 80px; /* Slightly wider underline */
-      height: 4px;
+      width: 90px; /* Wider underline */
+      height: 5px; /* Thicker underline */
       background: linear-gradient(90deg, #00f7ff, #ff007a);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     h3 {
-      font-size: 1.75rem;
+      font-size: 1.85rem; /* Slightly larger */
       font-weight: 600;
       color: #e0e7ff;
     }
 
     p {
-      font-size: 1.05rem;
+      font-size: 1.1rem; /* Slightly larger for better readability */
       color: #a5b4fc;
-      text-shadow: none; /* Removed text shadow for cleaner look */
+      text-shadow: none; /* Ensure no text shadow */
     }
 
     a {
@@ -94,7 +95,7 @@
 
     a:hover {
       color: #ff007a;
-      transform: translateY(-2px); /* Subtle lift on hover */
+      transform: translateY(-3px); /* More pronounced lift */
     }
 
     /* Navigation */
@@ -103,20 +104,21 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 50px;
-      background: rgba(10, 14, 26, 0.85); /* Slightly less opaque */
-      backdrop-filter: blur(12px); /* Increased blur */
+      height: 60px; /* Slightly taller */
+      background: rgba(10, 14, 26, 0.7); /* More transparent */
+      backdrop-filter: blur(15px); /* Increased blur for stronger glass effect */
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 0 2rem;
       z-index: 100;
-      transition: height 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 247, 255, 0.1); /* Lighter shadow */
+      transition: height 0.3s ease, background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 247, 255, 0.08); /* Softer shadow */
     }
 
     nav:hover {
-      height: 65px; /* Slightly less hover height increase */
+      height: 70px; /* Slightly more hover height increase */
+      background: rgba(10, 14, 26, 0.85); /* Slightly less transparent on hover */
     }
 
     .nav-links {
@@ -127,25 +129,21 @@
 
     nav a {
       color: #e0e7ff;
-      font-size: 1rem;
-      margin: 0 1rem;
+      font-size: 1.05rem; /* Slightly larger */
+      margin: 0 1.2rem; /* More margin */
       display: flex;
       align-items: center;
-      padding: 0.5rem 1rem;
-      opacity: 0.9;
+      padding: 0.6rem 1.2rem; /* Increased padding */
+      opacity: 0.95; /* More opaque */
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      border-radius: 6px; /* Slightly smaller radius */
+      border-radius: 8px; /* Slightly larger radius */
     }
 
     nav a i {
-      font-size: 1.2rem;
-      margin-right: 0.5rem;
-    }
-
-    nav a span {
-      display: inline;
+      font-size: 1.3rem; /* Slightly larger icons */
+      margin-right: 0.6rem; /* More space */
     }
 
     nav a::before {
@@ -154,7 +152,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 3px;
+      height: 4px; /* Thicker underline */
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       transform: translateX(-100%);
       transition: transform 0.3s ease-out;
@@ -167,47 +165,47 @@
 
     nav a:hover {
       color: #ff007a;
-      background: rgba(0, 247, 255, 0.05); /* Very subtle hover effect */
-      transform: translateY(-2px);
-      box-shadow: 0 2px 8px rgba(0, 247, 255, 0.1); /* Lighter shadow on hover */
+      background: rgba(0, 247, 255, 0.08); /* More visible hover background */
+      transform: translateY(-4px); /* More pronounced lift */
+      box-shadow: 0 3px 10px rgba(0, 247, 255, 0.15); /* More visible shadow on hover */
     }
 
     /* Hamburger Menu */
     .hamburger {
       display: none;
-      font-size: 1.8rem;
+      font-size: 2rem; /* Larger hamburger icon */
       color: #00f7ff;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 0.7rem;
       z-index: 101;
       transition: transform 0.3s ease;
     }
 
     .hamburger:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     .nav-links.active {
       transform: translateX(0);
-      box-shadow: 4px 0 15px rgba(0, 247, 255, 0.15); /* Lighter shadow for open menu */
+      box-shadow: 6px 0 20px rgba(0, 247, 255, 0.18); /* More visible shadow for open menu */
     }
 
     @media (max-width: 768px) {
       .hamburger {
         display: block;
         position: fixed;
-        top: 0.75rem;
-        left: 0.75rem;
+        top: 0.8rem;
+        left: 0.8rem;
       }
 
       nav {
-        height: 60px;
+        height: 65px;
         padding: 0 1rem;
         justify-content: flex-start;
       }
 
       nav:hover {
-        height: 60px;
+        height: 65px;
       }
 
       .nav-links {
@@ -215,38 +213,38 @@
         top: 0;
         left: 0;
         height: 100vh;
-        width: 250px;
-        background: rgba(10, 14, 26, 0.95); /* Slightly less opaque */
-        backdrop-filter: blur(15px);
+        width: 280px; /* Wider mobile menu */
+        background: rgba(10, 14, 26, 0.9); /* Slightly less opaque */
+        backdrop-filter: blur(18px); /* Increased blur */
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 5rem;
+        padding-top: 6rem; /* More padding at top */
         transform: translateX(-100%);
         transition: transform 0.4s ease-in-out;
         z-index: 100;
-        border-right: 1px solid rgba(0, 247, 255, 0.15); /* Lighter border */
+        border-right: 1px solid rgba(0, 247, 255, 0.2); /* More visible border */
       }
 
       nav a {
-        margin: 0.75rem 0;
-        padding: 1rem; /* Slightly smaller padding for mobile */
-        font-size: 1.1rem;
+        margin: 0.85rem 0; /* More margin for links */
+        padding: 1.1rem; /* More padding for links */
+        font-size: 1.2rem;
         width: 100%;
         justify-content: flex-start;
         border-radius: 0;
       }
 
       nav a i {
-        font-size: 1.4rem;
-        margin-right: 0.8rem;
+        font-size: 1.5rem;
+        margin-right: 1rem;
       }
 
       nav a span {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
 
       nav a::before {
-        height: 2px;
+        height: 3px;
         left: 10%;
         width: 80%;
       }
@@ -258,28 +256,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at top left, rgba(0, 247, 255, 0.05), transparent 70%), /* Less opaque */
-                  radial-gradient(circle at bottom right, rgba(255, 0, 122, 0.05), transparent 70%);
+      background: radial-gradient(circle at top left, rgba(0, 247, 255, 0.03), transparent 70%), /* Very subtle gradient */
+                  radial-gradient(circle at bottom right, rgba(255, 0, 122, 0.03), transparent 70%);
       position: relative;
       overflow: hidden;
-      padding: 5rem 2rem;
+      padding: 6rem 2rem; /* More padding */
       margin: 0 auto;
-      max-width: 1200px;
-      border-radius: 1.5rem;
-      box-shadow: 0 0 30px rgba(0, 247, 255, 0.1); /* Lighter shadow */
-      margin-top: 60px;
+      max-width: 1280px; /* Wider content area */
+      border-radius: 2rem; /* Larger radius */
+      box-shadow: 0 0 40px rgba(0, 247, 255, 0.05); /* Very soft shadow */
+      margin-top: 70px; /* Adjusted margin for nav */
     }
 
     .hero-content {
       text-align: center;
       z-index: 1;
       animation: fadeIn 1.5s ease;
-      background: rgba(10, 14, 26, 0.2); /* Less opaque glass */
-      backdrop-filter: blur(10px); /* Slightly less blur */
-      padding: 3rem; /* Slightly less padding */
-      border-radius: 1.5rem;
-      border: 1px solid rgba(0, 247, 255, 0.2); /* Lighter border */
-      box-shadow: 0 0 30px rgba(0, 247, 255, 0.3); /* Lighter shadow */
+      background: rgba(10, 14, 26, 0.15); /* Even more transparent glass */
+      backdrop-filter: blur(12px); /* Slightly more blur */
+      padding: 4rem; /* More padding */
+      border-radius: 2rem; /* Larger radius */
+      border: 1px solid rgba(0, 247, 255, 0.1); /* Very subtle border */
+      box-shadow: 0 0 50px rgba(0, 247, 255, 0.2); /* Softer, larger shadow */
       position: relative;
       overflow: hidden;
     }
@@ -291,11 +289,11 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(0, 247, 255, 0.1), transparent 50%), /* Less opaque */
-                  radial-gradient(circle, rgba(255, 0, 122, 0.1), transparent 50%);
-      animation: rotateBg 20s linear infinite;
+      background: radial-gradient(circle, rgba(0, 247, 255, 0.05), transparent 50%), /* Very subtle internal gradient */
+                  radial-gradient(circle, rgba(255, 0, 122, 0.05), transparent 50%);
+      animation: rotateBg 25s linear infinite; /* Slower rotation */
       z-index: -1;
-      opacity: 0.5; /* Less opaque */
+      opacity: 0.3; /* Less opaque */
     }
 
     @keyframes rotateBg {
@@ -308,39 +306,39 @@
     }
 
     .profile-photo {
-      width: 200px;
-      height: 200px;
+      width: 220px; /* Larger photo */
+      height: 220px; /* Larger photo */
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 2rem;
-      border: 4px solid #00f7ff; /* Slightly thinner border */
-      box-shadow: 0 0 20px rgba(0, 247, 255, 0.7); /* Lighter glow */
+      margin-bottom: 2.5rem; /* More margin */
+      border: 5px solid #00f7ff; /* Thicker border */
+      box-shadow: 0 0 25px rgba(0, 247, 255, 0.6); /* Softer glow */
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .profile-photo:hover {
-      transform: scale(1.03) rotate(1deg); /* Less pronounced effect */
-      box-shadow: 0 0 30px rgba(0, 247, 255, 0.8), 0 0 40px rgba(255, 0, 122, 0.5); /* Lighter dual glow */
+      transform: scale(1.04) rotate(2deg); /* Slightly more pronounced effect */
+      box-shadow: 0 0 35px rgba(0, 247, 255, 0.7), 0 0 50px rgba(255, 0, 122, 0.4); /* Stronger dual glow */
     }
 
     .hero h1 {
       background: linear-gradient(90deg, #00f7ff, #ff007a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem; /* Slightly less margin */
-      text-shadow: 0 0 10px rgba(0, 247, 255, 0.7); /* Lighter shadow */
-      font-size: 4rem; /* Slightly smaller font */
-      letter-spacing: 1px;
+      margin-bottom: 1.2rem; /* Slightly more margin */
+      text-shadow: 0 0 12px rgba(0, 247, 255, 0.6); /* Softer text shadow */
+      font-size: 4.5rem; /* Larger font */
+      letter-spacing: 1.5px; /* More letter spacing */
     }
 
     .hero h2 {
       color: #e0e7ff;
       font-weight: 500;
-      font-size: 1.8rem; /* Slightly smaller font */
+      font-size: 2rem; /* Larger font */
       position: relative;
       overflow: hidden;
-      text-shadow: none; /* Removed text shadow */
-      margin-bottom: 2rem; /* Slightly less margin */
+      text-shadow: none;
+      margin-bottom: 2.5rem; /* More margin */
     }
 
     .hero h2::after {
@@ -354,21 +352,21 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem; /* Slightly less gap */
-      margin-top: 2.5rem; /* Slightly less margin */
+      gap: 1.8rem; /* More gap */
+      margin-top: 3rem; /* More margin */
       flex-wrap: wrap;
     }
 
     .hero .hero-links a {
       display: inline-block;
-      padding: 0.8rem 2.2rem; /* Slightly smaller padding */
-      background: rgba(0, 247, 255, 0.15); /* Less opaque */
+      padding: 1rem 2.5rem; /* Larger padding */
+      background: rgba(0, 247, 255, 0.1); /* Even more transparent */
       border: 1px solid #00f7ff;
       border-radius: 50px;
       font-weight: 600;
       transition: all 0.3s ease;
       color: #e0e7ff;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
       position: relative;
       overflow: hidden;
     }
@@ -380,7 +378,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Less visible shine */
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent); /* Softer shine */
       transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -391,194 +389,194 @@
     .hero .hero-links a:hover {
       background: #00f7ff;
       color: #0a0e1a;
-      transform: translateY(-3px); /* Less pronounced lift */
-      box-shadow: 0 5px 15px rgba(0, 247, 255, 0.5); /* Lighter shadow */
+      transform: translateY(-4px); /* More pronounced lift */
+      box-shadow: 0 6px 18px rgba(0, 247, 255, 0.5); /* Stronger shadow */
       text-shadow: none;
     }
 
     .hero a.resume-btn {
-      background: rgba(255, 0, 122, 0.15); /* Less opaque */
+      background: rgba(255, 0, 122, 0.1); /* Even more transparent */
       border: 1px solid #ff007a;
     }
 
     .hero a.resume-btn:hover {
       background: #ff007a;
       color: #0a0e1a;
-      box-shadow: 0 5px 15px rgba(255, 0, 122, 0.5); /* Lighter shadow */
+      box-shadow: 0 6px 18px rgba(255, 0, 122, 0.5); /* Stronger shadow */
     }
 
     .hero .contact-info {
       text-align: center;
-      margin-top: 1.5rem; /* Slightly less margin */
+      margin-top: 2rem; /* More margin */
     }
 
     .hero .contact-info p {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem; /* Slightly less gap */
-      margin-bottom: 0.6rem; /* Slightly less margin */
-      font-size: 0.95rem; /* Slightly smaller font */
+      gap: 0.8rem; /* More gap */
+      margin-bottom: 0.8rem; /* More margin */
+      font-size: 1.05rem; /* Slightly larger font */
       color: #a5b4fc;
       transition: color 0.3s, transform 0.3s;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
     }
 
     .hero .contact-info p i {
-      font-size: 1.2rem; /* Slightly smaller icon */
+      font-size: 1.3rem; /* Larger icons */
       color: #ff007a;
     }
 
     .hero .contact-info p:hover {
       color: #00f7ff;
-      transform: translateX(3px); /* Less pronounced lift */
+      transform: translateX(4px); /* More pronounced lift */
     }
 
     @media (max-width: 768px) {
       .hero {
-        padding: 4rem 1rem;
-        margin-top: 50px;
+        padding: 5rem 1.5rem;
+        margin-top: 60px;
       }
 
       .hero h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
       }
 
       .hero h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
 
       .profile-photo {
-        width: 150px;
-        height: 150px;
-        margin-bottom: 1.5rem;
+        width: 180px;
+        height: 180px;
+        margin-bottom: 2rem;
       }
 
       .hero-content {
-        padding: 2rem;
+        padding: 2.5rem;
       }
 
       .hero .hero-links {
         flex-direction: column;
-        gap: 1rem;
-        margin-top: 2rem;
+        gap: 1.2rem;
+        margin-top: 2.5rem;
       }
 
       .hero .hero-links a {
-        padding: 0.8rem 2rem;
-        width: 80%;
-        max-width: 300px;
+        padding: 0.9rem 2.2rem;
+        width: 90%;
+        max-width: 350px;
       }
 
       .hero .contact-info p {
-        font-size: 0.9rem;
-        gap: 0.6rem;
+        font-size: 1rem;
+        gap: 0.7rem;
       }
 
       h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
       }
     }
 
     /* Sections */
     section {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 2rem auto;
+      padding: 6rem 2.5rem; /* More padding */
+      max-width: 1280px; /* Wider content area */
+      margin: 2.5rem auto; /* More margin */
       position: relative;
       overflow: hidden;
-      background: rgba(10, 14, 26, 0.25); /* Less opaque background for sections */
-      backdrop-filter: blur(10px); /* Slightly less blur */
-      border-radius: 1.5rem;
-      border: 1px solid rgba(0, 247, 255, 0.15); /* Lighter border */
-      box-shadow: 0 0 25px rgba(0, 247, 255, 0.1); /* Lighter shadow */
+      background: rgba(10, 14, 26, 0.2); /* More transparent background for sections */
+      backdrop-filter: blur(12px); /* Slightly more blur */
+      border-radius: 2rem; /* Larger radius */
+      border: 1px solid rgba(0, 247, 255, 0.1); /* Very subtle border */
+      box-shadow: 0 0 30px rgba(0, 247, 255, 0.08); /* Softer shadow */
     }
 
     section h2 {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem; /* More margin */
       color: #00f7ff;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
       z-index: 1;
       position: relative;
     }
 
     /* Glassmorphism Cards */
     .card {
-      background: rgba(10, 14, 26, 0.35); /* Less opaque */
-      backdrop-filter: blur(15px); /* Less blur */
-      border: 1px solid rgba(0, 247, 255, 0.2); /* Lighter border */
-      border-radius: 1.2rem; /* Slightly smaller radius */
-      padding: 2rem; /* Slightly less padding */
+      background: rgba(10, 14, 26, 0.25); /* More transparent */
+      backdrop-filter: blur(18px); /* More blur for stronger glass */
+      border: 1px solid rgba(0, 247, 255, 0.15); /* More subtle border */
+      border-radius: 1.5rem; /* Larger radius */
+      padding: 2.5rem; /* More padding */
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
       z-index: 1;
-      box-shadow: 0 4px 15px rgba(0, 247, 255, 0.15); /* Lighter shadow */
+      box-shadow: 0 6px 20px rgba(0, 247, 255, 0.1); /* Softer shadow */
     }
 
     .card:hover {
-      transform: translateY(-8px) scale(1.01); /* Less pronounced lift and slight scale */
-      box-shadow: 0 10px 25px rgba(0, 247, 255, 0.3), 0 0 40px rgba(255, 0, 122, 0.2); /* Lighter dual shadow */
+      transform: translateY(-10px) scale(1.02); /* More pronounced lift and slight scale */
+      box-shadow: 0 12px 30px rgba(0, 247, 255, 0.25), 0 0 50px rgba(255, 0, 122, 0.15); /* Stronger dual shadow */
     }
 
     .card img {
       width: 100%;
-      height: 200px; /* Slightly smaller height */
+      height: 230px; /* Taller height */
       object-fit: cover;
-      border-radius: 0.75rem; /* Slightly smaller radius */
-      margin-bottom: 1.2rem; /* Slightly less margin */
-      box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3); /* Lighter image shadow */
+      border-radius: 1rem; /* Larger radius */
+      margin-bottom: 1.5rem; /* More margin */
+      box-shadow: 0 6px 18px rgba(0, 247, 255, 0.2); /* Softer image shadow */
       transition: transform 0.3s ease;
     }
 
     .card img:hover {
-      transform: scale(1.01); /* Less pronounced scale */
+      transform: scale(1.02); /* More pronounced scale */
     }
 
     .card h3 {
       color: #ff007a;
-      margin-bottom: 0.6rem; /* Slightly less margin */
-      text-shadow: none; /* Removed text shadow */
+      margin-bottom: 0.8rem; /* More margin */
+      text-shadow: none;
     }
 
     .card p {
       color: #a5b4fc;
-      text-shadow: none; /* Removed text shadow */
-      line-height: 1.6;
-      margin-bottom: 0.8rem; /* Slightly less margin */
+      text-shadow: none;
+      line-height: 1.7; /* Slightly more line height */
+      margin-bottom: 1rem; /* More margin */
     }
 
     .card .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem; /* Slightly less gap */
-      margin-top: 0.6rem; /* Slightly less margin */
+      gap: 0.6rem; /* More gap */
+      margin-top: 0.8rem; /* More margin */
     }
     
     .card .project-tags span {
-      background: rgba(0, 247, 255, 0.15); /* Less opaque */
+      background: rgba(0, 247, 255, 0.1); /* More transparent */
       color: #00f7ff;
-      padding: 0.3rem 0.7rem; /* Slightly smaller padding */
-      border-radius: 5px; /* Slightly smaller radius */
-      font-size: 0.85rem; /* Slightly smaller font */
-      border: 1px solid rgba(0, 247, 255, 0.2); /* Lighter border */
+      padding: 0.4rem 0.8rem; /* More padding */
+      border-radius: 6px; /* Larger radius */
+      font-size: 0.9rem; /* Slightly larger font */
+      border: 1px solid rgba(0, 247, 255, 0.15); /* More subtle border */
       text-shadow: none;
     }
 
     .card a.project-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem; /* Slightly less space between icon and text */
-      margin-top: 1.5rem; /* Slightly less space */
-      padding: 0.7rem 1.8rem; /* Slightly smaller button */
-      background: rgba(0, 247, 255, 0.25); /* Less opaque */
+      gap: 0.6rem; /* More space between icon and text */
+      margin-top: 1.8rem; /* More space */
+      padding: 0.8rem 2rem; /* Larger button */
+      background: rgba(0, 247, 255, 0.2); /* More transparent */
       border: 1px solid #00f7ff;
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 1.05rem; /* Slightly larger font */
       color: #e0e7ff;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
       transition: all 0.3s ease;
     }
 
@@ -586,25 +584,25 @@
       background: #00f7ff;
       color: #0a0e1a;
       text-shadow: none;
-      transform: translateY(-3px); /* Less pronounced lift */
-      box-shadow: 0 6px 15px rgba(0, 247, 255, 0.4); /* Lighter shadow */
+      transform: translateY(-4px); /* More pronounced lift */
+      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.45); /* Stronger shadow */
     }
 
     .card .plotly-container {
       width: 100%;
-      height: 220px; /* Slightly smaller height */
-      margin-top: 1.2rem; /* Slightly less margin */
-      border-radius: 0.75rem; /* Match image radius */
-      background: rgba(0, 0, 0, 0.1); /* Lighter background for plots */
+      height: 250px; /* Taller height */
+      margin-top: 1.5rem; /* More margin */
+      border-radius: 1rem; /* Match image radius */
+      background: rgba(0, 0, 0, 0.08); /* Lighter background for plots */
       overflow: hidden;
-      box-shadow: inset 0 0 8px rgba(0, 247, 255, 0.08); /* Lighter inner shadow */
+      box-shadow: inset 0 0 10px rgba(0, 247, 255, 0.06); /* Softer inner shadow */
     }
 
     /* Project Grid */
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem; /* Slightly less spacing */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger minmax */
+      gap: 3rem; /* More spacing */
       background: transparent;
       backdrop-filter: none;
       border-radius: 0;
@@ -615,22 +613,22 @@
     .filter-buttons {
       display: flex;
       justify-content: center;
-      gap: 1.2rem; /* Slightly less gap */
-      margin-bottom: 3rem; /* Slightly less margin */
+      gap: 1.5rem; /* More gap */
+      margin-bottom: 3.5rem; /* More margin */
       flex-wrap: wrap;
     }
 
     .filter-buttons button {
-      padding: 0.6rem 1.8rem; /* Slightly smaller padding */
-      background: rgba(0, 247, 255, 0.2); /* Less opaque */
+      padding: 0.7rem 2rem; /* Larger padding */
+      background: rgba(0, 247, 255, 0.15); /* More transparent */
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 0.95rem; /* Slightly smaller font */
+      font-size: 1rem; /* Slightly larger font */
       font-weight: 500;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
       position: relative;
       overflow: hidden;
     }
@@ -642,7 +640,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent); /* Less visible shine */
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent); /* Softer shine */
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -654,16 +652,16 @@
     .filter-buttons button.active {
       background: #00f7ff;
       color: #0a0e1a;
-      box-shadow: 0 5px 12px rgba(0, 247, 255, 0.4); /* Lighter shadow */
+      box-shadow: 0 6px 15px rgba(0, 247, 255, 0.4); /* Stronger shadow */
       text-shadow: none;
-      transform: translateY(-3px); /* Less pronounced lift */
+      transform: translateY(-4px); /* More pronounced lift */
     }
 
     /* Skills Section */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem; /* Slightly less spacing */
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Slightly larger minmax */
+      gap: 2.5rem; /* More spacing */
       background: transparent;
       backdrop-filter: none;
       border-radius: 0;
@@ -673,7 +671,7 @@
 
     .skills-grid .card {
       text-align: center;
-      padding: 1.8rem; /* Slightly less padding */
+      padding: 2rem; /* More padding */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -681,91 +679,91 @@
     }
 
     .skills-grid i {
-      font-size: 3rem; /* Slightly smaller icons */
+      font-size: 3.5rem; /* Larger icons */
       color: #ff007a;
-      margin-bottom: 0.8rem; /* Slightly less margin */
+      margin-bottom: 1rem; /* More margin */
       transition: transform 0.3s ease, color 0.3s ease;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
     }
 
     .skills-grid .card:hover i {
-      transform: scale(1.15) rotate(5deg); /* Less pronounced effect */
+      transform: scale(1.2) rotate(8deg); /* More pronounced effect */
       color: #00f7ff;
     }
 
     .skills-grid .card p {
-      font-size: 1.1rem; /* Slightly smaller text */
+      font-size: 1.15rem; /* Larger text */
       font-weight: 500;
       color: #e0e7ff;
     }
 
     .tooltip {
       visibility: hidden;
-      background: rgba(0, 247, 255, 0.3); /* Less opaque */
+      background: rgba(0, 247, 255, 0.2); /* More transparent */
       color: #e0e7ff;
-      padding: 0.6rem 1rem; /* Slightly smaller padding */
-      border-radius: 0.6rem; /* Slightly smaller radius */
-      font-size: 0.9rem; /* Slightly smaller font */
+      padding: 0.7rem 1.2rem; /* More padding */
+      border-radius: 0.8rem; /* Larger radius */
+      font-size: 1rem; /* Larger font */
       position: absolute;
-      top: -45px; /* Adjusted position */
+      top: -50px; /* Adjusted position */
       white-space: nowrap;
       z-index: 2;
       opacity: 0;
       transition: all 0.2s ease-out, transform 0.2s ease-out;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
       pointer-events: none;
     }
 
     .skills-grid .card:hover .tooltip {
       visibility: visible;
       opacity: 1;
-      transform: translateY(-10px); /* Less significant lift */
+      transform: translateY(-12px); /* More significant lift */
     }
 
     /* Education Section */
     #education .card {
-      max-width: 750px; /* Slightly less max-width */
+      max-width: 800px; /* Wider card */
       margin: 0 auto;
       text-align: center;
-      padding: 2.5rem; /* Slightly less padding */
+      padding: 3rem; /* More padding */
     }
     #education .card h3 {
       color: #00f7ff;
-      margin-bottom: 0.7rem; /* Slightly less margin */
-      text-shadow: none; /* Removed text shadow */
-      font-size: 2rem; /* Slightly smaller */
+      margin-bottom: 0.9rem; /* More margin */
+      text-shadow: none;
+      font-size: 2.2rem; /* Larger */
     }
     #education .card p {
-      font-size: 1.1rem; /* Slightly smaller */
-      margin-bottom: 0.5rem; /* Slightly less margin */
+      font-size: 1.2rem; /* Larger */
+      margin-bottom: 0.6rem; /* More margin */
       color: #a5b4fc;
     }
 
     /* Certifications Section */
     #certifications .project-grid {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Slightly smaller minmax */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger minmax */
     }
     #certifications .card h3 {
-      font-size: 1.6rem; /* Slightly smaller */
+      font-size: 1.8rem; /* Larger */
     }
     #certifications .card p {
-      font-size: 1rem; /* Slightly smaller */
-      margin-bottom: 1rem; /* Slightly less margin */
+      font-size: 1.1rem; /* Larger */
+      margin-bottom: 1.2rem; /* More margin */
     }
     #certifications .card a {
-      padding: 0.6rem 1.5rem; /* Slightly smaller */
-      font-size: 0.95rem; /* Slightly smaller */
+      padding: 0.7rem 1.8rem; /* Larger */
+      font-size: 1rem; /* Larger */
     }
 
     /* Contact Form */
     .contact-form .card {
-      max-width: 700px; /* Slightly less max-width */
+      max-width: 750px; /* Wider card */
       margin: 0 auto;
-      padding: 2.5rem; /* Slightly less padding */
+      padding: 3rem; /* More padding */
     }
 
     .contact-info {
-      margin-bottom: 2.5rem; /* Slightly less margin */
+      margin-bottom: 3rem; /* More margin */
       text-align: center;
     }
 
@@ -773,27 +771,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.8rem; /* Slightly less gap */
-      margin-bottom: 0.8rem; /* Slightly less margin */
-      font-size: 1.05rem; /* Slightly smaller font */
-      text-shadow: none; /* Removed text shadow */
+      gap: 1rem; /* More gap */
+      margin-bottom: 1rem; /* More margin */
+      font-size: 1.1rem; /* Larger font */
+      text-shadow: none;
     }
     .contact-info p i {
       color: #ff007a;
-      font-size: 1.3rem; /* Slightly smaller icons */
+      font-size: 1.4rem; /* Larger icons */
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 0.9rem; /* Slightly smaller input fields */
-      margin-bottom: 1.2rem; /* Slightly less margin */
-      background: rgba(10, 14, 26, 0.5); /* Less opaque */
-      border: 1px solid #00f7ff;
+      padding: 1rem; /* Larger input fields */
+      margin-bottom: 1.5rem; /* More margin */
+      background: rgba(10, 14, 26, 0.4); /* More transparent */
+      border: 1px solid rgba(0, 247, 255, 0.8); /* Stronger border for input */
       color: #e0e7ff;
-      border-radius: 0.6rem; /* Slightly smaller radius */
-      font-size: 1rem;
-      text-shadow: none; /* Removed text shadow */
+      border-radius: 0.75rem; /* Larger radius */
+      font-size: 1.05rem; /* Slightly larger font */
+      text-shadow: none;
       transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
     }
 
@@ -801,25 +799,25 @@
     .contact-form textarea:focus {
       outline: none;
       border-color: #ff007a;
-      box-shadow: 0 0 10px rgba(255, 0, 122, 0.6); /* Lighter focus glow */
-      background: rgba(10, 14, 26, 0.7); /* Lighter on focus */
+      box-shadow: 0 0 12px rgba(255, 0, 122, 0.7); /* Stronger focus glow */
+      background: rgba(10, 14, 26, 0.6); /* Less transparent on focus */
     }
 
     .contact-form textarea {
-      height: 150px; /* Slightly smaller height */
+      height: 180px; /* Taller height */
       resize: vertical;
     }
 
     .contact-form button {
-      padding: 0.9rem 2.5rem; /* Slightly smaller button */
-      background: rgba(0, 247, 255, 0.3); /* Less opaque */
+      padding: 1rem 3rem; /* Larger button */
+      background: rgba(0, 247, 255, 0.25); /* More transparent */
       border: 1px solid #00f7ff;
       color: #e0e7ff;
       border-radius: 50px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
       position: relative;
       overflow: hidden;
     }
@@ -831,7 +829,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Less visible shine */
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent); /* Softer shine */
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -842,17 +840,17 @@
     .contact-form button:hover {
       background: #ff007a;
       color: #e0e7ff;
-      box-shadow: 0 6px 15px rgba(255, 0, 122, 0.5); /* Lighter shadow */
+      box-shadow: 0 8px 20px rgba(255, 0, 122, 0.5); /* Stronger shadow */
       text-shadow: none;
-      transform: translateY(-3px); /* Less pronounced lift */
+      transform: translateY(-4px); /* More pronounced lift */
     }
 
     .contact-form .error {
       color: #ff6b6b;
-      font-size: 0.9rem; /* Slightly smaller error text */
-      margin-bottom: 1.2rem; /* Slightly less margin */
+      font-size: 0.95rem; /* Slightly larger error text */
+      margin-bottom: 1.5rem; /* More margin */
       display: none;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
     }
 
     .contact-form .error.show {
@@ -861,113 +859,113 @@
 
     /* Footer */
     footer {
-      padding: 2.5rem 2rem; /* Slightly less padding */
+      padding: 3rem 2.5rem; /* More padding */
       text-align: center;
-      background: rgba(10, 14, 26, 0.9); /* Less opaque */
-      backdrop-filter: blur(10px); /* Slightly less blur */
-      margin: 2rem auto 0;
-      max-width: 1200px;
-      border-radius: 1.5rem 1.5rem 0 0; /* Consistent radius */
-      border-top: 1px solid rgba(0, 247, 255, 0.15); /* Lighter border */
-      box-shadow: 0 -2px 15px rgba(0, 247, 255, 0.1); /* Lighter shadow */
+      background: rgba(10, 14, 26, 0.8); /* More transparent */
+      backdrop-filter: blur(12px); /* Slightly more blur */
+      margin: 2.5rem auto 0; /* More margin */
+      max-width: 1280px; /* Wider content area */
+      border-radius: 2rem 2rem 0 0; /* Larger radius */
+      border-top: 1px solid rgba(0, 247, 255, 0.15); /* More subtle border */
+      box-shadow: 0 -3px 20px rgba(0, 247, 255, 0.08); /* Softer shadow */
     }
 
     footer p {
       color: #a5b4fc;
-      font-size: 0.95rem; /* Slightly smaller font */
+      font-size: 1rem; /* Slightly larger font */
     }
 
     .social-icons {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1.5rem; /* Slightly less gap */
-      margin-top: 1.5rem; /* Slightly less margin */
+      gap: 1.8rem; /* More gap */
+      margin-top: 2rem; /* More margin */
     }
 
     .social-icons a {
-      font-size: 1.8rem; /* Slightly smaller icons */
+      font-size: 2rem; /* Larger icons */
       color: #00f7ff;
       transition: all 0.3s ease;
-      text-shadow: none; /* Removed text shadow */
+      text-shadow: none;
     }
 
     .social-icons a:hover {
       color: #ff007a;
-      transform: scale(1.25) rotate(5deg); /* Less pronounced effect */
-      text-shadow: none; /* Removed text shadow */
+      transform: scale(1.3) rotate(8deg); /* More pronounced effect */
+      text-shadow: none;
     }
 
     /* Back to Top */
     #backToTop {
       position: fixed;
-      bottom: 2.5rem; /* Slightly less */
-      right: 2.5rem; /* Slightly less */
+      bottom: 3rem; /* More space */
+      right: 3rem; /* More space */
       background: linear-gradient(135deg, #00f7ff, #ff007a);
       color: #0a0e1a;
-      padding: 0.9rem; /* Slightly smaller button */
+      padding: 1rem; /* Larger button */
       border-radius: 50%;
       cursor: pointer;
       display: none;
       z-index: 10;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 247, 255, 0.4); /* Lighter shadow */
+      box-shadow: 0 5px 18px rgba(0, 247, 255, 0.45); /* Stronger shadow */
     }
 
     #backToTop:hover {
       background: linear-gradient(135deg, #ff007a, #00f7ff);
       color: #e0e7ff;
-      transform: scale(1.2) translateY(-3px); /* Less pronounced effect */
-      box-shadow: 0 6px 18px rgba(255, 0, 122, 0.5); /* Lighter shadow */
+      transform: scale(1.25) translateY(-4px); /* More pronounced effect */
+      box-shadow: 0 8px 22px rgba(255, 0, 122, 0.55); /* Stronger shadow */
     }
 
     #backToTop i {
-      font-size: 1.3rem; /* Slightly smaller icon */
+      font-size: 1.4rem; /* Larger icon */
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       section {
-        padding: 3rem 1rem;
-        margin: 1rem auto;
+        padding: 4rem 1.5rem;
+        margin: 1.5rem auto;
       }
       .project-grid {
         grid-template-columns: 1fr;
       }
       .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 2rem;
       }
       #education {
-        padding: 3rem 1rem;
-        margin: 1rem auto;
+        padding: 4rem 1.5rem;
+        margin: 1.5rem auto;
       }
       #education .card h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
       .contact-form .card {
-        padding: 2rem;
+        padding: 2.5rem;
       }
       .contact-form input, .contact-form textarea {
-        padding: 0.8rem;
+        padding: 0.9rem;
       }
       .contact-form textarea {
-        height: 120px;
+        height: 150px;
       }
       footer {
-        padding: 2rem 1rem;
-        margin: 1rem auto 0;
+        padding: 2.5rem 1.5rem;
+        margin: 1.5rem auto 0;
       }
       .social-icons a {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
       #backToTop {
-        bottom: 1.5rem;
-        right: 1.5rem;
-        padding: 0.7rem;
+        bottom: 2rem;
+        right: 2rem;
+        padding: 0.8rem;
       }
       #backToTop i {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -975,7 +973,7 @@
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -1187,7 +1185,7 @@
       <p>Expected: 2024-2026</p>
       <p>Relevant coursework: Advanced Machine Learning, Numerical Methods in Engineering, Data-Driven Design.</p>
     </div>
-    <div class="card" style="margin-top: 1.5rem;">
+    <div class="card" style="margin-top: 2rem;">
       <h3>B.Tech., Civil Engineering</h3>
       <p>Sreenidhi Institute of Science & Technology</p>
       <p>2019-2023</p>
@@ -1360,13 +1358,13 @@
           title: { text: plot.title, font: { color: '#e0e7ff', size: 14 } },
           xaxis: { 
             title: { text: plot.type === 'bar' ? 'Category' : 'Value', font: { color: '#e0e7ff', size: 12 } }, 
-            gridcolor: 'rgba(255, 255, 255, 0.08)', /* Lighter grid lines */
+            gridcolor: 'rgba(255, 255, 255, 0.05)', /* Even lighter grid lines */
             tickfont: { color: '#a5b4fc', size: 10 },
             automargin: true
           },
           yaxis: { 
             title: { text: plot.type === 'bar' ? 'Count' : 'Value', font: { color: '#e0e7ff', size: 12 } }, 
-            gridcolor: 'rgba(255, 255, 255, 0.08)', /* Lighter grid lines */
+            gridcolor: 'rgba(255, 255, 255, 0.05)', /* Even lighter grid lines */
             tickfont: { color: '#a5b4fc', size: 10 },
             automargin: true
           },
