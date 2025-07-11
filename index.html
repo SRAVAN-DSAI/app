@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC.256 0C112.6 0 0 112.6 0 256s112.6 256 256 256 256-112.6 256-256S399.4 0 256 0zm100 112c-14.6 14.6-38.2 14.6-52.8 0s14.6-38.2 0-52.8c14.6-14.6 38.2-14.6 52.8 0s14.6 38.2 0 52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8z"/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDBmN2ZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHpNMzU2IDIxNmMxNC42IDE0LjYgMzguMiAxNC42IDUyLjggMHMxNC42LTM4LjIgMC01Mi44Yy0xNC42LTE0LjYtMzguMi0xNC42LTUyLjggMHMxNC42IDM4LjIgMCA1Mi44em0tMTAwLTEwNGMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDExMmMtMTQuNi0xNC42LTM4LjItMTQuNi01Mi44IDBzLTE0LjYgMzguMiAwIDUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC42IDM4LjIgMTQuNiA1Mi44IDBzMTQuNi0zOC4yIDAtNTIuOHpNMjU2IDhjLTE0LjYtMTQuNi0zOC4yLTE0LjYtNTIuOCAwczAtMzguMiAwLTUyLjhjMTQuNiAxNC.256 0C112.6 0 0 112.6 0 256s112.6 256 256 256 256-112.6 256-256S399.4 0 256 0zm100 112c-14.6 14.6-38.2 14.6-52.8 0s14.6-38.2 0-52.8c14.6-14.6 38.2-14.6 52.8 0s14.6 38.2 0 52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8zm-100-104c-14.6-14.6-38.2-14.6-52.8 0s-14.6 38.2 0 52.8c14.6 14.6 38.2 14.6 52.8 0s14.6-38.2 0-52.8z"/%3E%3C/svg%3E">
   <style>
     /* Global Reset & Base Styles */
     * {
@@ -159,7 +159,8 @@
       }
 
       .nav-links {
-        display: none; /* Hide by default on mobile */
+        /* Mobile specific styles */
+        display: flex; /* Keep flex for layout, but control visibility with opacity/pointer-events */
         flex-direction: column;
         width: 100%;
         position: fixed;
@@ -170,11 +171,15 @@
         height: calc(100vh - 60px); /* Full height minus nav */
         overflow-y: auto;
         transform: translateX(-100%); /* Off-screen by default */
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Added opacity transition */
+        opacity: 0; /* Initially hidden */
+        pointer-events: none; /* Prevent interaction when hidden */
       }
 
       .nav-links.active {
         transform: translateX(0); /* Slide in */
+        opacity: 1; /* Fully visible */
+        pointer-events: auto; /* Allow interaction */
       }
 
       .nav-links li {
@@ -253,11 +258,13 @@
       text-shadow: 0 0 10px rgba(0, 196, 255, 0.6); /* Soft glow for name */
     }
 
-    #typing-text {
-      font-size: 1.8rem;
-      color: #ffffff; /* White text for typing effect */
-      font-weight: 400;
-      margin-bottom: 30px;
+    /* Removed #typing-text styles as it's removed from HTML */
+
+    .hero-content .about-text-hero {
+      max-width: 800px;
+      margin: 20px auto 30px auto; /* Margin for about text */
+      font-size: 1.1rem;
+      color: #a5b4fc;
     }
 
     .hero-links {
@@ -316,14 +323,6 @@
 
     .contact-info p i {
       color: #007bff; /* Icon color */
-    }
-
-    /* About Section */
-    #about .card {
-      padding: 30px;
-      background-color: #2b2b2b;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     /* Project Filtering */
@@ -624,7 +623,8 @@
 
       .hero { padding: 60px 15px; } /* Reduced padding for hero */
       .profile-photo { width: 120px; height: 120px; margin-bottom: 15px; } /* Smaller photo */
-      #typing-text { font-size: 1.3rem; margin-bottom: 20px; } /* Smaller typing text */
+      /* #typing-text styles removed */
+      .hero-content .about-text-hero { font-size: 1rem; margin: 15px auto 20px auto; } /* Adjusted about text on mobile */
       .hero-links { flex-direction: column; gap: 10px; margin-top: 20px; } /* Stack buttons */
       .hero-links a { width: 90%; max-width: 300px; padding: 10px 20px; } /* Wider, adjusted buttons */
 
@@ -639,7 +639,7 @@
       }
 
       .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust min width for skills */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 15px;
       }
 
@@ -648,7 +648,7 @@
       }
 
       .skills-grid .card i {
-        font-size: 2em; /* Smaller icons */
+        font-size: 2.5em; /* Smaller icons */
       }
 
       .contact-form .card {
@@ -665,7 +665,7 @@
       }
 
       .social-icons a {
-        font-size: 1.5em; /* Smaller social icons */
+        font-size: 1.5em;
       }
 
       #backToTop {
@@ -685,7 +685,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
+      <!-- Removed About link as it's merged into Hero -->
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
@@ -698,7 +698,8 @@
     <div class="hero-content">
       <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan Profile" class="profile-photo">
       <h1>Kodari Sravan</h1>
-      <p id="typing-text"></p>
+      <!-- Removed typing text element -->
+      <p class="about-text-hero">As a passionate Data Scientist and AI-ML enthusiast, I thrive on transforming complex datasets into actionable insights. My journey in data science is driven by a deep curiosity and a commitment to leveraging machine learning and data visualization for impactful solutions. With a strong foundation in Python and SQL, I specialize in building robust predictive models and crafting compelling data narratives. I am proficient in a range of tools including Scikit-learn, PyTorch, and Plotly, consistently delivering projects that are both analytically sound and visually intuitive. I am eager to contribute my skills to dynamic teams and tackle challenging problems at the intersection of data and innovation.</p>
       <div class="hero-links">
         <a href="https://github.com/SRAVAN-DSAI/app/raw/main/Data_Scientist_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn">View Resume <i class="fas fa-file-alt"></i></a>
         <a href="https://www.linkedin.com/in/sravan-kodari-943654210" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <i class="fab fa-linkedin"></i></a>
@@ -707,13 +708,6 @@
         <p><i class="fas fa-envelope"></i>sravankodari4@gmail.com</p>
         <p><i class="fas fa-phone"></i>+91 8374147548</p>
       </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>As a passionate Data Scientist and AI-ML enthusiast, I thrive on transforming complex datasets into actionable insights. My journey in data science is driven by a deep curiosity and a commitment to leveraging machine learning and data visualization for impactful solutions. With a strong foundation in Python and SQL, I specialize in building robust predictive models and crafting compelling data narratives. I am proficient in a range of tools including Scikit-learn, PyTorch, and Plotly, consistently delivering projects that are both analytically sound and visually intuitive. I am eager to contribute my skills to dynamic teams and tackle challenging problems at the intersection of data and innovation.</p>
     </div>
   </section>
   
@@ -957,44 +951,6 @@
       });
     } catch (error) {
       console.error('Hamburger Menu error:', error);
-    }
-
-    // Typing effect for subtitle
-    try {
-      const typingText = document.getElementById('typing-text');
-      const phrases = [
-        'Data Scientist & AI-ML Enthusiast',
-        'Predictive Modeling and Data Visualization Specialist',
-        'Bridging Data with Business Solutions'
-      ];
-      let phraseIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-    
-      function type() {
-        const currentPhrase = phrases[phraseIndex];
-        if (isDeleting) {
-          typingText.textContent = currentPhrase.substring(0, charIndex--);
-          if (charIndex < 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            setTimeout(type, 500);
-          } else {
-            setTimeout(type, 50);
-          }
-        } else {
-          typingText.textContent = currentPhrase.substring(0, charIndex++);
-          if (charIndex > currentPhrase.length) {
-            isDeleting = true;
-            setTimeout(type, 2000);
-          } else {
-            setTimeout(type, 100);
-          }
-        }
-      }
-      type();
-    } catch (error) {
-      console.error('Typing Effect error:', error);
     }
     
     // Project Filtering
