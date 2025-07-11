@@ -1,0 +1,18 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <rect x="100" y="50" width="200" height="50" fill="none" stroke="#32CD32" stroke-width="2"/>
+  <text x="200" y="75" text-anchor="middle" fill="#32CD32" font-size="16">Data Exploration</text>
+  <path d="M200 100 L200 150" fill="none" stroke="#32CD32" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="100" y="150" width="200" height="50" fill="none" stroke="#32CD32" stroke-width="2"/>
+  <text x="200" y="175" text-anchor="middle" fill="#32CD32" font-size="16">Modeling</text>
+  <path d="M200 200 L200 250" fill="none" stroke="#32CD32" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="100" y="250" width="200" height="50" fill="none" stroke="#32CD32" stroke-width="2"/>
+  <text x="200" y="275" text-anchor="middle" fill="#32CD32" font-size="16">Evaluation</text>
+  <path d="M200 300 L200 350" fill="none" stroke="#32CD32" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="100" y="350" width="200" height="50" fill="none" stroke="#32CD32" stroke-width="2"/>
+  <text x="200" y="375" text-anchor="middle" fill="#32CD32" font-size="16">Visualization</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#32CD32"/>
+    </marker>
+  </defs>
+</svg>
