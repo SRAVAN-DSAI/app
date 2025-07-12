@@ -1153,39 +1153,60 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-container {
-        height: 70px;
-        padding: 0 1rem;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(10, 10, 10, 0.98);
-        backdrop-filter: var(--blur);
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 3rem;
-        transform: translateX(-100%);
-        transition: transform 0.4s ease;
-        gap: 1rem;
-        align-items: flex-start; /* Align links to the left in mobile menu */
-        padding-left: 2rem; /* Add some padding to the left */
-      }
-
-      .nav-links.active {
-        transform: translateX(0);
-      }
-
-      .nav-actions {
-        display: none;
+        .hamburger {
+          display: flex;
+        }
+      
+        .nav-container {
+          height: 70px;
+          padding: 0 1rem;
+          /* Add justify-content to space elements if needed, or adjust padding */
+          justify-content: space-between; /* Ensures logo and buttons are at ends */
+          gap: 1rem; /* Adjust gap between elements */
+        }
+      
+        .nav-logo {
+          margin-right: auto; /* Pushes the logo to the left */
+        }
+      
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          height: calc(100vh - 70px);
+          background: rgba(10, 10, 10, 0.98);
+          backdrop-filter: var(--blur);
+          flex-direction: column;
+          justify-content: flex-start;
+          padding-top: 3rem;
+          transform: translateX(-100%);
+          transition: transform 0.4s ease;
+          gap: 1rem;
+        }
+      
+        .nav-links.active {
+          transform: translateX(0);
+        }
+      
+        .nav-actions {
+          display: flex; /* Change this to flex to show buttons */
+          gap: 0.5rem; /* Adjust gap between the two buttons */
+          align-items: center;
+          order: 1; /* Ensure they appear after the logo, before hamburger */
+        }
+      
+        /* Optional: Adjust button sizes for smaller screens if they look too big */
+        .nav-actions .btn {
+          padding: 0.6rem 1rem;
+          font-size: 0.8rem;
+        }
+      
+        .hamburger {
+          order: 2; /* Ensure hamburger is on the right */
+        }
+      
+        /* Adjust other elements if they conflict with the new button placement */
       }
 
       .hero {
