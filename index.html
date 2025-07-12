@@ -1155,7 +1155,7 @@
     @media (max-width: 768px) {
       .hamburger {
         display: flex; /* Always display hamburger on mobile */
-        order: 2; /* Position hamburger to the right */
+        order: 0; /* Position hamburger to the right */
       }
 
       .nav-container {
@@ -1169,7 +1169,8 @@
 
       .nav-logo {
         font-size: 1.5rem; /* Adjust logo size for mobile if needed */
-        margin-right: auto; /* Pushes other items to the right */
+        margin-left: auto; /* Push the logo to the far right */
+        order: 2; /* Move logo to the rightmost position */
       }
 
       .nav-links {
