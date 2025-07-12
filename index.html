@@ -1153,60 +1153,59 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-        .hamburger {
-          display: flex;
-        }
-      
-        .nav-container {
-          height: 70px;
-          padding: 0 1rem;
-          /* Add justify-content to space elements if needed, or adjust padding */
-          justify-content: space-between; /* Ensures logo and buttons are at ends */
-          gap: 1rem; /* Adjust gap between elements */
-        }
-      
-        .nav-logo {
-          margin-right: auto; /* Pushes the logo to the left */
-        }
-      
-        .nav-links {
-          position: fixed;
-          top: 70px;
-          left: 0;
-          width: 100%;
-          height: calc(100vh - 70px);
-          background: rgba(10, 10, 10, 0.98);
-          backdrop-filter: var(--blur);
-          flex-direction: column;
-          justify-content: flex-start;
-          padding-top: 3rem;
-          transform: translateX(-100%);
-          transition: transform 0.4s ease;
-          gap: 1rem;
-        }
-      
-        .nav-links.active {
-          transform: translateX(0);
-        }
-      
-        .nav-actions {
-          display: flex; /* Change this to flex to show buttons */
-          gap: 0.5rem; /* Adjust gap between the two buttons */
-          align-items: center;
-          order: 1; /* Ensure they appear after the logo, before hamburger */
-        }
-      
-        /* Optional: Adjust button sizes for smaller screens if they look too big */
-        .nav-actions .btn {
-          padding: 0.6rem 1rem;
-          font-size: 0.8rem;
-        }
-      
-        .hamburger {
-          order: 2; /* Ensure hamburger is on the right */
-        }
-      
-        /* Adjust other elements if they conflict with the new button placement */
+      .hamburger {
+        display: flex; /* Always display hamburger on mobile */
+        order: 2; /* Position hamburger to the right */
+      }
+
+      .nav-container {
+        height: 70px;
+        padding: 0 1rem;
+        display: flex; /* Ensure nav-container uses flexbox on mobile */
+        justify-content: space-between; /* Space out logo, buttons, and hamburger */
+        align-items: center; /* Vertically align items */
+        gap: 0.5rem; /* Small gap between items */
+      }
+
+      .nav-logo {
+        font-size: 1.5rem; /* Adjust logo size for mobile if needed */
+        margin-right: auto; /* Pushes other items to the right */
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: var(--blur);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        gap: 1rem;
+        align-items: flex-start; /* Align links to the left in mobile menu */
+        padding-left: 2rem; /* Add some padding to the left */
+        z-index: 999; /* Ensure menu is above other content */
+      }
+
+      .nav-links.active {
+        transform: translateX(0);
+      }
+
+      .nav-actions {
+        display: flex; /* Show the buttons on mobile */
+        gap: 0.75rem; /* Space between LinkedIn and Resume buttons */
+        align-items: center;
+        order: 1; /* Position buttons between logo and hamburger */
+      }
+
+      /* Adjust button sizes for mobile within the nav-actions if they appear too large */
+      .nav-actions .btn {
+        padding: 0.6rem 1rem; /* Smaller padding */
+        font-size: 0.75rem; /* Smaller font size */
       }
 
       .hero {
