@@ -1293,7 +1293,25 @@
       }
 
       .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for skills on smaller mobile */
+        gap: 1rem; /* Smaller gap */
+      }
+
+      .skill-card {
+        padding: 1.5rem; /* Reduced padding for smaller cards */
+      }
+
+      .skill-icon {
+        font-size: 2.5rem; /* Smaller icon size */
+        margin-bottom: 1rem;
+      }
+
+      .skill-name {
+        font-size: 0.9rem; /* Smaller skill name font size */
+      }
+
+      .skill-description {
+        font-size: 0.8rem; /* Smaller description font size */
       }
 
       .hero-actions {
