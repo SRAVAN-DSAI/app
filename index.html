@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +8,11 @@
   <meta name="author" content="Kodari Sravan">
   <title>Kodari Sravan - Data Scientist</title>
   
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA3YmZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHoiLz48L3N2Zz4=">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA3YmZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2BDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHoiLz48L3N2Zz4=">
   
   <style>
     /* CSS Variables for consistent theming */
@@ -733,7 +730,7 @@
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg-dark);
-      height: 280px;
+      height: 280px; /* Default height */
       transition: all 0.3s ease;
     }
 
@@ -1179,6 +1176,8 @@
         transform: translateX(-100%);
         transition: transform 0.4s ease;
         gap: 1rem;
+        align-items: flex-start; /* Align links to the left in mobile menu */
+        padding-left: 2rem; /* Add some padding to the left */
       }
 
       .nav-links.active {
@@ -1214,6 +1213,13 @@
         flex-direction: column;
         width: fit-content;
         margin: 0 auto;
+        padding: 0.5rem; /* Reduce padding for smaller buttons */
+        gap: 0.25rem; /* Reduce gap between filter buttons */
+      }
+
+      .filter-btn {
+        padding: 0.8rem 1.5rem; /* Adjust padding for filter buttons */
+        font-size: 0.9rem; /* Adjust font size */
       }
 
       .project-grid {
@@ -1254,6 +1260,10 @@
       h2 {
         font-size: clamp(1.5rem, 6vw, 2.5rem);
       }
+
+      .plotly-container {
+        height: 250px; /* Adjust height for mobile */
+      }
     }
 
     @media (max-width: 480px) {
@@ -1274,7 +1284,48 @@
         width: 100%;
         justify-content: center;
       }
+
+      .nav-logo {
+        font-size: 1.5rem; /* Slightly smaller logo on very small screens */
+      }
+
+      .hero-description {
+        font-size: 1rem; /* Smaller text for hero description */
+      }
+
+      .contact-item {
+        flex-direction: column; /* Stack icon and text for contact items */
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1.5rem;
+      }
+
+      .contact-icon {
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-form {
+        padding: 2rem 1.5rem; /* Adjust padding for contact form */
+      }
     }
+
+    @media (max-width: 320px) {
+        .filter-buttons {
+            flex-direction: column;
+            width: 100%; /* Make filter buttons full width */
+            padding: 0.5rem;
+        }
+        .filter-btn {
+            width: 100%; /* Make each filter button full width */
+        }
+        .skills-grid {
+            grid-template-columns: 1fr; /* Stack skills cards on very small screens */
+        }
+        .section-bg {
+            padding: 1.5rem 1rem; /* Even smaller padding for sections */
+        }
+    }
+
 
     /* Performance optimizations */
     * {
@@ -1289,7 +1340,6 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-container">
       <div class="nav-logo">KS</div>
@@ -1317,7 +1367,6 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-content">
       <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan - Data Scientist" class="profile-photo">
@@ -1339,7 +1388,6 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <div class="section-bg">
       <h2 class="reveal">Featured Projects</h2>
@@ -1509,7 +1557,6 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills">
     <div class="section-bg">
       <h2 class="reveal">Technical Skills</h2>
@@ -1558,7 +1605,6 @@
     </div>
   </section>
 
-  <!-- Education Section -->
   <section id="education">
     <div class="section-bg">
       <h2 class="reveal">Education</h2>
@@ -1583,7 +1629,6 @@
     </div>
   </section>
 
-  <!-- Certifications Section -->
   <section id="certifications">
     <div class="section-bg">
       <h2 class="reveal">Certifications</h2>
@@ -1634,7 +1679,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <div class="section-bg">
       <h2 class="reveal">Get In Touch</h2>
@@ -1687,7 +1731,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="social-icon" title="LinkedIn">
@@ -1706,7 +1749,6 @@
     <p>&copy; 2025 Kodari Sravan. Crafted with passion and precision.</p>
   </footer>
 
-  <!-- Back to Top -->
   <div id="backToTop" title="Back to Top">
     <i class="fas fa-chevron-up"></i>
   </div>
@@ -2027,18 +2069,21 @@
     function typeWriter() {
       const text = "Data Scientist & ML Engineer";
       const element = document.querySelector('.hero-subtitle');
-      const typingElement = element.querySelector('.typing-effect');
-      let i = 0;
-      
+      // Clear existing content and remove typing effect span if present
       element.innerHTML = '';
+      let i = 0;
       
       function type() {
         if (i < text.length) {
-          element.innerHTML += text.charAt(i);
+          element.textContent += text.charAt(i); // Use textContent to avoid re-creating span
           i++;
           setTimeout(type, 100);
         } else {
-          element.innerHTML += ' <span class="typing-effect">|</span>';
+          // Add typing effect span after typing is complete
+          const typingSpan = document.createElement('span');
+          typingSpan.classList.add('typing-effect');
+          typingSpan.textContent = '|';
+          element.appendChild(typingSpan);
         }
       }
       
