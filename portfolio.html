@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +8,11 @@
   <meta name="author" content="Kodari Sravan">
   <title>Kodari Sravan - Data Scientist</title>
   
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA3YmZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2IDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44IDBzMTQuNiAzOC4yIDAgNTIuOHoiLz48L3N2Zz4=">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDA3YmZmIiBkPSJNMjU2IDBDMTEyLjYgMCAwIDExMi42IDAgMjU2czExMi42IDI1NiAyNTYgMjU2IDI1Ni0xMTIuNiAyNTYtMjU2UzM5OS40IDAgMjU2BDB6bTEwMCAxMTJjLTE0LjYgMTQuNi0zOC4yIDE0LjYtNTIuOCAwczE0LjYtMzguMiAwLTUyLjhjMTQuNi0xNC42IDM4LjItMTQuNiA1Mi44czE0LjYgMzguMiAwIDUyLjh6Ii8+PC9zdmc+">
   
   <style>
     /* CSS Variables for consistent theming */
@@ -733,7 +730,7 @@
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg-dark);
-      height: 280px;
+      height: 280px; /* Default height */
       transition: all 0.3s ease;
     }
 
@@ -833,6 +830,19 @@
       opacity: 1;
       transform: translateY(0);
     }
+    
+    /* Style for SVG icons within social-icon to ensure proper sizing and color */
+    .social-icon svg {
+        width: 1.4rem; /* Match font-size of original icon */
+        height: 1.4rem; /* Match font-size of original icon */
+        fill: var(--text-secondary); /* Inherit color from parent */
+        transition: all 0.4s ease; /* Apply transition for hover effects */
+    }
+
+    .social-icon:hover svg {
+        fill: white; /* Change fill color on hover */
+    }
+
 
     /* Enhanced Timeline */
     .timeline {
@@ -1157,12 +1167,23 @@
     /* Responsive Design */
     @media (max-width: 768px) {
       .hamburger {
-        display: flex;
+        display: flex; /* Always display hamburger on mobile */
+        order: 0; /* Position hamburger to the right */
       }
 
       .nav-container {
         height: 70px;
         padding: 0 1rem;
+        display: flex; /* Ensure nav-container uses flexbox on mobile */
+        justify-content: space-between; /* Space out logo, buttons, and hamburger */
+        align-items: center; /* Vertically align items */
+        gap: 0.5rem; /* Small gap between items */
+      }
+
+      .nav-logo {
+        font-size: 1.5rem; /* Adjust logo size for mobile if needed */
+        margin-left: auto; /* Push the logo to the far right */
+        order: 2; /* Move logo to the rightmost position */
       }
 
       .nav-links {
@@ -1179,6 +1200,9 @@
         transform: translateX(-100%);
         transition: transform 0.4s ease;
         gap: 1rem;
+        align-items: flex-start; /* Align links to the left in mobile menu */
+        padding-left: 2rem; /* Add some padding to the left */
+        z-index: 999; /* Ensure menu is above other content */
       }
 
       .nav-links.active {
@@ -1186,7 +1210,16 @@
       }
 
       .nav-actions {
-        display: none;
+        display: flex; /* Show the buttons on mobile */
+        gap: 0.75rem; /* Space between LinkedIn and Resume buttons */
+        align-items: center;
+        order: 1; /* Position buttons between logo and hamburger */
+      }
+
+      /* Adjust button sizes for mobile within the nav-actions if they appear too large */
+      .nav-actions .btn {
+        padding: 0.6rem 1rem; /* Smaller padding */
+        font-size: 0.75rem; /* Smaller font size */
       }
 
       .hero {
@@ -1214,6 +1247,13 @@
         flex-direction: column;
         width: fit-content;
         margin: 0 auto;
+        padding: 0.5rem; /* Reduce padding for smaller buttons */
+        gap: 0.25rem; /* Reduce gap between filter buttons */
+      }
+
+      .filter-btn {
+        padding: 0.8rem 1.5rem; /* Adjust padding for filter buttons */
+        font-size: 0.9rem; /* Adjust font size */
       }
 
       .project-grid {
@@ -1254,6 +1294,10 @@
       h2 {
         font-size: clamp(1.5rem, 6vw, 2.5rem);
       }
+
+      .plotly-container {
+        height: 250px; /* Adjust height for mobile */
+      }
     }
 
     @media (max-width: 480px) {
@@ -1262,7 +1306,25 @@
       }
 
       .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for skills on smaller mobile */
+        gap: 1rem; /* Smaller gap */
+      }
+
+      .skill-card {
+        padding: 1.5rem; /* Reduced padding for smaller cards */
+      }
+
+      .skill-icon {
+        font-size: 2.5rem; /* Smaller icon size */
+        margin-bottom: 1rem;
+      }
+
+      .skill-name {
+        font-size: 0.9rem; /* Smaller skill name font size */
+      }
+
+      .skill-description {
+        font-size: 0.8rem; /* Smaller description font size */
       }
 
       .hero-actions {
@@ -1274,7 +1336,48 @@
         width: 100%;
         justify-content: center;
       }
+
+      .nav-logo {
+        font-size: 1.5rem; /* Slightly smaller logo on very small screens */
+      }
+
+      .hero-description {
+        font-size: 1rem; /* Smaller text for hero description */
+      }
+
+      .contact-item {
+        flex-direction: column; /* Stack icon and text for contact items */
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1.5rem;
+      }
+
+      .contact-icon {
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-form {
+        padding: 2rem 1.5rem; /* Adjust padding for contact form */
+      }
     }
+
+    @media (max-width: 320px) {
+        .filter-buttons {
+            flex-direction: column;
+            width: 100%; /* Make filter buttons full width */
+            padding: 0.5rem;
+        }
+        .filter-btn {
+            width: 100%; /* Make each filter button full width */
+        }
+        .skills-grid {
+            grid-template-columns: 1fr; /* Stack skills cards on very small screens */
+        }
+        .section-bg {
+            padding: 1.5rem 1rem; /* Even smaller padding for sections */
+        }
+    }
+
 
     /* Performance optimizations */
     * {
@@ -1289,14 +1392,13 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-container">
       <div class="nav-logo">KS</div>
       <ul class="nav-links">
         <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#certifications" class="nav-link">Certifications</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -1317,7 +1419,6 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="hero-content">
       <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan - Data Scientist" class="profile-photo">
@@ -1339,7 +1440,54 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <section id="skills">
+    <div class="section-bg">
+      <h2 class="reveal">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <i class="fab fa-python skill-icon"></i>
+          <div class="skill-name">Python</div>
+          <div class="skill-description">Data Analysis, ML, DL, Automation</div>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-database skill-icon"></i>
+          <div class="skill-name">SQL</div>
+          <div class="skill-description">Database Design & Optimization</div>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-fire skill-icon"></i>
+          <div class="skill-name">PyTorch</div>
+          <div class="skill-description">Deep Learning & Neural Networks</div>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-brain skill-icon"></i>
+          <div class="skill-name">TensorFlow</div>
+          <div class="skill-description">ML Model Development</div>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-chart-line skill-icon"></i>
+          <div class="skill-name">Data Visualization</div>
+          <div class="skill-description">Plotly, Matplotlib, Seaborn</div>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-cloud skill-icon"></i>
+          <div class="skill-name">AWS</div>
+          <div class="skill-description">S3, EC2, Cloud Computing</div>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fab fa-git-alt skill-icon"></i>
+          <div class="skill-name">Git</div>
+          <div class="skill-description">Version Control & Collaboration</div>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-star skill-icon"></i>
+          <div class="skill-name">PySpark</div>
+          <div class="skill-description">Big Data Processing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="projects">
     <div class="section-bg">
       <h2 class="reveal">Featured Projects</h2>
@@ -1509,56 +1657,6 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <div class="section-bg">
-      <h2 class="reveal">Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <i class="fab fa-python skill-icon"></i>
-          <div class="skill-name">Python</div>
-          <div class="skill-description">Data Analysis, ML, DL, Automation</div>
-        </div>
-        <div class="skill-card reveal">
-          <i class="fas fa-database skill-icon"></i>
-          <div class="skill-name">SQL</div>
-          <div class="skill-description">Database Design & Optimization</div>
-        </div>
-        <div class="skill-card reveal">
-          <i class="fas fa-fire skill-icon"></i>
-          <div class="skill-name">PyTorch</div>
-          <div class="skill-description">Deep Learning & Neural Networks</div>
-        </div>
-        <div class="skill-card reveal">
-          <i class="fas fa-brain skill-icon"></i>
-          <div class="skill-name">TensorFlow</div>
-          <div class="skill-description">ML Model Development</div>
-        </div>
-        <div class="skill-card reveal">
-          <i class="fas fa-chart-line skill-icon"></i>
-          <div class="skill-name">Data Visualization</div>
-          <div class="skill-description">Plotly, Matplotlib, Seaborn</div>
-        </div>
-        <div class="skill-card reveal">
-          <i class="fas fa-cloud skill-icon"></i>
-          <div class="skill-name">AWS</div>
-          <div class="skill-description">S3, EC2, Cloud Computing</div>
-        </div>
-        <div class="skill-card reveal">
-          <i class="fab fa-git-alt skill-icon"></i>
-          <div class="skill-name">Git</div>
-          <div class="skill-description">Version Control & Collaboration</div>
-        </div>
-        <div class="skill-card reveal">
-          <i class="fas fa-star skill-icon"></i>
-          <div class="skill-name">PySpark</div>
-          <div class="skill-description">Big Data Processing</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
   <section id="education">
     <div class="section-bg">
       <h2 class="reveal">Education</h2>
@@ -1583,7 +1681,6 @@
     </div>
   </section>
 
-  <!-- Certifications Section -->
   <section id="certifications">
     <div class="section-bg">
       <h2 class="reveal">Certifications</h2>
@@ -1634,7 +1731,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <div class="section-bg">
       <h2 class="reveal">Get In Touch</h2>
@@ -1687,7 +1783,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="social-icon" title="LinkedIn">
@@ -1696,8 +1791,8 @@
       <a href="https://github.com/sravan-dsai" target="_blank" class="social-icon" title="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://x.com/sravankodari4" target="_blank" class="social-icon" title="Twitter">
-        <i class="fab fa-x-twitter"></i>
+      <a href="https://x.com/sravankodari1" target="_blank" class="social-icon" title="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
       </a>
       <a href="mailto:sravankodari4@gmail.com" class="social-icon" title="Email">
         <i class="fas fa-envelope"></i>
@@ -1706,7 +1801,6 @@
     <p>&copy; 2025 Kodari Sravan. Crafted with passion and precision.</p>
   </footer>
 
-  <!-- Back to Top -->
   <div id="backToTop" title="Back to Top">
     <i class="fas fa-chevron-up"></i>
   </div>
@@ -2027,18 +2121,21 @@
     function typeWriter() {
       const text = "Data Scientist & ML Engineer";
       const element = document.querySelector('.hero-subtitle');
-      const typingElement = element.querySelector('.typing-effect');
-      let i = 0;
-      
+      // Clear existing content and remove typing effect span if present
       element.innerHTML = '';
+      let i = 0;
       
       function type() {
         if (i < text.length) {
-          element.innerHTML += text.charAt(i);
+          element.textContent += text.charAt(i); // Use textContent to avoid re-creating span
           i++;
           setTimeout(type, 100);
         } else {
-          element.innerHTML += ' <span class="typing-effect">|</span>';
+          // Add typing effect span after typing is complete
+          const typingSpan = document.createElement('span');
+          typingSpan.classList.add('typing-effect');
+          typingSpan.textContent = '|';
+          element.appendChild(typingSpan);
         }
       }
       
