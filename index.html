@@ -1305,15 +1305,6 @@
         grid-template-columns: 1fr;
       }
 
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for skills on smaller mobile */
-        gap: 1rem; /* Smaller gap */
-      }
-
-      .skill-card {
-        padding: 1.5rem; /* Reduced padding for smaller cards */
-      }
-
       .skill-icon {
         font-size: 2.5rem; /* Smaller icon size */
         margin-bottom: 1rem;
@@ -1360,7 +1351,24 @@
         padding: 2rem 1.5rem; /* Adjust padding for contact form */
       }
     }
-
+    @media (max-width: 400px) {
+      .skills-grid {
+        grid-template-columns: 1fr; /* Force single column on very small screens */
+        gap: 15px; /* Adjust gap between cards */
+      }
+  
+      .skill-card {
+        border-left: 6px solid var(--primary); /* Left border from example UI */
+        border-top: 1px solid var(--border); /* Retain existing border */
+        border-right: 1px solid var(--border); /* Retain existing border */
+        border-bottom: 1px solid var(--border); /* Retain existing border */
+        padding: 1.5rem; /* Consistent padding for smaller cards */
+        margin-bottom: 15px; /* Margin-bottom from example UI */
+        float: none; /* Ensure no floating, handled by grid */
+        width: auto; /* Allow grid to manage width */
+        box-shadow: var(--shadow); /* Add a subtle shadow for depth */
+      }
+    }
     @media (max-width: 320px) {
         .filter-buttons {
             flex-direction: column;
