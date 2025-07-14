@@ -1183,14 +1183,16 @@
     /* Responsive Design */
     @media (max-width: 992px) {
       .hero-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on mobile */
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem; /* Reduced gap for mobile */
+        padding: 1rem;
       }
       .profile-photo {
-        margin-bottom: 2rem;
-        width: 250px;
-        height: 250px;
+        order: 2; /* Ensure image is last (bottom) on mobile */
+        width: 200px; /* Slightly smaller for mobile */
+        height: 200px;
+        margin: 0 auto 1rem; /* Center image with bottom margin */
       }
       .hero-subtitle::after {
         left: 50%;
