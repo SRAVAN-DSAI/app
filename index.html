@@ -594,6 +594,9 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       cursor: pointer;
+      /* Apply flex to project-card for vertical stacking of image and body */
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card:hover {
@@ -631,9 +634,24 @@
       transform: scale(1.05);
     }
 
+    /* New class for wrapping project content and Plotly graph */
+    .project-body { 
+        display: flex;
+        flex-wrap: wrap; /* Allows content and graph to wrap on smaller screens */
+        gap: 2rem; /* Spacing between content and graph */
+        padding: 2rem; /* Matches existing project-content padding */
+        position: relative;
+        width: 100%; /* Ensure it takes full width within project-card */
+    }
+
     .project-content {
-      padding: 2rem; /* Reduced from 3rem */
+      /* Removed padding as it's now on .project-body */
+      padding: 0;
+      /* Removed margin-bottom if it causes issues with flex layout */
+      margin-bottom: 0;
       position: relative;
+      flex: 2; /* Content takes more space */
+      min-width: 300px; /* Ensures content doesn't shrink too much */
     }
 
     .project-title {
@@ -700,13 +718,17 @@
 
     /* Enhanced Plotly Container */
     .plotly-container {
-      margin-top: 1.5rem; /* Reduced from 2rem */
+      /* Removed margin-top as it's now handled by .project-body gap */
+      margin-top: 0; 
       border-radius: 12px; /* Reduced from 16px */
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg-dark);
-      height: 250px; /* Reduced from 300px */
+      /* Changed height to auto for better responsiveness with flexbox */
+      height: auto; 
       transition: all 0.3s ease;
+      flex: 1; /* Graph takes less space */
+      min-width: 280px; /* Ensures graph doesn't shrink too much */
     }
 
     .plotly-container:hover {
@@ -1146,35 +1168,29 @@
         text-align: center;
         gap: 2rem; /* Reduced from 2.5rem */
       }
-
       .profile-photo {
         margin-bottom: 2rem; /* Reduced from 2.5rem */
         width: 250px; /* Reduced from 300px */
         height: 250px; /* Reduced from 300px */
       }
-
       .hero-subtitle::after {
         left: 50%;
         transform: translateX(-50%);
       }
-
       .hero-actions {
         justify-content: center;
       }
-
       .hero-description {
         max-width: 700px;
         margin-left: auto;
         margin-right: auto;
       }
     }
-
     @media (max-width: 768px) {
       .hamburger {
         display: flex;
         order: 0;
       }
-
       .nav-container {
         height: 50px; /* Reduced from 70px */
         padding: 0 1rem; /* Reduced from 1.5rem */
@@ -1183,13 +1199,11 @@
         align-items: center;
         gap: 0.8rem;
       }
-
       .nav-logo {
         font-size: 1.2rem; /* Reduced from 1.4rem */
         margin-left: auto;
         order: 2;
       }
-
       .nav-links {
         position: fixed;
         top: 50px; /* Adjusted for smaller nav height */
@@ -1208,44 +1222,36 @@
         padding-left: 2rem; /* Reduced from 2.5rem */
         z-index: 999;
       }
-
       .nav-links.active {
         transform: translateX(0);
       }
-
       .nav-actions {
         display: flex;
         gap: 0.8rem;
         align-items: center;
         order: 1;
       }
-
       .nav-actions .btn {
         padding: 0.5rem 1rem; /* Reduced from 0.6rem 1.2rem */
         font-size: 0.75rem; /* Reduced from 0.8rem */
       }
-
       .hero {
         padding: 4rem 1rem; /* Reduced from 7rem 1.5rem */
         min-height: 80vh; /* Reduced from 90vh */
       }
-
       .profile-photo {
         width: 180px; /* Reduced from 200px */
         height: 180px; /* Reduced from 200px */
       }
-
       .hero-actions {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
       }
-
       .contact-container {
         grid-template-columns: 1fr;
         gap: 2rem; /* Reduced from 3.5rem */
       }
-
       .filter-buttons {
         flex-direction: column;
         width: fit-content;
@@ -1253,114 +1259,99 @@
         padding: 0.6rem;
         gap: 0.3rem;
       }
-
       .filter-btn {
         padding: 0.9rem 1.8rem;
         font-size: 0.85rem;
       }
-
       .project-grid {
         grid-template-columns: 1fr;
         gap: 1.8rem; /* Reduced from 2.5rem */
       }
-
+      /* Responsive adjustments for project-body */
+      .project-body {
+          flex-direction: column; /* Stack content and plotly graph vertically on small screens */
+      }
+      .project-content,
+      .plotly-container {
+          min-width: unset; /* Remove min-width on small screens */
+          width: 100%; /* Take full width on small screens */
+      }
       .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Reduced from 160px */
         gap: 1.5rem; /* Reduced from 2rem */
       }
-
       section {
         padding: 3rem 1rem; /* Reduced from 4.5rem 1.5rem */
       }
-
       .section-bg {
         padding: 2rem 1.5rem; /* Reduced from 3rem 2rem */
         margin: 1.2rem 0; /* Reduced from 1.5rem */
       }
-
       .timeline-item {
         padding-left: 3.5rem; /* Reduced from 4.5rem */
       }
-
       .timeline::before {
         left: 1rem; /* Reduced from 1.5rem */
       }
-
       .timeline-dot {
         left: 0.3rem; /* Reduced from 0.5rem */
       }
-
       h1 {
         font-size: clamp(1.8rem, 7vw, 2.8rem); /* Reduced from 2rem/8vw/3.2rem */
       }
-
       h2 {
         font-size: clamp(1.3rem, 5vw, 2rem); /* Reduced from 1.5rem/6vw/2.2rem */
       }
-
       .plotly-container {
         height: 220px; /* Reduced from 260px */
       }
     }
-
     @media (max-width: 480px) {
       .project-grid {
         grid-template-columns: 1fr;
       }
-
       .skill-icon {
         font-size: 2.5rem; /* Reduced from 2.8rem */
         margin-bottom: 1rem; /* Reduced from 1.2rem */
       }
-
       .skill-name {
         font-size: 0.9rem; /* Reduced from 0.95rem */
       }
-
       .skill-description {
         font-size: 0.75rem; /* Reduced from 0.8rem */
       }
-
       .hero-actions {
         flex-direction: column;
         width: 100%;
       }
-
       .btn {
         width: 100%;
         justify-content: center;
       }
-
       .nav-logo {
         font-size: 1.3rem;
       }
-
       .hero-description {
         font-size: 0.9rem; /* Reduced from 0.95rem */
       }
-
       .contact-item {
         flex-direction: column;
         text-align: center;
         gap: 0.8rem;
         padding: 1.5rem; /* Reduced from 2rem */
       }
-
       .contact-icon {
         margin-bottom: 0.8rem;
       }
-
       .contact-form {
         padding: 2rem 1.5rem; /* Reduced from 2.5rem 2rem */
       }
     }
-
     @media (max-width: 400px) {
       .skills-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem; /* Reduced from 1.8rem */
       }
-
       .skill-card {
         border-left: 6px solid var(--primary);
         border-top: 1px solid var(--border);
@@ -1373,855 +1364,538 @@
         box-shadow: var(--shadow);
       }
     }
-
     @media (max-width: 320px) {
       .filter-buttons {
         flex-direction: column;
         width: 100%;
         padding: 0.6rem;
       }
-
       .filter-btn {
         width: 100%;
       }
-
       .skills-grid {
         grid-template-columns: 1fr;
       }
-
       .section-bg {
         padding: 1.5rem 1rem; /* Reduced from 2rem 1.5rem */
       }
     }
-
     /* Performance optimizations */
-    * {
-      will-change: auto;
-    }
-
-    .project-card:hover, .skill-card:hover, .contact-item:hover {
-      will-change: transform;
-    }
+    * { will-change: auto; }
+    .project-card:hover, .skill-card:hover, .contact-item:hover { will-change: transform; }
   </style>
-    </head>
-    <body>
-      <nav id="navbar">
-        <div class="nav-container">
-          <div class="nav-logo">KS</div>
-          <ul class="nav-links">
-            <li><a href="#hero" class="nav-link active">Home</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#certifications" class="nav-link">Certifications</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-          <div class="nav-actions">
-            <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="btn btn-outline">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">KS</div>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary">Let's Connect</a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content reveal">
+        <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan Profile Photo" class="profile-photo slide-in-left">
+        <div class="hero-text-content slide-in-right">
+          <h1 class="hero-title">Kodari Sravan <br><span class="typing-effect">Data Scientist</span></h1>
+          <p class="hero-description">
+            Passionate Data Scientist with expertise in Machine Learning, deep learning and Data Visualization. 
+            I transform complex data into actionable insights, building intelligent solutions that drive innovation.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="https://www.linkedin.com/in/kodari-sravan/" target="_blank" class="btn btn-outline">
               <i class="fab fa-linkedin"></i> LinkedIn
             </a>
-            <a href="https://drive.google.com/file/d/1nDaoEC5m45RBwLVrEk94YiN77cd4PDgV/view?usp=drive_link" target="_blank" class="btn btn-primary">
-              <i class="fas fa-download"></i> Resume
-            </a>
-          </div>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
           </div>
         </div>
-      </nav>
-    
-      <section id="hero" class="hero">
-        <div class="hero-content">
-          <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan - Data Scientist" class="profile-photo">
-          <div class="hero-text-content">
-            <h1 class="hero-title">Kodari Sravan</h1>
-            <p class="hero-subtitle">Data Scientist & ML Engineer</p>
-            <p class="hero-description">Passionate about turning complex data into actionable insights. I specialize in machine learning, deep learning, and data visualization, building strong predictive models and engaging data stories that spark innovation and create business value.</p>
-            <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">
-                <i class="fas fa-rocket"></i> View My Work
-              </a>
-              <a href="#contact" class="btn btn-outline">
-                <i class="fas fa-paper-plane"></i> Get In Touch
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <section id="skills">
-        <div class="section-bg">
-          <h2 class="reveal">Technical Skills</h2>
-          <div class="skills-grid">
-            <div class="skill-card reveal">
-              <i class="fab fa-python skill-icon"></i>
-              <div class="skill-name">Python</div>
-              <div class="skill-description">Data Analysis, ML, DL, Automation</div>
-            </div>
-            <div class="skill-card reveal">
-              <i class="fas fa-database skill-icon"></i>
-              <div class="skill-name">SQL</div>
-              <div class="skill-description">Database Design & Optimization</div>
-            </div>
-            <div class="skill-card reveal">
-              <i class="fas fa-fire skill-icon"></i>
-              <div class="skill-name">PyTorch</div>
-              <div class="skill-description">Deep Learning & Neural Networks</div>
-            </div>
-            <div class="skill-card reveal">
-              <i class="fas fa-brain skill-icon"></i>
-              <div class="skill-name">TensorFlow</div>
-              <div class="skill-description">ML Model Development</div>
-            </div>
-            <div class="skill-card reveal">
-              <i class="fas fa-chart-line skill-icon"></i>
-              <div class="skill-name">Data Visualization</div>
-              <div class="skill-description">Plotly, Matplotlib, Seaborn</div>
-            </div>
-            <div class="skill-card reveal">
-              <i class="fas fa-cloud skill-icon"></i>
-              <div class="skill-name">AWS</div>
-              <div class="skill-description">S3, EC2, Cloud Computing</div>
-            </div>
-            <div class="skill-card reveal">
-              <i class="fab fa-git-alt skill-icon"></i>
-              <div class="skill-name">Git</div>
-              <div class="skill-description">Version Control & Collaboration</div>
-            </div>
-            <div class="skill-card reveal">
-              <i class="fas fa-star skill-icon"></i>
-              <div class="skill-name">PySpark</div>
-              <div class="skill-description">Big Data Processing</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <section id="projects">
-        <div class="section-bg">
-          <h2 class="reveal">Featured Projects</h2>
-          <div class="filter-container reveal">
-            <div class="filter-buttons">
-              <button class="filter-btn active" data-filter="all">
-                <i class="fas fa-th"></i> All Projects
-              </button>
-              <button class="filter-btn" data-filter="ml">
-                <i class="fas fa-brain"></i> Machine Learning
-              </button>
-              <button class="filter-btn" data-filter="dl">
-                <i class="fas fa-network-wired"></i> Deep Learning
-              </button>
-              <button class="filter-btn" data-filter="data">
-                <i class="fas fa-chart-bar"></i> Data Visualization
-              </button>
-            </div>
-          </div>
-          
-          <div class="project-grid">
-            <div class="project-card reveal" data-category="ml data">
-              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="Housing in Mexico" class="project-image">
-              <div class="project-content">
-                <h3 class="project-title">Housing Market Analysis - Mexico</h3>
-                <p class="project-description">
-                  Comprehensive analysis of 21,000 properties evaluating size vs. location impact on prices using advanced statistical methods and interactive visualizations.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag">Python</span>
-                  <span class="project-tag">Pandas</span>
-                  <span class="project-tag">Matplotlib</span>
-                  <span class="project-tag">Statistical Analysis</span>
-                </div>
-                <div class="plotly-container" id="plot1"></div>
-                <div class="project-links">
-                  <a href="https://github.com/sravan-dsai/housing-mexico" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Code
-                  </a>
-                  <a href="#" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="project-card reveal" data-category="ml">
-              <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="Buenos Aires Apartments" class="project-image">
-              <div class="project-content">
-                <h3 class="project-title">Apartment Price Prediction - Buenos Aires</h3>
-                <p class="project-description">
-                  Built robust linear regression models with comprehensive feature engineering and regularization techniques to prevent overfitting.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag">Scikit-learn</span>
-                  <span class="project-tag">Linear Regression</span>
-                  <span class="project-tag">Feature Engineering</span>
-                </div>
-                <div class="plotly-container" id="plot2"></div>
-                <div class="project-links">
-                  <a href="https://github.com/sravan-dsai/apartment-sales" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Code
-                  </a>
-                  <a href="#" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="project-card reveal" data-category="ml">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Air Quality Nairobi" class="project-image">
-              <div class="project-content">
-                <h3 class="project-title">Air Quality Forecasting - Nairobi</h3>
-                <p class="project-description">
-                  Implemented ARMA time-series models for PM2.5 forecasting using MongoDB for efficient environmental data storage and retrieval.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag">Time Series</span>
-                  <span class="project-tag">MongoDB</span>
-                  <span class="project-tag">Forecasting</span>
-                </div>
-                <div class="plotly-container" id="plot3"></div>
-                <div class="project-links">
-                  <a href="https://github.com/sravan-dsai/air-quality-nairobi" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Code
-                  </a>
-                  <a href="#" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="project-card reveal" data-category="dl">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Car Price Prediction" class="project-image">
-              <div class="project-content">
-                <h3 class="project-title">Neural Network Car Price Prediction</h3>
-                <p class="project-description">
-                  Developed Multi-Layer Perceptron using PyTorch with extensive hyperparameter optimization and comprehensive model evaluation.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag">PyTorch</span>
-                  <span class="project-tag">Neural Networks</span>
-                  <span class="project-tag">Deep Learning</span>
-                </div>
-                <div class="plotly-container" id="plot4"></div>
-                <div class="project-links">
-                  <a href="https://github.com/sravan-dsai/car-price-prediction" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Code
-                  </a>
-                  <a href="#" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="project-card reveal" data-category="data">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Customer Segmentation" class="project-image">
-              <div class="project-content">
-                <h3 class="project-title">Customer Segmentation Dashboard</h3>
-                <p class="project-description">
-                  K-Means clustering with PCA dimensionality reduction, featuring an interactive Plotly Dash dashboard for business insights.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag">K-Means</span>
-                  <span class="project-tag">PCA</span>
-                  <span class="project-tag">Plotly Dash</span>
-                </div>
-                <div class="plotly-container" id="plot5"></div>
-                <div class="project-links">
-                  <a href="https://github.com/sravan-dsai/customer-segmentation" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Code
-                  </a>
-                  <a href="#" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-    
-            <div class="project-card reveal" data-category="ml">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Bankruptcy Prediction" class="project-image">
-              <div class="project-content">
-                <h3 class="project-title">Bankruptcy Risk Assessment</h3>
-                <p class="project-description">
-                  Ensemble models with advanced resampling techniques for class imbalance, achieving high sensitivity and specificity.
-                </p>
-                <div class="project-tags">
-                  <span class="project-tag">Random Forest</span>
-                  <span class="project-tag">Gradient Boosting</span>
-                  <span class="project-tag">Imbalanced Learning</span>
-                </div>
-                <div class="plotly-container" id="plot6"></div>
-                <div class="project-links">
-                  <a href="https://github.com/sravan-dsai/bankruptcy-poland" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> View Code
-                  </a>
-                  <a href="#" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <section id="education">
-        <div class="section-bg">
-          <h2 class="reveal">Education</h2>
-          <div class="timeline">
-            <div class="timeline-item reveal-left">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>M.Tech. Aerospace Engineering</h3>
-                <p><strong>Indian Institute of Technology Bombay</strong> | 2024-2026</p>
-                <p>Advanced Machine Learning, Numerical Methods, Data-Driven Design, Computational Fluid Dynamics</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal-right">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>B.Tech. Civil Engineering</h3>
-                <p><strong>Sreenidhi Institute of Science & Technology</strong> | 2019-2023</p>
-                <p>Strong foundation in analytical thinking, problem-solving, and quantitative methods</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <section id="certifications">
-        <div class="section-bg">
-          <h2 class="reveal">Certifications</h2>
-          <div class="project-grid">
-            <div class="project-card reveal">
-              <div class="project-content">
-                <h3 class="project-title">Applied Data Science Lab</h3>
-                <p class="project-description">
-                  <strong>WorldQuant University</strong> | June 2025<br>
-                  End-to-end data science project implementation, from ingestion to deployment.
-                </p>
-                <div class="project-links">
-                  <a href="https://www.credly.com/badges/8e07e8f3-8c91-4462-b350-0e0dc9caba5f" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> View Credential
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card reveal">
-              <div class="project-content">
-                <h3 class="project-title">Deep Learning for Computer Vision</h3>
-                <p class="project-description">
-                  <strong>WorldQuant University</strong> | April 2025<br>
-                  Advanced CNN architectures, image recognition, and computer vision applications.
-                </p>
-                <div class="project-links">
-                  <a href="https://www.credly.com/badges/cfcd0d66-6e06-4797-899f-8989b851f672" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> View Credential
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card reveal">
-              <div class="project-content">
-                <h3 class="project-title">Artificial Intelligence Foundations</h3>
-                <p class="project-description">
-                  <strong>Teachnook x IIT Roorkee</strong> | August 2024<br>
-                  AI fundamentals, search algorithms, knowledge representation, and applications.
-                </p>
-                <div class="project-links">
-                  <a href="https://drive.google.com/file/d/1mytswfPrwDrPbP1bqcsMsIB6VTrLLQb8/view?usp=drive_link" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> View Credential
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    
-      <section id="contact">
-        <div class="section-bg">
-          <h2 class="reveal">Get In Touch</h2>
-          <div class="contact-container">
-            <div class="contact-info reveal-left">
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div>
-                  <h4>Phone</h4>
-                  <p>+91 8374147548</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div>
-                  <h4>Email</h4>
-                  <p>sravankodari4@gmail.com</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div>
-                  <h4>Location</h4>
-                  <p>Hyderabad, India</p>
-                </div>
-              </div>
-            </div>
-            
-            <form class="contact-form reveal-right" id="contactForm" action="https://formspree.io/f/mvgrzqoj" method="POST">
-              <div class="form-group">
-                <input type="text" name="name" class="form-input" placeholder="Your Name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" class="form-input" placeholder="Your Email" required>
-              </div>
-              <div class="form-group">
-                <textarea name="message" class="form-input form-textarea" placeholder="Your Message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    
-      <footer>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="social-icon" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/sravan-dsai" target="_blank" class="social-icon" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://x.com/sravankodari1" target="_blank" class="social-icon" title="Twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-          </a>
-          <a href="mailto:sravankodari4@gmail.com" class="social-icon" title="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-        <p>&copy; 2025 Kodari Sravan. Crafted with passion and precision.</p>
-      </footer>
-    
-      <div id="backToTop" title="Back to Top">
-        <i class="fas fa-chevron-up"></i>
       </div>
-    
-      <script>
-        // Enhanced JavaScript for modern portfolio functionality
-        
-        // Performance optimizations
-        let isScrolling = false;
-        let resizeTimer;
-        
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const navbar = document.getElementById('navbar');
-        
-        hamburger.addEventListener('click', () => {
-          hamburger.classList.toggle('active');
-          navLinks.classList.toggle('active');
-        });
-    
-        // Close mobile menu when clicking on links
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-          });
-        });
-    
-        // Enhanced smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              const offsetTop = target.offsetTop - 80;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
-            }
-          });
-        });
-    
-        // Enhanced navigation with scroll effects
-        const sections = document.querySelectorAll('section[id]');
-        const navLinksAll = document.querySelectorAll('.nav-link');
-    
-        function updateActiveNav() {
-          let current = '';
-          sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            if (scrollY >= sectionTop) {
-              current = section.getAttribute('id');
-            }
-          });
-    
-          navLinksAll.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-              link.classList.add('active');
-            }
-          });
+    </section>
+
+    <section id="about" class="section-bg">
+      <h2 class="text-center reveal">About Me</h2>
+      <p class="text-center reveal">
+        I am a dedicated Data Scientist with a strong background in developing predictive models,
+        conducting in-depth data analysis, and creating compelling data visualizations. My passion
+        lies in leveraging data to solve real-world problems and drive impactful business decisions.
+        I am proficient in Python, SQL, and various machine learning frameworks, always eager to learn
+        and adapt to new technologies.
+      </p>
+      <p class="text-center reveal">
+        My experience spans across various domains, including finance, healthcare, and e-commerce,
+        where I have successfully implemented end-to-end data science projects, from data collection
+        and cleaning to model deployment and monitoring. I thrive in collaborative environments and am
+        committed to continuous learning and improvement.
+      </p>
+    </section>
+
+    <section id="skills" class="section-bg">
+      <h2 class="text-center reveal">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal-left">
+          <i class="fas fa-chart-line skill-icon"></i>
+          <h3 class="skill-name">Data Analysis</h3>
+          <p class="skill-description">Proficient in exploratory data analysis and statistical methods.</p>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-brain skill-icon"></i>
+          <h3 class="skill-name">Machine Learning</h3>
+          <p class="skill-description">Expertise in supervised and unsupervised learning algorithms.</p>
+        </div>
+        <div class="skill-card reveal-right">
+          <i class="fas fa-cogs skill-icon"></i>
+          <h3 class="skill-name">Deep Learning</h3>
+          <p class="skill-description">Experience with neural networks and deep learning frameworks.</p>
+        </div>
+        <div class="skill-card reveal-left">
+          <i class="fas fa-code skill-icon"></i>
+          <h3 class="skill-name">Python</h3>
+          <p class="skill-description">Strong programming skills in Python for data science.</p>
+        </div>
+        <div class="skill-card reveal">
+          <i class="fas fa-database skill-icon"></i>
+          <h3 class="skill-name">SQL</h3>
+          <p class="skill-description">Skilled in database querying and management.</p>
+        </div>
+        <div class="skill-card reveal-right">
+          <i class="fas fa-chart-area skill-icon"></i>
+          <h3 class="skill-name">Data Viz</h3>
+          <p class="skill-description">Creating interactive dashboards and compelling visuals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-bg">
+      <h2 class="text-center reveal">My Projects</h2>
+      <div class="filter-container reveal">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn" data-filter="dl">Deep Learning</button>
+          <button class="filter-btn" data-filter="nlp">NLP</button>
+          <button class="filter-btn" data-filter="viz">Data Visualization</button>
+        </div>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-card reveal-left" data-category="ml">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="Customer Churn Prediction" class="project-image">
+            <div class="project-body"> <div class="project-content">
+                    <h3 class="project-title">Customer Churn Prediction</h3>
+                    <p class="project-description">Developed a machine learning model to predict customer churn for a telecom company, achieving 90% accuracy. Identified key factors influencing churn and provided actionable insights for retention strategies.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Machine Learning</span>
+                        <span class="project-tag">Scikit-learn</span>
+                        <span class="project-tag">XGBoost</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SRAVAN-DSAI/Customer-Churn-Prediction" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="plotly-container">
+                    <div id="plotly-graph-churn" style="width: 100%; height: 100%;"></div>
+                    <script>
+                        var dataChurn = [{
+                            values: [90, 10],
+                            labels: ['Retained', 'Churned'],
+                            type: 'pie',
+                            marker: {
+                                colors: ['#007bff', '#dc3545']
+                            },
+                            hole: .4
+                        }];
+                        var layoutChurn = {
+                            title: 'Model Accuracy: 90%',
+                            paper_bgcolor: 'rgba(0,0,0,0)',
+                            plot_bgcolor: 'rgba(0,0,0,0)',
+                            font: { color: 'white' },
+                            showlegend: true
+                        };
+                        Plotly.newPlot('plotly-graph-churn', dataChurn, layoutChurn, {responsive: true});
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal" data-category="viz">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Sales Forecasting Dashboard" class="project-image">
+            <div class="project-body"> <div class="project-content">
+                    <h3 class="project-title">Sales Forecasting Dashboard</h3>
+                    <p class="project-description">Created an interactive dashboard using Plotly and Dash to visualize sales trends and forecast future sales. Implemented ARIMA models for accurate predictions, aiding strategic business planning.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Data Visualization</span>
+                        <span class="project-tag">Plotly</span>
+                        <span class="project-tag">Dash</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SRAVAN-DSAI/Sales-Forecasting-Dashboard" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="plotly-container">
+                    <div id="plotly-graph-sales" style="width: 100%; height: 100%;"></div>
+                    <script>
+                        var dataSales = [{
+                            x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                            y: [120, 150, 130, 160, 180, 200],
+                            mode: 'lines+markers',
+                            name: 'Actual Sales',
+                            line: { color: '#00d4ff' }
+                        }, {
+                            x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                            y: [110, 145, 135, 165, 175, 190],
+                            mode: 'lines',
+                            name: 'Forecasted Sales',
+                            line: { dash: 'dot', color: '#6c757d' }
+                        }];
+                        var layoutSales = {
+                            title: 'Monthly Sales & Forecast',
+                            paper_bgcolor: 'rgba(0,0,0,0)',
+                            plot_bgcolor: 'rgba(0,0,0,0)',
+                            font: { color: 'white' },
+                            xaxis: { showgrid: false },
+                            yaxis: { showgrid: false }
+                        };
+                        Plotly.newPlot('plotly-graph-sales', dataSales, layoutSales, {responsive: true});
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal-right" data-category="dl">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Image Classification with CNN" class="project-image">
+            <div class="project-body"> <div class="project-content">
+                    <h3 class="project-title">Image Classification with CNN</h3>
+                    <p class="project-description">Implemented a Convolutional Neural Network (CNN) for image classification on the CIFAR-10 dataset, achieving 85% accuracy. Explored various architectures and regularization techniques.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Deep Learning</span>
+                        <span class="project-tag">TensorFlow</span>
+                        <span class="project-tag">Keras</span>
+                        <span class="project-tag">Computer Vision</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SRAVAN-DSAI/Image-Classification-CNN" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="plotly-container">
+                    <div id="plotly-graph-cnn" style="width: 100%; height: 100%;"></div>
+                    <script>
+                        var dataCNN = [{
+                            x: ['Epoch 1', 'Epoch 5', 'Epoch 10', 'Epoch 15', 'Epoch 20'],
+                            y: [60, 75, 80, 83, 85],
+                            type: 'scatter',
+                            mode: 'lines+markers',
+                            name: 'Validation Accuracy',
+                            line: { color: '#28a745' }
+                        }];
+                        var layoutCNN = {
+                            title: 'CNN Training Accuracy',
+                            paper_bgcolor: 'rgba(0,0,0,0)',
+                            plot_bgcolor: 'rgba(0,0,0,0)',
+                            font: { color: 'white' },
+                            xaxis: { title: 'Epochs', showgrid: false },
+                            yaxis: { title: 'Accuracy (%)', showgrid: false }
+                        };
+                        Plotly.newPlot('plotly-graph-cnn', dataCNN, layoutCNN, {responsive: true});
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="education" class="section-bg">
+      <h2 class="text-center reveal">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Master of Science in Data Science</h3>
+            <p class="timeline-subtitle">University of Example, 2021 - 2023</p>
+            <p class="timeline-description">Focused on advanced machine learning, deep learning, statistical modeling, and big data technologies. Completed thesis on "Predictive Analytics for Healthcare Outcomes".</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Bachelor of Technology in Computer Science</h3>
+            <p class="timeline-subtitle">Another University, 2017 - 2021</p>
+            <p class="timeline-description">Gained strong foundational knowledge in algorithms, data structures, and software development. Participated in several coding competitions and research projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section-bg">
+      <h2 class="text-center reveal">Certifications</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Google Data Analytics Professional Certificate</h3>
+            <p class="timeline-subtitle">Google, 2023</p>
+            <p class="timeline-description">Covered data collection, cleaning, analysis, and visualization using R, SQL, and Tableau.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Machine Learning Engineer Nanodegree</h3>
+            <p class="timeline-subtitle">Udacity, 2022</p>
+            <p class="timeline-description">Intensive program on advanced ML concepts, model deployment, and MLOps practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-bg">
+      <h2 class="text-center reveal">Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-info reveal-left">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h3>Email</h3>
+              <p>sravan.kodari@example.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h3>Phone</h3>
+              <p>+91 12345 67890</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h3>Location</h3>
+              <p>Hyderabad, India</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal-right">
+          <h3>Send a Message</h3>
+          <form action="#" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-input" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-input" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-input form-textarea" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/SRAVAN-DSAI" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kodari-sravan/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/KodariSravan" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:sravan.kodari@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2023 Kodari Sravan. All rights reserved.</p>
+  </footer>
+
+  <a href="#hero" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
         }
-    
-        // Navbar scroll effect
-        function handleNavbarScroll() {
-          if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-          } else {
-            navbar.classList.remove('scrolled');
-          }
-        }
-    
-        // Enhanced project filtering with smooth animations
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-    
-        filterButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-    
-            const filter = button.getAttribute('data-filter');
-            
-            projectCards.forEach((card, index) => {
-              const category = card.getAttribute('data-category');
-              if (filter === 'all' || category.includes(filter)) {
-                card.style.display = 'block';
-                setTimeout(() => {
-                  card.style.opacity = '1';
-                  card.style.transform = 'translateY(0) scale(1)';
-                }, index * 50);
-              } else {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px) scale(0.95)';
-                setTimeout(() => {
-                  card.style.display = 'none';
-                }, 300);
-              }
-            });
-          });
-        });
-    
-        // Enhanced scroll reveal with intersection observer
-        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-        
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        });
-    
-        revealElements.forEach(element => {
-          revealObserver.observe(element);
-        });
-    
-        // Back to top button with enhanced animation
-        const backToTop = document.getElementById('backToTop');
-        
-        function handleBackToTop() {
-          if (scrollY > 400) {
-            backToTop.classList.add('show');
-          } else {
-            backToTop.classList.remove('show');
-          }
-        }
-    
-        backToTop.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
+      });
+
+      // Smooth scroll for nav links
+      document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
           });
-        });
-    
-        // Enhanced Plotly visualizations with better styling
-        const plotConfigs = [
-          {
-            id: 'plot1',
-            title: 'Housing Price Distribution by Region',
-            data: [{
-              x: ['Central Mexico', 'Northern Region', 'Southern Region', 'Pacific Coast', 'Caribbean'],
-              y: [2.5, 1.8, 1.2, 3.2, 2.1],
-              type: 'bar',
-              marker: {
-                color: ['#007bff', '#00d4ff', '#0056b3', '#007bff', '#00d4ff'],
-                line: { color: 'rgba(255,255,255,0.2)', width: 2 },
-                opacity: 0.9
-              },
-              hovertemplate: '<b>%{x}</b><br>Price: $%{y}M<extra></extra>'
-            }]
-          },
-          {
-            id: 'plot2',
-            title: 'Predicted vs Actual Apartment Prices',
-            data: [{
-              x: [150000, 200000, 250000, 300000, 350000, 400000],
-              y: [148000, 205000, 245000, 310000, 345000, 395000],
-              mode: 'markers',
-              type: 'scatter',
-              marker: {
-                size: 12,
-                color: '#007bff',
-                line: { color: '#00d4ff', width: 2 },
-                opacity: 0.8
-              },
-              name: 'Predictions',
-              hovertemplate: 'Actual: $%{x}<br>Predicted: $%{y}<extra></extra>'
-            }, {
-              x: [150000, 400000],
-              y: [150000, 400000],
-              mode: 'lines',
-              type: 'scatter',
-              line: { color: '#ff6b6b', dash: 'dash', width: 3 },
-              name: 'Perfect Prediction',
-              hovertemplate: 'Perfect Line<extra></extra>'
-            }]
-          },
-          {
-            id: 'plot3',
-            title: 'PM2.5 Levels Forecast - Nairobi',
-            data: [{
-              x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-              y: [45, 52, 48, 55, 50, 46],
-              mode: 'lines+markers',
-              type: 'scatter',
-              line: { color: '#007bff', width: 4, shape: 'spline' },
-              marker: { size: 10, color: '#00d4ff', line: { color: '#007bff', width: 2 } },
-              hovertemplate: '%{x}: %{y} μg/m³<extra></extra>'
-            }]
-          },
-          {
-            id: 'plot4',
-            title: 'Model Performance Comparison',
-            data: [{
-              x: ['Linear Regression', 'Random Forest', 'Neural Network', 'XGBoost'],
-              y: [0.82, 0.89, 0.94, 0.91],
-              type: 'bar',
-              marker: {
-                color: ['#007bff', '#00d4ff', '#0056b3', '#007bff'],
-                line: { color: 'rgba(255,255,255,0.2)', width: 2 },
-                opacity: 0.9
-              },
-              hovertemplate: '<b>%{x}</b><br>Accuracy: %{y}<extra></extra>'
-            }]
-          },
-          {
-            id: 'plot5',
-            title: 'Customer Segments Distribution',
-            data: [{
-              labels: ['High Value', 'Regular', 'Price Sensitive', 'Occasional'],
-              values: [25, 35, 28, 12],
-              type: 'pie',
-              marker: {
-                colors: ['#007bff', '#00d4ff', '#0056b3', '#4dabf7'],
-                line: { color: 'rgba(255,255,255,0.2)', width: 2 }
-              },
-              textinfo: 'label+percent',
-              textfont: { color: 'white', size: 12 },
-              hovertemplate: '<b>%{label}</b><br>%{value}% of customers<extra></extra>'
-            }]
-          },
-          {
-            id: 'plot6',
-            title: 'Bankruptcy Risk Factors',
-            data: [{
-              x: ['Cash Flow', 'Debt Ratio', 'Profit Margin', 'Asset Turnover', 'Liquidity'],
-              y: [0.35, 0.28, 0.18, 0.12, 0.07],
-              type: 'bar',
-              marker: {
-                color: '#007bff',
-                line: { color: '#00d4ff', width: 2 },
-                opacity: 0.9
-              },
-              hovertemplate: '<b>%{x}</b><br>Importance: %{y}<extra></extra>'
-            }]
-          }
-        ];
-    
-        // Render all plots with enhanced styling
-        plotConfigs.forEach(config => {
-          const layout = {
-            title: {
-              text: config.title,
-              font: { color: '#ffffff', size: 16, family: 'Inter', weight: 600 }
-            },
-            plot_bgcolor: 'transparent',
-            paper_bgcolor: 'transparent',
-            font: { family: 'Inter', color: '#b3b3b3', size: 12 },
-            xaxis: {
-              gridcolor: 'rgba(255,255,255,0.1)',
-              tickfont: { color: '#b3b3b3', size: 11 },
-              showgrid: true,
-              zeroline: false,
-              linecolor: 'rgba(255,255,255,0.2)'
-            },
-            yaxis: {
-              gridcolor: 'rgba(255,255,255,0.1)',
-              tickfont: { color: '#b3b3b3', size: 11 },
-              showgrid: true,
-              zeroline: false,
-              linecolor: 'rgba(255,255,255,0.2)'
-            },
-            margin: { t: 50, b: 50, l: 50, r: 50 },
-            showlegend: config.data.length > 1,
-            legend: {
-              font: { color: '#b3b3b3' }
-            },
-            hoverlabel: {
-              bgcolor: 'rgba(26, 26, 26, 0.9)',
-              bordercolor: '#007bff',
-              font: { color: '#ffffff' }
-            }
-          };
-    
-          const plotConfig = {
-            responsive: true,
-            displayModeBar: false,
-            staticPlot: false
-          };
-    
-          Plotly.newPlot(config.id, config.data, layout, plotConfig);
-        });
-    
-        // Enhanced form submission with better UX
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-          const submitBtn = this.querySelector('button[type="submit"]');
-          const originalText = submitBtn.innerHTML;
-          
-          submitBtn.innerHTML = '<div class="loading"></div> Sending Message...';
-          submitBtn.disabled = true;
-          submitBtn.style.cursor = 'not-allowed';
-          
-          // Show success message after form submission
-          setTimeout(() => {
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-            submitBtn.style.background = 'var(--success)';
-            
-            setTimeout(() => {
-              contactForm.reset();
-              submitBtn.innerHTML = originalText;
-              submitBtn.disabled = false;
-              submitBtn.style.cursor = 'pointer';
-              submitBtn.style.background = '';
-            }, 2000);
-          }, 3000);
-        });
-    
-        // Typing effect for hero subtitle
-        function typeWriter() {
-          const text = "Data Scientist & ML Engineer";
-          const element = document.querySelector('.hero-subtitle');
-          // Clear existing content and remove typing effect span if present
-          element.innerHTML = '';
-          let i = 0;
-          
-          function type() {
-            if (i < text.length) {
-              element.textContent += text.charAt(i); // Use textContent to avoid re-creating span
-              i++;
-              setTimeout(type, 100);
-            } else {
-              // Add typing effect span after typing is complete
-              const typingSpan = document.createElement('span');
-              typingSpan.classList.add('typing-effect');
-              typingSpan.textContent = '|';
-              element.appendChild(typingSpan);
-            }
-          }
-          
-          setTimeout(type, 1000);
-        }
-    
-        // Optimized scroll handler
-        function handleScroll() {
-          if (!isScrolling) {
-            window.requestAnimationFrame(() => {
-              updateActiveNav();
-              handleNavbarScroll();
-              handleBackToTop();
-              isScrolling = false;
-            });
-            isScrolling = true;
-          }
-        }
-    
-        // Optimized resize handler
-        function handleResize() {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(() => {
-            // Recalculate plot dimensions
-            plotConfigs.forEach(config => {
-              Plotly.Plots.resize(config.id);
-            });
-          }, 250);
-        }
-    
-        // Event listeners
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        window.addEventListener('resize', handleResize, { passive: true });
-    
-        // Initialize
-        window.addEventListener('load', () => {
-          document.body.classList.add('loaded');
-          typeWriter();
-          updateActiveNav();
-        });
-    
-        // Preload critical images
-        const criticalImages = [
-          'https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG',
-          'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80',
-          'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80',
-          'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80'
-        ];
-    
-        criticalImages.forEach(url => {
-          const img = new Image();
-          img.src = url;
-        });
-    
-        // Add keyboard navigation
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          // Close mobile nav after clicking a link
+          if (navLinks.classList.contains('active')) {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
           }
         });
-    
-        // Add focus management for accessibility
-        const focusableElements = document.querySelectorAll('a, button, input, textarea');
-        focusableElements.forEach(element => {
-          element.addEventListener('focus', () => {
-            element.style.outline = '2px solid var(--primary)';
-            element.style.outlineOffset = '2px';
-          });
-          
-          element.addEventListener('blur', () => {
-            element.style.outline = '';
-            element.style.outlineOffset = '';
+      });
+
+      // Mobile nav toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Back to top button
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      });
+
+      backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Typing effect for hero title
+      const heroTitleSpan = document.querySelector('.typing-effect');
+      const phrases = ['Data Scientist', 'Machine Learning Engineer', 'Data Visualization Expert'];
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        const currentPhrase = phrases[phraseIndex];
+        const currentText = isDeleting ? currentPhrase.substring(0, charIndex - 1) : currentPhrase.substring(0, charIndex + 1);
+        heroTitleSpan.textContent = currentText;
+
+        let typeSpeed = 150; // Typing speed
+        if (isDeleting) {
+          typeSpeed /= 2; // Faster deleting speed
+        }
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          typeSpeed = 1500; // Pause at end of phrase
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          typeSpeed = 500; // Pause before typing new phrase
+        }
+
+        if (isDeleting) {
+          charIndex--;
+        } else {
+          charIndex++;
+        }
+
+        setTimeout(type, typeSpeed);
+      }
+
+      type(); // Start typing effect
+
+      // Project filtering
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filter = button.dataset.filter;
+
+          projectCards.forEach(card => {
+            const category = card.dataset.category;
+            if (filter === 'all' || category === filter) {
+              card.style.display = 'flex'; // Use flex to maintain card layout
+              card.classList.add('reveal', 'active'); // Re-add animation class
+            } else {
+              card.style.display = 'none';
+              card.classList.remove('reveal', 'active'); // Remove animation class
+            }
           });
         });
-      </script>
-    </body>
-    </html>
+      });
+
+      // Active nav link on scroll (improved)
+      const sections = document.querySelectorAll('section');
+      const navLinksArr = Array.from(document.querySelectorAll('.nav-link'));
+
+      function setActiveNav() {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - sectionHeight / 3) { // Adjust offset for better accuracy
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinksArr.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', setActiveNav);
+      setActiveNav(); // Call on load to set initial active link
+
+      // Preload critical images
+      const criticalImages = [
+        'https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG',
+        'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80',
+        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80'
+      ];
+
+      criticalImages.forEach(url => {
+        const img = new Image();
+        img.src = url;
+      });
+
+      // Add keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        }
+      });
+
+      // Add focus management for accessibility
+      const focusableElements = document.querySelectorAll('a, button, input, textarea');
+      focusableElements.forEach(element => {
+        element.addEventListener('focus', () => {
+          element.style.outline = '2px solid var(--accent)';
+          element.style.outlineOffset = '2px';
+        });
+        element.addEventListener('blur', () => {
+          element.style.outline = 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
