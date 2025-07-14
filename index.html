@@ -381,7 +381,7 @@
 
     /* Enhanced Hero Section */
     .hero {
-      min-height: 100vh;
+      min-height: 150vh;
       display: flex;
       align-items: center;
       /* justify-content: center; */ /* Removed to align content left */
@@ -429,21 +429,13 @@
       border-radius: 10px; /* Changed to square with slight radius */
       object-fit: cover;
       margin-bottom: 0; /* Removed margin-bottom as content will be beside it */
-      border: 6px solid transparent;
-      background: var(--gradient-primary);
-      padding: 6px;
-      box-shadow: 
-        0 0 40px rgba(0, 123, 255, 0.4),
-        0 0 80px rgba(0, 212, 255, 0.2);
+      
       transition: all 0.4s ease;
       /* animation: float 6s ease-in-out infinite; */ /* Removed animation */
     }
 
     .profile-photo:hover {
       transform: scale(1.08) rotate(0deg); /* Removed rotation from hover */
-      box-shadow: 
-        0 0 60px rgba(0, 123, 255, 0.6),
-        0 0 120px rgba(0, 212, 255, 0.3);
     }
 
     /* @keyframes float { */ /* Removed animation keyframes */
