@@ -1183,20 +1183,20 @@
     /* Responsive Design */
     @media (max-width: 992px) {
       .hero-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically on mobile */
         text-align: center;
-        gap: 1rem;
+        gap: 1.5rem; /* Reduced gap for mobile */
         padding: 1rem;
-        justify-content: center;
+      }
+      .profile-photo {
+        order: 2; /* Ensure image is last (bottom) on mobile */
+        width: 200px; /* Slightly smaller for mobile */
+        height: 200px;
+        margin: 0 auto 1rem; /* Center image with bottom margin */
       }
       .hero-text-content {
         align-items: center; /* Center all content on mobile */
         max-width: 100%;
-      }
-      .profile-photo {
-        width: 200px;
-        height: 200px;
-        margin: 0.3rem auto 0.8rem; /* Tight spacing below subtitle, above description */
       }
       .hero-title {
         font-size: clamp(1.4rem, 5vw, 2.2rem);
