@@ -49,14 +49,14 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
+      font-size: 14px; /* Reduced from 16px for overall smaller text */
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg-dark);
       color: var(--text-primary);
-      line-height: 1.8; /* Increased for better readability */
+      line-height: 1.6; /* Reduced from 1.8 */
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -82,13 +82,13 @@
 
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
-      font-weight: 600; /* Slightly lighter weight for elegance */
-      line-height: 1.3; /* Adjusted for better heading spacing */
-      margin-bottom: 1.2rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1rem; /* Reduced from 1.2rem */
     }
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem); /* Slightly smaller for balance */
+      font-size: clamp(2rem, 4vw, 3rem); /* Reduced from 2.5rem/5vw/4rem */
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -102,19 +102,19 @@
     }
 
     h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem); /* Adjusted for consistency */
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem); /* Reduced from 1.8rem/4vw/3rem */
       position: relative;
       display: inline-block;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2rem; /* Reduced from 3.5rem */
     }
 
     h2::after {
       content: '';
       position: absolute;
-      bottom: -12px;
+      bottom: -8px; /* Reduced from -12px */
       left: 0;
-      width: 80px;
-      height: 4px;
+      width: 60px; /* Reduced from 80px */
+      height: 3px; /* Reduced from 4px */
       background: var(--gradient-primary);
       border-radius: 2px;
       animation: slideIn 0.8s ease-out;
@@ -122,19 +122,19 @@
 
     @keyframes slideIn {
       from { width: 0; }
-      to { width: 80px; }
+      to { width: 60px; }
     }
 
     h3 {
-      font-size: clamp(1.2rem, 2.5vw, 1.6rem); /* Smaller for better hierarchy */
+      font-size: clamp(1rem, 2vw, 1.4rem); /* Reduced from 1.2rem/2.5vw/1.6rem */
       color: var(--text-primary);
     }
 
     p {
       color: var(--text-secondary);
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem; /* Slightly smaller for readability */
-      line-height: 1.9; /* Increased for better text flow */
+      margin-bottom: 1rem; /* Reduced from 1.2rem */
+      font-size: 0.95rem; /* Reduced from 1.05rem */
+      line-height: 1.7; /* Reduced from 1.9 */
     }
 
     /* Enhanced Links */
@@ -169,17 +169,17 @@
     }
 
     .nav-container {
-      max-width: 1400px;
+      max-width: 1200px; /* Reduced from 1400px */
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem; /* Reduced from 2rem */
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 80px;
+      height: 60px; /* Reduced from 80px */
     }
 
     .nav-logo {
-      font-size: 1.6rem; /* Slightly smaller for balance */
+      font-size: 1.4rem; /* Reduced from 1.6rem */
       font-weight: 700;
       background: var(--gradient-primary);
       -webkit-background-clip: text;
@@ -207,18 +207,18 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 2.5rem;
+      gap: 1.5rem; /* Reduced from 2.5rem */
       align-items: center;
     }
 
     .nav-links a {
       position: relative;
-      font-weight: 500; /* Lighter for elegance */
+      font-weight: 500;
       color: var(--text-secondary);
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
+      padding: 0.5rem 0.8rem; /* Reduced from 0.75rem 1rem */
+      border-radius: 6px; /* Reduced from 8px */
       transition: all 0.3s ease;
-      font-size: 0.95rem; /* Slightly smaller for cleaner look */
+      font-size: 0.9rem; /* Reduced from 0.95rem */
     }
 
     .nav-links a::before {
@@ -246,7 +246,7 @@
 
     .nav-actions {
       display: flex;
-      gap: 1.2rem; /* Increased for better spacing */
+      gap: 1rem; /* Reduced from 1.2rem */
       align-items: center;
     }
 
@@ -254,10 +254,10 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.8rem 1.8rem; /* Slightly larger for comfort */
-      border-radius: 50px;
+      padding: 0.6rem 1.4rem; /* Reduced from 0.8rem 1.8rem */
+      border-radius: 40px; /* Reduced from 50px */
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem; /* Reduced from 0.9rem */
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: none;
       cursor: pointer;
@@ -343,17 +343,17 @@
 
     /* Sections */
     section {
-      padding: 2rem 2rem; /* Increased padding for breathing room */
-      max-width: 1400px;
+      padding: 1.5rem 1.5rem; /* Reduced from 2rem 2rem */
+      max-width: 1200px; /* Reduced from 1400px */
       margin: 0 auto;
       position: relative;
     }
 
     .section-bg {
       background: var(--bg-section);
-      border-radius: 24px;
-      padding: 2rem 2rem; /* Increased for more space */
-      margin: 2.5rem 0; /* Increased margin */
+      border-radius: 16px; /* Reduced from 24px */
+      padding: 1.5rem 1.5rem; /* Reduced from 2rem 2rem */
+      margin: 2rem 0; /* Reduced from 2.5rem */
       border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
@@ -383,11 +383,11 @@
 
     /* Enhanced Hero Section */
     .hero {
-      min-height: 100vh; /* Increased for better presence */
+      min-height: 80vh; /* Reduced from 100vh */
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding-left: 2rem; /* Increased left padding */
+      padding-left: 1.5rem; /* Reduced from 2rem */
       position: relative;
       background: var(--gradient-hero);
       overflow: hidden;
@@ -412,27 +412,27 @@
     }
 
     .hero-content {
-      max-width: 1400px; /* Increased for wider content */
+      max-width: 1200px; /* Reduced from 1400px */
       z-index: 2;
       position: relative;
       display: flex;
       align-items: center;
-      gap: 2rem; /* Increased gap for better separation */
+      gap: 1.5rem; /* Reduced from 2rem */
       text-align: left;
       margin: 0 auto;
       width: 100%;
     }
 
     .profile-photo {
-      width: 450px; /* Slightly larger for prominence */
-      height: 450px;
-      border-radius: 12px; /* Slightly larger radius */
+      width: 300px; /* Reduced from 450px */
+      height: 300px; /* Reduced from 450px */
+      border-radius: 10px; /* Reduced from 12px */
       object-fit: cover;
       transition: all 0.4s ease;
     }
 
     .profile-photo:hover {
-      transform: scale(1.05); /* Reduced scale for subtlety */
+      transform: scale(1.05);
     }
 
     .hero-text-content {
@@ -440,14 +440,14 @@
     }
 
     .hero-title {
-      margin-bottom: 1.8rem; /* Increased for spacing */
+      margin-bottom: 1.8rem;
     }
 
     .hero-subtitle {
-      font-size: 1.6rem; /* Slightly smaller for hierarchy */
+      font-size: 1.4rem; /* Reduced from 1.6rem */
       color: var(--accent);
-      margin-bottom: 2.2rem; /* Increased for spacing */
-      font-weight: 500; /* Lighter for elegance */
+      margin-bottom: 1.8rem; /* Reduced from 2.2rem */
+      font-weight: 500;
       animation: fadeInUp 1s ease-out 0.2s both;
       position: relative;
     }
@@ -455,9 +455,9 @@
     .hero-subtitle::after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -6px; /* Reduced from -8px */
       left: 0;
-      width: 100px;
+      width: 80px; /* Reduced from 100px */
       height: 2px;
       background: var(--gradient-primary);
       transform: translateX(0%);
@@ -465,16 +465,16 @@
     }
 
     .hero-description {
-      font-size: 1.15rem; /* Slightly smaller for readability */
-      line-height: 2; /* Increased for better text flow */
-      margin-bottom: 3.5rem; /* Increased for spacing */
+      font-size: 1rem; /* Reduced from 1.15rem */
+      line-height: 1.8; /* Reduced from 2 */
+      margin-bottom: 2.5rem; /* Reduced from 3.5rem */
       animation: fadeInUp 1s ease-out 0.4s both;
       color: var(--text-secondary);
     }
 
     .hero-actions {
       display: flex;
-      gap: 1.8rem; /* Increased for better button separation */
+      gap: 1.2rem; /* Reduced from 1.8rem */
       justify-content: flex-start;
       flex-wrap: wrap;
       animation: fadeInUp 1s ease-out 0.6s both;
@@ -521,7 +521,7 @@
     /* Enhanced Project Filtering */
     .filter-container {
       text-align: center;
-      margin-bottom: 4.5rem; /* Increased for spacing */
+      margin-bottom: 4.5rem;
     }
 
     .filter-buttons {
@@ -529,7 +529,7 @@
       background: var(--bg-card);
       border-radius: 50px;
       padding: 0.8rem;
-      gap: 0.6rem; /* Slightly increased for clarity */
+      gap: 0.6rem;
       border: 1px solid var(--border);
       flex-wrap: wrap;
       justify-content: center;
@@ -544,7 +544,7 @@
       border: none;
       cursor: pointer;
       font-weight: 600;
-      font-family: 'JetBrains Mono', monospace; /* Code font for filters */
+      font-family: 'JetBrains Mono', monospace;
       transition: all 0.3s ease;
       font-size: 0.9rem;
       position: relative;
@@ -582,13 +582,13 @@
     .project-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3rem; /* Increased for better spacing */
-      margin-top: 4.5rem; /* Increased for section balance */
+      gap: 2rem; /* Reduced from 3rem */
+      margin-top: 3rem; /* Reduced from 4.5rem */
     }
 
     .project-card {
       background: var(--bg-card);
-      border-radius: 24px;
+      border-radius: 16px; /* Reduced from 24px */
       overflow: hidden;
       border: 1px solid var(--border);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -597,7 +597,7 @@
     }
 
     .project-card:hover {
-      transform: translateY(-10px); /* Slightly reduced for subtlety */
+      transform: translateY(-10px);
       box-shadow: var(--shadow-hover);
       border-color: var(--border-hover);
     }
@@ -621,50 +621,50 @@
 
     .project-image {
       width: 100%;
-      height: 240px; /* Slightly taller for better visuals */
+      height: 200px; /* Reduced from 240px */
       object-fit: cover;
       transition: all 0.4s ease;
       position: relative;
     }
 
     .project-card:hover .project-image {
-      transform: scale(1.05); /* Reduced for subtlety */
+      transform: scale(1.05);
     }
 
     .project-content {
-      padding: 3rem; /* Increased for more internal spacing */
+      padding: 2rem; /* Reduced from 3rem */
       position: relative;
     }
 
     .project-title {
       color: var(--text-primary);
-      margin-bottom: 1.2rem; /* Increased for spacing */
-      font-size: 1.35rem; /* Slightly smaller for hierarchy */
+      margin-bottom: 1rem; /* Reduced from 1.2rem */
+      font-size: 1.2rem; /* Reduced from 1.35rem */
       font-weight: 600;
     }
 
     .project-description {
       color: var(--text-secondary);
-      margin-bottom: 2.2rem; /* Increased for spacing */
-      line-height: 1.9; /* Increased for readability */
-      font-size: 1rem;
+      margin-bottom: 1.5rem; /* Reduced from 2.2rem */
+      line-height: 1.7; /* Reduced from 1.9 */
+      font-size: 0.9rem; /* Reduced from 1rem */
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem; /* Slightly increased */
-      margin-bottom: 2.2rem; /* Increased for spacing */
+      gap: 0.6rem; /* Reduced from 0.8rem */
+      margin-bottom: 1.5rem; /* Reduced from 2.2rem */
     }
 
     .project-tag {
       background: rgba(0, 123, 255, 0.15);
       color: var(--accent);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem; /* Reduced from 0.5rem 1rem */
+      border-radius: 16px; /* Reduced from 20px */
+      font-size: 0.8rem; /* Reduced from 0.85rem */
       font-weight: 600;
-      font-family: 'JetBrains Mono', monospace; /* Code font for tags */
+      font-family: 'JetBrains Mono', monospace;
       border: 1px solid rgba(0, 123, 255, 0.3);
       transition: all 0.3s ease;
     }
@@ -676,7 +676,7 @@
 
     .project-links {
       display: flex;
-      gap: 1.8rem; /* Increased for button separation */
+      gap: 1.2rem; /* Reduced from 1.8rem */
       align-items: center;
     }
 
@@ -686,9 +686,9 @@
       gap: 0.5rem;
       color: var(--primary);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem; /* Reduced from 0.9rem */
       transition: all 0.3s ease;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem; /* Reduced from 0.5rem 1rem */
       border-radius: 8px;
     }
 
@@ -700,12 +700,12 @@
 
     /* Enhanced Plotly Container */
     .plotly-container {
-      margin-top: 2rem; /* Increased for spacing */
-      border-radius: 16px;
+      margin-top: 1.5rem; /* Reduced from 2rem */
+      border-radius: 12px; /* Reduced from 16px */
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg-dark);
-      height: 300px; /* Slightly taller */
+      height: 250px; /* Reduced from 300px */
       transition: all 0.3s ease;
     }
 
@@ -717,15 +717,15 @@
     /* Enhanced Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Wider cards */
-      gap: 2.5rem; /* Increased for better spacing */
-      margin-top: 4.5rem; /* Increased for section balance */
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Reduced from 200px */
+      gap: 2rem; /* Reduced from 2.5rem */
+      margin-top: 3rem; /* Reduced from 4.5rem */
     }
 
     .skill-card {
       background: var(--bg-card);
-      padding: 2.8rem; /* Increased for more space */
-      border-radius: 20px;
+      padding: 2rem; /* Reduced from 2.8rem */
+      border-radius: 16px; /* Reduced from 20px */
       text-align: center;
       border: 1px solid var(--border);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -775,31 +775,31 @@
     }
 
     .skill-icon {
-      font-size: 3.2rem; /* Slightly smaller for balance */
+      font-size: 2.8rem; /* Reduced from 3.2rem */
       color: var(--primary);
-      margin-bottom: 1.8rem; /* Increased for spacing */
+      margin-bottom: 1.2rem; /* Reduced from 1.8rem */
       transition: all 0.4s ease;
     }
 
     .skill-card:hover .skill-icon {
-      transform: scale(1.1); /* Reduced for subtlety */
+      transform: scale(1.1);
       color: var(--accent);
     }
 
     .skill-name {
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 1rem; /* Increased for spacing */
-      font-size: 1.05rem; /* Slightly smaller */
+      margin-bottom: 0.8rem; /* Reduced from 1rem */
+      font-size: 1rem; /* Reduced from 1.05rem */
     }
 
     .skill-description {
-      font-size: 0.85rem; /* Slightly smaller */
+      font-size: 0.8rem; /* Reduced from 0.85rem */
       color: var(--text-muted);
       opacity: 0;
-      transform: translateY(15px);
+      transform: translateY(12px); /* Reduced from 15px */
       transition: all 0.4s ease;
-      font-family: 'JetBrains Mono', monospace; /* Code font for descriptions */
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .skill-card:hover .skill-description {
@@ -809,8 +809,8 @@
 
     /* Social Icons */
     .social-icon svg {
-      width: 1.4rem;
-      height: 1.4rem;
+      width: 1.2rem; /* Reduced from 1.4rem */
+      height: 1.2rem; /* Reduced from 1.4rem */
       fill: var(--text-secondary);
       transition: all 0.4s ease;
     }
@@ -822,7 +822,7 @@
     /* Enhanced Timeline */
     .timeline {
       position: relative;
-      margin-top: 4.5rem; /* Increased for spacing */
+      margin-top: 3rem; /* Reduced from 4.5rem */
     }
 
     .timeline::before {
@@ -838,8 +838,8 @@
 
     .timeline-item {
       position: relative;
-      padding-left: 6rem;
-      margin-bottom: 4.5rem; /* Increased for spacing */
+      padding-left: 5rem; /* Reduced from 6rem */
+      margin-bottom: 3rem; /* Reduced from 4.5rem */
     }
 
     .timeline-dot {
@@ -863,8 +863,8 @@
 
     .timeline-content {
       background: var(--bg-card);
-      padding: 3rem; /* Increased for more space */
-      border-radius: 20px;
+      padding: 2rem; /* Reduced from 3rem */
+      border-radius: 16px; /* Reduced from 20px */
       border: 1px solid var(--border);
       transition: all 0.4s ease;
       position: relative;
@@ -897,23 +897,23 @@
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem; /* Increased for better separation */
-      margin-top: 4.5rem; /* Increased for spacing */
+      gap: 4rem; /* Reduced from 6rem */
+      margin-top: 3rem; /* Reduced from 4.5rem */
     }
 
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: 2.5rem; /* Increased for spacing */
+      gap: 2rem; /* Reduced from 2.5rem */
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 1.8rem; /* Increased for spacing */
-      padding: 2.5rem; /* Increased for more space */
+      gap: 1.2rem; /* Reduced from 1.8rem */
+      padding: 1.8rem; /* Reduced from 2.5rem */
       background: var(--bg-card);
-      border-radius: 16px;
+      border-radius: 12px; /* Reduced from 16px */
       border: 1px solid var(--border);
       transition: all 0.4s ease;
       cursor: pointer;
@@ -926,15 +926,15 @@
     }
 
     .contact-icon {
-      width: 60px;
-      height: 60px;
+      width: 50px; /* Reduced from 60px */
+      height: 50px; /* Reduced from 60px */
       background: var(--gradient-primary);
-      border-radius: 16px;
+      border-radius: 12px; /* Reduced from 16px */
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.3rem; /* Reduced from 1.5rem */
       transition: all 0.3s ease;
     }
 
@@ -944,8 +944,8 @@
 
     .contact-form {
       background: var(--bg-card);
-      padding: 3.5rem; /* Increased for more space */
-      border-radius: 20px;
+      padding: 2.5rem; /* Reduced from 3.5rem */
+      border-radius: 16px; /* Reduced from 20px */
       border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
@@ -962,17 +962,17 @@
     }
 
     .form-group {
-      margin-bottom: 2.2rem; /* Increased for spacing */
+      margin-bottom: 1.8rem; /* Reduced from 2.2rem */
     }
 
     .form-input {
       width: 100%;
-      padding: 1.4rem; /* Increased for better usability */
+      padding: 1rem; /* Reduced from 1.4rem */
       background: var(--bg-dark);
       border: 2px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px; /* Reduced from 12px */
       color: var(--text-primary);
-      font-size: 1rem;
+      font-size: 0.9rem; /* Reduced from 1rem */
       transition: all 0.3s ease;
       font-family: inherit;
     }
@@ -985,17 +985,17 @@
     }
 
     .form-textarea {
-      min-height: 160px; /* Slightly taller */
+      min-height: 140px; /* Reduced from 160px */
       resize: vertical;
     }
 
     /* Enhanced Footer */
     footer {
       background: var(--bg-section);
-      padding: 4.5rem 2rem 2.5rem; /* Increased for spacing */
+      padding: 3rem 1.5rem 2rem; /* Reduced from 4.5rem 2rem 2.5rem */
       text-align: center;
       border-top: 1px solid var(--border);
-      margin-top: 7rem; /* Increased for separation */
+      margin-top: 5rem; /* Reduced from 7rem */
       position: relative;
     }
 
@@ -1012,21 +1012,21 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 2rem; /* Increased for spacing */
-      margin-bottom: 3.5rem; /* Increased for spacing */
+      gap: 1.5rem; /* Reduced from 2rem */
+      margin-bottom: 2.5rem; /* Reduced from 3.5rem */
     }
 
     .social-icon {
-      width: 60px;
-      height: 60px;
+      width: 50px; /* Reduced from 60px */
+      height: 50px; /* Reduced from 60px */
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 12px; /* Reduced from 16px */
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-secondary);
-      font-size: 1.4rem;
+      font-size: 1.2rem; /* Reduced from 1.4rem */
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
@@ -1061,10 +1061,10 @@
     /* Enhanced Back to Top */
     #backToTop {
       position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 60px;
-      height: 60px;
+      bottom: 1.5rem; /* Reduced from 2rem */
+      right: 1.5rem; /* Reduced from 2rem */
+      width: 50px; /* Reduced from 60px */
+      height: 50px; /* Reduced from 60px */
       background: var(--gradient-primary);
       border-radius: 50%;
       display: flex;
@@ -1077,7 +1077,7 @@
       opacity: 0;
       visibility: hidden;
       box-shadow: var(--shadow);
-      font-size: 1.2rem;
+      font-size: 1rem; /* Reduced from 1.2rem */
     }
 
     #backToTop.show {
@@ -1144,11 +1144,13 @@
       .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 2.5rem;
+        gap: 2rem; /* Reduced from 2.5rem */
       }
 
       .profile-photo {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem; /* Reduced from 2.5rem */
+        width: 250px; /* Reduced from 300px */
+        height: 250px; /* Reduced from 300px */
       }
 
       .hero-subtitle::after {
@@ -1174,8 +1176,8 @@
       }
 
       .nav-container {
-        height: 70px;
-        padding: 0 1.5rem; /* Increased for mobile */
+        height: 50px; /* Reduced from 70px */
+        padding: 0 1rem; /* Reduced from 1.5rem */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1183,27 +1185,27 @@
       }
 
       .nav-logo {
-        font-size: 1.4rem;
+        font-size: 1.2rem; /* Reduced from 1.4rem */
         margin-left: auto;
         order: 2;
       }
 
       .nav-links {
         position: fixed;
-        top: 70px;
+        top: 50px; /* Adjusted for smaller nav height */
         left: 0;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 50px);
         background: rgba(10, 10, 10, 0.98);
         backdrop-filter: var(--blur);
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 3.5rem; /* Increased for spacing */
+        padding-top: 2.5rem; /* Reduced from 3.5rem */
         transform: translateX(-100%);
         transition: transform 0.4s ease;
         gap: 1.2rem;
         align-items: flex-start;
-        padding-left: 2.5rem; /* Increased for spacing */
+        padding-left: 2rem; /* Reduced from 2.5rem */
         z-index: 999;
       }
 
@@ -1219,18 +1221,18 @@
       }
 
       .nav-actions .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.8rem;
+        padding: 0.5rem 1rem; /* Reduced from 0.6rem 1.2rem */
+        font-size: 0.75rem; /* Reduced from 0.8rem */
       }
 
       .hero {
-        padding: 7rem 1.5rem; /* Increased for mobile */
-        min-height: 90vh;
+        padding: 5rem 1rem; /* Reduced from 7rem 1.5rem */
+        min-height: 80vh; /* Reduced from 90vh */
       }
 
       .profile-photo {
-        width: 200px;
-        height: 200px;
+        width: 180px; /* Reduced from 200px */
+        height: 180px; /* Reduced from 200px */
       }
 
       .hero-actions {
@@ -1241,7 +1243,7 @@
 
       .contact-container {
         grid-template-columns: 1fr;
-        gap: 3.5rem; /* Increased for spacing */
+        gap: 2.5rem; /* Reduced from 3.5rem */
       }
 
       .filter-buttons {
@@ -1259,45 +1261,45 @@
 
       .project-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem; /* Increased for mobile */
+        gap: 1.8rem; /* Reduced from 2.5rem */
       }
 
       .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Wider cards */
-        gap: 2rem; /* Increased for spacing */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Reduced from 160px */
+        gap: 1.5rem; /* Reduced from 2rem */
       }
 
       section {
-        padding: 4.5rem 1.5rem; /* Increased for mobile */
+        padding: 3rem 1rem; /* Reduced from 4.5rem 1.5rem */
       }
 
       .section-bg {
-        padding: 3rem 2rem; /* Increased for mobile */
-        margin: 1.5rem 0;
+        padding: 2rem 1.5rem; /* Reduced from 3rem 2rem */
+        margin: 1.2rem 0; /* Reduced from 1.5rem */
       }
 
       .timeline-item {
-        padding-left: 4.5rem; /* Increased for spacing */
+        padding-left: 3.5rem; /* Reduced from 4.5rem */
       }
 
       .timeline::before {
-        left: 1.5rem;
+        left: 1rem; /* Reduced from 1.5rem */
       }
 
       .timeline-dot {
-        left: 0.5rem;
+        left: 0.3rem; /* Reduced from 0.5rem */
       }
 
       h1 {
-        font-size: clamp(2rem, 8vw, 3.2rem);
+        font-size: clamp(1.8rem, 7vw, 2.8rem); /* Reduced from 2rem/8vw/3.2rem */
       }
 
       h2 {
-        font-size: clamp(1.5rem, 6vw, 2.2rem);
+        font-size: clamp(1.3rem, 5vw, 2rem); /* Reduced from 1.5rem/6vw/2.2rem */
       }
 
       .plotly-container {
-        height: 260px;
+        height: 220px; /* Reduced from 260px */
       }
     }
 
@@ -1307,16 +1309,16 @@
       }
 
       .skill-icon {
-        font-size: 2.8rem;
-        margin-bottom: 1.2rem;
+        font-size: 2.5rem; /* Reduced from 2.8rem */
+        margin-bottom: 1rem; /* Reduced from 1.2rem */
       }
 
       .skill-name {
-        font-size: 0.95rem;
+        font-size: 0.9rem; /* Reduced from 0.95rem */
       }
 
       .skill-description {
-        font-size: 0.8rem;
+        font-size: 0.75rem; /* Reduced from 0.8rem */
       }
 
       .hero-actions {
@@ -1334,14 +1336,14 @@
       }
 
       .hero-description {
-        font-size: 0.95rem;
+        font-size: 0.9rem; /* Reduced from 0.95rem */
       }
 
       .contact-item {
         flex-direction: column;
         text-align: center;
         gap: 0.8rem;
-        padding: 2rem;
+        padding: 1.5rem; /* Reduced from 2rem */
       }
 
       .contact-icon {
@@ -1349,14 +1351,14 @@
       }
 
       .contact-form {
-        padding: 2.5rem 2rem;
+        padding: 2rem 1.5rem; /* Reduced from 2.5rem 2rem */
       }
     }
 
     @media (max-width: 400px) {
       .skills-grid {
         grid-template-columns: 1fr;
-        gap: 1.8rem;
+        gap: 1.5rem; /* Reduced from 1.8rem */
       }
 
       .skill-card {
@@ -1364,8 +1366,8 @@
         border-top: 1px solid var(--border);
         border-right: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
-        padding: 2rem;
-        margin-bottom: 1.8rem;
+        padding: 1.5rem; /* Reduced from 2rem */
+        margin-bottom: 1.5rem; /* Reduced from 1.8rem */
         float: none;
         width: auto;
         box-shadow: var(--shadow);
@@ -1388,7 +1390,7 @@
       }
 
       .section-bg {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem; /* Reduced from 2rem 1.5rem */
       }
     }
 
