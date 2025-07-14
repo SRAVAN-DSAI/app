@@ -594,7 +594,7 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       cursor: pointer;
-      /* Apply flex to project-card for vertical stacking of image and body */
+      /* Added for flex layout within the card */
       display: flex;
       flex-direction: column;
     }
@@ -634,10 +634,10 @@
       transform: scale(1.05);
     }
 
-    /* New class for wrapping project content and Plotly graph */
-    .project-body { 
+    /* New styles for project content and plotly container alignment */
+    .project-body { /* New class to wrap content and plotly graph */
         display: flex;
-        flex-wrap: wrap; /* Allows content and graph to wrap on smaller screens */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
         gap: 2rem; /* Spacing between content and graph */
         padding: 2rem; /* Matches existing project-content padding */
         position: relative;
@@ -645,13 +645,11 @@
     }
 
     .project-content {
-      /* Removed padding as it's now on .project-body */
-      padding: 0;
-      /* Removed margin-bottom if it causes issues with flex layout */
-      margin-bottom: 0;
+      padding: 0; /* Remove padding here as it's now on project-body */
       position: relative;
-      flex: 2; /* Content takes more space */
-      min-width: 300px; /* Ensures content doesn't shrink too much */
+      flex: 2; /* Takes more space, e.g., 66% */
+      min-width: 300px; /* Ensure content doesn't shrink too much */
+      margin-bottom: 0; /* Remove margin if it causes issues with flex layout */
     }
 
     .project-title {
@@ -718,17 +716,15 @@
 
     /* Enhanced Plotly Container */
     .plotly-container {
-      /* Removed margin-top as it's now handled by .project-body gap */
-      margin-top: 0; 
+      margin-top: 0; /* Changed from 1.5rem */
       border-radius: 12px; /* Reduced from 16px */
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg-dark);
-      /* Changed height to auto for better responsiveness with flexbox */
-      height: auto; 
+      height: auto; /* Changed from fixed height */
       transition: all 0.3s ease;
-      flex: 1; /* Graph takes less space */
-      min-width: 280px; /* Ensures graph doesn't shrink too much */
+      flex: 1; /* Takes less space, e.g., 33% */
+      min-width: 280px; /* Ensure plotly container doesn't shrink too much */
     }
 
     .plotly-container:hover {
@@ -1186,6 +1182,7 @@
         margin-right: auto;
       }
     }
+
     @media (max-width: 768px) {
       .hamburger {
         display: flex;
@@ -1267,15 +1264,6 @@
         grid-template-columns: 1fr;
         gap: 1.8rem; /* Reduced from 2.5rem */
       }
-      /* Responsive adjustments for project-body */
-      .project-body {
-          flex-direction: column; /* Stack content and plotly graph vertically on small screens */
-      }
-      .project-content,
-      .plotly-container {
-          min-width: unset; /* Remove min-width on small screens */
-          width: 100%; /* Take full width on small screens */
-      }
       .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Reduced from 160px */
         gap: 1.5rem; /* Reduced from 2rem */
@@ -1305,7 +1293,18 @@
       .plotly-container {
         height: 220px; /* Reduced from 260px */
       }
+
+      /* Specific responsive rule for project-body to stack on small screens */
+      .project-body {
+          flex-direction: column; /* Stack content and plotly graph vertically on small screens */
+      }
+      .project-content,
+      .plotly-container {
+          min-width: unset; /* Remove min-width on small screens */
+          width: 100%; /* Take full width on small screens */
+      }
     }
+
     @media (max-width: 480px) {
       .project-grid {
         grid-template-columns: 1fr;
@@ -1347,6 +1346,7 @@
         padding: 2rem 1.5rem; /* Reduced from 2.5rem 2rem */
       }
     }
+
     @media (max-width: 400px) {
       .skills-grid {
         grid-template-columns: 1fr;
@@ -1364,6 +1364,7 @@
         box-shadow: var(--shadow);
       }
     }
+
     @media (max-width: 320px) {
       .filter-buttons {
         flex-direction: column;
@@ -1380,6 +1381,7 @@
         padding: 1.5rem 1rem; /* Reduced from 2rem 1.5rem */
       }
     }
+
     /* Performance optimizations */
     * { will-change: auto; }
     .project-card:hover, .skill-card:hover, .contact-item:hover { will-change: transform; }
@@ -1398,293 +1400,292 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary">Let's Connect</a>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="btn btn-outline">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Hire Me
+        </a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </nav>
 
   <main>
-    <section id="hero" class="hero">
-      <div class="hero-content reveal">
-        <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan Profile Photo" class="profile-photo slide-in-left">
-        <div class="hero-text-content slide-in-right">
-          <h1 class="hero-title">Kodari Sravan <br><span class="typing-effect">Data Scientist</span></h1>
+    <section id="hero" class="hero reveal">
+      <div class="hero-content">
+        <div class="hero-text-content">
+          <p class="hero-subtitle">Hi, I'm Kodari Sravan 👋</p>
+          <h1 class="hero-title">
+            <span class="typing-effect" data-text="Data Scientist"></span>
+          </h1>
           <p class="hero-description">
-            Passionate Data Scientist with expertise in Machine Learning, deep learning and Data Visualization. 
-            I transform complex data into actionable insights, building intelligent solutions that drive innovation.
+            Passionate Data Scientist with expertise in Machine Learning, Data Analysis, and building interactive data visualizations. I transform complex data into actionable insights, driving informed decision-making.
           </p>
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="https://www.linkedin.com/in/kodari-sravan/" target="_blank" class="btn btn-outline">
-              <i class="fab fa-linkedin"></i> LinkedIn
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-folder-open"></i> View Projects
+            </a>
+            <a href="mailto:sravankodari2002@gmail.com" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Email Me
             </a>
           </div>
         </div>
+        <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Profile Photo" class="profile-photo slide-in-right">
       </div>
     </section>
 
-    <section id="about" class="section-bg">
-      <h2 class="text-center reveal">About Me</h2>
-      <p class="text-center reveal">
-        I am a dedicated Data Scientist with a strong background in developing predictive models,
-        conducting in-depth data analysis, and creating compelling data visualizations. My passion
-        lies in leveraging data to solve real-world problems and drive impactful business decisions.
-        I am proficient in Python, SQL, and various machine learning frameworks, always eager to learn
-        and adapt to new technologies.
-      </p>
-      <p class="text-center reveal">
-        My experience spans across various domains, including finance, healthcare, and e-commerce,
-        where I have successfully implemented end-to-end data science projects, from data collection
-        and cleaning to model deployment and monitoring. I thrive in collaborative environments and am
-        committed to continuous learning and improvement.
-      </p>
-    </section>
-
-    <section id="skills" class="section-bg">
-      <h2 class="text-center reveal">Skills</h2>
+    <section id="skills" class="section-bg reveal">
+      <h2>Skills</h2>
       <div class="skills-grid">
         <div class="skill-card reveal-left">
-          <i class="fas fa-chart-line skill-icon"></i>
-          <h3 class="skill-name">Data Analysis</h3>
-          <p class="skill-description">Proficient in exploratory data analysis and statistical methods.</p>
+          <i class="fas fa-code skill-icon"></i>
+          <h3 class="skill-name">Programming</h3>
+          <p class="skill-description">Python (Pandas, NumPy, Scikit-learn), SQL, R, Java, C</p>
         </div>
         <div class="skill-card reveal">
           <i class="fas fa-brain skill-icon"></i>
           <h3 class="skill-name">Machine Learning</h3>
-          <p class="skill-description">Expertise in supervised and unsupervised learning algorithms.</p>
+          <p class="skill-description">Supervised & Unsupervised Learning, Deep Learning, NLP, Time Series</p>
         </div>
         <div class="skill-card reveal-right">
-          <i class="fas fa-cogs skill-icon"></i>
-          <h3 class="skill-name">Deep Learning</h3>
-          <p class="skill-description">Experience with neural networks and deep learning frameworks.</p>
+          <i class="fas fa-chart-bar skill-icon"></i>
+          <h3 class="skill-name">Data Visualization</h3>
+          <p class="skill-description">Matplotlib, Seaborn, Plotly, Tableau, Power BI</p>
         </div>
         <div class="skill-card reveal-left">
-          <i class="fas fa-code skill-icon"></i>
-          <h3 class="skill-name">Python</h3>
-          <p class="skill-description">Strong programming skills in Python for data science.</p>
+          <i class="fas fa-database skill-icon"></i>
+          <h3 class="skill-name">Databases</h3>
+          <p class="skill-description">MySQL, PostgreSQL, MongoDB, Data Warehousing</p>
         </div>
         <div class="skill-card reveal">
-          <i class="fas fa-database skill-icon"></i>
-          <h3 class="skill-name">SQL</h3>
-          <p class="skill-description">Skilled in database querying and management.</p>
+          <i class="fas fa-cloud skill-icon"></i>
+          <h3 class="skill-name">Cloud & Big Data</h3>
+          <p class="skill-description">AWS (S3, EC2), Azure, Spark, Hadoop</p>
         </div>
         <div class="skill-card reveal-right">
-          <i class="fas fa-chart-area skill-icon"></i>
-          <h3 class="skill-name">Data Viz</h3>
-          <p class="skill-description">Creating interactive dashboards and compelling visuals.</p>
+          <i class="fas fa-tools skill-icon"></i>
+          <h3 class="skill-name">Tools & Platforms</h3>
+          <p class="skill-description">Git, Docker, Jupyter, VS Code, Google Colab</p>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section-bg">
-      <h2 class="text-center reveal">My Projects</h2>
-      <div class="filter-container reveal">
+    <section id="projects" class="section-bg reveal">
+      <h2>Projects</h2>
+      <div class="filter-container">
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="ml">Machine Learning</button>
-          <button class="filter-btn" data-filter="dl">Deep Learning</button>
-          <button class="filter-btn" data-filter="nlp">NLP</button>
           <button class="filter-btn" data-filter="viz">Data Visualization</button>
+          <button class="filter-btn" data-filter="nlp">NLP</button>
         </div>
       </div>
-
       <div class="project-grid">
-        <div class="project-card reveal-left" data-category="ml">
-            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="Customer Churn Prediction" class="project-image">
+        <div class="project-card reveal" data-category="ml viz">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Project Image" class="project-image">
             <div class="project-body"> <div class="project-content">
-                    <h3 class="project-title">Customer Churn Prediction</h3>
-                    <p class="project-description">Developed a machine learning model to predict customer churn for a telecom company, achieving 90% accuracy. Identified key factors influencing churn and provided actionable insights for retention strategies.</p>
+                    <h3 class="project-title">Dynamic Sales Dashboard</h3>
+                    <p class="project-description">Developed an interactive sales dashboard using Plotly Dash, enabling real-time visualization of sales trends, product performance, and regional insights. Implemented advanced filters and drill-down capabilities for granular analysis.</p>
                     <div class="project-tags">
                         <span class="project-tag">Python</span>
-                        <span class="project-tag">Machine Learning</span>
-                        <span class="project-tag">Scikit-learn</span>
-                        <span class="project-tag">XGBoost</span>
+                        <span class="project-tag">Plotly Dash</span>
+                        <span class="project-tag">Pandas</span>
+                        <span class="project-tag">SQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/SRAVAN-DSAI/Customer-Churn-Prediction" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-                <div class="plotly-container">
-                    <div id="plotly-graph-churn" style="width: 100%; height: 100%;"></div>
-                    <script>
-                        var dataChurn = [{
-                            values: [90, 10],
-                            labels: ['Retained', 'Churned'],
-                            type: 'pie',
-                            marker: {
-                                colors: ['#007bff', '#dc3545']
-                            },
-                            hole: .4
-                        }];
-                        var layoutChurn = {
-                            title: 'Model Accuracy: 90%',
-                            paper_bgcolor: 'rgba(0,0,0,0)',
-                            plot_bgcolor: 'rgba(0,0,0,0)',
-                            font: { color: 'white' },
-                            showlegend: true
-                        };
-                        Plotly.newPlot('plotly-graph-churn', dataChurn, layoutChurn, {responsive: true});
-                    </script>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card reveal" data-category="viz">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Sales Forecasting Dashboard" class="project-image">
-            <div class="project-body"> <div class="project-content">
-                    <h3 class="project-title">Sales Forecasting Dashboard</h3>
-                    <p class="project-description">Created an interactive dashboard using Plotly and Dash to visualize sales trends and forecast future sales. Implemented ARIMA models for accurate predictions, aiding strategic business planning.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Data Visualization</span>
-                        <span class="project-tag">Plotly</span>
-                        <span class="project-tag">Dash</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/SRAVAN-DSAI/Sales-Forecasting-Dashboard" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/SRAVAN-DSAI/E-commerce-Sales-Dashboard" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="plotly-container">
                     <div id="plotly-graph-sales" style="width: 100%; height: 100%;"></div>
                     <script>
-                        var dataSales = [{
-                            x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                            y: [120, 150, 130, 160, 180, 200],
-                            mode: 'lines+markers',
-                            name: 'Actual Sales',
-                            line: { color: '#00d4ff' }
-                        }, {
-                            x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                            y: [110, 145, 135, 165, 175, 190],
-                            mode: 'lines',
-                            name: 'Forecasted Sales',
-                            line: { dash: 'dot', color: '#6c757d' }
-                        }];
-                        var layoutSales = {
-                            title: 'Monthly Sales & Forecast',
+                        var trace1 = {
+                            x: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                            y: [20, 14, 23, 28, 35],
+                            name: 'North Region',
+                            type: 'bar',
+                            marker: { color: '#007bff' }
+                        };
+                        var trace2 = {
+                            x: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                            y: [12, 18, 29, 21, 15],
+                            name: 'South Region',
+                            type: 'bar',
+                            marker: { color: '#00d4ff' }
+                        };
+                        var data = [trace1, trace2];
+                        var layout = {
+                            barmode: 'group',
+                            title: 'Monthly Sales by Region',
                             paper_bgcolor: 'rgba(0,0,0,0)',
                             plot_bgcolor: 'rgba(0,0,0,0)',
                             font: { color: 'white' },
                             xaxis: { showgrid: false },
                             yaxis: { showgrid: false }
                         };
-                        Plotly.newPlot('plotly-graph-sales', dataSales, layoutSales, {responsive: true});
+                        Plotly.newPlot('plotly-graph-sales', data, layout, {responsive: true});
                     </script>
                 </div>
             </div>
         </div>
 
-        <div class="project-card reveal-right" data-category="dl">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Image Classification with CNN" class="project-image">
+        <div class="project-card reveal" data-category="ml">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=700&q=80" alt="Project Image" class="project-image">
             <div class="project-body"> <div class="project-content">
-                    <h3 class="project-title">Image Classification with CNN</h3>
-                    <p class="project-description">Implemented a Convolutional Neural Network (CNN) for image classification on the CIFAR-10 dataset, achieving 85% accuracy. Explored various architectures and regularization techniques.</p>
+                    <h3 class="project-title">Customer Churn Prediction</h3>
+                    <p class="project-description">Built a machine learning model to predict customer churn for a telecom company. Utilized various classification algorithms (Logistic Regression, Random Forest, Gradient Boosting) and evaluated performance metrics to identify key churn drivers.</p>
                     <div class="project-tags">
-                        <span class="project-tag">Deep Learning</span>
-                        <span class="project-tag">TensorFlow</span>
-                        <span class="project-tag">Keras</span>
-                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Scikit-learn</span>
+                        <span class="project-tag">Pandas</span>
+                        <span class="project-tag">Machine Learning</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/SRAVAN-DSAI/Image-Classification-CNN" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/SRAVAN-DSAI/Customer_Churn_Prediction" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="plotly-container">
-                    <div id="plotly-graph-cnn" style="width: 100%; height: 100%;"></div>
+                    <div id="plotly-graph-churn" style="width: 100%; height: 100%;"></div>
                     <script>
-                        var dataCNN = [{
-                            x: ['Epoch 1', 'Epoch 5', 'Epoch 10', 'Epoch 15', 'Epoch 20'],
-                            y: [60, 75, 80, 83, 85],
-                            type: 'scatter',
-                            mode: 'lines+markers',
-                            name: 'Validation Accuracy',
-                            line: { color: '#28a745' }
+                        var data = [{
+                            values: [75, 25],
+                            labels: ['Retained', 'Churned'],
+                            type: 'pie',
+                            marker: {
+                                colors: ['#007bff', '#dc3545']
+                            }
                         }];
-                        var layoutCNN = {
-                            title: 'CNN Training Accuracy',
+                        var layout = {
+                            title: 'Customer Churn Distribution',
                             paper_bgcolor: 'rgba(0,0,0,0)',
                             plot_bgcolor: 'rgba(0,0,0,0)',
                             font: { color: 'white' },
-                            xaxis: { title: 'Epochs', showgrid: false },
-                            yaxis: { title: 'Accuracy (%)', showgrid: false }
+                            showlegend: true
                         };
-                        Plotly.newPlot('plotly-graph-cnn', dataCNN, layoutCNN, {responsive: true});
+                        Plotly.newPlot('plotly-graph-churn', data, layout, {responsive: true});
                     </script>
                 </div>
             </div>
         </div>
 
+        <div class="project-card reveal" data-category="nlp">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Project Image" class="project-image">
+            <div class="project-body"> <div class="project-content">
+                    <h3 class="project-title">Sentiment Analysis of Product Reviews</h3>
+                    <p class="project-description">Developed an NLP pipeline to perform sentiment analysis on customer product reviews. Used techniques like tokenization, stemming, and various machine learning models to classify reviews as positive, negative, or neutral.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">NLTK</span>
+                        <span class="project-tag">TextBlob</span>
+                        <span class="project-tag">NLP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/SRAVAN-DSAI/Sentiment_Analysis" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+                <div class="plotly-container">
+                    <div id="plotly-graph-sentiment" style="width: 100%; height: 100%;"></div>
+                    <script>
+                        var data = [{
+                            x: ['Positive', 'Negative', 'Neutral'],
+                            y: [60, 25, 15],
+                            type: 'bar',
+                            marker: {
+                                color: ['#28a745', '#dc3545', '#ffc107']
+                            }
+                        }];
+                        var layout = {
+                            title: 'Sentiment Distribution',
+                            paper_bgcolor: 'rgba(0,0,0,0)',
+                            plot_bgcolor: 'rgba(0,0,0,0)',
+                            font: { color: 'white' },
+                            xaxis: { showgrid: false },
+                            yaxis: { showgrid: false }
+                        };
+                        Plotly.newPlot('plotly-graph-sentiment', data, layout, {responsive: true});
+                    </script>
+                </div>
+            </div>
         </div>
+      </div>
     </section>
 
-    <section id="education" class="section-bg">
-      <h2 class="text-center reveal">Education</h2>
+    <section id="education" class="section-bg reveal">
+      <h2>Education</h2>
       <div class="timeline">
         <div class="timeline-item reveal-left">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Master of Science in Data Science</h3>
-            <p class="timeline-subtitle">University of Example, 2021 - 2023</p>
-            <p class="timeline-description">Focused on advanced machine learning, deep learning, statistical modeling, and big data technologies. Completed thesis on "Predictive Analytics for Healthcare Outcomes".</p>
+            <h3>Master of Science in Data Science</h3>
+            <p><strong>University of XYZ</strong> | 2023 - 2025</p>
+            <p>Focused on advanced machine learning, big data technologies, and statistical modeling. GPA: 3.9/4.0</p>
           </div>
         </div>
         <div class="timeline-item reveal-right">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Bachelor of Technology in Computer Science</h3>
-            <p class="timeline-subtitle">Another University, 2017 - 2021</p>
-            <p class="timeline-description">Gained strong foundational knowledge in algorithms, data structures, and software development. Participated in several coding competitions and research projects.</p>
+            <h3>Bachelor of Technology in Computer Science</h3>
+            <p><strong>ABC Institute of Technology</strong> | 2019 - 2023</p>
+            <p>Specialized in algorithms, data structures, and software development. GPA: 8.5/10</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="certifications" class="section-bg">
-      <h2 class="text-center reveal">Certifications</h2>
+    <section id="certifications" class="section-bg reveal">
+      <h2>Certifications</h2>
       <div class="timeline">
         <div class="timeline-item reveal-left">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Google Data Analytics Professional Certificate</h3>
-            <p class="timeline-subtitle">Google, 2023</p>
-            <p class="timeline-description">Covered data collection, cleaning, analysis, and visualization using R, SQL, and Tableau.</p>
+            <h3>Google Professional Data Engineer</h3>
+            <p><strong>Google Cloud</strong> | Issued: Jan 2024</p>
+            <p>Demonstrated proficiency in designing and building data processing systems on Google Cloud Platform.</p>
           </div>
         </div>
         <div class="timeline-item reveal-right">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Machine Learning Engineer Nanodegree</h3>
-            <p class="timeline-subtitle">Udacity, 2022</p>
-            <p class="timeline-description">Intensive program on advanced ML concepts, model deployment, and MLOps practices.</p>
+            <h3>Machine Learning Specialization</h3>
+            <p><strong>Stanford University (Coursera)</strong> | Issued: Aug 2023</p>
+            <p>Completed comprehensive training in fundamental machine learning algorithms and best practices.</p>
           </div>
+        </div>
+        <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Deep Learning Specialization</h3>
+              <p><strong>DeepLearning.AI (Coursera)</strong> | Issued: Mar 2023</p>
+              <p>Gained expertise in neural networks, convolutional networks, and recurrent neural networks for various applications.</p>
+            </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section-bg">
-      <h2 class="text-center reveal">Contact Me</h2>
+    <section id="contact" class="section-bg reveal">
+      <h2>Contact Me</h2>
       <div class="contact-container">
-        <div class="contact-info reveal-left">
-          <div class="contact-item">
+        <div class="contact-info">
+          <div class="contact-item reveal-left">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div>
               <h3>Email</h3>
-              <p>sravan.kodari@example.com</p>
+              <p>sravankodari2002@gmail.com</p>
             </div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-item reveal">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
             <div>
               <h3>Phone</h3>
-              <p>+91 12345 67890</p>
+              <p>+91 9390230239</p>
             </div>
           </div>
-          <div class="contact-item">
+          <div class="contact-item reveal-right">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div>
               <h3>Location</h3>
@@ -1692,51 +1693,48 @@
             </div>
           </div>
         </div>
-        <div class="contact-form reveal-right">
-          <h3>Send a Message</h3>
-          <form action="#" method="POST">
-            <div class="form-group">
-              <input type="text" class="form-input" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-input" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-input form-textarea" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
+        <form class="contact-form reveal">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-input" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-input form-textarea" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="social-icons">
-      <a href="https://github.com/SRAVAN-DSAI" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/kodari-sravan/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/KodariSravan" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:sravan.kodari@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/SRAVAN-DSAI" target="_blank" class="social-icon">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:sravankodari2002@gmail.com" class="social-icon">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
-    <p>&copy; 2023 Kodari Sravan. All rights reserved.</p>
+    <p>&copy; 2025 Kodari Sravan. All rights reserved.</p>
   </footer>
 
-  <a href="#hero" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Navbar scroll effect
-      const navbar = document.getElementById('navbar');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
-
-      // Smooth scroll for nav links
-      document.querySelectorAll('.nav-link').forEach(anchor => {
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
           document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -1750,69 +1748,56 @@
         });
       });
 
-      // Mobile nav toggle
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Mobile navigation toggle
       const hamburger = document.querySelector('.hamburger');
       const navLinks = document.querySelector('.nav-links');
-
       hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
       });
 
-      // Back to top button
-      const backToTop = document.getElementById('backToTop');
+      // Typing effect for hero title
+      const typingElement = document.querySelector('.typing-effect');
+      const textToType = typingElement.dataset.text;
+      let i = 0;
+      function typeWriter() {
+        if (i < textToType.length) {
+          typingElement.textContent += textToType.charAt(i);
+          i++;
+          setTimeout(typeWriter, 100);
+        } else {
+          // Optional: You can make it reset or do something else after typing is complete
+        }
+      }
+      // Start typing after a short delay
+      setTimeout(typeWriter, 500);
+
+      // Back to top button functionality
+      const backToTopButton = document.getElementById('backToTop');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-          backToTop.classList.add('show');
+          backToTopButton.classList.add('show');
         } else {
-          backToTop.classList.remove('show');
+          backToTopButton.classList.remove('show');
         }
       });
 
-      backToTop.addEventListener('click', (e) => {
-        e.preventDefault();
+      backToTopButton.addEventListener('click', () => {
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
         });
       });
-
-      // Typing effect for hero title
-      const heroTitleSpan = document.querySelector('.typing-effect');
-      const phrases = ['Data Scientist', 'Machine Learning Engineer', 'Data Visualization Expert'];
-      let phraseIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-
-      function type() {
-        const currentPhrase = phrases[phraseIndex];
-        const currentText = isDeleting ? currentPhrase.substring(0, charIndex - 1) : currentPhrase.substring(0, charIndex + 1);
-        heroTitleSpan.textContent = currentText;
-
-        let typeSpeed = 150; // Typing speed
-        if (isDeleting) {
-          typeSpeed /= 2; // Faster deleting speed
-        }
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-          typeSpeed = 1500; // Pause at end of phrase
-          isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          typeSpeed = 500; // Pause before typing new phrase
-        }
-
-        if (isDeleting) {
-          charIndex--;
-        } else {
-          charIndex++;
-        }
-
-        setTimeout(type, typeSpeed);
-      }
-
-      type(); // Start typing effect
 
       // Project filtering
       const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1820,49 +1805,82 @@
 
       filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+          // Remove active class from all buttons
           filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
           button.classList.add('active');
 
           const filter = button.dataset.filter;
 
           projectCards.forEach(card => {
-            const category = card.dataset.category;
-            if (filter === 'all' || category === filter) {
+            const categories = card.dataset.category.split(' ');
+            if (filter === 'all' || categories.includes(filter)) {
               card.style.display = 'flex'; // Use flex to maintain card layout
-              card.classList.add('reveal', 'active'); // Re-add animation class
+              setTimeout(() => card.classList.add('reveal'), 10); // Re-add reveal class for animation
             } else {
-              card.style.display = 'none';
-              card.classList.remove('reveal', 'active'); // Remove animation class
+              card.classList.remove('reveal'); // Remove reveal to hide with animation
+              setTimeout(() => card.style.display = 'none', 500); // Hide after animation
             }
           });
         });
       });
 
-      // Active nav link on scroll (improved)
+      // Scroll reveal animation
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // 10% of element visible
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Stop observing once animated
+          }
+        });
+      }, observerOptions);
+
+      revealElements.forEach(el => {
+        observer.observe(el);
+      });
+
+      // Active navigation link on scroll
       const sections = document.querySelectorAll('section');
-      const navLinksArr = Array.from(document.querySelectorAll('.nav-link'));
+      const navLinksList = document.querySelectorAll('.nav-link');
 
-      function setActiveNav() {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (pageYOffset >= sectionTop - sectionHeight / 3) { // Adjust offset for better accuracy
-            current = section.getAttribute('id');
-          }
-        });
+      const updateActiveNav = () => {
+          let current = '';
+          sections.forEach(section => {
+              const sectionTop = section.offsetTop;
+              const sectionHeight = section.clientHeight;
+              if (scrollY >= sectionTop - navbar.offsetHeight - 50) { // Adjusted offset
+                  current = section.getAttribute('id');
+              }
+          });
 
-        navLinksArr.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-          }
-        });
-      }
+          navLinksList.forEach(link => {
+              link.classList.remove('active');
+              if (link.href.includes(current)) {
+                  link.classList.add('active');
+              }
+          });
+      };
 
-      window.addEventListener('scroll', setActiveNav);
-      setActiveNav(); // Call on load to set initial active link
-
+      window.addEventListener('scroll', updateActiveNav);
+      // Initial call to set active link on page load
+      window.addEventListener('load', () => {
+        updateActiveNav();
+        // Ensure mobile menu is closed on load if it somehow persisted state
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        }
+      });
+  
       // Preload critical images
       const criticalImages = [
         'https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG',
@@ -1870,12 +1888,12 @@
         'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80',
         'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80'
       ];
-
+  
       criticalImages.forEach(url => {
         const img = new Image();
         img.src = url;
       });
-
+  
       // Add keyboard navigation
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navLinks.classList.contains('active')) {
@@ -1883,13 +1901,13 @@
           navLinks.classList.remove('active');
         }
       });
-
+  
       // Add focus management for accessibility
       const focusableElements = document.querySelectorAll('a, button, input, textarea');
       focusableElements.forEach(element => {
         element.addEventListener('focus', () => {
           element.style.outline = '2px solid var(--accent)';
-          element.style.outlineOffset = '2px';
+          element.style.outlineOffset = '3px';
         });
         element.addEventListener('blur', () => {
           element.style.outline = 'none';
