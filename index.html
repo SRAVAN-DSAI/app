@@ -56,7 +56,7 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg-dark);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.8; /* Increased for better readability */
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -82,13 +82,13 @@
 
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
+      font-weight: 600; /* Slightly lighter weight for elegance */
+      line-height: 1.3; /* Adjusted for better heading spacing */
+      margin-bottom: 1.2rem;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-size: clamp(2.5rem, 5vw, 4rem); /* Slightly smaller for balance */
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -102,10 +102,10 @@
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-size: clamp(1.8rem, 4vw, 3rem); /* Adjusted for consistency */
       position: relative;
       display: inline-block;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
 
     h2::after {
@@ -126,14 +126,15 @@
     }
 
     h3 {
-      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem); /* Smaller for better hierarchy */
       color: var(--text-primary);
     }
 
     p {
       color: var(--text-secondary);
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem; /* Slightly smaller for readability */
+      line-height: 1.9; /* Increased for better text flow */
     }
 
     /* Enhanced Links */
@@ -178,8 +179,8 @@
     }
 
     .nav-logo {
-      font-size: 1.8rem;
-      font-weight: 800;
+      font-size: 1.6rem; /* Slightly smaller for balance */
+      font-weight: 700;
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -212,11 +213,12 @@
 
     .nav-links a {
       position: relative;
-      font-weight: 600;
+      font-weight: 500; /* Lighter for elegance */
       color: var(--text-secondary);
       padding: 0.75rem 1rem;
       border-radius: 8px;
       transition: all 0.3s ease;
+      font-size: 0.95rem; /* Slightly smaller for cleaner look */
     }
 
     .nav-links a::before {
@@ -244,7 +246,7 @@
 
     .nav-actions {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem; /* Increased for better spacing */
       align-items: center;
     }
 
@@ -252,7 +254,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.8rem; /* Slightly larger for comfort */
       border-radius: 50px;
       font-weight: 600;
       font-size: 0.9rem;
@@ -341,7 +343,7 @@
 
     /* Sections */
     section {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem; /* Increased padding for breathing room */
       max-width: 1400px;
       margin: 0 auto;
       position: relative;
@@ -350,8 +352,8 @@
     .section-bg {
       background: var(--bg-section);
       border-radius: 24px;
-      padding: 4rem 3rem;
-      margin: 2rem 0;
+      padding: 4.5rem 3.5rem; /* Increased for more space */
+      margin: 2.5rem 0; /* Increased margin */
       border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
@@ -381,16 +383,14 @@
 
     /* Enhanced Hero Section */
     .hero {
-      min-height: 50vh;
+      min-height: 60vh; /* Increased for better presence */
       display: flex;
       align-items: center;
-      /* justify-content: center; */ /* Removed to align content left */
-      /* text-align: center; */ /* Removed to align content left */
+      justify-content: flex-start;
+      padding-left: 3rem; /* Increased left padding */
       position: relative;
       background: var(--gradient-hero);
       overflow: hidden;
-      justify-content: flex-start; /* Align content to the left */
-      padding-left: 2rem; /* Add some padding on the left */
     }
 
     .hero::before {
@@ -412,52 +412,42 @@
     }
 
     .hero-content {
-      max-width: 1200px; /* Increased max-width to allow more space for side-by-side layout */
+      max-width: 1400px; /* Increased for wider content */
       z-index: 2;
       position: relative;
-      display: flex; /* Make hero-content a flex container */
-      align-items: center; /* Vertically align items in hero-content */
-      gap: 3rem; /* Space between profile photo and text */
-      text-align: left; /* Align text within hero-content to the left */
-      margin: 0 auto; /* Center hero-content within its parent */
-      width: 100%; /* Take full width of its parent */
+      display: flex;
+      align-items: center;
+      gap: 4rem; /* Increased gap for better separation */
+      text-align: left;
+      margin: 0 auto;
+      width: 100%;
     }
 
     .profile-photo {
-      width: 400px;
-      height: 450px;
-      border-radius: 10px; /* Changed to square with slight radius */
+      width: 450px; /* Slightly larger for prominence */
+      height: 500px;
+      border-radius: 12px; /* Slightly larger radius */
       object-fit: cover;
-      margin-bottom: 0; /* Removed margin-bottom as content will be beside it */
-      
       transition: all 0.4s ease;
-      /* animation: float 6s ease-in-out infinite; */ /* Removed animation */
     }
 
     .profile-photo:hover {
-      transform: scale(1.08) rotate(0deg); /* Removed rotation from hover */
+      transform: scale(1.05); /* Reduced scale for subtlety */
     }
 
-    /* @keyframes float { */ /* Removed animation keyframes */
-    /* 0%, 100% { transform: translateY(0px) rotate(0deg); } */
-    /* 33% { transform: translateY(-8px) rotate(1deg); } */
-    /* 66% { transform: translateY(-12px) rotate(-1deg); } */
-    /* } */
-
-    .hero-text-content { /* New class for the text content */
-        flex: 1; /* Allow text content to take remaining space */
+    .hero-text-content {
+      flex: 1;
     }
 
     .hero-title {
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 1s ease-out;
+      margin-bottom: 1.8rem; /* Increased for spacing */
     }
 
     .hero-subtitle {
-      font-size: 1.8rem;
+      font-size: 1.6rem; /* Slightly smaller for hierarchy */
       color: var(--accent);
-      margin-bottom: 2rem;
-      font-weight: 600;
+      margin-bottom: 2.2rem; /* Increased for spacing */
+      font-weight: 500; /* Lighter for elegance */
       animation: fadeInUp 1s ease-out 0.2s both;
       position: relative;
     }
@@ -466,29 +456,26 @@
       content: '';
       position: absolute;
       bottom: -8px;
-      left: 0; /* Changed to 0 for left alignment */
+      left: 0;
       width: 100px;
       height: 2px;
       background: var(--gradient-primary);
-      transform: translateX(0%); /* Removed translateX to align left */
+      transform: translateX(0%);
       animation: slideIn 1s ease-out 0.8s both;
     }
 
     .hero-description {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      margin-bottom: 3rem;
+      font-size: 1.15rem; /* Slightly smaller for readability */
+      line-height: 2; /* Increased for better text flow */
+      margin-bottom: 3.5rem; /* Increased for spacing */
       animation: fadeInUp 1s ease-out 0.4s both;
       color: var(--text-secondary);
-      max-width: none; /* Removed max-width */
-      margin-left: 0; /* Removed auto margin-left */
-      margin-right: 0; /* Removed auto margin-right */
     }
 
     .hero-actions {
       display: flex;
-      gap: 1.5rem;
-      justify-content: flex-start; /* Changed to flex-start for left alignment */
+      gap: 1.8rem; /* Increased for better button separation */
+      justify-content: flex-start;
       flex-wrap: wrap;
       animation: fadeInUp 1s ease-out 0.6s both;
     }
@@ -505,36 +492,18 @@
 
     /* Enhanced Animations */
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     .fade-in {
@@ -552,15 +521,15 @@
     /* Enhanced Project Filtering */
     .filter-container {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem; /* Increased for spacing */
     }
 
     .filter-buttons {
       display: inline-flex;
       background: var(--bg-card);
       border-radius: 50px;
-      padding: 0.75rem;
-      gap: 0.5rem;
+      padding: 0.8rem;
+      gap: 0.6rem; /* Slightly increased for clarity */
       border: 1px solid var(--border);
       flex-wrap: wrap;
       justify-content: center;
@@ -575,8 +544,9 @@
       border: none;
       cursor: pointer;
       font-weight: 600;
+      font-family: 'JetBrains Mono', monospace; /* Code font for filters */
       transition: all 0.3s ease;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       position: relative;
       overflow: hidden;
     }
@@ -612,8 +582,8 @@
     .project-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2.5rem;
-      margin-top: 4rem;
+      gap: 3rem; /* Increased for better spacing */
+      margin-top: 4.5rem; /* Increased for section balance */
     }
 
     .project-card {
@@ -627,7 +597,7 @@
     }
 
     .project-card:hover {
-      transform: translateY(-12px) rotateX(2deg);
+      transform: translateY(-10px); /* Slightly reduced for subtlety */
       box-shadow: var(--shadow-hover);
       border-color: var(--border-hover);
     }
@@ -651,40 +621,40 @@
 
     .project-image {
       width: 100%;
-      height: 220px;
+      height: 240px; /* Slightly taller for better visuals */
       object-fit: cover;
       transition: all 0.4s ease;
       position: relative;
     }
 
     .project-card:hover .project-image {
-      transform: scale(1.08);
+      transform: scale(1.05); /* Reduced for subtlety */
     }
 
     .project-content {
-      padding: 2.5rem;
+      padding: 3rem; /* Increased for more internal spacing */
       position: relative;
     }
 
     .project-title {
       color: var(--text-primary);
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-      font-weight: 700;
+      margin-bottom: 1.2rem; /* Increased for spacing */
+      font-size: 1.35rem; /* Slightly smaller for hierarchy */
+      font-weight: 600;
     }
 
     .project-description {
       color: var(--text-secondary);
-      margin-bottom: 2rem;
-      line-height: 1.7;
-      font-size: 1.05rem;
+      margin-bottom: 2.2rem; /* Increased for spacing */
+      line-height: 1.9; /* Increased for readability */
+      font-size: 1rem;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
+      gap: 0.8rem; /* Slightly increased */
+      margin-bottom: 2.2rem; /* Increased for spacing */
     }
 
     .project-tag {
@@ -694,6 +664,7 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 600;
+      font-family: 'JetBrains Mono', monospace; /* Code font for tags */
       border: 1px solid rgba(0, 123, 255, 0.3);
       transition: all 0.3s ease;
     }
@@ -705,7 +676,7 @@
 
     .project-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.8rem; /* Increased for button separation */
       align-items: center;
     }
 
@@ -714,8 +685,8 @@
       align-items: center;
       gap: 0.5rem;
       color: var(--primary);
-      font-weight: 700;
-      font-size: 0.95rem;
+      font-weight: 600;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
       padding: 0.5rem 1rem;
       border-radius: 8px;
@@ -729,12 +700,12 @@
 
     /* Enhanced Plotly Container */
     .plotly-container {
-      margin-top: 1.5rem;
+      margin-top: 2rem; /* Increased for spacing */
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border);
       background: var(--bg-dark);
-      height: 280px; /* Default height */
+      height: 300px; /* Slightly taller */
       transition: all 0.3s ease;
     }
 
@@ -746,14 +717,14 @@
     /* Enhanced Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Wider cards */
+      gap: 2.5rem; /* Increased for better spacing */
+      margin-top: 4.5rem; /* Increased for section balance */
     }
 
     .skill-card {
       background: var(--bg-card);
-      padding: 2.5rem;
+      padding: 2.8rem; /* Increased for more space */
       border-radius: 20px;
       text-align: center;
       border: 1px solid var(--border);
@@ -798,60 +769,60 @@
     }
 
     .skill-card:hover {
-      transform: translateY(-8px) rotateY(5deg);
+      transform: translateY(-8px);
       border-color: var(--border-hover);
       box-shadow: 0 12px 40px rgba(0, 123, 255, 0.25);
     }
 
     .skill-icon {
-      font-size: 3.5rem;
+      font-size: 3.2rem; /* Slightly smaller for balance */
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem; /* Increased for spacing */
       transition: all 0.4s ease;
     }
 
     .skill-card:hover .skill-icon {
-      transform: scale(1.2) rotateY(360deg);
+      transform: scale(1.1); /* Reduced for subtlety */
       color: var(--accent);
     }
 
     .skill-name {
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
+      margin-bottom: 1rem; /* Increased for spacing */
+      font-size: 1.05rem; /* Slightly smaller */
     }
 
     .skill-description {
-      font-size: 0.9rem;
+      font-size: 0.85rem; /* Slightly smaller */
       color: var(--text-muted);
       opacity: 0;
       transform: translateY(15px);
       transition: all 0.4s ease;
+      font-family: 'JetBrains Mono', monospace; /* Code font for descriptions */
     }
 
     .skill-card:hover .skill-description {
       opacity: 1;
       transform: translateY(0);
     }
-    
-    /* Style for SVG icons within social-icon to ensure proper sizing and color */
+
+    /* Social Icons */
     .social-icon svg {
-        width: 1.4rem; /* Match font-size of original icon */
-        height: 1.4rem; /* Match font-size of original icon */
-        fill: var(--text-secondary); /* Inherit color from parent */
-        transition: all 0.4s ease; /* Apply transition for hover effects */
+      width: 1.4rem;
+      height: 1.4rem;
+      fill: var(--text-secondary);
+      transition: all 0.4s ease;
     }
 
     .social-icon:hover svg {
-        fill: white; /* Change fill color on hover */
+      fill: white;
     }
-
 
     /* Enhanced Timeline */
     .timeline {
       position: relative;
-      margin-top: 4rem;
+      margin-top: 4.5rem; /* Increased for spacing */
     }
 
     .timeline::before {
@@ -868,7 +839,7 @@
     .timeline-item {
       position: relative;
       padding-left: 6rem;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem; /* Increased for spacing */
     }
 
     .timeline-dot {
@@ -892,7 +863,7 @@
 
     .timeline-content {
       background: var(--bg-card);
-      padding: 2.5rem;
+      padding: 3rem; /* Increased for more space */
       border-radius: 20px;
       border: 1px solid var(--border);
       transition: all 0.4s ease;
@@ -926,21 +897,21 @@
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      margin-top: 4rem;
+      gap: 6rem; /* Increased for better separation */
+      margin-top: 4.5rem; /* Increased for spacing */
     }
 
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem; /* Increased for spacing */
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      padding: 2rem;
+      gap: 1.8rem; /* Increased for spacing */
+      padding: 2.5rem; /* Increased for more space */
       background: var(--bg-card);
       border-radius: 16px;
       border: 1px solid var(--border);
@@ -968,12 +939,12 @@
     }
 
     .contact-item:hover .contact-icon {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.1);
     }
 
     .contact-form {
       background: var(--bg-card);
-      padding: 3rem;
+      padding: 3.5rem; /* Increased for more space */
       border-radius: 20px;
       border: 1px solid var(--border);
       position: relative;
@@ -991,12 +962,12 @@
     }
 
     .form-group {
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem; /* Increased for spacing */
     }
 
     .form-input {
       width: 100%;
-      padding: 1.25rem;
+      padding: 1.4rem; /* Increased for better usability */
       background: var(--bg-dark);
       border: 2px solid var(--border);
       border-radius: 12px;
@@ -1014,17 +985,17 @@
     }
 
     .form-textarea {
-      min-height: 140px;
+      min-height: 160px; /* Slightly taller */
       resize: vertical;
     }
 
     /* Enhanced Footer */
     footer {
       background: var(--bg-section);
-      padding: 4rem 2rem 2rem;
+      padding: 4.5rem 2rem 2.5rem; /* Increased for spacing */
       text-align: center;
       border-top: 1px solid var(--border);
-      margin-top: 6rem;
+      margin-top: 7rem; /* Increased for separation */
       position: relative;
     }
 
@@ -1041,8 +1012,8 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      gap: 2rem; /* Increased for spacing */
+      margin-bottom: 3.5rem; /* Increased for spacing */
     }
 
     .social-icon {
@@ -1082,7 +1053,7 @@
 
     .social-icon:hover {
       color: white;
-      transform: translateY(-6px) scale(1.05);
+      transform: translateY(-6px);
       border-color: transparent;
       box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
     }
@@ -1169,28 +1140,28 @@
     }
 
     /* Responsive Design */
-    @media (max-width: 992px) { /* Adjust breakpoint for hero section layout change */
+    @media (max-width: 992px) {
       .hero-content {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        text-align: center; /* Center text when stacked */
-        gap: 2rem; /* Adjust gap */
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
       }
 
       .profile-photo {
-        margin-bottom: 2rem; /* Add margin back when stacked */
+        margin-bottom: 2.5rem;
       }
 
       .hero-subtitle::after {
-        left: 50%; /* Center the underline when stacked */
+        left: 50%;
         transform: translateX(-50%);
       }
 
       .hero-actions {
-        justify-content: center; /* Center buttons when stacked */
+        justify-content: center;
       }
 
       .hero-description {
-        max-width: 700px; /* Re-apply max-width for better readability when stacked */
+        max-width: 700px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -1198,23 +1169,23 @@
 
     @media (max-width: 768px) {
       .hamburger {
-        display: flex; /* Always display hamburger on mobile */
-        order: 0; /* Position hamburger to the right */
+        display: flex;
+        order: 0;
       }
 
       .nav-container {
         height: 70px;
-        padding: 0 1rem;
-        display: flex; /* Ensure nav-container uses flexbox on mobile */
-        justify-content: space-between; /* Space out logo, buttons, and hamburger */
-        align-items: center; /* Vertically align items */
-        gap: 0.5rem; /* Small gap between items */
+        padding: 0 1.5rem; /* Increased for mobile */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
       }
 
       .nav-logo {
-        font-size: 1.5rem; /* Adjust logo size for mobile if needed */
-        margin-left: auto; /* Push the logo to the far right */
-        order: 2; /* Move logo to the rightmost position */
+        font-size: 1.4rem;
+        margin-left: auto;
+        order: 2;
       }
 
       .nav-links {
@@ -1227,13 +1198,13 @@
         backdrop-filter: var(--blur);
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 3rem;
+        padding-top: 3.5rem; /* Increased for spacing */
         transform: translateX(-100%);
         transition: transform 0.4s ease;
-        gap: 1rem;
-        align-items: flex-start; /* Align links to the left in mobile menu */
-        padding-left: 2rem; /* Add some padding to the left */
-        z-index: 999; /* Ensure menu is above other content */
+        gap: 1.2rem;
+        align-items: flex-start;
+        padding-left: 2.5rem; /* Increased for spacing */
+        z-index: 999;
       }
 
       .nav-links.active {
@@ -1241,73 +1212,72 @@
       }
 
       .nav-actions {
-        display: flex; /* Show the buttons on mobile */
-        gap: 0.75rem; /* Space between LinkedIn and Resume buttons */
+        display: flex;
+        gap: 0.8rem;
         align-items: center;
-        order: 1; /* Position buttons between logo and hamburger */
+        order: 1;
       }
 
-      /* Adjust button sizes for mobile within the nav-actions if they appear too large */
       .nav-actions .btn {
-        padding: 0.6rem 1rem; /* Smaller padding */
-        font-size: 0.75rem; /* Smaller font size */
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
       }
 
       .hero {
-        padding: 6rem 1rem;
+        padding: 7rem 1.5rem; /* Increased for mobile */
         min-height: 90vh;
       }
 
       .profile-photo {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
       }
 
       .hero-actions {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 1.2rem;
       }
 
       .contact-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 3.5rem; /* Increased for spacing */
       }
 
       .filter-buttons {
         flex-direction: column;
         width: fit-content;
         margin: 0 auto;
-        padding: 0.5rem; /* Reduce padding for smaller buttons */
-        gap: 0.25rem; /* Reduce gap between filter buttons */
+        padding: 0.6rem;
+        gap: 0.3rem;
       }
 
       .filter-btn {
-        padding: 0.8rem 1.5rem; /* Adjust padding for filter buttons */
-        font-size: 0.9rem; /* Adjust font size */
+        padding: 0.9rem 1.8rem;
+        font-size: 0.85rem;
       }
 
       .project-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem; /* Increased for mobile */
       }
 
       .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Wider cards */
+        gap: 2rem; /* Increased for spacing */
       }
 
       section {
-        padding: 4rem 1rem;
+        padding: 4.5rem 1.5rem; /* Increased for mobile */
       }
 
       .section-bg {
-        padding: 2.5rem 1.5rem;
-        margin: 1rem 0;
+        padding: 3rem 2rem; /* Increased for mobile */
+        margin: 1.5rem 0;
       }
 
       .timeline-item {
-        padding-left: 4rem;
+        padding-left: 4.5rem; /* Increased for spacing */
       }
 
       .timeline::before {
@@ -1319,15 +1289,15 @@
       }
 
       h1 {
-        font-size: clamp(2rem, 8vw, 3.5rem);
+        font-size: clamp(2rem, 8vw, 3.2rem);
       }
 
       h2 {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
       }
 
       .plotly-container {
-        height: 250px; /* Adjust height for mobile */
+        height: 260px;
       }
     }
 
@@ -1337,16 +1307,16 @@
       }
 
       .skill-icon {
-        font-size: 2.5rem; /* Smaller icon size */
-        margin-bottom: 1rem;
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
       }
 
       .skill-name {
-        font-size: 0.9rem; /* Smaller skill name font size */
+        font-size: 0.95rem;
       }
 
       .skill-description {
-        font-size: 0.8rem; /* Smaller description font size */
+        font-size: 0.8rem;
       }
 
       .hero-actions {
@@ -1360,65 +1330,65 @@
       }
 
       .nav-logo {
-        font-size: 1.5rem; /* Slightly smaller logo on very small screens */
+        font-size: 1.3rem;
       }
 
       .hero-description {
-        font-size: 1rem; /* Smaller text for hero description */
+        font-size: 0.95rem;
       }
 
       .contact-item {
-        flex-direction: column; /* Stack icon and text for contact items */
+        flex-direction: column;
         text-align: center;
-        gap: 0.5rem;
-        padding: 1.5rem;
+        gap: 0.8rem;
+        padding: 2rem;
       }
 
       .contact-icon {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
       }
 
       .contact-form {
-        padding: 2rem 1.5rem; /* Adjust padding for contact form */
+        padding: 2.5rem 2rem;
       }
     }
 
     @media (max-width: 400px) {
       .skills-grid {
-        grid-template-columns: 1fr; /* Force single column on very small screens */
-        gap: 15px; /* Adjust gap between cards */
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
       }
 
       .skill-card {
-        border-left: 6px solid var(--primary); /* Left border from example UI */
-        border-top: 1px solid var(--border); /* Retain existing border */
-        border-right: 1px solid var(--border); /* Retain existing border */
-        border-bottom: 1px solid var(--border); /* Retain existing border */
-        padding: 1.5rem; /* Consistent padding for smaller cards */
-        margin-bottom: 15px; /* Margin-bottom from example UI */
-        float: none; /* Ensure no floating, handled by grid */
-        width: auto; /* Allow grid to manage width */
-        box-shadow: var(--shadow); /* Add a subtle shadow for depth */
+        border-left: 6px solid var(--primary);
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 2rem;
+        margin-bottom: 1.8rem;
+        float: none;
+        width: auto;
+        box-shadow: var(--shadow);
       }
     }
 
     @media (max-width: 320px) {
       .filter-buttons {
         flex-direction: column;
-        width: 100%; /* Make filter buttons full width */
-        padding: 0.5rem;
+        width: 100%;
+        padding: 0.6rem;
       }
 
       .filter-btn {
-        width: 100%; /* Make each filter button full width */
+        width: 100%;
       }
 
       .skills-grid {
-        grid-template-columns: 1fr; /* Stack skills cards on very small screens */
+        grid-template-columns: 1fr;
       }
 
       .section-bg {
-        padding: 1.5rem 1rem; /* Even smaller padding for sections */
+        padding: 2rem 1.5rem;
       }
     }
 
@@ -1463,9 +1433,10 @@
   <section id="hero" class="hero">
     <div class="hero-content">
       <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan - Data Scientist" class="profile-photo">
-      <div class="hero-text-content"> <h1 class="hero-title">Kodari Sravan</h1>
+      <div class="hero-text-content">
+        <h1 class="hero-title">Kodari Sravan</h1>
         <p class="hero-subtitle">Data Scientist & ML Engineer</p>
-        <p class="hero-description"> Passionate about transforming complex datasets into actionable insights. I specialize in machine learning, deep learning, and data visualization, creating robust predictive models and compelling data narratives that drive innovation and deliver measurable business impact. </p>
+        <p class="hero-description">Passionate about transforming complex datasets into actionable insights. I specialize in machine learning, deep learning, and data visualization, creating robust predictive models and compelling data narratives that drive innovation and deliver measurable business impact.</p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
             <i class="fas fa-rocket"></i> View My Work
@@ -1716,25 +1687,25 @@
 
   <footer>
     <div class="social-icons">
-        <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="social-icon">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/SRAVAN-DSAI" target="_blank" class="social-icon">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:sravankodari@outlook.com" class="social-icon">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://twitter.com/SRAVAN_DSAI" target="_blank" class="social-icon">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.kaggle.com/sravankodari" target="_blank" class="social-icon">
-            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="kaggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-kaggle fa-w-16">
-                <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm96.7 353.4c-42.4 35.5-115.3 50.3-159.9 29.2-46.3-22.3-54.6-84.3-18.4-129.5 28.7-37.8 72.8-51.4 113.8-51.4 14.6 0 28.9 2.5 42.1 7.2l-37.6 48.7c-24.9-7.9-49.3-3.1-66.6 13.9-18 17.7-22 53.3 2.9 69.5 24.9 16.2 59.5 4.5 76.8-13.9l37.6 48.7zm-2.9-201.8c-28.7-37.8-72.8-51.4-113.8-51.4-14.6 0-28.9 2.5-42.1 7.2l37.6 48.7c24.9-7.9 49.3-3.1 66.6 13.9 18 17.7 22 53.3-2.9 69.5-24.9 16.2-59.5 4.5-76.8-13.9l-37.6 48.7c42.4 35.5 115.3 50.3 159.9 29.2 46.3-22.3 54.6-84.3 18.4-129.5z"></path>
-            </svg>
-        </a>
+      <a href="https://www.linkedin.com/in/sravan-kodari" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/SRAVAN-DSAI" target="_blank" class="social-icon">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:sravankodari@outlook.com" class="social-icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://twitter.com/SRAVAN_DSAI" target="_blank" class="social-icon">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.kaggle.com/sravankodari" target="_blank" class="social-icon">
+        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="kaggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-kaggle fa-w-16">
+          <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm96.7 353.4c-42.4 35.5-115.3 50.3-159.9 29.2-46.3-22.3-54.6-84.3-18.4-129.5 28.7-37.8 72.8-51.4 113.8-51.4 14.6 0 28.9 2.5 42.1 7.2l-37.6 48.7c-24.9-7.9-49.3-3.1-66.6 13.9-18 17.7-22 53.3 2.9 69.5 24.9 16.2 59.5 4.5 76.8-13.9l37.6 48.7zm-2.9-201.8c-28.7-37.8-72.8-51.4-113.8-51.4-14.6 0-28.9 2.5-42.1 7.2l37.6 48.7c24.9-7.9 49.3-3.1 66.6 13.9 18 17.7 22 53.3-2.9 69.5-24.9 16.2-59.5 4.5-76.8-13.9l-37.6 48.7c42.4 35.5 115.3 50.3 159.9 29.2 46.3-22.3 54.6-84.3 18.4-129.5z"></path>
+        </svg>
+      </a>
     </div>
-    <p>&copy; 2025 Kodari Sravan. All rights reserved.</p>
+    <p>© 2025 Kodari Sravan. All rights reserved.</p>
   </footer>
 
   <button id="backToTop" title="Back to top">
@@ -1843,7 +1814,7 @@
         } else if (isDeleting && charIndex === 0) {
           isDeleting = false;
           textIndex = (textIndex + 1) % texts.length;
-          setTimeout(() => {}, delayBeforeType); // Short delay before typing next word
+          setTimeout(() => {}, delayBeforeType);
         }
 
         const currentSpeed = isDeleting ? deletingSpeed : typingSpeed;
@@ -1863,7 +1834,7 @@
 
           projectCards.forEach(card => {
             if (filter === 'all' || card.dataset.category === filter) {
-              card.style.display = 'block'; // Or 'grid-item' if using display: grid for cards
+              card.style.display = 'block';
             } else {
               card.style.display = 'none';
             }
@@ -1877,17 +1848,14 @@
       const handleScrollReveal = () => {
         revealElements.forEach(el => {
           const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight - 100) { // Adjust offset as needed
+          if (rect.top < window.innerHeight - 100) {
             el.classList.add('active');
-          } else {
-            // Optional: remove 'active' class if element scrolls out of view
-            // el.classList.remove('active'); 
           }
         });
       };
 
       window.addEventListener('scroll', handleScrollReveal);
-      handleScrollReveal(); // Initial check on load
+      handleScrollReveal();
 
       // Initialize
       window.addEventListener('load', () => {
