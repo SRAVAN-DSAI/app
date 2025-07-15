@@ -756,9 +756,24 @@
     }
     @media (min-width: 992px) {
       .hero-content {
-        flex-direction: row; /* Text on left, image on right for PC */
-        align-items: center;
-        gap: 2rem;
+        flex-direction: row; /* Text on left, image on right */
+        justify-content: space-between; /* Spread text and image across the container */
+        align-items: center; /* Vertically center content */
+        gap: 2rem; /* Space between text and image */
+        max-width: 1200px; /* Maintain max width */
+        margin: 0 auto; /* Center the content */
+      }
+      .hero-text-content {
+        flex: 1; /* Text takes available space */
+        max-width: 50%; /* Limit text width to balance layout */
+        text-align: left; /* Ensure text is left-aligned */
+      }
+      .profile-photo {
+        width: 300px; /* Maintain image size */
+        height: 300px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex-shrink: 0; /* Prevent image from shrinking */
       }
     }
 
@@ -1446,7 +1461,6 @@
       <div class="hero-text-content">
         <p class="hero-greeting">Hello, I'm</p>
         <h1 class="hero-title">Kodari Sravan</h1>
-        <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan - Data Scientist" class="profile-photo">
         <h1 class="hero-title">Data Scientist & ML Engineer</h1>
         <p class="hero-description">Passionate about turning complex data into actionable insights. I specialize in machine learning, deep learning, and data visualization, building strong predictive models and engaging data stories that spark innovation and create business value.</p>
         <div class="hero-actions">
@@ -1458,6 +1472,7 @@
           </a>
         </div>
       </div>
+      <img src="https://raw.githubusercontent.com/SRAVAN-DSAI/app/main/profile.JPG" alt="Kodari Sravan - Data Scientist" class="profile-photo">
     </div>
   </section>
 
