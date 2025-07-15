@@ -754,6 +754,13 @@
       border-color: var(--border-hover);
       box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
     }
+    @media (min-width: 992px) {
+      .hero-content {
+        flex-direction: row; /* Text on left, image on right for PC */
+        align-items: center;
+        gap: 2rem;
+      }
+    }
 
     /* Enhanced Skills Grid */
     .skills-grid {
